@@ -87,6 +87,13 @@
 			"settings": {
 				"foreground": "#BFEBBF",
 			}
+		},
+		{
+			"name": "Annotations",
+			"scope": "meta.attribute",
+			"settings": {
+				"foreground": "#94BFF3",
+			}
 		}
 	]
 }
