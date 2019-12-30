@@ -2,6 +2,11 @@
     "name": "pale-fire",
     "displayName": "Pale Fire",
     "description": "Emacs-inspired zenburn variation",
+    "preview": true,
+    "publisher": "matklad",
+    "repository": {
+        "url": "https://github.com/matklad/pale-fire"
+    },
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.41.0"
@@ -9,6 +14,12 @@
     "categories": [
         "Themes"
     ],
+    "scripts": {
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "vsce": "^1.71.0"
+    },
     "contributes": {
         "themes": [
             {
