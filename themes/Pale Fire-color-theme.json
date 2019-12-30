@@ -57,7 +57,8 @@
 			"name": "Type",
 			"scope": [
 				"entity.name.type",
-				"storage.type.core.rust"
+				"storage.type.core.rust",
+				"storage.class.std.rust"
 			],
 			"settings": {
 				"foreground": "#7CB8BB",
