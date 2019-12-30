@@ -31,6 +31,13 @@
 			}
 		},
 		{
+			"name": "Fix False Keywords",
+			"scope": "storage.type.core.rust",
+			"settings": {
+				"fontStyle": ""
+			}
+		},
+		{
 			"name": "Punctuation",
 			"scope": "keyword.operator",
 			"settings": {
@@ -61,7 +68,10 @@
 		},
 		{
 			"name": "Primitive",
-			"scope": ["support.type.primitive", "support.type.builtin"],
+			"scope": [
+				"support.type.primitive",
+				"support.type.builtin"
+			],
 			"settings": {
 				"foreground": "#8CD0D3",
 			}
@@ -80,7 +90,6 @@
 				"foreground": "#BFEBBF",
 			}
 		}
-
 	]
 }
 /*
