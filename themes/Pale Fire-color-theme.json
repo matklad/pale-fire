@@ -31,13 +31,6 @@
 			}
 		},
 		{
-			"name": "Fix False Keywords",
-			"scope": "storage.type.core.rust",
-			"settings": {
-				"fontStyle": ""
-			}
-		},
-		{
 			"name": "Punctuation",
 			"scope": "keyword.operator",
 			"settings": {
@@ -61,9 +54,13 @@
 		},
 		{
 			"name": "Type",
-			"scope": "entity.name.type",
+			"scope": [
+				"entity.name.type",
+				"storage.type.core.rust"
+			],
 			"settings": {
 				"foreground": "#7CB8BB",
+				"fontStyle": "",
 			}
 		},
 		{
