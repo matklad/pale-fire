@@ -72,7 +72,15 @@
 			"settings": {
 				"foreground": "#CC9393",
 			}
+		},
+		{
+			"name": "Constant",
+			"scope": "constant",
+			"settings": {
+				"foreground": "#BFEBBF",
+			}
 		}
+
 	]
 }
 /*
