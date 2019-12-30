@@ -1,0 +1,21 @@
+{
+    "name": "pale-fire",
+    "displayName": "Pale Fire",
+    "description": "Emacs-inspired zenburn variation",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Pale Fire",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Pale Fire-color-theme.json"
+            }
+        ]
+    }
+}
