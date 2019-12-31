@@ -6,9 +6,46 @@
 		"editor.selectionBackground": "#2B2B2B",
 		"editor.foreground": "#DCDCCC",
 		"activityBarBadge.background": "#007acc",
-		"sideBarTitle.foreground": "#bbbbbb"
+		"sideBarTitle.foreground": "#bbbbbb",
+		"ralsp.inlayHint": "#8FB28F"
 	},
 	"tokenColors": [
+		{
+			"name": "Field",
+			"scope": "entity.name.field",
+			"settings": {
+				"foreground": "#94BFF3",
+			}
+		},
+		{
+			"name": "Function",
+			"scope": "entity.name.function",
+			"settings": {
+				"foreground": "#93E0E3",
+			}
+		},
+		{
+			"scope": "entity.name.module",
+			"settings": {
+				"foreground": "#AFD8AF"
+			}
+		},
+		{
+			"name": "Constant",
+			"scope": [
+				"constant",
+				"entity.name.constant"
+			],
+			"settings": {
+				"foreground": "#BFEBBF",
+			}
+		},
+		{
+			"scope": "entity.name.macro",
+			"settings": {
+				"foreground": "#94BFF3"
+			}
+		},
 		{
 			"name": "Variable",
 			"scope": "variable",
@@ -17,40 +54,9 @@
 			}
 		},
 		{
-			"name": "Keyword",
-			"scope": [
-				"keyword",
-				"storage",
-				"keyword.operator.new",
-				"keyword.operator.expression",
-				"variable.language.this",
-				"constant.language.null",
-			],
+			"scope": "meta.mutable",
 			"settings": {
-				"foreground": "#F0DFAF",
-				"fontStyle": "bold"
-			}
-		},
-		{
-			"name": "Punctuation",
-			"scope": "keyword.operator",
-			"settings": {
-				"foreground": "#DCDCCC",
-				"fontStyle": ""
-			}
-		},
-		{
-			"name": "Comment",
-			"scope": "comment",
-			"settings": {
-				"foreground": "#7F9F7F",
-			}
-		},
-		{
-			"name": "Function",
-			"scope": "entity.name.function",
-			"settings": {
-				"foreground": "#93E0E3",
+				"fontStyle": "underline"
 			}
 		},
 		{
@@ -76,17 +82,39 @@
 			}
 		},
 		{
+			"scope": "entity.name.type.parameter",
+			"settings": {
+				"foreground": "#DFAF8F"
+			}
+		},
+		{
+			"scope": "entity.name.type.lifetime",
+			"settings": {
+				"foreground": "#DFAF8F",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"scope": [
+				"constant.character",
+				"constant.numeric"
+			],
+			"settings": {
+				"foreground": "#BFEBBF"
+			}
+		},
+		{
+			"name": "Comment",
+			"scope": "comment",
+			"settings": {
+				"foreground": "#7F9F7F",
+			}
+		},
+		{
 			"name": "String",
 			"scope": "string",
 			"settings": {
 				"foreground": "#CC9393",
-			}
-		},
-		{
-			"name": "Constant",
-			"scope": "constant",
-			"settings": {
-				"foreground": "#BFEBBF",
 			}
 		},
 		{
@@ -95,7 +123,37 @@
 			"settings": {
 				"foreground": "#94BFF3",
 			}
-		}
+		},
+		{
+			"name": "Keyword",
+			"scope": [
+				"keyword",
+				"keyword.operator.new",
+				"keyword.operator.expression",
+				"variable.language.this",
+				"constant.language.null",
+			],
+			"settings": {
+				"foreground": "#F0DFAF",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": [
+				"keyword.other.unsafe"
+			],
+			"settings": {
+				"foreground": "#BC8383"
+			}
+		},
+		{
+			"name": "Punctuation",
+			"scope": "keyword.operator",
+			"settings": {
+				"foreground": "#DCDCCC",
+				"fontStyle": ""
+			}
+		},
 	]
 }
 /*
