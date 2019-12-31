@@ -7,14 +7,14 @@
 		"editor.foreground": "#DCDCCC",
 		"activityBarBadge.background": "#007acc",
 		"sideBarTitle.foreground": "#bbbbbb",
-		"ralsp.inlayHint": "#8FB28F"
+		"rust-analyzer.inlayHint": "#8FB28F"
 	},
 	"tokenColors": [
 		{
 			"name": "Field",
 			"scope": "entity.name.field",
 			"settings": {
-				"foreground": "#DFAF8F",
+				"foreground": "#DCDCCC",
 			}
 		},
 		{
