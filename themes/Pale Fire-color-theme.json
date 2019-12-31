@@ -130,6 +130,8 @@
 				"keyword",
 				"keyword.operator.new",
 				"keyword.operator.expression",
+				"storage.modifier",
+				"storage.type",
 				"variable.language.this",
 				"constant.language.null",
 			],
