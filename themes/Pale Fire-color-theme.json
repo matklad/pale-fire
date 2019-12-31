@@ -14,7 +14,7 @@
 			"name": "Field",
 			"scope": "entity.name.field",
 			"settings": {
-				"foreground": "#94BFF3",
+				"foreground": "#DFAF8F",
 			}
 		},
 		{
@@ -89,6 +89,13 @@
 		},
 		{
 			"scope": "entity.name.type.lifetime",
+			"settings": {
+				"foreground": "#DFAF8F",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"scope": "storage.modifier.lifetime.rust",
 			"settings": {
 				"foreground": "#DFAF8F",
 				"fontStyle": "italic"
