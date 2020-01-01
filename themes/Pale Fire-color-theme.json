@@ -14,7 +14,7 @@
 			"name": "Field",
 			"scope": "entity.name.field",
 			"settings": {
-				"foreground": "#DCDCCC",
+				"foreground": "#AFD8AF",
 			}
 		},
 		{
@@ -37,7 +37,7 @@
 				"entity.name.constant"
 			],
 			"settings": {
-				"foreground": "#BFEBBF",
+				"foreground": "#BDE0F3",
 			}
 		},
 		{
