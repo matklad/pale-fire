@@ -126,7 +126,11 @@
 		},
 		{
 			"name": "Annotations",
-			"scope": "meta.attribute",
+			"scope": [
+				"meta.attribute",
+				"support.variable.attribute",
+				"punctuation.definition.attributeentry"
+			],
 			"settings": {
 				"foreground": "#94BFF3",
 			}
