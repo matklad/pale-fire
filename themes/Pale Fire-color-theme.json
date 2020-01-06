@@ -145,6 +145,7 @@
 				"storage.type",
 				"variable.language.this",
 				"constant.language.null",
+				"punctuation.definition.heading"
 			],
 			"settings": {
 				"foreground": "#F0DFAF",
@@ -167,6 +168,18 @@
 				"fontStyle": ""
 			}
 		},
+		{
+			"scope": "markup.italic",
+			"settings": {
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"scope": "markup.bold",
+			"settings": {
+				"fontStyle": "bold"
+			}
+		}
 	]
 }
 /*
