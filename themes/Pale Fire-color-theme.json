@@ -7,7 +7,7 @@
 		"editor.foreground": "#DCDCCC",
 		"activityBarBadge.background": "#007acc",
 		"sideBarTitle.foreground": "#bbbbbb",
-		"rust_analyzer.inlayHint": "#8FB28F"
+		"rust_analyzer.inlayHint": "#7F9F7F"
 	},
 	"tokenColors": [
 		{
