@@ -179,6 +179,12 @@
 			"settings": {
 				"fontStyle": "bold"
 			}
+		},
+		{
+			"scope": "entity.name.section",
+			"settings": {
+				"fontStyle": "underline"
+			}
 		}
 	]
 }
