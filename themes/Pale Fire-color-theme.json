@@ -145,7 +145,8 @@
 				"storage.type",
 				"variable.language.this",
 				"constant.language.null",
-				"punctuation.definition.heading"
+				"punctuation.definition.heading",
+				"markup.heading.marker"
 			],
 			"settings": {
 				"foreground": "#F0DFAF",
@@ -181,7 +182,7 @@
 			}
 		},
 		{
-			"scope": "entity.name.section",
+			"scope": "markup.heading",
 			"settings": {
 				"fontStyle": "underline"
 			}
