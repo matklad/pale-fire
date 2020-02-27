@@ -25,7 +25,10 @@
 			}
 		},
 		{
-			"scope": "entity.name.module",
+			"scope": [
+				"entity.name.module",
+				"entity.name.namespace"
+			],
 			"settings": {
 				"foreground": "#AFD8AF"
 			}
@@ -41,7 +44,10 @@
 			}
 		},
 		{
-			"scope": "entity.name.macro",
+			"scope": [
+				"entity.name.macro",
+				"entity.name.other.preprocessor.macro"
+			],
 			"settings": {
 				"foreground": "#94BFF3"
 			}
