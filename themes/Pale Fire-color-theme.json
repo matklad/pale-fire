@@ -34,16 +34,6 @@
 			}
 		},
 		{
-			"name": "Constant",
-			"scope": [
-				"constant",
-				"entity.name.constant"
-			],
-			"settings": {
-				"foreground": "#BDE0F3",
-			}
-		},
-		{
 			"scope": [
 				"entity.name.macro",
 				"entity.name.other.preprocessor.macro"
@@ -60,6 +50,17 @@
 			}
 		},
 		{
+			"name": "Constant",
+			"scope": [
+				"constant",
+				"entity.name.constant",
+				"variable.other.enummember",
+			],
+			"settings": {
+				"foreground": "#BDE0F3",
+			}
+		},
+		{
 			"scope": "meta.mutable",
 			"settings": {
 				"fontStyle": "underline"
@@ -69,6 +70,8 @@
 			"name": "Type",
 			"scope": [
 				"entity.name.type",
+				"storage.type.struct",
+				"entity.name.type.enum",
 				"storage.type.core.rust",
 				"storage.class.std.rust"
 			],
@@ -148,7 +151,6 @@
 				"keyword.operator.new",
 				"keyword.operator.expression",
 				"storage.modifier",
-				"storage.type",
 				"variable.language.this",
 				"constant.language.null",
 				"punctuation.definition.heading",
