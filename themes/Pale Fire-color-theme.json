@@ -99,14 +99,11 @@
 			}
 		},
 		{
-			"scope": "entity.name.type.lifetime",
-			"settings": {
-				"foreground": "#DFAF8F",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"scope": "storage.modifier.lifetime.rust",
+			"scope": [
+				"storage.modifier.lifetime.rust",
+				"entity.name.lifetime.rust",
+				"entity.name.type.lifetime"
+			],
 			"settings": {
 				"foreground": "#DFAF8F",
 				"fontStyle": "italic"
