@@ -73,6 +73,7 @@
 				"storage.type.struct",
 				"entity.name.type.enum",
 				"entity.name.typeAlias",
+				"entity.name.union",
 				"storage.type.core.rust",
 				"storage.class.std.rust"
 			],
