@@ -13,192 +13,192 @@
 	"semanticTokenColors": {
 
 	},
-	"tokenColors": [
-		{
-			"name": "Field",
-			"scope": "entity.name.field",
-			"settings": {
-				"foreground": "#AFD8AF",
-			}
-		},
-		{
-			"name": "Function",
-			"scope": "entity.name.function",
-			"settings": {
-				"foreground": "#93E0E3",
-			}
-		},
-		{
-			"scope": [
-				"entity.name.module",
-				"entity.name.namespace"
-			],
-			"settings": {
-				"foreground": "#AFD8AF"
-			}
-		},
-		{
-			"scope": [
-				"entity.name.macro",
-				"entity.name.other.preprocessor.macro"
-			],
-			"settings": {
-				"foreground": "#94BFF3"
-			}
-		},
-		{
-			"name": "Variable",
-			"scope": "variable",
-			"settings": {
-				"foreground": "#DCDCCC",
-			}
-		},
-		{
-			"name": "Constant",
-			"scope": [
-				"constant",
-				"entity.name.constant",
-				"variable.other.enummember",
-			],
-			"settings": {
-				"foreground": "#BDE0F3",
-			}
-		},
-		{
-			"scope": "meta.mutable",
-			"settings": {
-				"fontStyle": "underline"
-			}
-		},
-		{
-			"name": "Type",
-			"scope": [
-				"entity.name.type",
-				"storage.type.struct",
-				"entity.name.type.enum",
-				"entity.name.typeAlias",
-				"entity.name.union",
-				"storage.type.core.rust",
-				"storage.class.std.rust"
-			],
-			"settings": {
-				"foreground": "#7CB8BB",
-				"fontStyle": "",
-			}
-		},
-		{
-			"name": "Primitive",
-			"scope": [
-				"support.type.primitive",
-				"support.type.builtin"
-			],
-			"settings": {
-				"foreground": "#8CD0D3",
-			}
-		},
-		{
-			"scope": "entity.name.type.parameter",
-			"settings": {
-				"foreground": "#DFAF8F"
-			}
-		},
-		{
-			"scope": [
-				"storage.modifier.lifetime.rust",
-				"entity.name.lifetime.rust",
-				"entity.name.type.lifetime"
-			],
-			"settings": {
-				"foreground": "#DFAF8F",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"scope": [
-				"constant.character",
-				"constant.numeric"
-			],
-			"settings": {
-				"foreground": "#BFEBBF"
-			}
-		},
-		{
-			"name": "Comment",
-			"scope": "comment",
-			"settings": {
-				"foreground": "#7F9F7F",
-			}
-		},
-		{
-			"name": "String",
-			"scope": "string",
-			"settings": {
-				"foreground": "#CC9393",
-			}
-		},
-		{
-			"name": "Annotations",
-			"scope": [
-				"meta.attribute",
-				"support.variable.attribute",
-				"punctuation.definition.attributeentry"
-			],
-			"settings": {
-				"foreground": "#94BFF3",
-			}
-		},
-		{
-			"name": "Keyword",
-			"scope": [
-				"keyword",
-				"keyword.operator.new",
-				"keyword.operator.expression",
-				"storage.modifier",
-				"variable.language.this",
-				"constant.language.null",
-				"punctuation.definition.heading",
-				"markup.heading.marker"
-			],
-			"settings": {
-				"foreground": "#F0DFAF",
-				"fontStyle": "bold"
-			}
-		},
-		{
-			"scope": [
-				"keyword.other.unsafe"
-			],
-			"settings": {
-				"foreground": "#BC8383"
-			}
-		},
-		{
-			"name": "Punctuation",
-			"scope": "keyword.operator",
-			"settings": {
-				"foreground": "#DCDCCC",
-				"fontStyle": ""
-			}
-		},
-		{
-			"scope": "markup.italic",
-			"settings": {
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"scope": "markup.bold",
-			"settings": {
-				"fontStyle": "bold"
-			}
-		},
-		{
-			"scope": "markup.heading",
-			"settings": {
-				"fontStyle": "underline"
-			}
-		}
-	]
+	// "tokenColors": [
+	// 	{
+	// 		"name": "Field",
+	// 		"scope": "entity.name.field",
+	// 		"settings": {
+	// 			"foreground": "#AFD8AF",
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Function",
+	// 		"scope": "entity.name.function",
+	// 		"settings": {
+	// 			"foreground": "#93E0E3",
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": [
+	// 			"entity.name.module",
+	// 			"entity.name.namespace"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#AFD8AF"
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": [
+	// 			"entity.name.macro",
+	// 			"entity.name.other.preprocessor.macro"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#94BFF3"
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Variable",
+	// 		"scope": "variable",
+	// 		"settings": {
+	// 			"foreground": "#DCDCCC",
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Constant",
+	// 		"scope": [
+	// 			"constant",
+	// 			"entity.name.constant",
+	// 			"variable.other.enummember",
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#BDE0F3",
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": "meta.mutable",
+	// 		"settings": {
+	// 			"fontStyle": "underline"
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Type",
+	// 		"scope": [
+	// 			"entity.name.type",
+	// 			"storage.type.struct",
+	// 			"entity.name.type.enum",
+	// 			"entity.name.typeAlias",
+	// 			"entity.name.union",
+	// 			"storage.type.core.rust",
+	// 			"storage.class.std.rust"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#7CB8BB",
+	// 			"fontStyle": "",
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Primitive",
+	// 		"scope": [
+	// 			"support.type.primitive",
+	// 			"support.type.builtin"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#8CD0D3",
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": "entity.name.type.parameter",
+	// 		"settings": {
+	// 			"foreground": "#DFAF8F"
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": [
+	// 			"storage.modifier.lifetime.rust",
+	// 			"entity.name.lifetime.rust",
+	// 			"entity.name.type.lifetime"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#DFAF8F",
+	// 			"fontStyle": "italic"
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": [
+	// 			"constant.character",
+	// 			"constant.numeric"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#BFEBBF"
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Comment",
+	// 		"scope": "comment",
+	// 		"settings": {
+	// 			"foreground": "#7F9F7F",
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "String",
+	// 		"scope": "string",
+	// 		"settings": {
+	// 			"foreground": "#CC9393",
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Annotations",
+	// 		"scope": [
+	// 			"meta.attribute",
+	// 			"support.variable.attribute",
+	// 			"punctuation.definition.attributeentry"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#94BFF3",
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Keyword",
+	// 		"scope": [
+	// 			"keyword",
+	// 			"keyword.operator.new",
+	// 			"keyword.operator.expression",
+	// 			"storage.modifier",
+	// 			"variable.language.this",
+	// 			"constant.language.null",
+	// 			"punctuation.definition.heading",
+	// 			"markup.heading.marker"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#F0DFAF",
+	// 			"fontStyle": "bold"
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": [
+	// 			"keyword.other.unsafe"
+	// 		],
+	// 		"settings": {
+	// 			"foreground": "#BC8383"
+	// 		}
+	// 	},
+	// 	{
+	// 		"name": "Punctuation",
+	// 		"scope": "keyword.operator",
+	// 		"settings": {
+	// 			"foreground": "#DCDCCC",
+	// 			"fontStyle": ""
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": "markup.italic",
+	// 		"settings": {
+	// 			"fontStyle": "italic"
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": "markup.bold",
+	// 		"settings": {
+	// 			"fontStyle": "bold"
+	// 		}
+	// 	},
+	// 	{
+	// 		"scope": "markup.heading",
+	// 		"settings": {
+	// 			"fontStyle": "underline"
+	// 		}
+	// 	}
+	// ]
 }
 /*
     colors https://github.com/bbatsov/zenburn-emacs/blob/master/zenburn-theme.el
