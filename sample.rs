@@ -3,23 +3,23 @@
 //! Cells interlinked withing cells interlinked
 //! Within on stem. And dreadfully distinct
 //! Against the dark, a tall white fountain played.
-enum Foo<X> {
-    Bar { x: i32, y: X},
-    Baz(i32),
+use std::ops::Add;
+
+#[repr(transparent)]
+struct Wrapper<T> {
+    value: T
 }
 
-fn main() {
-    println!("Hello, {}!", 92);
-
-    let mut vec = Vec::<Foo<_>>::new();
-    if true {
-        let x = 92;
-        vec.push(Foo::Bar { x, y: 1});
+impl Add<f32> for Wrapper<f32> {
+    type Output = Wrapper<f32>;
+    fn add(self, rhs: f32) -> Self {
+        todo!("not yet implemented :(")
     }
-    unsafe { vec.set_len(0); }
+}
 
-    let mut spam = 42;
-    let eggs = &mut spam;
-    let ham = &eggs;
-    eggs;
+fn frobnicate<'a>(wrapper: &'a mut Wrapper<f32>) -> &'a f32 {
+    wrapper.value += 1.0;
+    unsafe {
+        &*(wrapper as *const _)
+    }
 }
