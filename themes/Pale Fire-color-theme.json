@@ -9,6 +9,10 @@
 		"sideBarTitle.foreground": "#bbbbbb",
 		"rust_analyzer.inlayHint": "#7F9F7F"
 	},
+	"semanticHighlighting": true,
+	"semanticTokenColors": {
+
+	},
 	"tokenColors": [
 		{
 			"name": "Field",
