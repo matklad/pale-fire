@@ -109,6 +109,7 @@
 				"entity.name.type.enum",
 				"entity.name.typeAlias",
 				"entity.name.union",
+				"entity.name.class",
 				"storage.type.core.rust",
 				"storage.class.std.rust"
 			],
