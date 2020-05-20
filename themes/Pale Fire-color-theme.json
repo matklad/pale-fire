@@ -17,10 +17,11 @@
 			"fontStyle": "bold"
 		},
 		"*.unsafe": "#BC8383",
-		"member": "#AFD8AF",
+		"property": "#AFD8AF",
 		"function": "#93E0E3",
 		"namespace": "#AFD8AF",
 		"macro": "#94BFF3",
+		"formatSpecifier": "#94BFF3",
 		"variable": "#DCDCCC",
 		"variable.static.constant": "#BDE0F3",
 		"struct": "#7CB8BB",
@@ -42,7 +43,6 @@
 		"*.mutable": {
 			"fontStyle": "underline"
 		}
-
 	},
 	"tokenColors": [
 		{
