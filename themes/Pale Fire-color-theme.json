@@ -40,6 +40,7 @@
 		"number": "#BFEBBF",
 		"string": "#CC9393",
 		"attribute": "#94BFF3",
+		"function.attribute": "#94BFF3",
 		"*.mutable": {
 			"fontStyle": "underline"
 		}
