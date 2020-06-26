@@ -12,14 +12,17 @@
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
 		"comment": "#7F9F7F",
+		"comment.documentation": "#9FC59F",
 		"keyword": {
 			"foreground": "#F0DFAF",
 			"fontStyle": "bold"
 		},
 		"*.unsafe": "#BC8383",
+		"function.unsafe": "#BC8383",
+		"operator.unsafe": "#BC8383",
 		"property": "#AFD8AF",
 		"function": "#93E0E3",
-		"namespace": "#AFD8AF",
+		"namespace": "#BFEBBF",
 		"macro": "#94BFF3",
 		"formatSpecifier": "#94BFF3",
 		"variable": "#DCDCCC",
@@ -37,7 +40,7 @@
 			"foreground": "#DFAF8F",
 			"fontStyle": "italic"
 		},
-		"number": "#BFEBBF",
+		"number": "#DCDCCC",
 		"string": "#CC9393",
 		"attribute": "#94BFF3",
 		"function.attribute": "#94BFF3",
@@ -152,7 +155,7 @@
 				"constant.numeric"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
+				"foreground": "#DCDCCC"
 			}
 		},
 		{
