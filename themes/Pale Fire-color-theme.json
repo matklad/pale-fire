@@ -20,7 +20,7 @@
 		"*.unsafe": "#BC8383",
 		"function.unsafe": "#BC8383",
 		"operator.unsafe": "#BC8383",
-		"property": "#AFD8AF",
+		"property": "#DFAF8F",
 		"function": "#93E0E3",
 		"namespace": "#BFEBBF",
 		"macro": "#94BFF3",
