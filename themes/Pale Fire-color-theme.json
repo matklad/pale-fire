@@ -218,28 +218,25 @@
 			"name": "Type",
 			"scope": [
 				"entity.name.type",
-				"storage.type.struct",
-				"entity.name.type.enum",
-				"entity.name.typeAlias",
-				"entity.name.union",
-				"entity.name.class",
-				"storage.type.core.rust",
-				"storage.class.std.rust"
+				"storage.type.cs",
+				"support.class",
+				"support.type"
 			],
 			"settings": {
 				"foreground": "#7CB8BB",
-				"fontStyle": "",
+				"fontStyle": ""
 			}
 		},
 		{
 			"name": "Primitive",
 			"scope": [
-				"storage.type.built-in",
-				"support.type.primitive",
-				"support.type.builtin"
+				"keyword.type",
+				"storage.type",
+				"support.type"
 			],
 			"settings": {
-				"foreground": "#8CD0D3"
+				"foreground": "#8CD0D3",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -300,18 +297,25 @@
 		{
 			"name": "Keyword",
 			"scope": [
-				"keyword",
-				"keyword.operator.new",
-				"keyword.operator.expression",
-				"storage.modifier",
-				"variable.language.this",
 				"constant.language.null",
-				"punctuation.definition.heading",
+				"entity.name.tag",
+				"keyword.operator.expression",
+				"keyword.operator.new",
+				"keyword.type.go",
+				"keyword",
 				"markup.heading.marker",
+				"punctuation.definition.heading",
+				"storage.modifier",
+				"storage.type.class",
+				"storage.type.enum",
 				"storage.type.function.python",
 				"storage.type.function.ts",
+				"storage.type.function",
+				"storage.type.js",
+				"storage.type.rust",
+				"storage.type.struct",
 				"storage.type.ts",
-				"entity.name.tag",
+				"variable.language.this"
 			],
 			"settings": {
 				"foreground": "#F0DFAF",
