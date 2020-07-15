@@ -151,7 +151,11 @@
 			"name": "Property",
 			"scope": [
 				"entity.name.field",
-				"support.type.property-name"
+				"entity.name.variable.field",
+				"support.type.property-name",
+				"variable.other.member",
+				"variable.other.object.property",
+				"variable.other.property"
 			],
 			"settings": {
 				"foreground": "#AFD8AF",
