@@ -109,7 +109,10 @@
 	},
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
-		"comment": "#7F9F7F",
+		"comment": {
+			"foreground": "#7F9F7F",
+			"fontStyle": "italic"
+		},
 		"comment.documentation": "#9FC59F",
 		"keyword": {
 			"foreground": "#F0DFAF",
@@ -273,6 +276,7 @@
 			"scope": "comment",
 			"settings": {
 				"foreground": "#7F9F7F",
+				"fontStyle": "italic"
 			}
 		},
 		{
