@@ -172,12 +172,14 @@
 			}
 		},
 		{
+			"name": "Namespace",
 			"scope": [
 				"entity.name.module",
-				"entity.name.namespace"
+				"entity.name.namespace",
+				"entity.name.type.namespace"
 			],
 			"settings": {
-				"foreground": "#AFD8AF"
+				"foreground": "#BFEBBF"
 			}
 		},
 		{
