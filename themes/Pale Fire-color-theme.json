@@ -240,23 +240,23 @@
 			"settings": {
 				"fontStyle": "underline"
 			}
-        },
-        {
-            "scope": "keyword.operator.logical.python",
-            "settings": {
-                "foreground": "#F0DFAF",
-                "fontStyle": "bold"
-            }
-        },
-        {
-            "scope": [
-                "meta.function-call.generic.python",
-                "source.python support"
-            ],
-            "settings": {
-                "foreground": "#93E0E3",
-            }
-        }
+		},
+		{
+			"scope": "keyword.operator.logical.python",
+			"settings": {
+				"foreground": "#F0DFAF",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": [
+				"meta.function-call.generic.python",
+				"source.python support"
+			],
+			"settings": {
+				"foreground": "#93E0E3",
+			}
+		}
 	]
 }
 /*
