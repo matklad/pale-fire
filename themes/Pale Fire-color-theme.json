@@ -35,6 +35,7 @@
 		"editorOverviewRuler.addedForeground": "#7F9F7F",
 		"editorOverviewRuler.deletedForeground": "#CC9393",
 		"editorOverviewRuler.errorForeground": "#AC7373",
+		"editorOverviewRuler.findMatchForeground": "#94BFF388",
 		"editorOverviewRuler.modifiedForeground": "#D0BF8F",
 		"editorSuggestWidget.highlightForeground": "#BDE0F3",
 		"editorSuggestWidget.selectedBackground": "#2B2B2B",
