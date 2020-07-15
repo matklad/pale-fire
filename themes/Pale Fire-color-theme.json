@@ -234,11 +234,12 @@
 		{
 			"name": "Primitive",
 			"scope": [
+				"storage.type.built-in",
 				"support.type.primitive",
 				"support.type.builtin"
 			],
 			"settings": {
-				"foreground": "#8CD0D3",
+				"foreground": "#8CD0D3"
 			}
 		},
 		{
