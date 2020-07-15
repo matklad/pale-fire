@@ -40,7 +40,7 @@
 			"foreground": "#DFAF8F",
 			"fontStyle": "italic"
 		},
-		"number": "#DCDCCC",
+		"number": "#BFEBBF",
 		"string": "#CC9393",
 		"attribute": "#94BFF3",
 		"function.attribute": "#94BFF3",
@@ -151,11 +151,12 @@
 		},
 		{
 			"scope": [
-				"constant.character",
-				"constant.numeric"
+				"constant.numeric",
+				"keyword.other.unit"
 			],
 			"settings": {
-				"foreground": "#DCDCCC"
+				"foreground": "#BFEBBF",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -166,8 +167,11 @@
 			}
 		},
 		{
-			"name": "String",
-			"scope": "string",
+			"name": "String and Character",
+			"scope": [
+				"string",
+				"constant.character"
+			],
 			"settings": {
 				"foreground": "#CC9393",
 			}
