@@ -299,7 +299,6 @@
 		{
 			"name": "Keyword",
 			"scope": [
-				"constant.language.null",
 				"entity.name.tag",
 				"keyword.operator.expression",
 				"keyword.operator.new",
