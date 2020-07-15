@@ -50,15 +50,21 @@
 	},
 	"tokenColors": [
 		{
-			"name": "Field",
-			"scope": "entity.name.field",
+			"name": "Property",
+			"scope": [
+				"entity.name.field",
+				"support.type.property-name"
+			],
 			"settings": {
 				"foreground": "#AFD8AF",
 			}
 		},
 		{
 			"name": "Function",
-			"scope": "entity.name.function",
+			"scope": [
+				"entity.name.function",
+				"support.function"
+			],
 			"settings": {
 				"foreground": "#93E0E3",
 			}
@@ -94,6 +100,7 @@
 				"constant",
 				"entity.name.constant",
 				"variable.other.enummember",
+				"support.constant"
 			],
 			"settings": {
 				"foreground": "#BDE0F3",
@@ -201,10 +208,21 @@
 				"storage.type.function.python",
 				"storage.type.function.ts",
 				"storage.type.ts",
+				"entity.name.tag",
 			],
 			"settings": {
 				"foreground": "#F0DFAF",
 				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "CSS Class/ID",
+			"scope": [
+				"entity.other.attribute-name.class",
+				"entity.other.attribute-name.id",
+			],
+			"settings": {
+				"foreground": "#7CB8BB"
 			}
 		},
 		{
