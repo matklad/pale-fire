@@ -37,8 +37,6 @@
 		"editorOverviewRuler.errorForeground": "#AC7373",
 		"editorOverviewRuler.findMatchForeground": "#94BFF388",
 		"editorOverviewRuler.modifiedForeground": "#D0BF8F",
-		"editorSuggestWidget.highlightForeground": "#BDE0F3",
-		"editorSuggestWidget.selectedBackground": "#2B2B2B",
 		"editorWarning.foreground": "#DFAF8F",
 		"editorWidget.background": "#383838",
 		"focusBorder": "#656555",
