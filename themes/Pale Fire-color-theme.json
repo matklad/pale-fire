@@ -116,7 +116,7 @@
 			"foreground": "#F0DFAF",
 			"fontStyle": "bold"
 		},
-		"selfKeyword" {
+		"selfKeyword.mutable": {
 			"foreground": "#F0DFAF",
 			"fontStyle": "bold underline"
 		},
