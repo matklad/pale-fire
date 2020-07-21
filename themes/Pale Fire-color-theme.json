@@ -116,6 +116,10 @@
 			"foreground": "#F0DFAF",
 			"fontStyle": "bold"
 		},
+		"selfKeyword" {
+			"foreground": "#F0DFAF",
+			"fontStyle": "bold underline"
+		},
 		"*.unsafe": "#BC8383",
 		"function.unsafe": "#BC8383",
 		"operator.unsafe": "#BC8383",
