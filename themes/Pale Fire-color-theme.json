@@ -129,7 +129,7 @@
 		"*.unsafe": "#BC8383",
 		"function.unsafe": "#BC8383",
 		"operator.unsafe": "#BC8383",
-		"property": "#DFAF8F",
+		"property": "#AFD8AF",
 		"function": "#93E0E3",
 		"namespace": "#BFEBBF",
 		"macro": "#94BFF3",
@@ -169,7 +169,7 @@
 				"variable.other.property"
 			],
 			"settings": {
-				"foreground": "#DFAF8F",
+				"foreground": "#AFD8AF",
 			}
 		},
 		{
