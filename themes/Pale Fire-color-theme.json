@@ -43,7 +43,7 @@
 		"editorOverviewRuler.modifiedForeground": "#D0BF8F",
 		"editorWarning.foreground": "#DFAF8F",
 		"editorWidget.background": "#383838",
-		"focusBorder": "#656555",
+		"focusBorder": "#5F5F5F",
 		"foreground": "#DCDCCC",
 		"gitDecoration.ignoredResourceForeground": "#6F6F6F",
 		"gitDecoration.modifiedResourceForeground": "#F0DFAF",
