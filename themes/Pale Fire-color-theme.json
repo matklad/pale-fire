@@ -48,7 +48,7 @@
 		"gitDecoration.ignoredResourceForeground": "#6F6F6F",
 		"gitDecoration.modifiedResourceForeground": "#F0DFAF",
 		"gitDecoration.untrackedResourceForeground": "#AFD8AF",
-		"input.background": "#3F3F3F",
+		"input.background": "#FFFFFF0A", // input field lightens what is behind it
 		"input.foreground": "#DCDCCC",
 		"input.placeholderForeground": "#6F6F6F",
 		"list.activeSelectionBackground": "#4F4F4F",
