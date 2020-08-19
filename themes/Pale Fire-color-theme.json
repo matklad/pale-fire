@@ -5,6 +5,7 @@
 		"activityBar.activeBorder": "#DCDCCC",
 		"activityBar.background": "#383838",
 		"activityBar.foreground": "#DCDCCC",
+		"activityBar.inactiveForeground": "#6F6F6F",
 		"activityBarBadge.background": "#5C888B",
 		"activityBarBadge.foreground": "#DCDCCC",
 		"badge.background": "#5F5F5F",
