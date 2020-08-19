@@ -138,6 +138,7 @@
 		"macro": "#94BFF3",
 		"formatSpecifier": "#94BFF3",
 		"variable": "#DCDCCC",
+		"variable.static": "#BDE0F3",
 		"variable.static.constant": "#BDE0F3",
 		"struct": "#7CB8BB",
 		"enum": "#7CB8BB",
