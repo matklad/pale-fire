@@ -123,7 +123,10 @@
 	},
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
-		"boolean": "#BDE0F3",
+		"boolean": {
+			"foreground": "#BDE0F3",
+			"fontStyle": "" // Booleans are also given the keyword semantic token by rust_analyzer; to avoid this making booleans bold, we clear all font styles
+		},
 		"comment": "#7F9F7F",
 		"comment.documentation": "#9FC59F",
 		"keyword": {
