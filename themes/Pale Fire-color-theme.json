@@ -118,6 +118,7 @@
 	},
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
+		"boolean": "#BDE0F3",
 		"comment": "#7F9F7F",
 		"comment.documentation": "#9FC59F",
 		"keyword": {
