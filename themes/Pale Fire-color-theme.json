@@ -38,6 +38,7 @@
 		"editorLineNumber.foreground": "#5F5F5F",
 		"editorLink.activeForeground": "#94BFF3",
 		"editorOverviewRuler.addedForeground": "#7F9F7F",
+		"editorOverviewRuler.border": "#5F5F5F",
 		"editorOverviewRuler.deletedForeground": "#CC9393",
 		"editorOverviewRuler.errorForeground": "#AC7373",
 		"editorOverviewRuler.findMatchForeground": "#94BFF388",
