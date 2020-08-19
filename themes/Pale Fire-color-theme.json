@@ -64,6 +64,7 @@
 		"minimap.findMatchHighlight": "#94BFF366",
 		"minimap.selectionHighlight": "#2B2B2B88",
 		"panel.background": "#494949",
+		"panel.border": "#5F5F5F",
 		"panelTitle.activeForeground": "#DCDCCC",
 		"peekView.border": "#6F6F6F",
 		"peekViewEditor.background": "#3F3F3F",
