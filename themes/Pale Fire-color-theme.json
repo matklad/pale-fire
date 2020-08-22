@@ -119,6 +119,10 @@
 		"textLink.activeForeground": "#94BFF3",
 		"textLink.foreground": "#94BFF3",
 		"textPreformat.foreground": "#DCDCCC", // inline code in e.g. Settings page
+		"titleBar.activeBackground": "#383838",
+		"titleBar.activeForeground": "#DCDCCC",
+		"titleBar.inactiveBackground": "#383838",
+		"titleBar.inactiveForeground": "#6F6F6F",
 		"widget.shadow": "#00000088"
 	},
 	"semanticHighlighting": true,
