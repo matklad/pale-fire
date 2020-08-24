@@ -146,6 +146,7 @@
 		"operator.unsafe": "#BC8383",
 		"property": "#AFD8AF",
 		"function": "#93E0E3",
+		"function.consuming": "#DC8CC3",
 		"namespace": "#BFEBBF",
 		"macro": "#94BFF3",
 		"formatSpecifier": "#94BFF3",
