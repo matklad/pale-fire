@@ -179,6 +179,7 @@
 				"entity.name.field",
 				"entity.name.variable.field",
 				"support.type.property-name",
+				"support.type.vendored.property-name",
 				"variable.other.member",
 				"variable.other.object.property",
 				"variable.other.property"
