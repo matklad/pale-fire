@@ -81,7 +81,7 @@
 		"peekViewTitleDescription.foreground": "#94BFF3",
 		"peekViewTitleLabel.foreground": "#FFFFEF",
 		"progressBar.background": "#94BFF3",
-		"rust_analyzer.inlayHint": "#7F9F7F",
+		"rust_analyzer.inlayHints.foreground": "#7F9F7F",
 		"scrollbar.shadow": "#00000088",
 		"settings.headerForeground": "#FFFFEF",
 		"settings.modifiedItemIndicator": "#94BFF3",
