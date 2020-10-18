@@ -208,7 +208,9 @@
 			"scope": [
 				"entity.name.module",
 				"entity.name.namespace",
-				"entity.name.type.namespace"
+				"entity.name.type.namespace",
+				"storage.modifier.import",
+				"storage.modifier.package"
 			],
 			"settings": {
 				"foreground": "#BFEBBF"
