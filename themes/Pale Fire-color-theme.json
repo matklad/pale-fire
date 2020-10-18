@@ -183,6 +183,7 @@
 			"scope": [
 				"entity.name.field",
 				"entity.name.variable.field",
+				"punctuation.support.type.property-name",
 				"support.type.property-name",
 				"support.type.vendored.property-name",
 				"variable.other.member",
@@ -321,8 +322,10 @@
 		{
 			"name": "String and Character",
 			"scope": [
-				"string",
-				"constant.character"
+				"constant.character",
+				"punctuation.definition.char",
+				"punctuation.definition.string",
+				"string"
 			],
 			"settings": {
 				"foreground": "#CC9393",
