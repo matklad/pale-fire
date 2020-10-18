@@ -191,7 +191,7 @@
 				"variable.other.property"
 			],
 			"settings": {
-				"foreground": "#AFD8AF",
+				"foreground": "#AFD8AF"
 			}
 		},
 		{
@@ -201,7 +201,7 @@
 				"support.function"
 			],
 			"settings": {
-				"foreground": "#93E0E3",
+				"foreground": "#93E0E3"
 			}
 		},
 		{
@@ -231,7 +231,7 @@
 			"name": "Variable",
 			"scope": "variable",
 			"settings": {
-				"foreground": "#DCDCCC",
+				"foreground": "#DCDCCC"
 			}
 		},
 		{
@@ -243,7 +243,7 @@
 				"support.constant"
 			],
 			"settings": {
-				"foreground": "#BDE0F3",
+				"foreground": "#BDE0F3"
 			}
 		},
 		{
@@ -316,7 +316,7 @@
 			"name": "Comment",
 			"scope": "comment",
 			"settings": {
-				"foreground": "#7F9F7F",
+				"foreground": "#7F9F7F"
 			}
 		},
 		{
@@ -328,7 +328,7 @@
 				"string"
 			],
 			"settings": {
-				"foreground": "#CC9393",
+				"foreground": "#CC9393"
 			}
 		},
 		{
@@ -339,7 +339,7 @@
 				"punctuation.definition.attributeentry"
 			],
 			"settings": {
-				"foreground": "#94BFF3",
+				"foreground": "#94BFF3"
 			}
 		},
 		{
@@ -374,7 +374,7 @@
 			"name": "CSS Class/ID",
 			"scope": [
 				"entity.other.attribute-name.class",
-				"entity.other.attribute-name.id",
+				"entity.other.attribute-name.id"
 			],
 			"settings": {
 				"foreground": "#7CB8BB"
@@ -430,7 +430,7 @@
 				"source.python support"
 			],
 			"settings": {
-				"foreground": "#93E0E3",
+				"foreground": "#93E0E3"
 			}
 		}
 	]
