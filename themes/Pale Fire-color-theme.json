@@ -254,8 +254,7 @@
 			"name": "Type",
 			"scope": [
 				"entity.name.type",
-				"storage.type.cs",
-				"storage.type.java",
+				"storage.type",
 				"support.class",
 				"support.type"
 			],
@@ -268,7 +267,15 @@
 			"name": "Primitive",
 			"scope": [
 				"keyword.type",
-				"storage.type",
+				"storage.type.boolean.go",
+				"storage.type.built-in",
+				"storage.type.byte.go",
+				"storage.type.error.go",
+				"storage.type.numeric.go",
+				"storage.type.primitive",
+				"storage.type.rune.go",
+				"storage.type.string.go",
+				"storage.type.uintptr.go",
 				"support.type"
 			],
 			"settings": {
