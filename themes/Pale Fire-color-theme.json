@@ -256,8 +256,7 @@
 				"entity.name.type",
 				"storage.type.cs",
 				"support.class",
-				"support.type",
-				"variable.other.object"
+				"support.type"
 			],
 			"settings": {
 				"foreground": "#7CB8BB",
