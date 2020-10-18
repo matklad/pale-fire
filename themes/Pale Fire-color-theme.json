@@ -387,7 +387,10 @@
 		},
 		{
 			"name": "Punctuation",
-			"scope": "keyword.operator",
+			"scope": [
+				"keyword.operator",
+				"punctuation"
+			],
 			"settings": {
 				"foreground": "#DCDCCC",
 				"fontStyle": ""
