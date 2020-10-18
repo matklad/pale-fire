@@ -213,7 +213,8 @@
 				"storage.modifier.package"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
+				"foreground": "#BFEBBF",
+				"fontStyle": ""
 			}
 		},
 		{
