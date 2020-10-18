@@ -255,6 +255,7 @@
 			"scope": [
 				"entity.name.type",
 				"storage.type.cs",
+				"storage.type.java",
 				"support.class",
 				"support.type"
 			],
