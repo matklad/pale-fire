@@ -270,7 +270,7 @@ impl Theme {
         let mut colors_owned = json::Map::new();
         let colors = &mut colors_owned;
 
-        rule(colors, "boolean", ZENBURN_BLUE_PLUS_3);
+        rule(colors, "boolean", (ZENBURN_BLUE_PLUS_3, FontStyle::Clear));
         rule(colors, "comment", ZENBURN_GREEN);
         rule(colors, "comment.documentation", ZENBURN_GREEN_PLUS_2);
         rule(colors, "keyword", (ZENBURN_YELLOW, FontStyle::Bold));
@@ -340,7 +340,7 @@ impl Theme {
                 "storage.modifier.import",
                 "storage.modifier.package",
             ],
-            ZENBURN_GREEN_PLUS_4,
+            (ZENBURN_GREEN_PLUS_4, FontStyle::Clear),
         );
 
         textmate_rule(
@@ -375,7 +375,7 @@ impl Theme {
                 "support.class",
                 "support.type",
             ],
-            ZENBURN_BLUE_MINUS_1,
+            (ZENBURN_BLUE_MINUS_1, FontStyle::Clear),
         );
 
         textmate_rule(
@@ -394,7 +394,7 @@ impl Theme {
                 "storage.type.uintptr.go",
                 "support.type",
             ],
-            ZENBURN_BLUE,
+            (ZENBURN_BLUE, FontStyle::Clear),
         );
 
         textmate_rule(
@@ -419,7 +419,7 @@ impl Theme {
             colors,
             None,
             &["constant.numeric", "keyword.other.unit"],
-            ZENBURN_GREEN_PLUS_4,
+            (ZENBURN_GREEN_PLUS_4, FontStyle::Clear),
         );
 
         textmate_rule(
@@ -495,7 +495,7 @@ impl Theme {
             colors,
             Some("Punctuation"),
             &["keyword.operator", "punctuation"],
-            ZENBURN_FG,
+            (ZENBURN_FG, FontStyle::Clear),
         );
 
         textmate_rule(colors, None, &["markup.italic"], FontStyle::Italic);

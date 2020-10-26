@@ -132,7 +132,10 @@
 	},
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
-		"boolean": "#BDE0F3",
+		"boolean": {
+			"foreground": "#BDE0F3",
+			"fontStyle": ""
+		},
 		"comment": "#7F9F7F",
 		"comment.documentation": "#9FC59F",
 		"keyword": {
@@ -208,7 +211,8 @@
 				"storage.modifier.package"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
+				"foreground": "#BFEBBF",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -264,7 +268,8 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#7CB8BB"
+				"foreground": "#7CB8BB",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -283,7 +288,8 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#8CD0D3"
+				"foreground": "#8CD0D3",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -309,7 +315,8 @@
 				"keyword.other.unit"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
+				"foreground": "#BFEBBF",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -396,7 +403,8 @@
 				"punctuation"
 			],
 			"settings": {
-				"foreground": "#DCDCCC"
+				"foreground": "#DCDCCC",
+				"fontStyle": ""
 			}
 		},
 		{

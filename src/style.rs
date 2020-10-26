@@ -55,6 +55,7 @@ pub(crate) enum FontStyle {
     Bold,
     Italic,
     Underline,
+    Clear,
 }
 
 impl From<&FontStyle> for json::Value {
@@ -63,6 +64,7 @@ impl From<&FontStyle> for json::Value {
             FontStyle::Bold => Self::String("bold".to_string()),
             FontStyle::Italic => Self::String("italic".to_string()),
             FontStyle::Underline => Self::String("underline".to_string()),
+            FontStyle::Clear => Self::String(String::new()),
         }
     }
 }
