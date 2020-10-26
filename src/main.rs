@@ -1,5 +1,5 @@
-mod color;
 mod palette;
+mod style;
 mod theme;
 
 use std::{fs, io};

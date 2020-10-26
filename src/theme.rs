@@ -1,5 +1,5 @@
-use crate::color::{Color, Rgb};
 use crate::palette::*;
+use crate::style::{Color, Rgb};
 use std::fmt;
 
 pub(crate) struct Theme;

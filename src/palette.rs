@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use crate::color::Rgb;
+use crate::style::Rgb;
 
 // Colors are from https://github.com/bbatsov/zenburn_emacs/blob/master/zenburn_theme.el
 
