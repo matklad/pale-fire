@@ -213,7 +213,7 @@ impl Theme {
         write_scope(f, "boolean", ZENBURN_BLUE_PLUS_3)?;
         write_scope(f, "comment", ZENBURN_GREEN)?;
         write_scope(f, "comment.documentation", ZENBURN_GREEN_PLUS_2)?;
-        write_scope(f, "keyword", ZENBURN_YELLOW)?;
+        write_scope(f, "keyword", (ZENBURN_YELLOW, FontStyle::Bold))?;
         write_scope(f, "*.unsafe", ZENBURN_RED_MINUS_1)?;
         write_scope(f, "function.unsafe", ZENBURN_RED_MINUS_1)?;
         write_scope(f, "operator.unsafe", ZENBURN_RED_MINUS_1)?;
@@ -233,11 +233,12 @@ impl Theme {
         write_scope(f, "interface", ZENBURN_BLUE)?;
         write_scope(f, "enumMember", ZENBURN_BLUE_PLUS_3)?;
         write_scope(f, "typeParameter", ZENBURN_ORANGE)?;
-        write_scope(f, "lifetime", ZENBURN_ORANGE)?;
+        write_scope(f, "lifetime", (ZENBURN_ORANGE, FontStyle::Italic))?;
         write_scope(f, "number", ZENBURN_GREEN_PLUS_4)?;
         write_scope(f, "string", ZENBURN_RED)?;
         write_scope(f, "attribute", ZENBURN_BLUE_PLUS_1)?;
         write_scope(f, "function.attribute", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "*.mutable", FontStyle::Underline)?;
 
         writeln!(f, "\t}},")?;
 
@@ -304,6 +305,8 @@ impl Theme {
             ZENBURN_BLUE_PLUS_3,
         )?;
 
+        write_textmate(f, None, &["meta.mutable"], FontStyle::Underline)?;
+
         write_textmate(
             f,
             Some("Type"),
@@ -345,7 +348,7 @@ impl Theme {
                 "entity.name.lifetime.rust",
                 "entity.name.type.lifetime",
             ],
-            ZENBURN_ORANGE,
+            (ZENBURN_ORANGE, FontStyle::Italic),
         )?;
 
         write_textmate(
@@ -409,7 +412,7 @@ impl Theme {
                 "storage.type.ts",
                 "variable.language.this",
             ],
-            ZENBURN_YELLOW,
+            (ZENBURN_YELLOW, FontStyle::Bold),
         )?;
 
         write_textmate(
@@ -431,11 +434,15 @@ impl Theme {
             ZENBURN_FG,
         )?;
 
+        write_textmate(f, None, &["markup.italic"], FontStyle::Italic)?;
+        write_textmate(f, None, &["markup.bold"], FontStyle::Bold)?;
+        write_textmate(f, None, &["markup.heading"], FontStyle::Underline)?;
+
         write_textmate(
             f,
             None,
             &["keyword.operator.logical.python"],
-            ZENBURN_YELLOW,
+            (ZENBURN_YELLOW, FontStyle::Bold),
         )?;
 
         write_textmate(

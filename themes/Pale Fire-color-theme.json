@@ -135,7 +135,10 @@
 		"boolean": "#BDE0F3",
 		"comment": "#7F9F7F",
 		"comment.documentation": "#9FC59F",
-		"keyword": "#F0DFAF",
+		"keyword": {
+			"foreground": "#F0DFAF",
+			"fontStyle": "bold"
+		},
 		"*.unsafe": "#BC8383",
 		"function.unsafe": "#BC8383",
 		"operator.unsafe": "#BC8383",
@@ -156,11 +159,17 @@
 		"interface": "#8CD0D3",
 		"enumMember": "#BDE0F3",
 		"typeParameter": "#DFAF8F",
-		"lifetime": "#DFAF8F",
+		"lifetime": {
+			"foreground": "#DFAF8F",
+			"fontStyle": "italic"
+		},
 		"number": "#BFEBBF",
 		"string": "#CC9393",
 		"attribute": "#94BFF3",
 		"function.attribute": "#94BFF3",
+		"*.mutable": {
+			"fontStyle": "underline"
+		},
 	},
 	"tokenColors": [
 		{
@@ -176,8 +185,8 @@
 				"variable.other.property"
 			],
 			"settings": {
-				"foreground": "#AFD8AF"
-			}
+			"foreground": "#AFD8AF"
+		}
 		},
 		{
 			"name": "Function",
@@ -186,8 +195,8 @@
 				"support.function"
 			],
 			"settings": {
-				"foreground": "#93E0E3"
-			}
+			"foreground": "#93E0E3"
+		}
 		},
 		{
 			"name": "Namespace",
@@ -199,8 +208,8 @@
 				"storage.modifier.package"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
-			}
+			"foreground": "#BFEBBF"
+		}
 		},
 		{
 			"scope": [
@@ -208,15 +217,15 @@
 				"entity.name.other.preprocessor.macro"
 			],
 			"settings": {
-				"foreground": "#94BFF3"
-			}
+			"foreground": "#94BFF3"
+		}
 		},
 		{
 			"name": "Variable",
 			"scope": "variable",
 			"settings": {
-				"foreground": "#DCDCCC"
-			}
+			"foreground": "#DCDCCC"
+		}
 		},
 		{
 			"name": "Parameter",
@@ -237,8 +246,14 @@
 				"support.constant"
 			],
 			"settings": {
-				"foreground": "#BDE0F3"
-			}
+			"foreground": "#BDE0F3"
+		}
+		},
+		{
+			"scope": "meta.mutable",
+			"settings": {
+			"fontStyle": "underline"
+		}
 		},
 		{
 			"name": "Type",
@@ -249,8 +264,8 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#7CB8BB"
-			}
+			"foreground": "#7CB8BB"
+		}
 		},
 		{
 			"name": "Primitive",
@@ -268,14 +283,14 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#8CD0D3"
-			}
+			"foreground": "#8CD0D3"
+		}
 		},
 		{
 			"scope": "entity.name.type.parameter",
 			"settings": {
-				"foreground": "#DFAF8F"
-			}
+			"foreground": "#DFAF8F"
+		}
 		},
 		{
 			"scope": [
@@ -284,8 +299,9 @@
 				"entity.name.type.lifetime"
 			],
 			"settings": {
-				"foreground": "#DFAF8F"
-			}
+			"foreground": "#DFAF8F",
+			"fontStyle": "italic"
+		}
 		},
 		{
 			"scope": [
@@ -293,8 +309,8 @@
 				"keyword.other.unit"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
-			}
+			"foreground": "#BFEBBF"
+		}
 		},
 		{
 			"name": "Comment",
@@ -303,8 +319,8 @@
 				"punctuation.definition.comment"
 			],
 			"settings": {
-				"foreground": "#7F9F7F"
-			}
+			"foreground": "#7F9F7F"
+		}
 		},
 		{
 			"name": "String and Character",
@@ -315,8 +331,8 @@
 				"string"
 			],
 			"settings": {
-				"foreground": "#CC9393"
-			}
+			"foreground": "#CC9393"
+		}
 		},
 		{
 			"name": "Annotations",
@@ -326,8 +342,8 @@
 				"punctuation.definition.attributeentry"
 			],
 			"settings": {
-				"foreground": "#94BFF3"
-			}
+			"foreground": "#94BFF3"
+		}
 		},
 		{
 			"name": "Keyword",
@@ -353,8 +369,9 @@
 				"variable.language.this"
 			],
 			"settings": {
-				"foreground": "#F0DFAF"
-			}
+			"foreground": "#F0DFAF",
+			"fontStyle": "bold"
+		}
 		},
 		{
 			"name": "CSS Class/ID",
@@ -363,14 +380,14 @@
 				"entity.other.attribute-name.id"
 			],
 			"settings": {
-				"foreground": "#7CB8BB"
-			}
+			"foreground": "#7CB8BB"
+		}
 		},
 		{
 			"scope": "keyword.other.unsafe",
 			"settings": {
-				"foreground": "#BC8383"
-			}
+			"foreground": "#BC8383"
+		}
 		},
 		{
 			"name": "Punctuation",
@@ -379,14 +396,33 @@
 				"punctuation"
 			],
 			"settings": {
-				"foreground": "#DCDCCC"
-			}
+			"foreground": "#DCDCCC"
+		}
+		},
+		{
+			"scope": "markup.italic",
+			"settings": {
+			"fontStyle": "italic"
+		}
+		},
+		{
+			"scope": "markup.bold",
+			"settings": {
+			"fontStyle": "bold"
+		}
+		},
+		{
+			"scope": "markup.heading",
+			"settings": {
+			"fontStyle": "underline"
+		}
 		},
 		{
 			"scope": "keyword.operator.logical.python",
 			"settings": {
-				"foreground": "#F0DFAF"
-			}
+			"foreground": "#F0DFAF",
+			"fontStyle": "bold"
+		}
 		},
 		{
 			"scope": [
@@ -394,8 +430,8 @@
 				"source.python support"
 			],
 			"settings": {
-				"foreground": "#93E0E3"
-			}
+			"foreground": "#93E0E3"
+		}
 		},
 	]
 }
