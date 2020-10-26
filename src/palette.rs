@@ -7,10 +7,10 @@ use crate::style::Rgb;
 pub(crate) const ZENBURN_FG_PLUS_1: Rgb = Rgb(0xFFFFEF);
 pub(crate) const ZENBURN_FG: Rgb = Rgb(0xDCDCCC);
 pub(crate) const ZENBURN_FG_MINUS_1: Rgb = Rgb(0x656555);
+
 pub(crate) const ZENBURN_BG_MINUS_2: Rgb = Rgb(0x000000);
 pub(crate) const ZENBURN_BG_MINUS_1: Rgb = Rgb(0x2B2B2B);
 pub(crate) const ZENBURN_BG_MINUS_05: Rgb = Rgb(0x383838);
-
 pub(crate) const ZENBURN_BG: Rgb = Rgb(0x3F3F3F);
 pub(crate) const ZENBURN_BG_PLUS_05: Rgb = Rgb(0x494949);
 pub(crate) const ZENBURN_BG_PLUS_1: Rgb = Rgb(0x4F4F4F);
