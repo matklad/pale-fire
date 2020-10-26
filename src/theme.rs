@@ -1,5 +1,5 @@
 use crate::palette::*;
-use crate::style::{Color, Rgb};
+use crate::style::{FontStyle, Rgb, Style};
 use std::fmt;
 
 pub(crate) struct Theme;
@@ -455,7 +455,7 @@ fn write_textmate(
     f: &mut fmt::Formatter,
     name: Option<&str>,
     scopes: &[&str],
-    color: impl Into<Color>,
+    style: impl Into<Style>,
 ) -> fmt::Result {
     writeln!(f, "\t\t{{")?;
 
@@ -485,9 +485,7 @@ fn write_textmate(
         writeln!(f, "\t\t\t],")?;
     }
 
-    writeln!(f, "\t\t\t\"settings\": {{")?;
-    writeln!(f, "\t\t\t\t\"foreground\": {}", color.into())?;
-    writeln!(f, "\t\t\t}}")?;
+    writeln!(f, "\t\t\t\"settings\": {:#}", style.into())?;
 
     writeln!(f, "\t\t}},")?;
 
@@ -497,7 +495,7 @@ fn write_textmate(
 fn write_scope(
     f: &mut fmt::Formatter<'_>,
     scope_name: &str,
-    color: impl Into<Color>,
+    style: impl Into<Style>,
 ) -> fmt::Result {
-    writeln!(f, "\t\t\"{}\": {},", scope_name, color.into())
+    writeln!(f, "\t\t\"{}\": {},", scope_name, style.into())
 }
