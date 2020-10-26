@@ -1,4 +1,5 @@
 use crate::color::{Color, Rgb};
+use crate::palette::*;
 use std::fmt;
 
 pub(crate) struct Theme;
@@ -24,156 +25,180 @@ impl Theme {
     fn workspace_colors(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         writeln!(f, "\t\"colors\": {{")?;
 
-        write_scope(f, "activityBar.activeBorder", Rgb(0xDCDCCC))?;
-        write_scope(f, "activityBar.background", Rgb(0x383838))?;
-        write_scope(f, "activityBar.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "activityBar.inactiveForeground", Rgb(0x6F6F6F))?;
-        write_scope(f, "activityBarBadge.background", Rgb(0x5C888B))?;
-        write_scope(f, "activityBarBadge.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "badge.background", Rgb(0x5F5F5F))?;
-        write_scope(f, "badge.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "button.background", Rgb(0x94BFF3))?;
-        write_scope(f, "button.foreground", Rgb(0x3F3F3F))?;
-        write_scope(f, "button.hoverBackground", Rgb(0xDCDCCC))?;
-        write_scope(f, "debugIcon.breakpointForeground", Rgb(0xCC9393))?;
+        write_scope(f, "activityBar.activeBorder", ZENBURN_FG)?;
+        write_scope(f, "activityBar.background", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "activityBar.foreground", ZENBURN_FG)?;
+        write_scope(f, "activityBar.inactiveForeground", ZENBURN_BG_PLUS_3)?;
+        write_scope(f, "activityBarBadge.background", ZENBURN_BLUE_MINUS_3)?;
+        write_scope(f, "activityBarBadge.foreground", ZENBURN_FG)?;
+        write_scope(f, "badge.background", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "badge.foreground", ZENBURN_FG)?;
+        write_scope(f, "button.background", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "button.foreground", ZENBURN_BG)?;
+        write_scope(f, "button.hoverBackground", ZENBURN_FG)?;
+        write_scope(f, "debugIcon.breakpointForeground", ZENBURN_RED)?;
         write_scope(
             f,
             "diffEditor.insertedTextBackground",
-            (Rgb(0xBFEBBF), 0x33),
+            (ZENBURN_GREEN_PLUS_4, 0x33),
         )?;
-        write_scope(f, "diffEditor.removedTextBackground", (Rgb(0xECB3B3), 0x33))?;
-        write_scope(f, "editor.background", Rgb(0x3F3F3F))?;
-        write_scope(f, "editor.findMatchBackground", (Rgb(0x94BFF3), 0x66))?;
+        write_scope(
+            f,
+            "diffEditor.removedTextBackground",
+            (ZENBURN_RED_PLUS_2, 0x33),
+        )?;
+        write_scope(f, "editor.background", ZENBURN_BG)?;
+        write_scope(f, "editor.findMatchBackground", (ZENBURN_BLUE_PLUS_1, 0x66))?;
         write_scope(
             f,
             "editor.findMatchHighlightBackground",
-            (Rgb(0x94BFF3), 0x44),
+            (ZENBURN_BLUE_PLUS_1, 0x44),
         )?;
-        write_scope(f, "editor.foldBackground", (Rgb(0x94BFF3), 0x22))?;
-        write_scope(f, "editor.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "editor.hoverHighlightBackground", Rgb(0x4F4F4F))?;
-        write_scope(f, "editor.lineHighlightBackground", Rgb(0x383838))?;
-        write_scope(f, "editor.selectionBackground", Rgb(0x2B2B2B))?;
-        write_scope(f, "editor.selectionHighlightBackground", Rgb(0x5F5F5F))?;
-        write_scope(f, "editor.symbolHighlightBackground", Rgb(0x5F5F5F))?;
-        write_scope(f, "editor.wordHighlightBackground", Rgb(0x5F5F5F))?;
-        write_scope(f, "editor.wordHighlightStrongBackground", Rgb(0x5F5F5F))?;
-        write_scope(f, "editorCursor.foreground", Rgb(0xFFFFEF))?;
-        write_scope(f, "editorError.foreground", Rgb(0xDCA3A3))?;
-        write_scope(f, "editorGroup.dropBackground", (Rgb(0x94BFF3), 0x22))?;
-        write_scope(f, "editorGroupHeader.noTabsBackground", Rgb(0x494949))?;
-        write_scope(f, "editorGroupHeader.tabsBackground", Rgb(0x2B2B2B))?;
-        write_scope(f, "editorGutter.addedBackground", Rgb(0x7F9F7F))?;
-        write_scope(f, "editorGutter.deletedBackground", Rgb(0xCC9393))?;
-        write_scope(f, "editorGutter.modifiedBackground", Rgb(0xD0BF8F))?;
-        write_scope(f, "editorIndentGuide.activeBackground", Rgb(0x5F5F5F))?;
-        write_scope(f, "editorIndentGuide.background", Rgb(0x4F4F4F))?;
-        write_scope(f, "editorLightBulb.foreground", Rgb(0xF0DFAF))?;
-        write_scope(f, "editorLineNumber.foreground", Rgb(0x5F5F5F))?;
-        write_scope(f, "editorLink.activeForeground", Rgb(0x94BFF3))?;
-        write_scope(f, "editorOverviewRuler.addedForeground", Rgb(0x7F9F7F))?;
-        write_scope(f, "editorOverviewRuler.border", Rgb(0x5F5F5F))?;
-        write_scope(f, "editorOverviewRuler.deletedForeground", Rgb(0xCC9393))?;
-        write_scope(f, "editorOverviewRuler.errorForeground", Rgb(0xAC7373))?;
+        write_scope(f, "editor.foldBackground", (ZENBURN_BLUE_PLUS_1, 0x22))?;
+        write_scope(f, "editor.foreground", ZENBURN_FG)?;
+        write_scope(f, "editor.hoverHighlightBackground", ZENBURN_BG_PLUS_1)?;
+        write_scope(f, "editor.lineHighlightBackground", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "editor.selectionBackground", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "editor.selectionHighlightBackground", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editor.symbolHighlightBackground", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editor.wordHighlightBackground", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editor.wordHighlightStrongBackground", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editorCursor.foreground", ZENBURN_FG_PLUS_1)?;
+        write_scope(f, "editorError.foreground", ZENBURN_RED_PLUS_1)?;
+        write_scope(f, "editorGroup.dropBackground", (ZENBURN_BLUE_PLUS_1, 0x22))?;
+        write_scope(f, "editorGroupHeader.noTabsBackground", ZENBURN_BG_PLUS_05)?;
+        write_scope(f, "editorGroupHeader.tabsBackground", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "editorGutter.addedBackground", ZENBURN_GREEN)?;
+        write_scope(f, "editorGutter.deletedBackground", ZENBURN_RED)?;
+        write_scope(f, "editorGutter.modifiedBackground", ZENBURN_YELLOW_MINUS_2)?;
+        write_scope(f, "editorIndentGuide.activeBackground", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editorIndentGuide.background", ZENBURN_BG_PLUS_1)?;
+        write_scope(f, "editorLightBulb.foreground", ZENBURN_YELLOW)?;
+        write_scope(f, "editorLineNumber.foreground", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editorLink.activeForeground", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "editorOverviewRuler.addedForeground", ZENBURN_GREEN)?;
+        write_scope(f, "editorOverviewRuler.border", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "editorOverviewRuler.deletedForeground", ZENBURN_RED)?;
+        write_scope(
+            f,
+            "editorOverviewRuler.errorForeground",
+            ZENBURN_RED_MINUS_2,
+        )?;
         write_scope(
             f,
             "editorOverviewRuler.findMatchForeground",
-            (Rgb(0x94BFF3), 0x88),
+            (ZENBURN_BLUE_PLUS_1, 0x88),
         )?;
-        write_scope(f, "editorOverviewRuler.modifiedForeground", Rgb(0xD0BF8F))?;
-        write_scope(f, "editorWarning.foreground", Rgb(0xDFAF8F))?;
-        write_scope(f, "editorWidget.background", Rgb(0x383838))?;
-        write_scope(f, "editorWidget.border", Rgb(0x4F4F4F))?;
-        write_scope(f, "focusBorder", Rgb(0x5F5F5F))?;
-        write_scope(f, "foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "gitDecoration.ignoredResourceForeground", Rgb(0x6F6F6F))?;
-        write_scope(f, "gitDecoration.modifiedResourceForeground", Rgb(0xF0DFAF))?;
+        write_scope(
+            f,
+            "editorOverviewRuler.modifiedForeground",
+            ZENBURN_YELLOW_MINUS_2,
+        )?;
+        write_scope(f, "editorWarning.foreground", ZENBURN_ORANGE)?;
+        write_scope(f, "editorWidget.background", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "editorWidget.border", ZENBURN_BG_PLUS_1)?;
+        write_scope(f, "focusBorder", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "foreground", ZENBURN_FG)?;
+        write_scope(
+            f,
+            "gitDecoration.ignoredResourceForeground",
+            ZENBURN_BG_PLUS_3,
+        )?;
+        write_scope(
+            f,
+            "gitDecoration.modifiedResourceForeground",
+            ZENBURN_YELLOW,
+        )?;
         write_scope(
             f,
             "gitDecoration.untrackedResourceForeground",
-            Rgb(0xAFD8AF),
+            ZENBURN_GREEN_PLUS_3,
         )?;
         write_scope(f, "input.background", (Rgb(0xFFFFFF), 0x0A))?; // input field lightens what is behind it
-        write_scope(f, "input.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "input.placeholderForeground", Rgb(0x6F6F6F))?;
-        write_scope(f, "list.activeSelectionBackground", Rgb(0x4F4F4F))?;
-        write_scope(f, "list.activeSelectionForeground", Rgb(0xDCDCCC))?;
-        write_scope(f, "list.errorForeground", Rgb(0xDCA3A3))?;
-        write_scope(f, "list.focusBackground", Rgb(0x4F4F4F))?;
-        write_scope(f, "list.highlightForeground", Rgb(0xBDE0F3))?;
-        write_scope(f, "list.hoverBackground", Rgb(0x3F3F3F))?;
-        write_scope(f, "list.inactiveSelectionBackground", Rgb(0x494949))?;
-        write_scope(f, "list.warningForeground", Rgb(0xDFAF8F))?;
-        write_scope(f, "minimap.errorHighlight", Rgb(0xECB3B3))?;
-        write_scope(f, "minimap.findMatchHighlight", (Rgb(0x94BFF3), 0x66))?;
-        write_scope(f, "minimap.selectionHighlight", (Rgb(0x2B2B2B), 0x88))?;
-        write_scope(f, "panel.background", Rgb(0x494949))?;
-        write_scope(f, "panel.border", Rgb(0x5F5F5F))?;
-        write_scope(f, "panelTitle.activeForeground", Rgb(0xDCDCCC))?;
-        write_scope(f, "peekView.border", Rgb(0x6F6F6F))?;
-        write_scope(f, "peekViewEditor.background", Rgb(0x3F3F3F))?;
+        write_scope(f, "input.foreground", ZENBURN_FG)?;
+        write_scope(f, "input.placeholderForeground", ZENBURN_BG_PLUS_3)?;
+        write_scope(f, "list.activeSelectionBackground", ZENBURN_BG_PLUS_1)?;
+        write_scope(f, "list.activeSelectionForeground", ZENBURN_FG)?;
+        write_scope(f, "list.errorForeground", ZENBURN_RED_PLUS_1)?;
+        write_scope(f, "list.focusBackground", ZENBURN_BG_PLUS_1)?;
+        write_scope(f, "list.highlightForeground", ZENBURN_BLUE_PLUS_3)?;
+        write_scope(f, "list.hoverBackground", ZENBURN_BG)?;
+        write_scope(f, "list.inactiveSelectionBackground", ZENBURN_BG_PLUS_05)?;
+        write_scope(f, "list.warningForeground", ZENBURN_ORANGE)?;
+        write_scope(f, "minimap.errorHighlight", ZENBURN_RED_PLUS_2)?;
+        write_scope(f, "minimap.findMatchHighlight", (ZENBURN_BLUE_PLUS_1, 0x66))?;
+        write_scope(f, "minimap.selectionHighlight", (ZENBURN_BG_MINUS_1, 0x88))?;
+        write_scope(f, "panel.background", ZENBURN_BG_PLUS_05)?;
+        write_scope(f, "panel.border", ZENBURN_BG_PLUS_2)?;
+        write_scope(f, "panelTitle.activeForeground", ZENBURN_FG)?;
+        write_scope(f, "peekView.border", ZENBURN_BG_PLUS_3)?;
+        write_scope(f, "peekViewEditor.background", ZENBURN_BG)?;
         write_scope(
             f,
             "peekViewEditor.matchHighlightBackground",
-            (Rgb(0x94BFF3), 0x66),
+            (ZENBURN_BLUE_PLUS_1, 0x66),
         )?;
-        write_scope(f, "peekViewResult.background", Rgb(0x383838))?;
-        write_scope(f, "peekViewResult.fileForeground", Rgb(0xDCDCCC))?;
-        write_scope(f, "peekViewResult.lineForeground", (Rgb(0xDCDCCC), 0x99))?;
+        write_scope(f, "peekViewResult.background", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "peekViewResult.fileForeground", ZENBURN_FG)?;
+        write_scope(f, "peekViewResult.lineForeground", (ZENBURN_FG, 0x99))?;
         write_scope(
             f,
             "peekViewResult.matchHighlightBackground",
-            (Rgb(0x94BFF3), 0x44),
+            (ZENBURN_BLUE_PLUS_1, 0x44),
         )?;
-        write_scope(f, "peekViewResult.selectionBackground", Rgb(0x4F4F4F))?;
-        write_scope(f, "peekViewResult.selectionForeground", Rgb(0xDCDCCC))?;
-        write_scope(f, "peekViewTitle.background", Rgb(0x383838))?;
-        write_scope(f, "peekViewTitleDescription.foreground", Rgb(0x94BFF3))?;
-        write_scope(f, "peekViewTitleLabel.foreground", Rgb(0xFFFFEF))?;
-        write_scope(f, "progressBar.background", Rgb(0x94BFF3))?;
-        write_scope(f, "rust_analyzer.inlayHints.foreground", Rgb(0x7F9F7F))?;
+        write_scope(f, "peekViewResult.selectionBackground", ZENBURN_BG_PLUS_1)?;
+        write_scope(f, "peekViewResult.selectionForeground", ZENBURN_FG)?;
+        write_scope(f, "peekViewTitle.background", ZENBURN_BG_MINUS_05)?;
+        write_scope(
+            f,
+            "peekViewTitleDescription.foreground",
+            ZENBURN_BLUE_PLUS_1,
+        )?;
+        write_scope(f, "peekViewTitleLabel.foreground", ZENBURN_FG_PLUS_1)?;
+        write_scope(f, "progressBar.background", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "rust_analyzer.inlayHints.foreground", ZENBURN_GREEN)?;
         write_scope(f, "scrollbar.shadow", (Rgb(0x000000), 0x88))?;
         write_scope(f, "selection.background", (Rgb(0xFFFFFF), 0x55))?;
-        write_scope(f, "settings.headerForeground", Rgb(0xFFFFEF))?;
-        write_scope(f, "settings.modifiedItemIndicator", Rgb(0x94BFF3))?;
-        write_scope(f, "sideBar.background", Rgb(0x383838))?;
-        write_scope(f, "sideBar.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "sideBarTitle.foreground", Rgb(0xFFFFEF))?;
-        write_scope(f, "statusBar.background", Rgb(0x2B2B2B))?;
-        write_scope(f, "statusBar.debuggingBackground", Rgb(0x2B2B2B))?;
-        write_scope(f, "statusBar.debuggingBorder", Rgb(0xDC8CC3))?;
-        write_scope(f, "statusBar.foreground", Rgb(0x8FB28F))?;
-        write_scope(f, "statusBar.noFolderBackground", Rgb(0x2B2B2B))?;
-        write_scope(f, "tab.activeForeground", Rgb(0xDCDCCC))?;
-        write_scope(f, "tab.border", Rgb(0x3F3F3F))?;
-        write_scope(f, "tab.inactiveBackground", Rgb(0x2B2B2B))?;
-        write_scope(f, "tab.inactiveForeground", Rgb(0x6F6F6F))?;
-        write_scope(f, "terminal.ansiBlack", Rgb(0x2B2B2B))?;
-        write_scope(f, "terminal.ansiBlue", Rgb(0x94BFF3))?;
-        write_scope(f, "terminal.ansiBrightBlack", Rgb(0x6F6F6F))?;
-        write_scope(f, "terminal.ansiBrightBlue", Rgb(0xBDE0F3))?;
-        write_scope(f, "terminal.ansiBrightCyan", Rgb(0x93E0E3))?;
-        write_scope(f, "terminal.ansiBrightGreen", Rgb(0xBFEBBF))?;
-        write_scope(f, "terminal.ansiBrightMagenta", Rgb(0xDFAF8F))?;
-        write_scope(f, "terminal.ansiBrightRed", Rgb(0xECB3B3))?;
-        write_scope(f, "terminal.ansiBrightWhite", Rgb(0xFFFFEF))?;
-        write_scope(f, "terminal.ansiBrightYellow", Rgb(0xF0DFAF))?;
-        write_scope(f, "terminal.ansiCyan", Rgb(0x7CB8BB))?;
-        write_scope(f, "terminal.ansiGreen", Rgb(0x7F9F7F))?;
-        write_scope(f, "terminal.ansiMagenta", Rgb(0xDFAF8F))?;
-        write_scope(f, "terminal.ansiRed", Rgb(0xCC9393))?;
-        write_scope(f, "terminal.ansiWhite", Rgb(0xDCDCCC))?;
-        write_scope(f, "terminal.ansiYellow", Rgb(0xD0BF8F))?;
-        write_scope(f, "terminal.foreground", Rgb(0xDCDCCC))?;
-        write_scope(f, "terminal.selectionBackground", Rgb(0x383838))?; // Lighter than normal selection background to compensate for lighter terminal background
-        write_scope(f, "terminalCursor.foreground", Rgb(0xFFFFEF))?;
-        write_scope(f, "textLink.activeForeground", Rgb(0x94BFF3))?;
-        write_scope(f, "textLink.foreground", Rgb(0x94BFF3))?;
-        write_scope(f, "textPreformat.foreground", Rgb(0xDCDCCC))?; // inline code in e.g. Settings page
-        write_scope(f, "titleBar.activeBackground", Rgb(0x383838))?;
-        write_scope(f, "titleBar.activeForeground", Rgb(0xDCDCCC))?;
-        write_scope(f, "titleBar.inactiveBackground", Rgb(0x383838))?;
-        write_scope(f, "titleBar.inactiveForeground", Rgb(0x6F6F6F))?;
+        write_scope(f, "settings.headerForeground", ZENBURN_FG_PLUS_1)?;
+        write_scope(f, "settings.modifiedItemIndicator", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "sideBar.background", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "sideBar.foreground", ZENBURN_FG)?;
+        write_scope(f, "sideBarTitle.foreground", ZENBURN_FG_PLUS_1)?;
+        write_scope(f, "statusBar.background", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "statusBar.debuggingBackground", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "statusBar.debuggingBorder", ZENBURN_MAGENTA)?;
+        write_scope(f, "statusBar.foreground", ZENBURN_GREEN_PLUS_1)?;
+        write_scope(f, "statusBar.noFolderBackground", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "tab.activeForeground", ZENBURN_FG)?;
+        write_scope(f, "tab.border", ZENBURN_BG)?;
+        write_scope(f, "tab.inactiveBackground", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "tab.inactiveForeground", ZENBURN_BG_PLUS_3)?;
+        write_scope(f, "terminal.ansiBlack", ZENBURN_BG_MINUS_1)?;
+        write_scope(f, "terminal.ansiBlue", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "terminal.ansiBrightBlack", ZENBURN_BG_PLUS_3)?;
+        write_scope(f, "terminal.ansiBrightBlue", ZENBURN_BLUE_PLUS_3)?;
+        write_scope(f, "terminal.ansiBrightCyan", ZENBURN_CYAN)?;
+        write_scope(f, "terminal.ansiBrightGreen", ZENBURN_GREEN_PLUS_4)?;
+        write_scope(f, "terminal.ansiBrightMagenta", ZENBURN_ORANGE)?;
+        write_scope(f, "terminal.ansiBrightRed", ZENBURN_RED_PLUS_2)?;
+        write_scope(f, "terminal.ansiBrightWhite", ZENBURN_FG_PLUS_1)?;
+        write_scope(f, "terminal.ansiBrightYellow", ZENBURN_YELLOW)?;
+        write_scope(f, "terminal.ansiCyan", ZENBURN_BLUE_MINUS_1)?;
+        write_scope(f, "terminal.ansiGreen", ZENBURN_GREEN)?;
+        write_scope(f, "terminal.ansiMagenta", ZENBURN_ORANGE)?;
+        write_scope(f, "terminal.ansiRed", ZENBURN_RED)?;
+        write_scope(f, "terminal.ansiWhite", ZENBURN_FG)?;
+        write_scope(f, "terminal.ansiYellow", ZENBURN_YELLOW_MINUS_2)?;
+        write_scope(f, "terminal.foreground", ZENBURN_FG)?;
+        write_scope(f, "terminal.selectionBackground", ZENBURN_BG_MINUS_05)?; // Lighter than normal selection background to compensate for lighter terminal background
+        write_scope(f, "terminalCursor.foreground", ZENBURN_FG_PLUS_1)?;
+        write_scope(f, "textLink.activeForeground", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "textLink.foreground", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "textPreformat.foreground", ZENBURN_FG)?; // inline code in e.g. Settings page
+        write_scope(f, "titleBar.activeBackground", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "titleBar.activeForeground", ZENBURN_FG)?;
+        write_scope(f, "titleBar.inactiveBackground", ZENBURN_BG_MINUS_05)?;
+        write_scope(f, "titleBar.inactiveForeground", ZENBURN_BG_PLUS_3)?;
         write_scope(f, "widget.shadow", (Rgb(0x000000), 0x88))?;
 
         writeln!(f, "\t}},")?;
@@ -185,34 +210,34 @@ impl Theme {
         writeln!(f, "\t\"semanticHighlighting\": true,")?;
         writeln!(f, "\t\"semanticTokenColors\": {{")?;
 
-        write_scope(f, "boolean", Rgb(0xBDE0F3))?;
-        write_scope(f, "comment", Rgb(0x7F9F7F))?;
-        write_scope(f, "comment.documentation", Rgb(0x9FC59F))?;
-        write_scope(f, "keyword", Rgb(0xF0DFAF))?;
-        write_scope(f, "*.unsafe", Rgb(0xBC8383))?;
-        write_scope(f, "function.unsafe", Rgb(0xBC8383))?;
-        write_scope(f, "operator.unsafe", Rgb(0xBC8383))?;
-        write_scope(f, "property", Rgb(0xAFD8AF))?;
-        write_scope(f, "function", Rgb(0x93E0E3))?;
-        write_scope(f, "namespace", Rgb(0xBFEBBF))?;
-        write_scope(f, "macro", Rgb(0x94BFF3))?;
-        write_scope(f, "formatSpecifier", Rgb(0x94BFF3))?;
-        write_scope(f, "variable", Rgb(0xDCDCCC))?;
-        write_scope(f, "variable.static.constant", Rgb(0xBDE0F3))?;
-        write_scope(f, "struct", Rgb(0x7CB8BB))?;
-        write_scope(f, "enum", Rgb(0x7CB8BB))?;
-        write_scope(f, "union", Rgb(0x7CB8BB))?;
-        write_scope(f, "typeAlias", Rgb(0x7CB8BB))?;
-        write_scope(f, "builtinType", Rgb(0x8CD0D3))?;
-        write_scope(f, "type", Rgb(0x7CB8BB))?;
-        write_scope(f, "interface", Rgb(0x8CD0D3))?;
-        write_scope(f, "enumMember", Rgb(0xBDE0F3))?;
-        write_scope(f, "typeParameter", Rgb(0xDFAF8F))?;
-        write_scope(f, "lifetime", Rgb(0xDFAF8F))?;
-        write_scope(f, "number", Rgb(0xBFEBBF))?;
-        write_scope(f, "string", Rgb(0xCC9393))?;
-        write_scope(f, "attribute", Rgb(0x94BFF3))?;
-        write_scope(f, "function.attribute", Rgb(0x94BFF3))?;
+        write_scope(f, "boolean", ZENBURN_BLUE_PLUS_3)?;
+        write_scope(f, "comment", ZENBURN_GREEN)?;
+        write_scope(f, "comment.documentation", ZENBURN_GREEN_PLUS_2)?;
+        write_scope(f, "keyword", ZENBURN_YELLOW)?;
+        write_scope(f, "*.unsafe", ZENBURN_RED_MINUS_1)?;
+        write_scope(f, "function.unsafe", ZENBURN_RED_MINUS_1)?;
+        write_scope(f, "operator.unsafe", ZENBURN_RED_MINUS_1)?;
+        write_scope(f, "property", ZENBURN_GREEN_PLUS_3)?;
+        write_scope(f, "function", ZENBURN_CYAN)?;
+        write_scope(f, "namespace", ZENBURN_GREEN_PLUS_4)?;
+        write_scope(f, "macro", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "formatSpecifier", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "variable", ZENBURN_FG)?;
+        write_scope(f, "variable.static.constant", ZENBURN_BLUE_PLUS_3)?;
+        write_scope(f, "struct", ZENBURN_BLUE_MINUS_1)?;
+        write_scope(f, "enum", ZENBURN_BLUE_MINUS_1)?;
+        write_scope(f, "union", ZENBURN_BLUE_MINUS_1)?;
+        write_scope(f, "typeAlias", ZENBURN_BLUE_MINUS_1)?;
+        write_scope(f, "builtinType", ZENBURN_BLUE)?;
+        write_scope(f, "type", ZENBURN_BLUE_MINUS_1)?;
+        write_scope(f, "interface", ZENBURN_BLUE)?;
+        write_scope(f, "enumMember", ZENBURN_BLUE_PLUS_3)?;
+        write_scope(f, "typeParameter", ZENBURN_ORANGE)?;
+        write_scope(f, "lifetime", ZENBURN_ORANGE)?;
+        write_scope(f, "number", ZENBURN_GREEN_PLUS_4)?;
+        write_scope(f, "string", ZENBURN_RED)?;
+        write_scope(f, "attribute", ZENBURN_BLUE_PLUS_1)?;
+        write_scope(f, "function.attribute", ZENBURN_BLUE_PLUS_1)?;
 
         writeln!(f, "\t}},")?;
 
@@ -235,14 +260,14 @@ impl Theme {
                 "variable.other.object.property",
                 "variable.other.property",
             ],
-            Rgb(0xAFD8AF),
+            ZENBURN_GREEN_PLUS_3,
         )?;
 
         write_textmate(
             f,
             Some("Function"),
             &["entity.name.function", "support.function"],
-            Rgb(0x93E0E3),
+            ZENBURN_CYAN,
         )?;
 
         write_textmate(
@@ -255,17 +280,17 @@ impl Theme {
                 "storage.modifier.import",
                 "storage.modifier.package",
             ],
-            Rgb(0xBFEBBF),
+            ZENBURN_GREEN_PLUS_4,
         )?;
 
         write_textmate(
             f,
             None,
             &["entity.name.macro", "entity.name.other.preprocessor.macro"],
-            Rgb(0x94BFF3),
+            ZENBURN_BLUE_PLUS_1,
         )?;
 
-        write_textmate(f, Some("Variable"), &["variable"], Rgb(0xDCDCCC))?;
+        write_textmate(f, Some("Variable"), &["variable"], ZENBURN_FG)?;
 
         write_textmate(
             f,
@@ -276,7 +301,7 @@ impl Theme {
                 "variable.other.enummember",
                 "support.constant",
             ],
-            Rgb(0xBDE0F3),
+            ZENBURN_BLUE_PLUS_3,
         )?;
 
         write_textmate(
@@ -288,7 +313,7 @@ impl Theme {
                 "support.class",
                 "support.type",
             ],
-            Rgb(0x7CB8BB),
+            ZENBURN_BLUE_MINUS_1,
         )?;
 
         write_textmate(
@@ -307,10 +332,10 @@ impl Theme {
                 "storage.type.uintptr.go",
                 "support.type",
             ],
-            Rgb(0x8CD0D3),
+            ZENBURN_BLUE,
         )?;
 
-        write_textmate(f, None, &["entity.name.type.parameter"], Rgb(0xDFAF8F))?;
+        write_textmate(f, None, &["entity.name.type.parameter"], ZENBURN_ORANGE)?;
 
         write_textmate(
             f,
@@ -320,21 +345,21 @@ impl Theme {
                 "entity.name.lifetime.rust",
                 "entity.name.type.lifetime",
             ],
-            Rgb(0xDFAF8F),
+            ZENBURN_ORANGE,
         )?;
 
         write_textmate(
             f,
             None,
             &["constant.numeric", "keyword.other.unit"],
-            Rgb(0xBFEBBF),
+            ZENBURN_GREEN_PLUS_4,
         )?;
 
         write_textmate(
             f,
             Some("Comment"),
             &["comment", "punctuation.definition.comment"],
-            Rgb(0x7F9F7F),
+            ZENBURN_GREEN,
         )?;
 
         write_textmate(
@@ -346,7 +371,7 @@ impl Theme {
                 "punctuation.definition.string",
                 "string",
             ],
-            Rgb(0xCC9393),
+            ZENBURN_RED,
         )?;
 
         write_textmate(
@@ -357,7 +382,7 @@ impl Theme {
                 "support.variable.attribute",
                 "punctuation.definition.attributeentry",
             ],
-            Rgb(0x94BFF3),
+            ZENBURN_BLUE_PLUS_1,
         )?;
 
         write_textmate(
@@ -384,7 +409,7 @@ impl Theme {
                 "storage.type.ts",
                 "variable.language.this",
             ],
-            Rgb(0xF0DFAF),
+            ZENBURN_YELLOW,
         )?;
 
         write_textmate(
@@ -394,25 +419,30 @@ impl Theme {
                 "entity.other.attribute-name.class",
                 "entity.other.attribute-name.id",
             ],
-            Rgb(0x7CB8BB),
+            ZENBURN_BLUE_MINUS_1,
         )?;
 
-        write_textmate(f, None, &["keyword.other.unsafe"], Rgb(0xBC8383))?;
+        write_textmate(f, None, &["keyword.other.unsafe"], ZENBURN_RED_MINUS_1)?;
 
         write_textmate(
             f,
             Some("Punctuation"),
             &["keyword.operator", "punctuation"],
-            Rgb(0xDCDCCC),
+            ZENBURN_FG,
         )?;
 
-        write_textmate(f, None, &["keyword.operator.logical.python"], Rgb(0xF0DFAF))?;
+        write_textmate(
+            f,
+            None,
+            &["keyword.operator.logical.python"],
+            ZENBURN_YELLOW,
+        )?;
 
         write_textmate(
             f,
             None,
             &["meta.function-call.generic.python", "source.python support"],
-            Rgb(0x93E0E3),
+            ZENBURN_CYAN,
         )?;
 
         writeln!(f, "\t]")?;
