@@ -5,3 +5,9 @@ name = "pale-fire"
 version = "0.1.0"
 
 [dependencies]
+serde = "1.0.117"
+
+[dependencies.json]
+features = ["preserve_order"]
+package = "serde_json"
+version = "1.0.59"

@@ -1,5 +1,3 @@
-use std::fmt;
-
 pub(crate) struct Style {
     color: Option<Color>,
     font_style: Option<FontStyle>,
@@ -32,32 +30,24 @@ impl<C: Into<Color>> From<(C, FontStyle)> for Style {
     }
 }
 
-impl fmt::Display for Style {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        if self.font_style.is_some() || f.alternate() {
-            writeln!(f, "{{")?;
+impl Style {
+    pub(crate) fn as_json_value(&self, long_format: bool) -> json::Value {
+        if self.font_style.is_some() || long_format {
+            let mut map = json::Map::new();
 
             if let Some(ref color) = self.color {
-                write!(f, "\t\t\t\"foreground\": {}", color)?;
+                map.insert("foreground".to_string(), color.into());
             }
 
             if let Some(ref font_style) = self.font_style {
-                if self.color.is_some() {
-                    writeln!(f, ",")?;
-                }
-
-                writeln!(f, "\t\t\t\"fontStyle\": {}", font_style)?;
-            } else {
-                writeln!(f)?;
+                map.insert("fontStyle".to_string(), font_style.into());
             }
 
-            write!(f, "\t\t}}")?;
+            json::Value::Object(map)
         } else {
             // Style cannot be created without a color.
-            write!(f, "{}", self.color.as_ref().unwrap())?;
+            self.color.as_ref().unwrap().into()
         }
-
-        Ok(())
     }
 }
 
@@ -67,12 +57,12 @@ pub(crate) enum FontStyle {
     Underline,
 }
 
-impl fmt::Display for FontStyle {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            Self::Bold => write!(f, "\"bold\""),
-            Self::Italic => write!(f, "\"italic\""),
-            Self::Underline => write!(f, "\"underline\""),
+impl From<&FontStyle> for json::Value {
+    fn from(font_style: &FontStyle) -> Self {
+        match font_style {
+            FontStyle::Bold => Self::String("bold".to_string()),
+            FontStyle::Italic => Self::String("italic".to_string()),
+            FontStyle::Underline => Self::String("underline".to_string()),
         }
     }
 }
@@ -97,20 +87,16 @@ impl From<(Rgb, u8)> for Color {
     }
 }
 
-impl fmt::Display for Color {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        if let Some(alpha) = self.alpha {
-            write!(f, "\"#{:06X}{:02X}\"", self.rgb.0, alpha)
+impl From<&Color> for json::Value {
+    fn from(color: &Color) -> Self {
+        let hex = if let Some(alpha) = color.alpha {
+            format!("#{:06X}{:02X}", color.rgb.0, alpha)
         } else {
-            write!(f, "\"#{:06X}\"", self.rgb.0)
-        }
+            format!("#{:06X}", color.rgb.0)
+        };
+
+        Self::String(hex)
     }
 }
 
 pub(crate) struct Rgb(pub(crate) u32);
-
-impl fmt::Display for Rgb {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "\"#{:06X}\"", self.0)
-    }
-}
