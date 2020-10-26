@@ -7,18 +7,15 @@ impl From<Theme> for json::Value {
     fn from(theme: Theme) -> Self {
         let mut map = json::Map::new();
 
-        map.insert(
-            "name".to_string(),
-            json::Value::String("Pale Fire".to_string()),
-        );
-        map.insert("type".to_string(), json::Value::String("dark".to_string()));
+        map.insert("name".to_string(), Self::String("Pale Fire".to_string()));
+        map.insert("type".to_string(), Self::String("dark".to_string()));
 
         map.insert("colors".to_string(), theme.workspace_colors());
-        map.insert("semanticHighlighting".to_string(), json::Value::Bool(true));
+        map.insert("semanticHighlighting".to_string(), Self::Bool(true));
         map.insert("semanticTokenColors".to_string(), theme.semantic_colors());
         map.insert("tokenColors".to_string(), theme.textmate_colors());
 
-        json::Value::Object(map)
+        Self::Object(map)
     }
 }
 
