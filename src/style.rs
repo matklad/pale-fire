@@ -31,23 +31,18 @@ impl<C: Into<Color>> From<(C, FontStyle)> for Style {
 }
 
 impl Style {
-    pub(crate) fn as_json_value(&self, long_format: bool) -> json::Value {
-        if self.font_style.is_some() || long_format {
-            let mut map = json::Map::new();
+    pub(crate) fn as_json_value(&self) -> json::Value {
+        let mut map = json::Map::new();
 
-            if let Some(ref color) = self.color {
-                map.insert("foreground".to_string(), color.into());
-            }
-
-            if let Some(ref font_style) = self.font_style {
-                map.insert("fontStyle".to_string(), font_style.into());
-            }
-
-            json::Value::Object(map)
-        } else {
-            // Style cannot be created without a color.
-            self.color.as_ref().unwrap().into()
+        if let Some(ref color) = self.color {
+            map.insert("foreground".to_string(), color.into());
         }
+
+        if let Some(ref font_style) = self.font_style {
+            map.insert("fontStyle".to_string(), font_style.into());
+        }
+
+        json::Value::Object(map)
     }
 }
 

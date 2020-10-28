@@ -137,40 +137,92 @@
 			"foreground": "#BDE0F3",
 			"fontStyle": ""
 		},
-		"comment": "#7F9F7F",
-		"comment.documentation": "#9FC59F",
+		"comment": {
+			"foreground": "#7F9F7F"
+		},
+		"comment.documentation": {
+			"foreground": "#9FC59F"
+		},
 		"keyword": {
 			"foreground": "#F0DFAF",
 			"fontStyle": "bold"
 		},
-		"*.unsafe": "#BC8383",
-		"function.unsafe": "#BC8383",
-		"operator.unsafe": "#BC8383",
-		"property": "#AFD8AF",
-		"function": "#93E0E3",
-		"namespace": "#BFEBBF",
-		"macro": "#94BFF3",
-		"formatSpecifier": "#94BFF3",
-		"variable": "#DCDCCC",
-		"variable.static.constant": "#BDE0F3",
-		"parameter": "#DFAF8F",
-		"struct": "#7CB8BB",
-		"enum": "#7CB8BB",
-		"union": "#7CB8BB",
-		"typeAlias": "#7CB8BB",
-		"builtinType": "#8CD0D3",
-		"type": "#7CB8BB",
-		"interface": "#8CD0D3",
-		"enumMember": "#BDE0F3",
-		"typeParameter": "#DFAF8F",
+		"*.unsafe": {
+			"foreground": "#BC8383"
+		},
+		"function.unsafe": {
+			"foreground": "#BC8383"
+		},
+		"operator.unsafe": {
+			"foreground": "#BC8383"
+		},
+		"property": {
+			"foreground": "#AFD8AF"
+		},
+		"function": {
+			"foreground": "#93E0E3"
+		},
+		"namespace": {
+			"foreground": "#BFEBBF"
+		},
+		"macro": {
+			"foreground": "#94BFF3"
+		},
+		"formatSpecifier": {
+			"foreground": "#94BFF3"
+		},
+		"variable": {
+			"foreground": "#DCDCCC"
+		},
+		"variable.static.constant": {
+			"foreground": "#BDE0F3"
+		},
+		"parameter": {
+			"foreground": "#DFAF8F"
+		},
+		"struct": {
+			"foreground": "#7CB8BB"
+		},
+		"enum": {
+			"foreground": "#7CB8BB"
+		},
+		"union": {
+			"foreground": "#7CB8BB"
+		},
+		"typeAlias": {
+			"foreground": "#7CB8BB"
+		},
+		"builtinType": {
+			"foreground": "#8CD0D3"
+		},
+		"type": {
+			"foreground": "#7CB8BB"
+		},
+		"interface": {
+			"foreground": "#8CD0D3"
+		},
+		"enumMember": {
+			"foreground": "#BDE0F3"
+		},
+		"typeParameter": {
+			"foreground": "#DFAF8F"
+		},
 		"lifetime": {
 			"foreground": "#DFAF8F",
 			"fontStyle": "italic"
 		},
-		"number": "#BFEBBF",
-		"string": "#CC9393",
-		"attribute": "#94BFF3",
-		"function.attribute": "#94BFF3",
+		"number": {
+			"foreground": "#BFEBBF"
+		},
+		"string": {
+			"foreground": "#CC9393"
+		},
+		"attribute": {
+			"foreground": "#94BFF3"
+		},
+		"function.attribute": {
+			"foreground": "#94BFF3"
+		},
 		"*.mutable": {
 			"fontStyle": "underline"
 		},
