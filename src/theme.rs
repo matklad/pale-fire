@@ -279,6 +279,7 @@ impl Theme {
         style_rule(colors, "namespace", ZENBURN_GREEN_PLUS_4);
         style_rule(colors, "macro", ZENBURN_BLUE_PLUS_1);
         style_rule(colors, "formatSpecifier", ZENBURN_BLUE_PLUS_1);
+        style_rule(colors, "escapeSequence", ZENBURN_BLUE_PLUS_1);
         style_rule(colors, "variable", ZENBURN_FG);
         style_rule(colors, "variable.static.constant", ZENBURN_BLUE_PLUS_3);
         style_rule(colors, "parameter", ZENBURN_ORANGE);
@@ -344,6 +345,8 @@ impl Theme {
             &["entity.name.macro", "entity.name.other.preprocessor.macro"],
             ZENBURN_BLUE_PLUS_1,
         );
+
+        textmate_rule(colors, &["constant.character.escape"], ZENBURN_BLUE_PLUS_1);
 
         textmate_rule(colors, &["variable"], ZENBURN_FG);
 

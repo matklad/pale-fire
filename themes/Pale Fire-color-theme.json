@@ -171,6 +171,9 @@
 		"formatSpecifier": {
 			"foreground": "#94BFF3"
 		},
+		"escapeSequence": {
+			"foreground": "#94BFF3"
+		},
 		"variable": {
 			"foreground": "#DCDCCC"
 		},
@@ -272,6 +275,14 @@
 			"scope": [
 				"entity.name.macro",
 				"entity.name.other.preprocessor.macro"
+			],
+			"settings": {
+				"foreground": "#94BFF3"
+			}
+		},
+		{
+			"scope": [
+				"constant.character.escape"
 			],
 			"settings": {
 				"foreground": "#94BFF3"
