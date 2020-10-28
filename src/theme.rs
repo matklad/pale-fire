@@ -308,7 +308,6 @@ impl Theme {
 
         textmate_rule(
             colors,
-            Some("Property"),
             &[
                 "entity.name.field",
                 "entity.name.variable.field",
@@ -324,14 +323,12 @@ impl Theme {
 
         textmate_rule(
             colors,
-            Some("Function"),
             &["entity.name.function", "support.function"],
             ZENBURN_CYAN,
         );
 
         textmate_rule(
             colors,
-            Some("Namespace"),
             &[
                 "entity.name.module",
                 "entity.name.namespace",
@@ -344,23 +341,20 @@ impl Theme {
 
         textmate_rule(
             colors,
-            None,
             &["entity.name.macro", "entity.name.other.preprocessor.macro"],
             ZENBURN_BLUE_PLUS_1,
         );
 
-        textmate_rule(colors, Some("Variable"), &["variable"], ZENBURN_FG);
+        textmate_rule(colors, &["variable"], ZENBURN_FG);
 
         textmate_rule(
             colors,
-            Some("Parameter"),
             &["entity.name.variable.parameter", "variable.parameter"],
             ZENBURN_ORANGE,
         );
 
         textmate_rule(
             colors,
-            Some("Constant"),
             &[
                 "constant",
                 "entity.name.constant",
@@ -370,11 +364,10 @@ impl Theme {
             ZENBURN_BLUE_PLUS_3,
         );
 
-        textmate_rule(colors, None, &["meta.mutable"], FontStyle::Underline);
+        textmate_rule(colors, &["meta.mutable"], FontStyle::Underline);
 
         textmate_rule(
             colors,
-            Some("Type"),
             &[
                 "entity.name.type",
                 "storage.type",
@@ -386,7 +379,6 @@ impl Theme {
 
         textmate_rule(
             colors,
-            Some("Primitive"),
             &[
                 "keyword.type",
                 "storage.type.boolean.go",
@@ -403,16 +395,10 @@ impl Theme {
             (ZENBURN_BLUE, FontStyle::Clear),
         );
 
-        textmate_rule(
-            colors,
-            None,
-            &["entity.name.type.parameter"],
-            ZENBURN_ORANGE,
-        );
+        textmate_rule(colors, &["entity.name.type.parameter"], ZENBURN_ORANGE);
 
         textmate_rule(
             colors,
-            None,
             &[
                 "storage.modifier.lifetime.rust",
                 "entity.name.lifetime.rust",
@@ -423,21 +409,18 @@ impl Theme {
 
         textmate_rule(
             colors,
-            None,
             &["constant.numeric", "keyword.other.unit"],
             (ZENBURN_GREEN_PLUS_4, FontStyle::Clear),
         );
 
         textmate_rule(
             colors,
-            Some("Comment"),
             &["comment", "punctuation.definition.comment"],
             ZENBURN_GREEN,
         );
 
         textmate_rule(
             colors,
-            Some("String and Character"),
             &[
                 "constant.character",
                 "punctuation.definition.char",
@@ -449,7 +432,6 @@ impl Theme {
 
         textmate_rule(
             colors,
-            Some("Annotations"),
             &[
                 "meta.attribute",
                 "support.variable.attribute",
@@ -460,7 +442,6 @@ impl Theme {
 
         textmate_rule(
             colors,
-            Some("Keyword"),
             &[
                 "constant.language.null",
                 "entity.name.tag",
@@ -487,7 +468,6 @@ impl Theme {
 
         textmate_rule(
             colors,
-            Some("CSS Class/ID"),
             &[
                 "entity.other.attribute-name.class",
                 "entity.other.attribute-name.id",
@@ -495,29 +475,26 @@ impl Theme {
             ZENBURN_BLUE_MINUS_1,
         );
 
-        textmate_rule(colors, None, &["keyword.other.unsafe"], ZENBURN_RED_MINUS_1);
+        textmate_rule(colors, &["keyword.other.unsafe"], ZENBURN_RED_MINUS_1);
 
         textmate_rule(
             colors,
-            Some("Punctuation"),
             &["keyword.operator", "punctuation"],
             (ZENBURN_FG, FontStyle::Clear),
         );
 
-        textmate_rule(colors, None, &["markup.italic"], FontStyle::Italic);
-        textmate_rule(colors, None, &["markup.bold"], FontStyle::Bold);
-        textmate_rule(colors, None, &["markup.heading"], FontStyle::Underline);
+        textmate_rule(colors, &["markup.italic"], FontStyle::Italic);
+        textmate_rule(colors, &["markup.bold"], FontStyle::Bold);
+        textmate_rule(colors, &["markup.heading"], FontStyle::Underline);
 
         textmate_rule(
             colors,
-            None,
             &["keyword.operator.logical.python"],
             (ZENBURN_YELLOW, FontStyle::Bold),
         );
 
         textmate_rule(
             colors,
-            None,
             &["meta.function-call.generic.python", "source.python support"],
             ZENBURN_CYAN,
         );
@@ -526,17 +503,8 @@ impl Theme {
     }
 }
 
-fn textmate_rule(
-    rules: &mut Vec<json::Value>,
-    name: Option<&str>,
-    scopes: &[&str],
-    style: impl Into<Style>,
-) {
+fn textmate_rule(rules: &mut Vec<json::Value>, scopes: &[&str], style: impl Into<Style>) {
     let mut map = json::Map::new();
-
-    if let Some(name) = name {
-        map.insert("name".to_string(), json::Value::String(name.to_string()));
-    }
 
     map.insert(
         "scope".to_string(),

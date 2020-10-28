@@ -232,7 +232,6 @@
 	},
 	"tokenColors": [
 		{
-			"name": "Property",
 			"scope": [
 				"entity.name.field",
 				"entity.name.variable.field",
@@ -248,7 +247,6 @@
 			}
 		},
 		{
-			"name": "Function",
 			"scope": [
 				"entity.name.function",
 				"support.function"
@@ -258,7 +256,6 @@
 			}
 		},
 		{
-			"name": "Namespace",
 			"scope": [
 				"entity.name.module",
 				"entity.name.namespace",
@@ -281,7 +278,6 @@
 			}
 		},
 		{
-			"name": "Variable",
 			"scope": [
 				"variable"
 			],
@@ -290,7 +286,6 @@
 			}
 		},
 		{
-			"name": "Parameter",
 			"scope": [
 				"entity.name.variable.parameter",
 				"variable.parameter"
@@ -300,7 +295,6 @@
 			}
 		},
 		{
-			"name": "Constant",
 			"scope": [
 				"constant",
 				"entity.name.constant",
@@ -320,7 +314,6 @@
 			}
 		},
 		{
-			"name": "Type",
 			"scope": [
 				"entity.name.type",
 				"storage.type",
@@ -333,7 +326,6 @@
 			}
 		},
 		{
-			"name": "Primitive",
 			"scope": [
 				"keyword.type",
 				"storage.type.boolean.go",
@@ -382,7 +374,6 @@
 			}
 		},
 		{
-			"name": "Comment",
 			"scope": [
 				"comment",
 				"punctuation.definition.comment"
@@ -392,7 +383,6 @@
 			}
 		},
 		{
-			"name": "String and Character",
 			"scope": [
 				"constant.character",
 				"punctuation.definition.char",
@@ -404,7 +394,6 @@
 			}
 		},
 		{
-			"name": "Annotations",
 			"scope": [
 				"meta.attribute",
 				"support.variable.attribute",
@@ -415,7 +404,6 @@
 			}
 		},
 		{
-			"name": "Keyword",
 			"scope": [
 				"constant.language.null",
 				"entity.name.tag",
@@ -443,7 +431,6 @@
 			}
 		},
 		{
-			"name": "CSS Class/ID",
 			"scope": [
 				"entity.other.attribute-name.class",
 				"entity.other.attribute-name.id"
@@ -461,7 +448,6 @@
 			}
 		},
 		{
-			"name": "Punctuation",
 			"scope": [
 				"keyword.operator",
 				"punctuation"
