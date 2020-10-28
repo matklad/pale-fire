@@ -297,6 +297,7 @@ impl Theme {
         rule(colors, "attribute", ZENBURN_BLUE_PLUS_1);
         rule(colors, "function.attribute", ZENBURN_BLUE_PLUS_1);
         rule(colors, "*.mutable", FontStyle::Underline);
+        rule(colors, "*.consuming", FontStyle::Italic);
 
         json::Value::Object(colors_owned)
     }

@@ -173,6 +173,9 @@
 		"function.attribute": "#94BFF3",
 		"*.mutable": {
 			"fontStyle": "underline"
+		},
+		"*.consuming": {
+			"fontStyle": "italic"
 		}
 	},
 	"tokenColors": [
