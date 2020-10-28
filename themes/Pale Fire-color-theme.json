@@ -409,12 +409,18 @@
 		},
 		{
 			"scope": [
+				"entity.name.function.decorator",
 				"meta.attribute",
-				"support.variable.attribute",
-				"punctuation.definition.attributeentry"
+				"punctuation.brackets.attribute",
+				"punctuation.definition.annotation",
+				"punctuation.definition.attribute",
+				"punctuation.definition.decorator",
+				"storage.modifier.attribute",
+				"storage.type.annotation"
 			],
 			"settings": {
-				"foreground": "#94BFF3"
+				"foreground": "#94BFF3",
+				"fontStyle": ""
 			}
 		},
 		{

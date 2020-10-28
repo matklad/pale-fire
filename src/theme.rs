@@ -437,11 +437,16 @@ impl Theme {
         textmate_rule(
             colors,
             &[
+                "entity.name.function.decorator",
                 "meta.attribute",
-                "support.variable.attribute",
-                "punctuation.definition.attributeentry",
+                "punctuation.brackets.attribute",
+                "punctuation.definition.annotation",
+                "punctuation.definition.attribute",
+                "punctuation.definition.decorator",
+                "storage.modifier.attribute",
+                "storage.type.annotation",
             ],
-            ZENBURN_BLUE_PLUS_1,
+            (ZENBURN_BLUE_PLUS_1, FontStyle::Clear),
         );
 
         textmate_rule(
