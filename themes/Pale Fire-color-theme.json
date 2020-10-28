@@ -177,7 +177,7 @@
 		"variable": {
 			"foreground": "#DCDCCC"
 		},
-		"variable.static.constant": {
+		"variable.static": {
 			"foreground": "#BDE0F3"
 		},
 		"parameter": {

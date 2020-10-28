@@ -281,7 +281,7 @@ impl Theme {
         style_rule(colors, "formatSpecifier", ZENBURN_BLUE_PLUS_1);
         style_rule(colors, "escapeSequence", ZENBURN_BLUE_PLUS_1);
         style_rule(colors, "variable", ZENBURN_FG);
-        style_rule(colors, "variable.static.constant", ZENBURN_BLUE_PLUS_3);
+        style_rule(colors, "variable.static", ZENBURN_BLUE_PLUS_3);
         style_rule(colors, "parameter", ZENBURN_ORANGE);
         style_rule(colors, "struct", ZENBURN_BLUE_MINUS_1);
         style_rule(colors, "enum", ZENBURN_BLUE_MINUS_1);
