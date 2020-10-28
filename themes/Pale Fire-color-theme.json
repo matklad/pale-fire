@@ -156,6 +156,7 @@
 		"formatSpecifier": "#94BFF3",
 		"variable": "#DCDCCC",
 		"variable.static.constant": "#BDE0F3",
+		"parameter": "#DFAF8F",
 		"struct": "#7CB8BB",
 		"enum": "#7CB8BB",
 		"union": "#7CB8BB",
@@ -232,6 +233,16 @@
 			"scope": "variable",
 			"settings": {
 				"foreground": "#DCDCCC"
+			}
+		},
+		{
+			"name": "Parameter",
+			"scope": [
+				"entity.name.variable.parameter",
+				"variable.parameter"
+			],
+			"settings": {
+				"foreground": "#DFAF8F"
 			}
 		},
 		{
