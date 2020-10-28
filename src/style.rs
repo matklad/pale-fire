@@ -30,19 +30,19 @@ impl<C: Into<Color>> From<(C, FontStyle)> for Style {
     }
 }
 
-impl Style {
-    pub(crate) fn as_json_value(&self) -> json::Value {
+impl From<&Style> for json::Value {
+    fn from(style: &Style) -> Self {
         let mut map = json::Map::new();
 
-        if let Some(ref color) = self.color {
+        if let Some(ref color) = style.color {
             map.insert("foreground".to_string(), color.into());
         }
 
-        if let Some(ref font_style) = self.font_style {
+        if let Some(ref font_style) = style.font_style {
             map.insert("fontStyle".to_string(), font_style.into());
         }
 
-        json::Value::Object(map)
+        Self::Object(map)
     }
 }
 

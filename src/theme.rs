@@ -549,7 +549,7 @@ fn textmate_rule(
         ),
     );
 
-    map.insert("settings".to_string(), style.into().as_json_value());
+    map.insert("settings".to_string(), (&style.into()).into());
 
     rules.push(json::Value::Object(map));
 }
@@ -559,5 +559,5 @@ fn color_rule(map: &mut json::Map<String, json::Value>, scope_name: &str, color:
 }
 
 fn style_rule(map: &mut json::Map<String, json::Value>, scope_name: &str, style: impl Into<Style>) {
-    map.insert(scope_name.to_string(), style.into().as_json_value());
+    map.insert(scope_name.to_string(), (&style.into()).into());
 }
