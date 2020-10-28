@@ -538,17 +538,16 @@ fn textmate_rule(
         map.insert("name".to_string(), json::Value::String(name.to_string()));
     }
 
-    let scope = if let [scope] = scopes {
-        json::Value::String(scope.to_string())
-    } else {
+    map.insert(
+        "scope".to_string(),
         json::Value::Array(
             scopes
                 .iter()
-                .map(|scope| json::Value::String(scope.to_string()))
+                .map(|s| s.to_string())
+                .map(json::Value::String)
                 .collect(),
-        )
-    };
-    map.insert("scope".to_string(), scope);
+        ),
+    );
 
     map.insert("settings".to_string(), style.into().as_json_value(true));
 
