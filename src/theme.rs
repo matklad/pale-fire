@@ -225,8 +225,8 @@ impl Theme {
         color_rule(colors, "sideBarTitle.foreground", ZENBURN_FG_PLUS_1);
         color_rule(colors, "statusBar.background", ZENBURN_BG_MINUS_1);
         color_rule(colors, "statusBar.debuggingBackground", ZENBURN_BG_MINUS_1);
-        color_rule(colors, "statusBar.debuggingBorder", ZENBURN_MAGENTA);
         color_rule(colors, "statusBar.foreground", ZENBURN_GREEN_PLUS_1);
+        color_rule(colors, "statusBar.debuggingForeground", ZENBURN_ORANGE);
         color_rule(colors, "statusBar.noFolderBackground", ZENBURN_BG_MINUS_1);
         color_rule(colors, "tab.activeForeground", ZENBURN_FG);
         color_rule(colors, "tab.border", ZENBURN_BG);
