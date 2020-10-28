@@ -226,6 +226,9 @@
 		"function.attribute": {
 			"foreground": "#94BFF3"
 		},
+		"punctuation": {
+			"foreground": "#DCDCCC"
+		},
 		"*.mutable": {
 			"underline": true
 		},

@@ -297,6 +297,7 @@ impl Theme {
         style_rule(colors, "string", ZENBURN_RED);
         style_rule(colors, "attribute", ZENBURN_BLUE_PLUS_1);
         style_rule(colors, "function.attribute", ZENBURN_BLUE_PLUS_1);
+        style_rule(colors, "punctuation", ZENBURN_FG);
         style_rule(colors, "*.mutable", FontStyle::Underline);
         style_rule(colors, "*.consuming", FontStyle::Italic);
 
