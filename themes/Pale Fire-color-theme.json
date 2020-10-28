@@ -145,7 +145,7 @@
 		},
 		"keyword": {
 			"foreground": "#F0DFAF",
-			"fontStyle": "bold"
+			"bold": true
 		},
 		"*.unsafe": {
 			"foreground": "#BC8383"
@@ -209,7 +209,7 @@
 		},
 		"lifetime": {
 			"foreground": "#DFAF8F",
-			"fontStyle": "italic"
+			"italic": true
 		},
 		"number": {
 			"foreground": "#BFEBBF"
@@ -224,10 +224,10 @@
 			"foreground": "#94BFF3"
 		},
 		"*.mutable": {
-			"fontStyle": "underline"
+			"underline": true
 		},
 		"*.consuming": {
-			"fontStyle": "italic"
+			"italic": true
 		}
 	},
 	"tokenColors": [
