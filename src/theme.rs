@@ -281,6 +281,7 @@ impl Theme {
         rule(colors, "formatSpecifier", ZENBURN_BLUE_PLUS_1);
         rule(colors, "variable", ZENBURN_FG);
         rule(colors, "variable.static.constant", ZENBURN_BLUE_PLUS_3);
+        rule(colors, "parameter", ZENBURN_ORANGE);
         rule(colors, "struct", ZENBURN_BLUE_MINUS_1);
         rule(colors, "enum", ZENBURN_BLUE_MINUS_1);
         rule(colors, "union", ZENBURN_BLUE_MINUS_1);
@@ -348,6 +349,13 @@ impl Theme {
         );
 
         textmate_rule(colors, Some("Variable"), &["variable"], ZENBURN_FG);
+
+        textmate_rule(
+            colors,
+            Some("Parameter"),
+            &["entity.name.variable.parameter", "variable.parameter"],
+            ZENBURN_ORANGE,
+        );
 
         textmate_rule(
             colors,
