@@ -255,6 +255,7 @@
 		{
 			"scope": [
 				"entity.name.function",
+				"meta.function-call.generic.python",
 				"support.function"
 			],
 			"settings": {
@@ -429,6 +430,7 @@
 				"constant.language.null",
 				"entity.name.tag",
 				"keyword.operator.expression",
+				"keyword.operator.logical",
 				"keyword.operator.new",
 				"keyword.type.go",
 				"keyword",
@@ -500,24 +502,6 @@
 			],
 			"settings": {
 				"fontStyle": "underline"
-			}
-		},
-		{
-			"scope": [
-				"keyword.operator.logical.python"
-			],
-			"settings": {
-				"foreground": "#F0DFAF",
-				"fontStyle": "bold"
-			}
-		},
-		{
-			"scope": [
-				"meta.function-call.generic.python",
-				"source.python support"
-			],
-			"settings": {
-				"foreground": "#93E0E3"
 			}
 		}
 	]

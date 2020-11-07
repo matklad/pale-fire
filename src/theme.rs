@@ -325,7 +325,11 @@ impl Theme {
 
         textmate_rule(
             colors,
-            &["entity.name.function", "support.function"],
+            &[
+                "entity.name.function",
+                "meta.function-call.generic.python",
+                "support.function",
+            ],
             ZENBURN_CYAN,
         );
 
@@ -456,6 +460,7 @@ impl Theme {
                 "constant.language.null",
                 "entity.name.tag",
                 "keyword.operator.expression",
+                "keyword.operator.logical",
                 "keyword.operator.new",
                 "keyword.type.go",
                 "keyword",
@@ -496,18 +501,6 @@ impl Theme {
         textmate_rule(colors, &["markup.italic"], FontStyle::Italic);
         textmate_rule(colors, &["markup.bold"], FontStyle::Bold);
         textmate_rule(colors, &["markup.heading"], FontStyle::Underline);
-
-        textmate_rule(
-            colors,
-            &["keyword.operator.logical.python"],
-            (ZENBURN_YELLOW, FontStyle::Bold),
-        );
-
-        textmate_rule(
-            colors,
-            &["meta.function-call.generic.python", "source.python support"],
-            ZENBURN_CYAN,
-        );
 
         json::Value::Array(colors_owned)
     }
