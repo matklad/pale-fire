@@ -370,7 +370,8 @@
 			"scope": [
 				"storage.modifier.lifetime.rust",
 				"entity.name.lifetime.rust",
-				"entity.name.type.lifetime"
+				"entity.name.type.lifetime",
+				"punctuation.definition.lifetime"
 			],
 			"settings": {
 				"foreground": "#DFAF8F",

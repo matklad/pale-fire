@@ -407,6 +407,7 @@ impl Theme {
                 "storage.modifier.lifetime.rust",
                 "entity.name.lifetime.rust",
                 "entity.name.type.lifetime",
+                "punctuation.definition.lifetime",
             ],
             (ZENBURN_ORANGE, FontStyle::Italic),
         );
