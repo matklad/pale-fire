@@ -462,6 +462,7 @@ impl Theme {
                 "keyword.operator.expression",
                 "keyword.operator.logical",
                 "keyword.operator.new",
+                "keyword.operator.wordlike",
                 "keyword.type.go",
                 "keyword",
                 "markup.heading.marker",
