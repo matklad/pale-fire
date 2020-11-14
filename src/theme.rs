@@ -106,6 +106,7 @@ impl Theme {
             "editorGutter.modifiedBackground",
             ZENBURN_YELLOW_MINUS_2,
         );
+        color_rule(colors, "editorGroup.border", ZENBURN_BG_PLUS_2);
         color_rule(
             colors,
             "editorIndentGuide.activeBackground",
