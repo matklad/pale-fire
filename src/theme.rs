@@ -496,7 +496,11 @@ impl Theme {
 
         textmate_rule(
             colors,
-            &["keyword.operator", "punctuation"],
+            &[
+                "keyword.operator.logical.rust",
+                "keyword.operator",
+                "punctuation",
+            ],
             (ZENBURN_FG, FontStyle::Clear),
         );
 
