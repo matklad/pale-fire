@@ -506,6 +506,24 @@
 			"settings": {
 				"fontStyle": "underline"
 			}
+		},
+		{
+			"scope": [
+				"markup.inserted.diff",
+				"punctuation.definition.inserted.diff"
+			],
+			"settings": {
+				"foreground": "#BFEBBF"
+			}
+		},
+		{
+			"scope": [
+				"markup.deleted.diff",
+				"punctuation.definition.deleted.diff"
+			],
+			"settings": {
+				"foreground": "#ECB3B3"
+			}
 		}
 	]
 }
