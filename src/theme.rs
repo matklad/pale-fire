@@ -508,6 +508,20 @@ impl Theme {
         textmate_rule(colors, &["markup.bold"], FontStyle::Bold);
         textmate_rule(colors, &["markup.heading"], FontStyle::Underline);
 
+        textmate_rule(
+            colors,
+            &[
+                "markup.inserted.diff",
+                "punctuation.definition.inserted.diff",
+            ],
+            ZENBURN_GREEN_PLUS_4,
+        );
+        textmate_rule(
+            colors,
+            &["markup.deleted.diff", "punctuation.definition.deleted.diff"],
+            ZENBURN_RED_PLUS_2,
+        );
+
         json::Value::Array(colors_owned)
     }
 }
@@ -515,17 +529,7 @@ impl Theme {
 fn textmate_rule(rules: &mut Vec<json::Value>, scopes: &[&str], style: impl Into<Style>) {
     let mut map = json::Map::new();
 
-    map.insert(
-        "scope".to_string(),
-        json::Value::Array(
-            scopes
-                .iter()
-                .map(|s| s.to_string())
-                .map(json::Value::String)
-                .collect(),
-        ),
-    );
-
+    map.insert("scope".to_string(), scopes.iter().copied().collect());
     map.insert("settings".to_string(), style.into().as_json_value(true));
 
     rules.push(json::Value::Object(map));
