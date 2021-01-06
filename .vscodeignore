@@ -1,4 +1,7 @@
-.vscode/**
-.vscode-test/**
-.gitignore
-vsc-extension-quickstart.md
+**
+!package.json
+!package-lock.json
+!icon.png
+!screenshot.png
+!README.md
+!themes/Pale Fire-color-theme.json

@@ -2,6 +2,7 @@
     "name": "pale-fire",
     "displayName": "Pale Fire",
     "description": "Emacs-inspired zenburn variation",
+    "icon": "icon.png",
     "preview": true,
     "publisher": "matklad",
     "repository": {
