@@ -1,3 +1,6 @@
+use once_cell::unsync::Lazy;
+use tincture::{Hex, LinearRgb, Oklab, Oklch, Srgb};
+
 pub(crate) struct Style {
     color: Option<Color>,
     font_style: Option<FontStyle>,
@@ -76,20 +79,32 @@ impl From<&FontStyle> for json::Value {
 }
 
 pub(crate) struct Color {
-    rgb: Rgb,
+    oklch: Oklch,
     alpha: Option<u8>,
 }
 
-impl From<Rgb> for Color {
-    fn from(rgb: Rgb) -> Self {
-        Self { rgb, alpha: None }
+impl From<Lazy<Oklch>> for Color {
+    fn from(oklch: Lazy<Oklch>) -> Self {
+        Self {
+            oklch: *oklch,
+            alpha: None,
+        }
     }
 }
 
-impl From<(Rgb, u8)> for Color {
-    fn from((rgb, alpha): (Rgb, u8)) -> Self {
+impl From<(Lazy<Oklch>, u8)> for Color {
+    fn from((oklch, alpha): (Lazy<Oklch>, u8)) -> Self {
         Self {
-            rgb,
+            oklch: *oklch,
+            alpha: Some(alpha),
+        }
+    }
+}
+
+impl From<(Oklch, u8)> for Color {
+    fn from((oklch, alpha): (Oklch, u8)) -> Self {
+        Self {
+            oklch,
             alpha: Some(alpha),
         }
     }
@@ -97,14 +112,17 @@ impl From<(Rgb, u8)> for Color {
 
 impl From<&Color> for json::Value {
     fn from(color: &Color) -> Self {
+        let oklab = Oklab::from(color.oklch);
+        let linear_rgb: LinearRgb = tincture::convert(oklab);
+        let srgb = Srgb::from(linear_rgb);
+        let hex = srgb.hex();
+
         let hex = if let Some(alpha) = color.alpha {
-            format!("#{:06X}{:02X}", color.rgb.0, alpha)
+            format!("#{:06X}{:02X}", hex, alpha)
         } else {
-            format!("#{:06X}", color.rgb.0)
+            format!("#{:06X}", hex)
         };
 
         Self::String(hex)
     }
 }
-
-pub(crate) struct Rgb(pub(crate) u32);

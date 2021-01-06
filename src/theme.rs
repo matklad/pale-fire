@@ -1,5 +1,6 @@
 use crate::palette::*;
-use crate::style::{Color, FontStyle, Rgb, Style};
+use crate::style::{Color, FontStyle, Style};
+use tincture::{ColorSpace, Oklch};
 
 pub(crate) struct Theme;
 
@@ -154,7 +155,7 @@ impl Theme {
             "gitDecoration.untrackedResourceForeground",
             ZENBURN_GREEN_PLUS_3,
         );
-        color_rule(colors, "input.background", (Rgb(0xFFFFFF), 0x0A)); // input field lightens what is behind it
+        color_rule(colors, "input.background", (Oklch::WHITE, 0x0A)); // input field lightens what is behind it
         color_rule(colors, "input.foreground", ZENBURN_FG);
         color_rule(colors, "input.placeholderForeground", ZENBURN_BG_PLUS_3);
         color_rule(colors, "list.activeSelectionBackground", ZENBURN_BG_PLUS_1);
@@ -213,8 +214,8 @@ impl Theme {
         color_rule(colors, "peekViewTitleLabel.foreground", ZENBURN_FG_PLUS_1);
         color_rule(colors, "progressBar.background", ZENBURN_BLUE_PLUS_1);
         color_rule(colors, "rust_analyzer.inlayHints.foreground", ZENBURN_GREEN);
-        color_rule(colors, "scrollbar.shadow", (Rgb(0x000000), 0x88));
-        color_rule(colors, "selection.background", (Rgb(0xFFFFFF), 0x55));
+        color_rule(colors, "scrollbar.shadow", (Oklch::BLACK, 0x88));
+        color_rule(colors, "selection.background", (Oklch::WHITE, 0x55));
         color_rule(colors, "settings.headerForeground", ZENBURN_FG_PLUS_1);
         color_rule(
             colors,
@@ -259,7 +260,7 @@ impl Theme {
         color_rule(colors, "titleBar.activeForeground", ZENBURN_FG);
         color_rule(colors, "titleBar.inactiveBackground", ZENBURN_BG_MINUS_05);
         color_rule(colors, "titleBar.inactiveForeground", ZENBURN_BG_PLUS_3);
-        color_rule(colors, "widget.shadow", (Rgb(0x000000), 0x88));
+        color_rule(colors, "widget.shadow", (Oklch::BLACK, 0x88));
 
         json::Value::Object(colors_owned)
     }

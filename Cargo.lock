@@ -29,11 +29,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dc6f3ad7b9d11a0c00842ff8de1b60ee58661048eb8049ed33c73594f359d7e6"
 
 [[package]]
+name = "once_cell"
+version = "1.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13bd41f508810a131401606d54ac32a467c97172d74ba7662562ebba5ad07fa0"
+
+[[package]]
 name = "pale-fire"
 version = "0.1.0"
 dependencies = [
+ "once_cell",
  "serde",
  "serde_json",
+ "tincture",
 ]
 
 [[package]]
@@ -59,3 +67,9 @@ dependencies = [
  "ryu",
  "serde",
 ]
+
+[[package]]
+name = "tincture"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c5ed303ea16fc658cf32e4f27c1a844d04db3ca8ee87cea6aee4d453c8ff91e"
