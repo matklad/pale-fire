@@ -501,6 +501,15 @@
 		},
 		{
 			"scope": [
+				"punctuation.definition.range.diff",
+				"meta.diff.range"
+			],
+			"settings": {
+				"foreground": "#9AC3E5"
+			}
+		},
+		{
+			"scope": [
 				"markup.italic"
 			],
 			"settings": {

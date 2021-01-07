@@ -530,6 +530,12 @@ impl Theme {
             (fg(), FontStyle::Clear),
         );
 
+        textmate_rule(
+            colors,
+            &["punctuation.definition.range.diff", "meta.diff.range"],
+            blue(2),
+        );
+
         textmate_rule(colors, &["markup.italic"], FontStyle::Italic);
         textmate_rule(colors, &["markup.bold"], FontStyle::Bold);
         textmate_rule(colors, &["markup.heading"], FontStyle::Underline);
