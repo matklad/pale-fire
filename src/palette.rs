@@ -33,9 +33,11 @@ pub(crate) const ZENBURN_RED_MINUS_6: Lazy<Oklch> = Lazy::new(|| oklch(0.3967032
 
 pub(crate) const ZENBURN_ORANGE: Lazy<Oklch> = Lazy::new(|| oklch(0.78973556, 0.0710855, 55.112522));
 
-pub(crate) const ZENBURN_YELLOW: Lazy<Oklch> = Lazy::new(|| oklch(0.9056917, 0.06499734, 90.87234));
-pub(crate) const ZENBURN_YELLOW_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.85676247, 0.06566793, 90.86996));
-pub(crate) const ZENBURN_YELLOW_MINUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.8071518, 0.0663619, 90.86176));
+const YELLOW_CHROMA: f32 = 0.065;
+const YELLOW_HUE: f32 = 91.0;
+pub(crate) const ZENBURN_YELLOW: Lazy<Oklch> = Lazy::new(|| oklch(0.9056917, YELLOW_CHROMA, YELLOW_HUE));
+pub(crate) const ZENBURN_YELLOW_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.85676247, YELLOW_CHROMA, YELLOW_HUE));
+pub(crate) const ZENBURN_YELLOW_MINUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.8071518, YELLOW_CHROMA, YELLOW_HUE));
 
 const GREEN_CHROMA: f32 = 0.065;
 const GREEN_HUE: f32 = 145.0;
