@@ -409,6 +409,14 @@
 		},
 		{
 			"scope": [
+				"comment.line.documentation"
+			],
+			"settings": {
+				"foreground": "#95B995"
+			}
+		},
+		{
+			"scope": [
 				"constant.character",
 				"punctuation.definition.char",
 				"punctuation.definition.string",

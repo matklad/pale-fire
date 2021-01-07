@@ -453,6 +453,8 @@ impl Theme {
             green(0),
         );
 
+        textmate_rule(colors, &["comment.line.documentation"], green(1));
+
         textmate_rule(
             colors,
             &[
