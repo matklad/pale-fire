@@ -83,6 +83,12 @@ pub(crate) struct Color {
     alpha: Option<u8>,
 }
 
+impl From<Oklch> for Color {
+    fn from(oklch: Oklch) -> Self {
+        Self { oklch, alpha: None }
+    }
+}
+
 impl From<Lazy<Oklch>> for Color {
     fn from(oklch: Lazy<Oklch>) -> Self {
         Self {

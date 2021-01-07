@@ -29,39 +29,47 @@ impl Theme {
         color_rule(colors, "activityBar.background", ZENBURN_BG_MINUS_05);
         color_rule(colors, "activityBar.foreground", ZENBURN_FG);
         color_rule(colors, "activityBar.inactiveForeground", ZENBURN_BG_PLUS_3);
-        color_rule(colors, "activityBarBadge.background", ZENBURN_BLUE_MINUS_1);
+        color_rule(
+            colors,
+            "activityBarBadge.background",
+            blue(LightnessLevel(2)),
+        );
         color_rule(colors, "activityBarBadge.foreground", ZENBURN_BG);
         color_rule(colors, "badge.background", ZENBURN_BG_PLUS_2);
         color_rule(colors, "badge.foreground", ZENBURN_FG);
-        color_rule(colors, "button.background", ZENBURN_BLUE_MINUS_1);
+        color_rule(colors, "button.background", blue(LightnessLevel(2)));
         color_rule(colors, "button.foreground", ZENBURN_BG);
         color_rule(colors, "button.hoverBackground", ZENBURN_FG);
-        color_rule(colors, "debugIcon.breakpointForeground", ZENBURN_RED);
+        color_rule(
+            colors,
+            "debugIcon.breakpointForeground",
+            red(LightnessLevel(2)),
+        );
         color_rule(
             colors,
             "diffEditor.insertedTextBackground",
-            (ZENBURN_GREEN_PLUS_1, 0x33),
+            (green(LightnessLevel(4)), 0x33),
         );
         color_rule(
             colors,
             "diffEditor.removedTextBackground",
-            (ZENBURN_RED, 0x33),
+            (red(LightnessLevel(2)), 0x33),
         );
         color_rule(colors, "editor.background", ZENBURN_BG);
         color_rule(
             colors,
             "editor.findMatchBackground",
-            (ZENBURN_BLUE_MINUS_1, 0x66),
+            (blue(LightnessLevel(2)), 0x66),
         );
         color_rule(
             colors,
             "editor.findMatchHighlightBackground",
-            (ZENBURN_BLUE_MINUS_1, 0x44),
+            (blue(LightnessLevel(2)), 0x44),
         );
         color_rule(
             colors,
             "editor.foldBackground",
-            (ZENBURN_BLUE_MINUS_1, 0x22),
+            (blue(LightnessLevel(2)), 0x22),
         );
         color_rule(colors, "editor.foreground", ZENBURN_FG);
         color_rule(colors, "editor.hoverHighlightBackground", ZENBURN_BG_PLUS_1);
@@ -88,11 +96,11 @@ impl Theme {
             ZENBURN_BG_PLUS_2,
         );
         color_rule(colors, "editorCursor.foreground", ZENBURN_FG_PLUS_1);
-        color_rule(colors, "editorError.foreground", ZENBURN_RED);
+        color_rule(colors, "editorError.foreground", red(LightnessLevel(2)));
         color_rule(
             colors,
             "editorGroup.dropBackground",
-            (ZENBURN_BLUE_MINUS_1, 0x22),
+            (blue(LightnessLevel(2)), 0x22),
         );
         color_rule(
             colors,
@@ -107,13 +115,17 @@ impl Theme {
         color_rule(
             colors,
             "editorGutter.addedBackground",
-            ZENBURN_GREEN_MINUS_1,
+            green(LightnessLevel(0)),
         );
-        color_rule(colors, "editorGutter.deletedBackground", ZENBURN_RED);
+        color_rule(
+            colors,
+            "editorGutter.deletedBackground",
+            red(LightnessLevel(2)),
+        );
         color_rule(
             colors,
             "editorGutter.modifiedBackground",
-            ZENBURN_YELLOW_MINUS_1,
+            yellow(LightnessLevel(2)),
         );
         color_rule(colors, "editorGroup.border", ZENBURN_BG_PLUS_2);
         color_rule(
@@ -122,32 +134,48 @@ impl Theme {
             ZENBURN_BG_PLUS_2,
         );
         color_rule(colors, "editorIndentGuide.background", ZENBURN_BG_PLUS_1);
-        color_rule(colors, "editorLightBulb.foreground", ZENBURN_YELLOW);
+        color_rule(
+            colors,
+            "editorLightBulb.foreground",
+            yellow(LightnessLevel(4)),
+        );
         color_rule(colors, "editorLineNumber.foreground", ZENBURN_BG_PLUS_2);
-        color_rule(colors, "editorLink.activeForeground", ZENBURN_BLUE_MINUS_1);
+        color_rule(
+            colors,
+            "editorLink.activeForeground",
+            blue(LightnessLevel(2)),
+        );
         color_rule(
             colors,
             "editorOverviewRuler.addedForeground",
-            ZENBURN_GREEN_MINUS_1,
+            green(LightnessLevel(0)),
         );
         color_rule(colors, "editorOverviewRuler.border", ZENBURN_BG_PLUS_2);
-        color_rule(colors, "editorOverviewRuler.deletedForeground", ZENBURN_RED);
+        color_rule(
+            colors,
+            "editorOverviewRuler.deletedForeground",
+            red(LightnessLevel(2)),
+        );
         color_rule(
             colors,
             "editorOverviewRuler.errorForeground",
-            ZENBURN_RED_MINUS_1,
+            red(LightnessLevel(0)),
         );
         color_rule(
             colors,
             "editorOverviewRuler.findMatchForeground",
-            (ZENBURN_BLUE_MINUS_1, 0x88),
+            (blue(LightnessLevel(2)), 0x88),
         );
         color_rule(
             colors,
             "editorOverviewRuler.modifiedForeground",
-            ZENBURN_YELLOW_MINUS_1,
+            yellow(LightnessLevel(2)),
         );
-        color_rule(colors, "editorWarning.foreground", ZENBURN_ORANGE);
+        color_rule(
+            colors,
+            "editorWarning.foreground",
+            orange(LightnessLevel(2)),
+        );
         color_rule(colors, "editorWidget.background", ZENBURN_BG_MINUS_05);
         color_rule(colors, "editorWidget.border", ZENBURN_BG_PLUS_1);
         color_rule(colors, "focusBorder", ZENBURN_BG_PLUS_2);
@@ -160,33 +188,33 @@ impl Theme {
         color_rule(
             colors,
             "gitDecoration.modifiedResourceForeground",
-            ZENBURN_YELLOW,
+            yellow(LightnessLevel(4)),
         );
         color_rule(
             colors,
             "gitDecoration.untrackedResourceForeground",
-            ZENBURN_GREEN,
+            green(LightnessLevel(2)),
         );
         color_rule(colors, "input.background", (Oklch::WHITE, 0x0A)); // input field lightens what is behind it
         color_rule(colors, "input.foreground", ZENBURN_FG);
         color_rule(colors, "input.placeholderForeground", ZENBURN_BG_PLUS_3);
         color_rule(colors, "list.activeSelectionBackground", ZENBURN_BG_PLUS_1);
         color_rule(colors, "list.activeSelectionForeground", ZENBURN_FG);
-        color_rule(colors, "list.errorForeground", ZENBURN_RED);
+        color_rule(colors, "list.errorForeground", red(LightnessLevel(2)));
         color_rule(colors, "list.focusBackground", ZENBURN_BG_PLUS_1);
-        color_rule(colors, "list.highlightForeground", ZENBURN_BLUE);
+        color_rule(colors, "list.highlightForeground", blue(LightnessLevel(4)));
         color_rule(colors, "list.hoverBackground", ZENBURN_BG);
         color_rule(
             colors,
             "list.inactiveSelectionBackground",
             ZENBURN_BG_PLUS_05,
         );
-        color_rule(colors, "list.warningForeground", ZENBURN_ORANGE);
-        color_rule(colors, "minimap.errorHighlight", ZENBURN_RED);
+        color_rule(colors, "list.warningForeground", orange(LightnessLevel(2)));
+        color_rule(colors, "minimap.errorHighlight", red(LightnessLevel(2)));
         color_rule(
             colors,
             "minimap.findMatchHighlight",
-            (ZENBURN_BLUE_MINUS_1, 0x66),
+            (blue(LightnessLevel(2)), 0x66),
         );
         color_rule(
             colors,
@@ -201,7 +229,7 @@ impl Theme {
         color_rule(
             colors,
             "peekViewEditor.matchHighlightBackground",
-            (ZENBURN_BLUE_MINUS_1, 0x66),
+            (blue(LightnessLevel(2)), 0x66),
         );
         color_rule(colors, "peekViewResult.background", ZENBURN_BG_MINUS_05);
         color_rule(colors, "peekViewResult.fileForeground", ZENBURN_FG);
@@ -209,7 +237,7 @@ impl Theme {
         color_rule(
             colors,
             "peekViewResult.matchHighlightBackground",
-            (ZENBURN_BLUE_MINUS_1, 0x44),
+            (blue(LightnessLevel(2)), 0x44),
         );
         color_rule(
             colors,
@@ -221,14 +249,14 @@ impl Theme {
         color_rule(
             colors,
             "peekViewTitleDescription.foreground",
-            ZENBURN_BLUE_MINUS_1,
+            blue(LightnessLevel(2)),
         );
         color_rule(colors, "peekViewTitleLabel.foreground", ZENBURN_FG_PLUS_1);
-        color_rule(colors, "progressBar.background", ZENBURN_BLUE_MINUS_1);
+        color_rule(colors, "progressBar.background", blue(LightnessLevel(2)));
         color_rule(
             colors,
             "rust_analyzer.inlayHints.foreground",
-            ZENBURN_GREEN_MINUS_1,
+            green(LightnessLevel(0)),
         );
         color_rule(colors, "scrollbar.shadow", (Oklch::BLACK, 0x88));
         color_rule(colors, "selection.background", (Oklch::WHITE, 0x55));
@@ -236,41 +264,53 @@ impl Theme {
         color_rule(
             colors,
             "settings.modifiedItemIndicator",
-            ZENBURN_BLUE_MINUS_1,
+            blue(LightnessLevel(2)),
         );
         color_rule(colors, "sideBar.background", ZENBURN_BG_MINUS_05);
         color_rule(colors, "sideBar.foreground", ZENBURN_FG);
         color_rule(colors, "sideBarTitle.foreground", ZENBURN_FG_PLUS_1);
         color_rule(colors, "statusBar.background", ZENBURN_BG_MINUS_1);
         color_rule(colors, "statusBar.debuggingBackground", ZENBURN_BG_MINUS_1);
-        color_rule(colors, "statusBar.foreground", ZENBURN_GREEN);
-        color_rule(colors, "statusBar.debuggingForeground", ZENBURN_ORANGE);
+        color_rule(colors, "statusBar.foreground", green(LightnessLevel(2)));
+        color_rule(
+            colors,
+            "statusBar.debuggingForeground",
+            orange(LightnessLevel(2)),
+        );
         color_rule(colors, "statusBar.noFolderBackground", ZENBURN_BG_MINUS_1);
         color_rule(colors, "tab.activeForeground", ZENBURN_FG);
         color_rule(colors, "tab.border", ZENBURN_BG);
         color_rule(colors, "tab.inactiveBackground", ZENBURN_BG_MINUS_1);
         color_rule(colors, "tab.inactiveForeground", ZENBURN_BG_PLUS_3);
         color_rule(colors, "terminal.ansiBlack", ZENBURN_BG_MINUS_1);
-        color_rule(colors, "terminal.ansiBlue", ZENBURN_BLUE_MINUS_1);
+        color_rule(colors, "terminal.ansiBlue", blue(LightnessLevel(2)));
         color_rule(colors, "terminal.ansiBrightBlack", ZENBURN_BG_PLUS_3);
-        color_rule(colors, "terminal.ansiBrightBlue", ZENBURN_BLUE);
-        color_rule(colors, "terminal.ansiBrightCyan", ZENBURN_CYAN_PLUS_2);
-        color_rule(colors, "terminal.ansiBrightGreen", ZENBURN_GREEN_PLUS_1);
-        color_rule(colors, "terminal.ansiBrightMagenta", ZENBURN_ORANGE);
-        color_rule(colors, "terminal.ansiBrightRed", ZENBURN_RED);
+        color_rule(colors, "terminal.ansiBrightBlue", blue(LightnessLevel(4)));
+        color_rule(colors, "terminal.ansiBrightCyan", cyan(LightnessLevel(3)));
+        color_rule(colors, "terminal.ansiBrightGreen", green(LightnessLevel(4)));
+        color_rule(
+            colors,
+            "terminal.ansiBrightMagenta",
+            orange(LightnessLevel(2)),
+        );
+        color_rule(colors, "terminal.ansiBrightRed", red(LightnessLevel(2)));
         color_rule(colors, "terminal.ansiBrightWhite", ZENBURN_FG_PLUS_1);
-        color_rule(colors, "terminal.ansiBrightYellow", ZENBURN_YELLOW);
-        color_rule(colors, "terminal.ansiCyan", ZENBURN_CYAN);
-        color_rule(colors, "terminal.ansiGreen", ZENBURN_GREEN_MINUS_1);
-        color_rule(colors, "terminal.ansiMagenta", ZENBURN_ORANGE);
-        color_rule(colors, "terminal.ansiRed", ZENBURN_RED);
+        color_rule(
+            colors,
+            "terminal.ansiBrightYellow",
+            yellow(LightnessLevel(4)),
+        );
+        color_rule(colors, "terminal.ansiCyan", cyan(LightnessLevel(1)));
+        color_rule(colors, "terminal.ansiGreen", green(LightnessLevel(0)));
+        color_rule(colors, "terminal.ansiMagenta", orange(LightnessLevel(2)));
+        color_rule(colors, "terminal.ansiRed", red(LightnessLevel(2)));
         color_rule(colors, "terminal.ansiWhite", ZENBURN_FG);
-        color_rule(colors, "terminal.ansiYellow", ZENBURN_YELLOW_MINUS_1);
+        color_rule(colors, "terminal.ansiYellow", yellow(LightnessLevel(2)));
         color_rule(colors, "terminal.foreground", ZENBURN_FG);
         color_rule(colors, "terminal.selectionBackground", ZENBURN_BG_MINUS_05); // Lighter than normal selection background to compensate for lighter terminal background
         color_rule(colors, "terminalCursor.foreground", ZENBURN_FG_PLUS_1);
-        color_rule(colors, "textLink.activeForeground", ZENBURN_BLUE_MINUS_1);
-        color_rule(colors, "textLink.foreground", ZENBURN_BLUE_MINUS_1);
+        color_rule(colors, "textLink.activeForeground", blue(LightnessLevel(2)));
+        color_rule(colors, "textLink.foreground", blue(LightnessLevel(2)));
         color_rule(colors, "textPreformat.foreground", ZENBURN_FG); // inline code in e.g. Settings page
         color_rule(colors, "titleBar.activeBackground", ZENBURN_BG_MINUS_05);
         color_rule(colors, "titleBar.activeForeground", ZENBURN_FG);
@@ -285,36 +325,48 @@ impl Theme {
         let mut colors_owned = json::Map::new();
         let colors = &mut colors_owned;
 
-        style_rule(colors, "boolean", (ZENBURN_BLUE, FontStyle::Clear));
-        style_rule(colors, "comment", ZENBURN_GREEN_MINUS_1);
-        style_rule(colors, "comment.documentation", ZENBURN_GREEN);
-        style_rule(colors, "keyword", (ZENBURN_YELLOW, FontStyle::Bold));
-        style_rule(colors, "*.unsafe", ZENBURN_RED_MINUS_1);
-        style_rule(colors, "function.unsafe", ZENBURN_RED_MINUS_1);
-        style_rule(colors, "operator.unsafe", ZENBURN_RED_MINUS_1);
-        style_rule(colors, "property", ZENBURN_GREEN);
-        style_rule(colors, "function", ZENBURN_CYAN_PLUS_2);
-        style_rule(colors, "namespace", ZENBURN_GREEN_PLUS_1);
-        style_rule(colors, "macro", ZENBURN_BLUE_MINUS_1);
-        style_rule(colors, "formatSpecifier", ZENBURN_BLUE_MINUS_1);
-        style_rule(colors, "escapeSequence", ZENBURN_BLUE_MINUS_1);
+        style_rule(
+            colors,
+            "boolean",
+            (blue(LightnessLevel(4)), FontStyle::Clear),
+        );
+        style_rule(colors, "comment", green(LightnessLevel(0)));
+        style_rule(colors, "comment.documentation", green(LightnessLevel(2)));
+        style_rule(
+            colors,
+            "keyword",
+            (yellow(LightnessLevel(4)), FontStyle::Bold),
+        );
+        style_rule(colors, "*.unsafe", red(LightnessLevel(0)));
+        style_rule(colors, "function.unsafe", red(LightnessLevel(0)));
+        style_rule(colors, "operator.unsafe", red(LightnessLevel(0)));
+        style_rule(colors, "property", green(LightnessLevel(2)));
+        style_rule(colors, "function", cyan(LightnessLevel(3)));
+        style_rule(colors, "namespace", green(LightnessLevel(4)));
+        style_rule(colors, "macro", blue(LightnessLevel(2)));
+        style_rule(colors, "formatSpecifier", blue(LightnessLevel(2)));
+        style_rule(colors, "escapeSequence", blue(LightnessLevel(2)));
         style_rule(colors, "variable", ZENBURN_FG);
-        style_rule(colors, "variable.static", ZENBURN_BLUE);
-        style_rule(colors, "parameter", ZENBURN_ORANGE);
-        style_rule(colors, "struct", ZENBURN_CYAN);
-        style_rule(colors, "enum", ZENBURN_CYAN);
-        style_rule(colors, "union", ZENBURN_CYAN);
-        style_rule(colors, "typeAlias", ZENBURN_CYAN);
-        style_rule(colors, "builtinType", ZENBURN_CYAN_PLUS_1);
-        style_rule(colors, "type", ZENBURN_CYAN);
-        style_rule(colors, "interface", ZENBURN_CYAN_PLUS_1);
-        style_rule(colors, "enumMember", ZENBURN_BLUE);
-        style_rule(colors, "typeParameter", ZENBURN_ORANGE);
-        style_rule(colors, "lifetime", (ZENBURN_ORANGE, FontStyle::Italic));
-        style_rule(colors, "number", ZENBURN_GREEN_PLUS_1);
-        style_rule(colors, "string", ZENBURN_RED);
-        style_rule(colors, "attribute", ZENBURN_BLUE_MINUS_1);
-        style_rule(colors, "function.attribute", ZENBURN_BLUE_MINUS_1);
+        style_rule(colors, "variable.static", blue(LightnessLevel(4)));
+        style_rule(colors, "parameter", orange(LightnessLevel(2)));
+        style_rule(colors, "struct", cyan(LightnessLevel(1)));
+        style_rule(colors, "enum", cyan(LightnessLevel(1)));
+        style_rule(colors, "union", cyan(LightnessLevel(1)));
+        style_rule(colors, "typeAlias", cyan(LightnessLevel(1)));
+        style_rule(colors, "builtinType", cyan(LightnessLevel(2)));
+        style_rule(colors, "type", cyan(LightnessLevel(1)));
+        style_rule(colors, "interface", cyan(LightnessLevel(2)));
+        style_rule(colors, "enumMember", blue(LightnessLevel(4)));
+        style_rule(colors, "typeParameter", orange(LightnessLevel(2)));
+        style_rule(
+            colors,
+            "lifetime",
+            (orange(LightnessLevel(2)), FontStyle::Italic),
+        );
+        style_rule(colors, "number", green(LightnessLevel(4)));
+        style_rule(colors, "string", red(LightnessLevel(2)));
+        style_rule(colors, "attribute", blue(LightnessLevel(2)));
+        style_rule(colors, "function.attribute", blue(LightnessLevel(2)));
         style_rule(colors, "punctuation", ZENBURN_FG);
         style_rule(colors, "*.mutable", FontStyle::Underline);
         style_rule(colors, "*.consuming", FontStyle::Italic);
@@ -338,7 +390,7 @@ impl Theme {
                 "variable.other.object.property",
                 "variable.other.property",
             ],
-            ZENBURN_GREEN,
+            green(LightnessLevel(2)),
         );
 
         textmate_rule(
@@ -348,7 +400,7 @@ impl Theme {
                 "meta.function-call.generic.python",
                 "support.function",
             ],
-            ZENBURN_CYAN_PLUS_2,
+            cyan(LightnessLevel(3)),
         );
 
         textmate_rule(
@@ -360,23 +412,27 @@ impl Theme {
                 "storage.modifier.import",
                 "storage.modifier.package",
             ],
-            (ZENBURN_GREEN_PLUS_1, FontStyle::Clear),
+            (green(LightnessLevel(4)), FontStyle::Clear),
         );
 
         textmate_rule(
             colors,
             &["entity.name.macro", "entity.name.other.preprocessor.macro"],
-            ZENBURN_BLUE_MINUS_1,
+            blue(LightnessLevel(2)),
         );
 
-        textmate_rule(colors, &["constant.character.escape"], ZENBURN_BLUE_MINUS_1);
+        textmate_rule(
+            colors,
+            &["constant.character.escape"],
+            blue(LightnessLevel(2)),
+        );
 
         textmate_rule(colors, &["variable"], ZENBURN_FG);
 
         textmate_rule(
             colors,
             &["entity.name.variable.parameter", "variable.parameter"],
-            ZENBURN_ORANGE,
+            orange(LightnessLevel(2)),
         );
 
         textmate_rule(
@@ -387,7 +443,7 @@ impl Theme {
                 "variable.other.enummember",
                 "support.constant",
             ],
-            ZENBURN_BLUE,
+            blue(LightnessLevel(4)),
         );
 
         textmate_rule(colors, &["meta.mutable"], FontStyle::Underline);
@@ -400,7 +456,7 @@ impl Theme {
                 "support.class",
                 "support.type",
             ],
-            (ZENBURN_CYAN, FontStyle::Clear),
+            (cyan(LightnessLevel(1)), FontStyle::Clear),
         );
 
         textmate_rule(
@@ -418,10 +474,14 @@ impl Theme {
                 "storage.type.uintptr.go",
                 "support.type",
             ],
-            (ZENBURN_CYAN_PLUS_1, FontStyle::Clear),
+            (cyan(LightnessLevel(2)), FontStyle::Clear),
         );
 
-        textmate_rule(colors, &["entity.name.type.parameter"], ZENBURN_ORANGE);
+        textmate_rule(
+            colors,
+            &["entity.name.type.parameter"],
+            orange(LightnessLevel(2)),
+        );
 
         textmate_rule(
             colors,
@@ -431,19 +491,19 @@ impl Theme {
                 "entity.name.type.lifetime",
                 "punctuation.definition.lifetime",
             ],
-            (ZENBURN_ORANGE, FontStyle::Italic),
+            (orange(LightnessLevel(2)), FontStyle::Italic),
         );
 
         textmate_rule(
             colors,
             &["constant.numeric", "keyword.other.unit"],
-            (ZENBURN_GREEN_PLUS_1, FontStyle::Clear),
+            (green(LightnessLevel(4)), FontStyle::Clear),
         );
 
         textmate_rule(
             colors,
             &["comment", "punctuation.definition.comment"],
-            ZENBURN_GREEN_MINUS_1,
+            green(LightnessLevel(0)),
         );
 
         textmate_rule(
@@ -454,7 +514,7 @@ impl Theme {
                 "punctuation.definition.string",
                 "string",
             ],
-            ZENBURN_RED,
+            red(LightnessLevel(2)),
         );
 
         textmate_rule(
@@ -469,7 +529,7 @@ impl Theme {
                 "storage.modifier.attribute",
                 "storage.type.annotation",
             ],
-            (ZENBURN_BLUE_MINUS_1, FontStyle::Clear),
+            (blue(LightnessLevel(2)), FontStyle::Clear),
         );
 
         textmate_rule(
@@ -497,7 +557,7 @@ impl Theme {
                 "storage.type.ts",
                 "variable.language.this",
             ],
-            (ZENBURN_YELLOW, FontStyle::Bold),
+            (yellow(LightnessLevel(4)), FontStyle::Bold),
         );
 
         textmate_rule(
@@ -506,10 +566,10 @@ impl Theme {
                 "entity.other.attribute-name.class",
                 "entity.other.attribute-name.id",
             ],
-            ZENBURN_CYAN,
+            cyan(LightnessLevel(1)),
         );
 
-        textmate_rule(colors, &["keyword.other.unsafe"], ZENBURN_RED_MINUS_1);
+        textmate_rule(colors, &["keyword.other.unsafe"], red(LightnessLevel(0)));
 
         textmate_rule(
             colors,
@@ -531,12 +591,12 @@ impl Theme {
                 "markup.inserted.diff",
                 "punctuation.definition.inserted.diff",
             ],
-            ZENBURN_GREEN_PLUS_1,
+            green(LightnessLevel(4)),
         );
         textmate_rule(
             colors,
             &["markup.deleted.diff", "punctuation.definition.deleted.diff"],
-            ZENBURN_RED,
+            red(LightnessLevel(2)),
         );
 
         json::Value::Array(colors_owned)
