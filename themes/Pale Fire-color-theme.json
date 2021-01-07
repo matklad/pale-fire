@@ -64,7 +64,7 @@
 		"list.activeSelectionForeground": "#DCDCCC",
 		"list.errorForeground": "#D49E9D",
 		"list.focusBackground": "#4F4F4F",
-		"list.highlightForeground": "#B9E4FF",
+		"list.highlightForeground": "#C5E2FA",
 		"list.hoverBackground": "#3F3F3F",
 		"list.inactiveSelectionBackground": "#494949",
 		"list.warningForeground": "#DFB396",
@@ -107,7 +107,7 @@
 		"terminal.ansiBlack": "#2B2B2B",
 		"terminal.ansiBlue": "#9AC3E5",
 		"terminal.ansiBrightBlack": "#6F6F6F",
-		"terminal.ansiBrightBlue": "#B9E4FF",
+		"terminal.ansiBrightBlue": "#C5E2FA",
 		"terminal.ansiBrightCyan": "#9BDBDE",
 		"terminal.ansiBrightGreen": "#C4EAC4",
 		"terminal.ansiBrightMagenta": "#DFB396",
@@ -135,7 +135,7 @@
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
 		"boolean": {
-			"foreground": "#B9E4FF",
+			"foreground": "#C5E2FA",
 			"fontStyle": ""
 		},
 		"comment": {
@@ -179,7 +179,7 @@
 			"foreground": "#DCDCCC"
 		},
 		"variable.static": {
-			"foreground": "#B9E4FF"
+			"foreground": "#C5E2FA"
 		},
 		"parameter": {
 			"foreground": "#DFB396"
@@ -206,7 +206,7 @@
 			"foreground": "#8BCBCE"
 		},
 		"enumMember": {
-			"foreground": "#B9E4FF"
+			"foreground": "#C5E2FA"
 		},
 		"typeParameter": {
 			"foreground": "#DFB396"
@@ -318,7 +318,7 @@
 				"support.constant"
 			],
 			"settings": {
-				"foreground": "#B9E4FF"
+				"foreground": "#C5E2FA"
 			}
 		},
 		{
