@@ -25,17 +25,17 @@ impl Theme {
         let mut colors_owned = json::Map::new();
         let colors = &mut colors_owned;
 
-        color_rule(colors, "activityBar.activeBorder", fg(7));
+        color_rule(colors, "activityBar.activeBorder", fg());
         color_rule(colors, "activityBar.background", bg(1));
-        color_rule(colors, "activityBar.foreground", fg(7));
+        color_rule(colors, "activityBar.foreground", fg());
         color_rule(colors, "activityBar.inactiveForeground", bg(6));
         color_rule(colors, "activityBarBadge.background", blue(2));
         color_rule(colors, "activityBarBadge.foreground", bg(2));
         color_rule(colors, "badge.background", bg(5));
-        color_rule(colors, "badge.foreground", fg(7));
+        color_rule(colors, "badge.foreground", fg());
         color_rule(colors, "button.background", blue(2));
         color_rule(colors, "button.foreground", bg(2));
-        color_rule(colors, "button.hoverBackground", fg(7));
+        color_rule(colors, "button.hoverBackground", fg());
         color_rule(colors, "debugIcon.breakpointForeground", red(2));
         color_rule(
             colors,
@@ -55,7 +55,7 @@ impl Theme {
             (blue(2), 0x44),
         );
         color_rule(colors, "editor.foldBackground", (blue(2), 0x22));
-        color_rule(colors, "editor.foreground", fg(7));
+        color_rule(colors, "editor.foreground", fg());
         color_rule(colors, "editor.hoverHighlightBackground", bg(4));
         color_rule(colors, "editor.lineHighlightBackground", bg(1));
         color_rule(colors, "editor.selectionBackground", bg(0));
@@ -63,7 +63,7 @@ impl Theme {
         color_rule(colors, "editor.symbolHighlightBackground", bg(5));
         color_rule(colors, "editor.wordHighlightBackground", bg(5));
         color_rule(colors, "editor.wordHighlightStrongBackground", bg(5));
-        color_rule(colors, "editorCursor.foreground", fg(8));
+        color_rule(colors, "editorCursor.foreground", bright_fg());
         color_rule(colors, "editorError.foreground", red(2));
         color_rule(colors, "editorGroup.dropBackground", (blue(2), 0x22));
         color_rule(colors, "editorGroupHeader.noTabsBackground", bg(3));
@@ -119,7 +119,7 @@ impl Theme {
         color_rule(colors, "editorWidget.background", bg(1));
         color_rule(colors, "editorWidget.border", bg(4));
         color_rule(colors, "focusBorder", bg(5));
-        color_rule(colors, "foreground", fg(7));
+        color_rule(colors, "foreground", fg());
         color_rule(colors, "gitDecoration.ignoredResourceForeground", bg(6));
         color_rule(
             colors,
@@ -132,10 +132,10 @@ impl Theme {
             green(ColorLightnessPreset::GitDecoration),
         );
         color_rule(colors, "input.background", (Oklch::WHITE, 0x0A)); // input field lightens what is behind it
-        color_rule(colors, "input.foreground", fg(7));
+        color_rule(colors, "input.foreground", fg());
         color_rule(colors, "input.placeholderForeground", bg(6));
         color_rule(colors, "list.activeSelectionBackground", bg(4));
-        color_rule(colors, "list.activeSelectionForeground", fg(7));
+        color_rule(colors, "list.activeSelectionForeground", fg());
         color_rule(colors, "list.errorForeground", red(2));
         color_rule(colors, "list.focusBackground", bg(4));
         color_rule(colors, "list.highlightForeground", blue(4));
@@ -155,7 +155,7 @@ impl Theme {
         color_rule(colors, "minimap.selectionHighlight", (bg(0), 0x88));
         color_rule(colors, "panel.background", bg(3));
         color_rule(colors, "panel.border", bg(5));
-        color_rule(colors, "panelTitle.activeForeground", fg(7));
+        color_rule(colors, "panelTitle.activeForeground", fg());
         color_rule(colors, "peekView.border", bg(6));
         color_rule(colors, "peekViewEditor.background", bg(2));
         color_rule(
@@ -164,33 +164,33 @@ impl Theme {
             (blue(2), 0x66),
         );
         color_rule(colors, "peekViewResult.background", bg(1));
-        color_rule(colors, "peekViewResult.fileForeground", fg(7));
-        color_rule(colors, "peekViewResult.lineForeground", (fg(7), 0x99));
+        color_rule(colors, "peekViewResult.fileForeground", fg());
+        color_rule(colors, "peekViewResult.lineForeground", (fg(), 0x99));
         color_rule(
             colors,
             "peekViewResult.matchHighlightBackground",
             (blue(2), 0x44),
         );
         color_rule(colors, "peekViewResult.selectionBackground", bg(4));
-        color_rule(colors, "peekViewResult.selectionForeground", fg(7));
+        color_rule(colors, "peekViewResult.selectionForeground", fg());
         color_rule(colors, "peekViewTitle.background", bg(1));
         color_rule(colors, "peekViewTitleDescription.foreground", blue(2));
-        color_rule(colors, "peekViewTitleLabel.foreground", fg(8));
+        color_rule(colors, "peekViewTitleLabel.foreground", bright_fg());
         color_rule(colors, "progressBar.background", blue(2));
         color_rule(colors, "rust_analyzer.inlayHints.foreground", green(0));
         color_rule(colors, "scrollbar.shadow", (Oklch::BLACK, 0x88));
         color_rule(colors, "selection.background", (Oklch::WHITE, 0x55));
-        color_rule(colors, "settings.headerForeground", fg(8));
+        color_rule(colors, "settings.headerForeground", bright_fg());
         color_rule(colors, "settings.modifiedItemIndicator", blue(2));
         color_rule(colors, "sideBar.background", bg(1));
-        color_rule(colors, "sideBar.foreground", fg(7));
-        color_rule(colors, "sideBarTitle.foreground", fg(8));
+        color_rule(colors, "sideBar.foreground", fg());
+        color_rule(colors, "sideBarTitle.foreground", bright_fg());
         color_rule(colors, "statusBar.background", bg(0));
         color_rule(colors, "statusBar.debuggingBackground", bg(0));
         color_rule(colors, "statusBar.foreground", green(2));
         color_rule(colors, "statusBar.debuggingForeground", orange(2));
         color_rule(colors, "statusBar.noFolderBackground", bg(0));
-        color_rule(colors, "tab.activeForeground", fg(7));
+        color_rule(colors, "tab.activeForeground", fg());
         color_rule(colors, "tab.border", bg(2));
         color_rule(colors, "tab.inactiveBackground", bg(0));
         color_rule(colors, "tab.inactiveForeground", bg(6));
@@ -226,7 +226,7 @@ impl Theme {
             "terminal.ansiBrightRed",
             red(ColorLightnessPreset::TerminalAnsiBright),
         );
-        color_rule(colors, "terminal.ansiBrightWhite", fg(8));
+        color_rule(colors, "terminal.ansiBrightWhite", bright_fg());
         color_rule(
             colors,
             "terminal.ansiBrightYellow",
@@ -252,20 +252,20 @@ impl Theme {
             "terminal.ansiRed",
             red(ColorLightnessPreset::TerminalAnsi),
         );
-        color_rule(colors, "terminal.ansiWhite", fg(7));
+        color_rule(colors, "terminal.ansiWhite", fg());
         color_rule(
             colors,
             "terminal.ansiYellow",
             yellow(ColorLightnessPreset::TerminalAnsi),
         );
-        color_rule(colors, "terminal.foreground", fg(7));
+        color_rule(colors, "terminal.foreground", fg());
         color_rule(colors, "terminal.selectionBackground", bg(1)); // Lighter than normal selection background to compensate for lighter terminal background
-        color_rule(colors, "terminalCursor.foreground", fg(8));
+        color_rule(colors, "terminalCursor.foreground", bright_fg());
         color_rule(colors, "textLink.activeForeground", blue(2));
         color_rule(colors, "textLink.foreground", blue(2));
-        color_rule(colors, "textPreformat.foreground", fg(7)); // inline code in e.g. Settings page
+        color_rule(colors, "textPreformat.foreground", fg()); // inline code in e.g. Settings page
         color_rule(colors, "titleBar.activeBackground", bg(1));
-        color_rule(colors, "titleBar.activeForeground", fg(7));
+        color_rule(colors, "titleBar.activeForeground", fg());
         color_rule(colors, "titleBar.inactiveBackground", bg(1));
         color_rule(colors, "titleBar.inactiveForeground", bg(6));
         color_rule(colors, "widget.shadow", (Oklch::BLACK, 0x88));
@@ -290,7 +290,7 @@ impl Theme {
         style_rule(colors, "macro", blue(2));
         style_rule(colors, "formatSpecifier", blue(2));
         style_rule(colors, "escapeSequence", blue(2));
-        style_rule(colors, "variable", fg(7));
+        style_rule(colors, "variable", fg());
         style_rule(colors, "variable.static", blue(4));
         style_rule(colors, "parameter", orange(2));
         style_rule(colors, "struct", cyan(1));
@@ -307,7 +307,7 @@ impl Theme {
         style_rule(colors, "string", red(2));
         style_rule(colors, "attribute", blue(2));
         style_rule(colors, "function.attribute", blue(2));
-        style_rule(colors, "punctuation", fg(7));
+        style_rule(colors, "punctuation", fg());
         style_rule(colors, "*.mutable", FontStyle::Underline);
         style_rule(colors, "*.consuming", FontStyle::Italic);
 
@@ -363,7 +363,7 @@ impl Theme {
 
         textmate_rule(colors, &["constant.character.escape"], blue(2));
 
-        textmate_rule(colors, &["variable"], fg(7));
+        textmate_rule(colors, &["variable"], fg());
 
         textmate_rule(
             colors,
@@ -510,7 +510,7 @@ impl Theme {
                 "keyword.operator",
                 "punctuation",
             ],
-            (fg(7), FontStyle::Clear),
+            (fg(), FontStyle::Clear),
         );
 
         textmate_rule(colors, &["markup.italic"], FontStyle::Italic);
