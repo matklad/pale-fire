@@ -25,13 +25,13 @@ impl From<u32> for GreyscaleLightness {
 impl From<GreyscaleLightness> for f32 {
     fn from(lightness: GreyscaleLightness) -> Self {
         match lightness.0 {
-            0 => 0.28908,
-            1 => 0.34069705,
-            2 => 0.36768097,
-            3 => 0.4053975,
-            4 => 0.42760777,
-            5 => 0.4854972,
-            6 => 0.5417056,
+            0 => 0.3,
+            1 => 0.34,
+            2 => 0.37,
+            3 => 0.4,
+            4 => 0.43,
+            5 => 0.5,
+            6 => 0.55,
             _ => unreachable!(),
         }
     }
