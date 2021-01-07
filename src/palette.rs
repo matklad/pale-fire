@@ -6,9 +6,11 @@ use tincture::{Hue, Oklch};
 
 // Colors are from https://github.com/bbatsov/zenburn_emacs/blob/master/zenburn_theme.el
 
-pub(crate) const ZENBURN_FG_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.9957194, 0.020837266, 106.87106));
-pub(crate) const ZENBURN_FG: Lazy<Oklch> = Lazy::new(|| oklch(0.8901145, 0.021415712, 106.913895));
-pub(crate) const ZENBURN_FG_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.50194794, 0.024493799, 107.29638));
+const FG_CHROMA: f32 = 0.022;
+const FG_HUE: f32 = 107.0;
+pub(crate) const ZENBURN_FG_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.9957194, FG_CHROMA, FG_HUE));
+pub(crate) const ZENBURN_FG: Lazy<Oklch> = Lazy::new(|| oklch(0.8901145, FG_CHROMA, FG_HUE));
+pub(crate) const ZENBURN_FG_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.50194794, FG_CHROMA, FG_HUE));
 
 pub(crate) const ZENBURN_BG_MINUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.0, 0.0, 0.0));
 pub(crate) const ZENBURN_BG_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.28908, 0.0, 0.0));
