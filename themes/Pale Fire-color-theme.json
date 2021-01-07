@@ -7,7 +7,7 @@
 		"activityBar.background": "#383838",
 		"activityBar.foreground": "#DCDCCC",
 		"activityBar.inactiveForeground": "#6F6F6F",
-		"activityBarBadge.background": "#5C888B",
+		"activityBarBadge.background": "#4C8B8E",
 		"activityBarBadge.foreground": "#DCDCCC",
 		"badge.background": "#5F5F5F",
 		"badge.foreground": "#DCDCCC",
@@ -108,13 +108,13 @@
 		"terminal.ansiBlue": "#94BFF3",
 		"terminal.ansiBrightBlack": "#6F6F6F",
 		"terminal.ansiBrightBlue": "#BDE0F3",
-		"terminal.ansiBrightCyan": "#93E0E3",
+		"terminal.ansiBrightCyan": "#9DDEE1",
 		"terminal.ansiBrightGreen": "#C3E9C3",
 		"terminal.ansiBrightMagenta": "#DFAF8F",
 		"terminal.ansiBrightRed": "#EEB2B1",
 		"terminal.ansiBrightWhite": "#FFFFEF",
 		"terminal.ansiBrightYellow": "#F0DFAF",
-		"terminal.ansiCyan": "#7CB8BB",
+		"terminal.ansiCyan": "#79B9BC",
 		"terminal.ansiGreen": "#7CA07D",
 		"terminal.ansiMagenta": "#DFAF8F",
 		"terminal.ansiRed": "#CC9392",
@@ -161,7 +161,7 @@
 			"foreground": "#B1D7B1"
 		},
 		"function": {
-			"foreground": "#93E0E3"
+			"foreground": "#9DDEE1"
 		},
 		"namespace": {
 			"foreground": "#C3E9C3"
@@ -185,25 +185,25 @@
 			"foreground": "#DFAF8F"
 		},
 		"struct": {
-			"foreground": "#7CB8BB"
+			"foreground": "#79B9BC"
 		},
 		"enum": {
-			"foreground": "#7CB8BB"
+			"foreground": "#79B9BC"
 		},
 		"union": {
-			"foreground": "#7CB8BB"
+			"foreground": "#79B9BC"
 		},
 		"typeAlias": {
-			"foreground": "#7CB8BB"
+			"foreground": "#79B9BC"
 		},
 		"builtinType": {
-			"foreground": "#8CD0D3"
+			"foreground": "#8FCFD2"
 		},
 		"type": {
-			"foreground": "#7CB8BB"
+			"foreground": "#79B9BC"
 		},
 		"interface": {
-			"foreground": "#8CD0D3"
+			"foreground": "#8FCFD2"
 		},
 		"enumMember": {
 			"foreground": "#BDE0F3"
@@ -260,7 +260,7 @@
 				"support.function"
 			],
 			"settings": {
-				"foreground": "#93E0E3"
+				"foreground": "#9DDEE1"
 			}
 		},
 		{
@@ -337,7 +337,7 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#7CB8BB",
+				"foreground": "#79B9BC",
 				"fontStyle": ""
 			}
 		},
@@ -356,7 +356,7 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#8CD0D3",
+				"foreground": "#8FCFD2",
 				"fontStyle": ""
 			}
 		},
@@ -461,7 +461,7 @@
 				"entity.other.attribute-name.id"
 			],
 			"settings": {
-				"foreground": "#7CB8BB"
+				"foreground": "#79B9BC"
 			}
 		},
 		{
