@@ -50,14 +50,16 @@ pub(crate) const ZENBURN_GREEN_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.785458
 pub(crate) const ZENBURN_GREEN_PLUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.8419188, GREEN_CHROMA, GREEN_HUE));
 pub(crate) const ZENBURN_GREEN_PLUS_4: Lazy<Oklch> = Lazy::new(|| oklch(0.8974478, GREEN_CHROMA, GREEN_HUE));
 
-pub(crate) const ZENBURN_CYAN_MINUS_4: Lazy<Oklch> = Lazy::new(|| oklch(0.45856485, 0.04705447, 195.68336));
-pub(crate) const ZENBURN_CYAN_MINUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.51914865, 0.041178934, 202.58775));
-pub(crate) const ZENBURN_CYAN_MINUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.595962, 0.048358206, 201.39072));
-pub(crate) const ZENBURN_CYAN_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.6703748, 0.05529149, 200.55424));
-pub(crate) const ZENBURN_CYAN: Lazy<Oklch> = Lazy::new(|| oklch(0.74277675, 0.062019896, 199.93712));
-pub(crate) const ZENBURN_CYAN_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.81345516, 0.06857484, 199.46292));
-pub(crate) const ZENBURN_CYAN_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.85783637, 0.07598806, 199.01628));
-pub(crate) const ZENBURN_CYAN_PLUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.87170947, 0.05355117, 200.70901));
+const CYAN_CHROMA: f32 = 0.065;
+const CYAN_HUE: f32 = 200.0;
+pub(crate) const ZENBURN_CYAN_MINUS_4: Lazy<Oklch> = Lazy::new(|| oklch(0.45856485, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN_MINUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.51914865, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN_MINUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.595962, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.6703748, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN: Lazy<Oklch> = Lazy::new(|| oklch(0.74277675, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.81345516, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.85783637, CYAN_CHROMA, CYAN_HUE));
+pub(crate) const ZENBURN_CYAN_PLUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.87170947, CYAN_CHROMA, CYAN_HUE));
 
 pub(crate) const ZENBURN_BLUE_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.7928748, 0.08759226, 253.56883));
 pub(crate) const ZENBURN_BLUE: Lazy<Oklch> = Lazy::new(|| oklch(0.8875058, 0.045272067, 231.736));
