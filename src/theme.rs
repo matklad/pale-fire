@@ -29,8 +29,8 @@ impl Theme {
         color_rule(colors, "activityBar.background", ZENBURN_BG_MINUS_05);
         color_rule(colors, "activityBar.foreground", ZENBURN_FG);
         color_rule(colors, "activityBar.inactiveForeground", ZENBURN_BG_PLUS_3);
-        color_rule(colors, "activityBarBadge.background", ZENBURN_CYAN_MINUS_1);
-        color_rule(colors, "activityBarBadge.foreground", ZENBURN_FG);
+        color_rule(colors, "activityBarBadge.background", ZENBURN_BLUE_MINUS_1);
+        color_rule(colors, "activityBarBadge.foreground", ZENBURN_BG);
         color_rule(colors, "badge.background", ZENBURN_BG_PLUS_2);
         color_rule(colors, "badge.foreground", ZENBURN_FG);
         color_rule(colors, "button.background", ZENBURN_BLUE_MINUS_1);
