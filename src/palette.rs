@@ -18,7 +18,7 @@ pub(crate) const ZENBURN_BG_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.42760777,
 pub(crate) const ZENBURN_BG_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.4854972, 0.0, 0.0));
 pub(crate) const ZENBURN_BG_PLUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.5417056, 0.0, 0.0));
 
-pub(crate) struct LightnessLevel(pub(crate) u32);
+pub(crate) struct LightnessLevel(u32);
 
 impl From<LightnessLevel> for f32 {
     fn from(lightness_level: LightnessLevel) -> Self {
@@ -30,6 +30,12 @@ impl From<LightnessLevel> for f32 {
             4 => 0.9,
             _ => unreachable!(),
         }
+    }
+}
+
+impl From<u32> for LightnessLevel {
+    fn from(level: u32) -> Self {
+        Self(level)
     }
 }
 
