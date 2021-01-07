@@ -44,8 +44,8 @@ macro_rules! def_color_fn {
     };
 }
 
-def_color_fn!(red, hue: 19.5);
-def_color_fn!(orange, hue: 55.112522);
+def_color_fn!(red, hue: 19.0);
+def_color_fn!(orange, hue: 55.0);
 def_color_fn!(yellow, hue: 91.0);
 def_color_fn!(green, hue: 145.0);
 def_color_fn!(cyan, hue: 200.0);
