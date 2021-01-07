@@ -14,7 +14,7 @@
 		"button.background": "#9AC3E5",
 		"button.foreground": "#3F3F3F",
 		"button.hoverBackground": "#DCDCCC",
-		"debugIcon.breakpointForeground": "#C48F8E",
+		"debugIcon.breakpointForeground": "#E5AEAD",
 		"diffEditor.insertedTextBackground": "#C4EAC433",
 		"diffEditor.removedTextBackground": "#E5AEAD33",
 		"editor.background": "#3F3F3F",
@@ -35,7 +35,7 @@
 		"editorGroupHeader.noTabsBackground": "#494949",
 		"editorGroupHeader.tabsBackground": "#2B2B2B",
 		"editorGutter.addedBackground": "#779A77",
-		"editorGutter.deletedBackground": "#C48F8E",
+		"editorGutter.deletedBackground": "#E5AEAD",
 		"editorGutter.modifiedBackground": "#CDBD8E",
 		"editorGroup.border": "#5F5F5F",
 		"editorIndentGuide.activeBackground": "#5F5F5F",
@@ -45,7 +45,7 @@
 		"editorLink.activeForeground": "#9AC3E5",
 		"editorOverviewRuler.addedForeground": "#779A77",
 		"editorOverviewRuler.border": "#5F5F5F",
-		"editorOverviewRuler.deletedForeground": "#C48F8E",
+		"editorOverviewRuler.deletedForeground": "#E5AEAD",
 		"editorOverviewRuler.errorForeground": "#B47F7F",
 		"editorOverviewRuler.findMatchForeground": "#9AC3E588",
 		"editorOverviewRuler.modifiedForeground": "#CDBD8E",
@@ -117,7 +117,7 @@
 		"terminal.ansiCyan": "#7BBBBE",
 		"terminal.ansiGreen": "#779A77",
 		"terminal.ansiMagenta": "#DFB396",
-		"terminal.ansiRed": "#C48F8E",
+		"terminal.ansiRed": "#E5AEAD",
 		"terminal.ansiWhite": "#DCDCCC",
 		"terminal.ansiYellow": "#CDBD8E",
 		"terminal.foreground": "#DCDCCC",
@@ -219,7 +219,7 @@
 			"foreground": "#C4EAC4"
 		},
 		"string": {
-			"foreground": "#C48F8E"
+			"foreground": "#E5AEAD"
 		},
 		"attribute": {
 			"foreground": "#9AC3E5"
@@ -407,7 +407,7 @@
 				"string"
 			],
 			"settings": {
-				"foreground": "#C48F8E"
+				"foreground": "#E5AEAD"
 			}
 		},
 		{
