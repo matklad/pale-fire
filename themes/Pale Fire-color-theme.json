@@ -139,7 +139,7 @@
 			"bold": true
 		},
 		"number": {
-			"foreground": "#C4EAC4",
+			"foreground": "#ABECEF",
 			"fontStyle": ""
 		},
 		"string": {
@@ -428,14 +428,14 @@
 		{
 			"scope": "constant.numeric",
 			"settings": {
-				"foreground": "#C4EAC4",
+				"foreground": "#ABECEF",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword.other.unit",
 			"settings": {
-				"foreground": "#C4EAC4",
+				"foreground": "#ABECEF",
 				"fontStyle": ""
 			}
 		},
