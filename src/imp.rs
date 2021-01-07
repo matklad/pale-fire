@@ -276,7 +276,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("entity.name.variable.parameter"),
             Textmate("variable.parameter"),
         ],
-        orange(2),
+        fg(),
     );
 
     builder.add_rules(

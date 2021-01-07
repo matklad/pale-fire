@@ -151,7 +151,7 @@
 			"fontStyle": ""
 		},
 		"parameter": {
-			"foreground": "#DFB396",
+			"foreground": "#DCDCCC",
 			"fontStyle": ""
 		},
 		"boolean": {
@@ -481,14 +481,14 @@
 		{
 			"scope": "entity.name.variable.parameter",
 			"settings": {
-				"foreground": "#DFB396",
+				"foreground": "#DCDCCC",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.parameter",
 			"settings": {
-				"foreground": "#DFB396",
+				"foreground": "#DCDCCC",
 				"fontStyle": ""
 			}
 		},
