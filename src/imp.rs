@@ -222,56 +222,50 @@ fn workspace_colors(builder: &mut ThemeBuilder) {
 fn syntax_highlighting(builder: &mut ThemeBuilder) {
     builder.add_rules(
         &[
-            Semantic("property"),
-            Textmate("entity.name.field"),
-            Textmate("entity.name.variable.field"),
-            Textmate("punctuation.support.type.property-name"),
-            Textmate("support.type.property-name"),
-            Textmate("support.type.vendored.property-name"),
-            Textmate("variable.other.member"),
-            Textmate("variable.other.object.property"),
-            Textmate("variable.other.property"),
+            Semantic("keyword"),
+            Textmate("constant.language.null"),
+            Textmate("entity.name.tag"),
+            Textmate("keyword.operator.expression"),
+            Textmate("keyword.operator.logical"),
+            Textmate("keyword.operator.new"),
+            Textmate("keyword.operator.wordlike"),
+            Textmate("keyword.type.go"),
+            Textmate("keyword"),
+            Textmate("markup.heading.marker"),
+            Textmate("punctuation.definition.heading"),
+            Textmate("storage.modifier"),
+            Textmate("storage.type.class"),
+            Textmate("storage.type.enum"),
+            Textmate("storage.type.function.python"),
+            Textmate("storage.type.function.ts"),
+            Textmate("storage.type.function"),
+            Textmate("storage.type.js"),
+            Textmate("storage.type.rust"),
+            Textmate("storage.type.struct"),
+            Textmate("storage.type.ts"),
+            Textmate("variable.language.this"),
         ],
-        green(3),
+        (yellow(4), FontStyle::Bold),
     );
 
     builder.add_rules(
         &[
-            Semantic("function"),
-            Textmate("entity.name.function"),
-            Textmate("meta.function-call.generic.python"),
-            Textmate("support.function"),
-        ],
-        cyan(3),
-    );
-
-    builder.add_rules(
-        &[
-            Semantic("namespace"),
-            Textmate("entity.name.module"),
-            Textmate("entity.name.namespace"),
-            Textmate("entity.name.type.namespace"),
-            Textmate("storage.modifier.import"),
-            Textmate("storage.modifier.package"),
+            Semantic("number"),
+            Textmate("constant.numeric"),
+            Textmate("keyword.other.unit"),
         ],
         green(4),
     );
 
     builder.add_rules(
         &[
-            Semantic("macro"),
-            Textmate("entity.name.macro"),
-            Textmate("entity.name.other.preprocessor.macro"),
+            Semantic("string"),
+            Textmate("constant.character"),
+            Textmate("punctuation.definition.char"),
+            Textmate("punctuation.definition.string"),
+            Textmate("string"),
         ],
-        blue(2),
-    );
-
-    builder.add_rules(
-        &[
-            Semantic("escapeSequence"),
-            Textmate("constant.character.escape"),
-        ],
-        blue(2),
+        red(1),
     );
 
     builder.add_rules(&[Semantic("variable"), Textmate("variable")], fg());
@@ -299,10 +293,14 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
     );
 
     builder.add_rules(
-        &[Semantic("*.mutable"), Textmate("meta.mutable")],
-        FontStyle::Underline,
+        &[
+            Semantic("function"),
+            Textmate("entity.name.function"),
+            Textmate("meta.function-call.generic.python"),
+            Textmate("support.function"),
+        ],
+        cyan(3),
     );
-    builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
 
     builder.add_rules(
         &[
@@ -348,6 +346,44 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("property"),
+            Textmate("entity.name.field"),
+            Textmate("entity.name.variable.field"),
+            Textmate("punctuation.support.type.property-name"),
+            Textmate("support.type.property-name"),
+            Textmate("support.type.vendored.property-name"),
+            Textmate("variable.other.member"),
+            Textmate("variable.other.object.property"),
+            Textmate("variable.other.property"),
+        ],
+        green(3),
+    );
+
+    builder.add_rule(Semantic("interface"), cyan(2));
+
+    builder.add_rules(
+        &[
+            Semantic("namespace"),
+            Textmate("entity.name.module"),
+            Textmate("entity.name.namespace"),
+            Textmate("entity.name.type.namespace"),
+            Textmate("storage.modifier.import"),
+            Textmate("storage.modifier.package"),
+        ],
+        green(4),
+    );
+
+    builder.add_rules(
+        &[
+            Semantic("macro"),
+            Textmate("entity.name.macro"),
+            Textmate("entity.name.other.preprocessor.macro"),
+        ],
+        blue(2),
+    );
+
+    builder.add_rules(
+        &[
             Semantic("lifetime"),
             Textmate("storage.modifier.lifetime.rust"),
             Textmate("entity.name.lifetime.rust"),
@@ -359,12 +395,13 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
-            Semantic("number"),
-            Textmate("constant.numeric"),
-            Textmate("keyword.other.unit"),
+            Semantic("escapeSequence"),
+            Textmate("constant.character.escape"),
         ],
-        green(4),
+        blue(2),
     );
+
+    builder.add_rule(Semantic("formatSpecifier"), blue(2));
 
     builder.add_rules(
         &[
@@ -385,17 +422,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
-            Semantic("string"),
-            Textmate("constant.character"),
-            Textmate("punctuation.definition.char"),
-            Textmate("punctuation.definition.string"),
-            Textmate("string"),
-        ],
-        red(1),
-    );
-
-    builder.add_rules(
-        &[
             Semantic("attribute"),
             Semantic("function.attribute"),
             Textmate("entity.name.function.decorator"),
@@ -410,34 +436,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
         blue(2),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("keyword"),
-            Textmate("constant.language.null"),
-            Textmate("entity.name.tag"),
-            Textmate("keyword.operator.expression"),
-            Textmate("keyword.operator.logical"),
-            Textmate("keyword.operator.new"),
-            Textmate("keyword.operator.wordlike"),
-            Textmate("keyword.type.go"),
-            Textmate("keyword"),
-            Textmate("markup.heading.marker"),
-            Textmate("punctuation.definition.heading"),
-            Textmate("storage.modifier"),
-            Textmate("storage.type.class"),
-            Textmate("storage.type.enum"),
-            Textmate("storage.type.function.python"),
-            Textmate("storage.type.function.ts"),
-            Textmate("storage.type.function"),
-            Textmate("storage.type.js"),
-            Textmate("storage.type.rust"),
-            Textmate("storage.type.struct"),
-            Textmate("storage.type.ts"),
-            Textmate("variable.language.this"),
-        ],
-        (yellow(4), FontStyle::Bold),
-    );
-
+    // CSS classes and IDs.
     builder.add_rules(
         &[
             Textmate("entity.other.attribute-name.class"),
@@ -466,14 +465,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
         fg(),
     );
 
-    builder.add_rules(
-        &[
-            Textmate("punctuation.definition.range.diff"),
-            Textmate("meta.diff.range"),
-        ],
-        blue(2),
-    );
-
     builder.add_rule(Textmate("markup.italic"), FontStyle::Italic);
     builder.add_rule(Textmate("markup.bold"), FontStyle::Bold);
     builder.add_rule(Textmate("markup.heading"), FontStyle::Underline);
@@ -493,9 +484,19 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
         red(ColorLightnessPreset::DiffFg),
     );
 
-    builder.add_rule(Semantic("formatSpecifier"), blue(2));
+    builder.add_rules(
+        &[
+            Textmate("punctuation.definition.range.diff"),
+            Textmate("meta.diff.range"),
+        ],
+        blue(2),
+    );
 
-    builder.add_rule(Semantic("interface"), cyan(2));
+    builder.add_rules(
+        &[Semantic("*.mutable"), Textmate("meta.mutable")],
+        FontStyle::Underline,
+    );
+    builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
 
     builder.add_rule(Semantic("magit-ref-name"), (cyan(3), FontStyle::Bold));
     builder.add_rule(
