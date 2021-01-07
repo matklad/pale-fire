@@ -359,7 +359,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
         orange(2),
     );
 
-    builder.add_rule(Semantic("interface"), cyan(2));
+    builder.add_rule(Semantic("interface"), cyan(4));
 
     builder.add_rules(
         &[
