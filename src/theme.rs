@@ -323,6 +323,9 @@ impl Theme {
         style_rule(colors, "*.mutable", FontStyle::Underline);
         style_rule(colors, "*.consuming", FontStyle::Italic);
 
+        style_rule(colors, "magit-ref-name", (cyan(3), FontStyle::Bold));
+        style_rule(colors, "magit-remote-ref-name", (green(0), FontStyle::Bold));
+
         json::Value::Object(colors_owned)
     }
 

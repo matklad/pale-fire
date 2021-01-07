@@ -235,6 +235,14 @@
 		},
 		"*.consuming": {
 			"italic": true
+		},
+		"magit-ref-name": {
+			"foreground": "#9BDBDE",
+			"bold": true
+		},
+		"magit-remote-ref-name": {
+			"foreground": "#779A77",
+			"bold": true
 		}
 	},
 	"tokenColors": [
