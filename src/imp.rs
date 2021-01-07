@@ -498,6 +498,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
     );
     builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
 
+    builder.add_rule(Semantic("unresolvedReference"), red(0));
+
     builder.add_rule(Semantic("magit-ref-name"), (cyan(3), FontStyle::Bold));
     builder.add_rule(
         Semantic("magit-remote-ref-name"),
