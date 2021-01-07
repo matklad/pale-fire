@@ -1,5 +1,4 @@
 #![allow(clippy::declare_interior_mutable_const, unused_attributes)]
-#![rustfmt::skip]
 
 use once_cell::unsync::Lazy;
 use tincture::{Hue, Oklch};
@@ -34,12 +33,45 @@ impl From<LightnessLevel> for f32 {
     }
 }
 
+pub(crate) enum LightnessLevelPreset {
+    TerminalAnsi,
+    TerminalAnsiBright,
+    DiffFg,
+    DiffBg,
+    Gutter,
+    OverviewRuler,
+    GitDecoration,
+    Minimap,
+}
+
+impl From<LightnessLevelPreset> for LightnessLevel {
+    fn from(lightness_level_preset: LightnessLevelPreset) -> Self {
+        Self(match lightness_level_preset {
+            LightnessLevelPreset::TerminalAnsi => 1,
+            LightnessLevelPreset::TerminalAnsiBright => 3,
+            LightnessLevelPreset::DiffFg => 3,
+            LightnessLevelPreset::DiffBg => 0,
+            LightnessLevelPreset::Gutter => 1,
+            LightnessLevelPreset::OverviewRuler => 2,
+            LightnessLevelPreset::GitDecoration => 3,
+            LightnessLevelPreset::Minimap => 2,
+        })
+    }
+}
+
+impl From<LightnessLevelPreset> for f32 {
+    fn from(lightness_level_preset: LightnessLevelPreset) -> Self {
+        let lightness_level = LightnessLevel::from(lightness_level_preset);
+        lightness_level.into()
+    }
+}
+
 const COLOR_CHROMA: f32 = 0.065;
 
 macro_rules! def_color_fn {
     ($name:ident, hue: $hue:literal) => {
-        pub(crate) fn $name(lightness_level: LightnessLevel) -> Oklch {
-            oklch(lightness_level.into(), COLOR_CHROMA, $hue)
+        pub(crate) fn $name(lightness_level: impl Into<LightnessLevel>) -> Oklch {
+            oklch(f32::from(lightness_level.into()), COLOR_CHROMA, $hue)
         }
     };
 }
@@ -50,14 +82,16 @@ def_color_fn!(yellow, hue: 91.0);
 def_color_fn!(green, hue: 145.0);
 def_color_fn!(cyan, hue: 200.0);
 
-pub(crate) fn blue(lightness_level: LightnessLevel) -> Oklch {
+pub(crate) fn blue(lightness_level: impl Into<LightnessLevel>) -> Oklch {
+    let lightness_level = lightness_level.into();
+
     let chroma = if lightness_level.0 == 4 {
         COLOR_CHROMA * 0.7
     } else {
         COLOR_CHROMA
     };
 
-    oklch(lightness_level.into(), chroma, 243.0)
+    oklch(f32::from(lightness_level), chroma, 243.0)
 }
 
 fn oklch(l: f32, c: f32, h: f32) -> Oklch {
