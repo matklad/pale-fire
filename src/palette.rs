@@ -13,11 +13,11 @@ pub(crate) fn bright_fg() -> Oklch {
     oklch(0.99, FG_CHROMA, FG_HUE)
 }
 
-pub(crate) struct GreyscaleLightness(u32);
+pub(crate) struct GreyscaleLightness(i32);
 
-impl From<u32> for GreyscaleLightness {
-    fn from(lightness: u32) -> Self {
-        assert!((0..=6).contains(&lightness));
+impl From<i32> for GreyscaleLightness {
+    fn from(lightness: i32) -> Self {
+        assert!((-2..=4).contains(&lightness));
         Self(lightness)
     }
 }
@@ -25,19 +25,19 @@ impl From<u32> for GreyscaleLightness {
 impl From<GreyscaleLightness> for f32 {
     fn from(lightness: GreyscaleLightness) -> Self {
         match lightness.0 {
-            0 => 0.3,
-            1 => 0.34,
-            2 => 0.37,
-            3 => 0.4,
-            4 => 0.43,
-            5 => 0.5,
-            6 => 0.55,
+            -2 => 0.3,
+            -1 => 0.34,
+            0 => 0.37,
+            1 => 0.4,
+            2 => 0.43,
+            3 => 0.5,
+            4 => 0.55,
             _ => unreachable!(),
         }
     }
 }
 
-pub(crate) fn bg(lightness: impl Into<GreyscaleLightness>) -> Oklch {
+pub(crate) fn greyscale(lightness: impl Into<GreyscaleLightness>) -> Oklch {
     oklch(f32::from(lightness.into()), 0.0, 0.0)
 }
 
