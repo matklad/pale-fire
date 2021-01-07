@@ -191,8 +191,16 @@ impl Theme {
         color_rule(colors, "sideBarTitle.foreground", bright_fg());
         color_rule(colors, "statusBar.background", greyscale(-2));
         color_rule(colors, "statusBar.debuggingBackground", greyscale(-2));
-        color_rule(colors, "statusBar.foreground", green(2));
-        color_rule(colors, "statusBar.debuggingForeground", orange(2));
+        color_rule(
+            colors,
+            "statusBar.foreground",
+            green(ColorLightnessPreset::StatusBar),
+        );
+        color_rule(
+            colors,
+            "statusBar.debuggingForeground",
+            orange(ColorLightnessPreset::StatusBar),
+        );
         color_rule(colors, "statusBar.noFolderBackground", greyscale(-2));
         color_rule(colors, "tab.activeForeground", fg());
         color_rule(colors, "tab.border", greyscale(0));
