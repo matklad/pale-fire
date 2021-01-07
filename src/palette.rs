@@ -6,11 +6,11 @@ const FG_CHROMA: f32 = 0.022;
 const FG_HUE: f32 = 107.0;
 
 pub(crate) fn fg() -> Oklch {
-    oklch(0.8901145, FG_CHROMA, FG_HUE)
+    oklch(0.89, FG_CHROMA, FG_HUE)
 }
 
 pub(crate) fn bright_fg() -> Oklch {
-    oklch(0.9957194, FG_CHROMA, FG_HUE)
+    oklch(0.99, FG_CHROMA, FG_HUE)
 }
 
 pub(crate) struct GreyscaleLightness(u32);
