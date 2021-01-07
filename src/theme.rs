@@ -291,7 +291,7 @@ impl Theme {
 
         style_rule(colors, "boolean", (blue(4), FontStyle::Clear));
         style_rule(colors, "comment", green(0));
-        style_rule(colors, "comment.documentation", green(2));
+        style_rule(colors, "comment.documentation", green(1));
         style_rule(colors, "keyword", (yellow(4), FontStyle::Bold));
         style_rule(colors, "*.unsafe", red(0));
         style_rule(colors, "function.unsafe", red(0));
