@@ -158,7 +158,7 @@
 			"foreground": "#B47F7F"
 		},
 		"property": {
-			"foreground": "#A4C9A4"
+			"foreground": "#B4DAB4"
 		},
 		"function": {
 			"foreground": "#9BDBDE"
@@ -250,7 +250,7 @@
 				"variable.other.property"
 			],
 			"settings": {
-				"foreground": "#A4C9A4"
+				"foreground": "#B4DAB4"
 			}
 		},
 		{
