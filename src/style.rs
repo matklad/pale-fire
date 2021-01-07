@@ -1,4 +1,3 @@
-use once_cell::unsync::Lazy;
 use tincture::{Hex, LinearRgb, Oklab, Oklch, Srgb};
 
 pub(crate) struct Style {
