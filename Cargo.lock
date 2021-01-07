@@ -63,6 +63,6 @@ dependencies = [
 
 [[package]]
 name = "tincture"
-version = "0.4.3"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c5ed303ea16fc658cf32e4f27c1a844d04db3ca8ee87cea6aee4d453c8ff91e"
+checksum = "05f713c3bf4e2ef169710223e7185c8eaa27a5e3709f64a042d7f7650c32f692"

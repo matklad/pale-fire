@@ -128,6 +128,6 @@ fn oklch(l: f32, c: f32, h: f32) -> Oklch {
     Oklch {
         l,
         c,
-        h: Hue::from_degrees(h),
+        h: Hue::from_degrees(h).unwrap(),
     }
 }

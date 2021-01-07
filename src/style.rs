@@ -1,4 +1,4 @@
-use tincture::{Hex, LinearRgb, Oklab, Oklch, Srgb};
+use tincture::{ColorSpace, Hex, LinearRgb, Oklab, Oklch, Srgb};
 
 pub(crate) struct Style {
     color: Option<Color>,
@@ -102,6 +102,8 @@ impl From<&Color> for json::Value {
         let oklab = Oklab::from(color.oklch);
         let linear_rgb: LinearRgb = tincture::convert(oklab);
         let srgb = Srgb::from(linear_rgb);
+        assert!(srgb.in_bounds());
+
         let hex = srgb.hex();
 
         let hex = if let Some(alpha) = color.alpha {
