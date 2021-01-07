@@ -1,5 +1,6 @@
 use tincture::{ColorSpace, Hex, LinearRgb, Oklab, Oklch, Srgb};
 
+#[derive(Clone, Copy)]
 pub(crate) struct Style {
     color: Option<Color>,
     font_style: Option<FontStyle>,
@@ -37,7 +38,7 @@ impl Style {
         let mut map = json::Map::new();
 
         if let Some(ref color) = self.color {
-            map.insert("foreground".to_string(), color.into());
+            map.insert("foreground".to_string(), (*color).into());
         }
 
         if let Some(ref font_style) = self.font_style {
@@ -59,6 +60,7 @@ impl Style {
     }
 }
 
+#[derive(Clone, Copy)]
 pub(crate) enum FontStyle {
     Bold,
     Italic,
@@ -77,6 +79,7 @@ impl From<&FontStyle> for json::Value {
     }
 }
 
+#[derive(Clone, Copy)]
 pub(crate) struct Color {
     oklch: Oklch,
     alpha: Option<u8>,
@@ -97,8 +100,8 @@ impl From<(Oklch, u8)> for Color {
     }
 }
 
-impl From<&Color> for json::Value {
-    fn from(color: &Color) -> Self {
+impl From<Color> for json::Value {
+    fn from(color: Color) -> Self {
         let oklab = Oklab::from(color.oklch);
         let linear_rgb: LinearRgb = tincture::convert(oklab);
         let srgb = Srgb::from(linear_rgb);

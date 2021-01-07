@@ -1,3 +1,4 @@
+mod imp;
 mod palette;
 mod style;
 mod theme;
@@ -6,10 +7,13 @@ use json::ser::PrettyFormatter;
 use json::Serializer;
 use serde::ser::Serialize;
 use std::{fs, io};
-use theme::Theme;
+use theme::{ThemeBuilder, Type};
 
 fn main() -> io::Result<()> {
-    let theme = Theme;
+    let mut theme_builder = ThemeBuilder::new("Pale Fire".to_string(), Type::Dark);
+    imp::add_rules(&mut theme_builder);
+
+    let theme = theme_builder.build();
     let json: json::Value = theme.into();
 
     let serialized_json = {
