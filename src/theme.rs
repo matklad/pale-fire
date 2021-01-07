@@ -296,7 +296,7 @@ impl Theme {
         style_rule(colors, "*.unsafe", red(0));
         style_rule(colors, "function.unsafe", red(0));
         style_rule(colors, "operator.unsafe", red(0));
-        style_rule(colors, "property", green(2));
+        style_rule(colors, "property", green(3));
         style_rule(colors, "function", cyan(3));
         style_rule(colors, "namespace", green(4));
         style_rule(colors, "macro", blue(2));
@@ -342,7 +342,7 @@ impl Theme {
                 "variable.other.object.property",
                 "variable.other.property",
             ],
-            green(2),
+            green(3),
         );
 
         textmate_rule(
