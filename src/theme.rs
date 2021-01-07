@@ -45,7 +45,7 @@ impl Theme {
         color_rule(
             colors,
             "diffEditor.removedTextBackground",
-            (ZENBURN_RED_PLUS_1, 0x33),
+            (ZENBURN_RED, 0x33),
         );
         color_rule(colors, "editor.background", ZENBURN_BG);
         color_rule(
@@ -88,7 +88,7 @@ impl Theme {
             ZENBURN_BG_PLUS_2,
         );
         color_rule(colors, "editorCursor.foreground", ZENBURN_FG_PLUS_1);
-        color_rule(colors, "editorError.foreground", ZENBURN_RED_PLUS_1);
+        color_rule(colors, "editorError.foreground", ZENBURN_RED);
         color_rule(
             colors,
             "editorGroup.dropBackground",
@@ -172,7 +172,7 @@ impl Theme {
         color_rule(colors, "input.placeholderForeground", ZENBURN_BG_PLUS_3);
         color_rule(colors, "list.activeSelectionBackground", ZENBURN_BG_PLUS_1);
         color_rule(colors, "list.activeSelectionForeground", ZENBURN_FG);
-        color_rule(colors, "list.errorForeground", ZENBURN_RED_PLUS_1);
+        color_rule(colors, "list.errorForeground", ZENBURN_RED);
         color_rule(colors, "list.focusBackground", ZENBURN_BG_PLUS_1);
         color_rule(colors, "list.highlightForeground", ZENBURN_BLUE);
         color_rule(colors, "list.hoverBackground", ZENBURN_BG);
@@ -182,7 +182,7 @@ impl Theme {
             ZENBURN_BG_PLUS_05,
         );
         color_rule(colors, "list.warningForeground", ZENBURN_ORANGE);
-        color_rule(colors, "minimap.errorHighlight", ZENBURN_RED_PLUS_1);
+        color_rule(colors, "minimap.errorHighlight", ZENBURN_RED);
         color_rule(
             colors,
             "minimap.findMatchHighlight",
@@ -257,7 +257,7 @@ impl Theme {
         color_rule(colors, "terminal.ansiBrightCyan", ZENBURN_CYAN_PLUS_2);
         color_rule(colors, "terminal.ansiBrightGreen", ZENBURN_GREEN_PLUS_1);
         color_rule(colors, "terminal.ansiBrightMagenta", ZENBURN_ORANGE);
-        color_rule(colors, "terminal.ansiBrightRed", ZENBURN_RED_PLUS_1);
+        color_rule(colors, "terminal.ansiBrightRed", ZENBURN_RED);
         color_rule(colors, "terminal.ansiBrightWhite", ZENBURN_FG_PLUS_1);
         color_rule(colors, "terminal.ansiBrightYellow", ZENBURN_YELLOW);
         color_rule(colors, "terminal.ansiCyan", ZENBURN_CYAN);
@@ -536,7 +536,7 @@ impl Theme {
         textmate_rule(
             colors,
             &["markup.deleted.diff", "punctuation.definition.deleted.diff"],
-            ZENBURN_RED_PLUS_1,
+            ZENBURN_RED,
         );
 
         json::Value::Array(colors_owned)
