@@ -72,6 +72,7 @@ pub(crate) enum ColorLightnessPreset {
     OverviewRuler,
     GitDecoration,
     Minimap,
+    StatusBar,
 }
 
 impl From<ColorLightnessPreset> for ColorLightness {
@@ -85,6 +86,7 @@ impl From<ColorLightnessPreset> for ColorLightness {
             ColorLightnessPreset::OverviewRuler => 2,
             ColorLightnessPreset::GitDecoration => 3,
             ColorLightnessPreset::Minimap => 2,
+            ColorLightnessPreset::StatusBar => 2,
         })
     }
 }
