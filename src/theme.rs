@@ -316,7 +316,7 @@ impl Theme {
         style_rule(colors, "typeParameter", orange(2));
         style_rule(colors, "lifetime", (orange(2), FontStyle::Italic));
         style_rule(colors, "number", green(4));
-        style_rule(colors, "string", red(2));
+        style_rule(colors, "string", red(1));
         style_rule(colors, "attribute", blue(2));
         style_rule(colors, "function.attribute", blue(2));
         style_rule(colors, "punctuation", fg());
@@ -458,7 +458,7 @@ impl Theme {
                 "punctuation.definition.string",
                 "string",
             ],
-            red(2),
+            red(1),
         );
 
         textmate_rule(

@@ -219,7 +219,7 @@
 			"foreground": "#C4EAC4"
 		},
 		"string": {
-			"foreground": "#E5AEAD"
+			"foreground": "#D49E9E"
 		},
 		"attribute": {
 			"foreground": "#9AC3E5"
@@ -407,7 +407,7 @@
 				"string"
 			],
 			"settings": {
-				"foreground": "#E5AEAD"
+				"foreground": "#D49E9E"
 			}
 		},
 		{
