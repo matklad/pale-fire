@@ -356,7 +356,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("variable.other.object.property"),
             Textmate("variable.other.property"),
         ],
-        green(3),
+        orange(2),
     );
 
     builder.add_rule(Semantic("interface"), cyan(2));

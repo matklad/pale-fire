@@ -203,7 +203,7 @@
 			"fontStyle": ""
 		},
 		"property": {
-			"foreground": "#B4DAB4",
+			"foreground": "#DFB396",
 			"fontStyle": ""
 		},
 		"interface": {
@@ -656,56 +656,56 @@
 		{
 			"scope": "entity.name.field",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "entity.name.variable.field",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "punctuation.support.type.property-name",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "support.type.property-name",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "support.type.vendored.property-name",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.other.member",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.other.object.property",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.other.property",
 			"settings": {
-				"foreground": "#B4DAB4",
+				"foreground": "#DFB396",
 				"fontStyle": ""
 			}
 		},
