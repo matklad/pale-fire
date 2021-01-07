@@ -7,8 +7,7 @@ use crate::theme::ThemeBuilder;
 
 pub(crate) fn add_rules(builder: &mut ThemeBuilder) {
     workspace_colors(builder);
-    semantic_colors(builder);
-    textmate_colors(builder);
+    syntax_highlighting(builder);
 }
 
 fn workspace_colors(builder: &mut ThemeBuilder) {
@@ -220,51 +219,10 @@ fn workspace_colors(builder: &mut ThemeBuilder) {
     builder.add_workspace_rule("widget.shadow", (Oklch::BLACK, 0x88));
 }
 
-fn semantic_colors(builder: &mut ThemeBuilder) {
-    builder.add_rule(Semantic("boolean"), (blue(4), FontStyle::Clear));
-    builder.add_rule(Semantic("comment"), green(0));
-    builder.add_rule(Semantic("comment.documentation"), green(1));
-    builder.add_rule(Semantic("keyword"), (yellow(4), FontStyle::Bold));
-    builder.add_rule(Semantic("*.unsafe"), red(0));
-    builder.add_rule(Semantic("function.unsafe"), red(0));
-    builder.add_rule(Semantic("operator.unsafe"), red(0));
-    builder.add_rule(Semantic("property"), green(3));
-    builder.add_rule(Semantic("function"), cyan(3));
-    builder.add_rule(Semantic("namespace"), green(4));
-    builder.add_rule(Semantic("macro"), blue(2));
-    builder.add_rule(Semantic("formatSpecifier"), blue(2));
-    builder.add_rule(Semantic("escapeSequence"), blue(2));
-    builder.add_rule(Semantic("variable"), fg());
-    builder.add_rule(Semantic("variable.static"), blue(4));
-    builder.add_rule(Semantic("parameter"), orange(2));
-    builder.add_rule(Semantic("struct"), cyan(1));
-    builder.add_rule(Semantic("enum"), cyan(1));
-    builder.add_rule(Semantic("union"), cyan(1));
-    builder.add_rule(Semantic("typeAlias"), cyan(1));
-    builder.add_rule(Semantic("builtinType"), cyan(2));
-    builder.add_rule(Semantic("type"), cyan(1));
-    builder.add_rule(Semantic("interface"), cyan(2));
-    builder.add_rule(Semantic("enumMember"), blue(4));
-    builder.add_rule(Semantic("typeParameter"), orange(2));
-    builder.add_rule(Semantic("lifetime"), (orange(2), FontStyle::Italic));
-    builder.add_rule(Semantic("number"), green(4));
-    builder.add_rule(Semantic("string"), red(1));
-    builder.add_rule(Semantic("attribute"), blue(2));
-    builder.add_rule(Semantic("function.attribute"), blue(2));
-    builder.add_rule(Semantic("punctuation"), fg());
-    builder.add_rule(Semantic("*.mutable"), FontStyle::Underline);
-    builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
-
-    builder.add_rule(Semantic("magit-ref-name"), (cyan(3), FontStyle::Bold));
-    builder.add_rule(
-        Semantic("magit-remote-ref-name"),
-        (green(0), FontStyle::Bold),
-    );
-}
-
-fn textmate_colors(builder: &mut ThemeBuilder) {
+fn syntax_highlighting(builder: &mut ThemeBuilder) {
     builder.add_rules(
         &[
+            Semantic("property"),
             Textmate("entity.name.field"),
             Textmate("entity.name.variable.field"),
             Textmate("punctuation.support.type.property-name"),
@@ -279,6 +237,7 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("function"),
             Textmate("entity.name.function"),
             Textmate("meta.function-call.generic.python"),
             Textmate("support.function"),
@@ -288,6 +247,7 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("namespace"),
             Textmate("entity.name.module"),
             Textmate("entity.name.namespace"),
             Textmate("entity.name.type.namespace"),
@@ -299,18 +259,26 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("macro"),
             Textmate("entity.name.macro"),
             Textmate("entity.name.other.preprocessor.macro"),
         ],
         blue(2),
     );
 
-    builder.add_rule(Textmate("constant.character.escape"), blue(2));
+    builder.add_rules(
+        &[
+            Semantic("escapeSequence"),
+            Textmate("constant.character.escape"),
+        ],
+        blue(2),
+    );
 
-    builder.add_rule(Textmate("variable"), fg());
+    builder.add_rules(&[Semantic("variable"), Textmate("variable")], fg());
 
     builder.add_rules(
         &[
+            Semantic("parameter"),
             Textmate("entity.name.variable.parameter"),
             Textmate("variable.parameter"),
         ],
@@ -319,6 +287,9 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("boolean"),
+            Semantic("enumMember"),
+            Semantic("variable.static"),
             Textmate("constant"),
             Textmate("entity.name.constant"),
             Textmate("variable.other.enummember"),
@@ -327,10 +298,20 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
         blue(4),
     );
 
-    builder.add_rule(Textmate("meta.mutable"), FontStyle::Underline);
+    builder.add_rules(
+        &[Semantic("*.mutable"), Textmate("meta.mutable")],
+        FontStyle::Underline,
+    );
+    builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
 
     builder.add_rules(
         &[
+            Semantic("type"),
+            Semantic("class"),
+            Semantic("struct"),
+            Semantic("enum"),
+            Semantic("union"),
+            Semantic("typeAlias"),
             Textmate("entity.name.type"),
             Textmate("storage.type"),
             Textmate("support.class"),
@@ -341,6 +322,7 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("builtinType"),
             Textmate("keyword.type"),
             Textmate("storage.type.boolean.go"),
             Textmate("storage.type.built-in"),
@@ -356,10 +338,17 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
         (cyan(2), FontStyle::Clear),
     );
 
-    builder.add_rule(Textmate("entity.name.type.parameter"), orange(2));
+    builder.add_rules(
+        &[
+            Semantic("typeParameter"),
+            Textmate("entity.name.type.parameter"),
+        ],
+        orange(2),
+    );
 
     builder.add_rules(
         &[
+            Semantic("lifetime"),
             Textmate("storage.modifier.lifetime.rust"),
             Textmate("entity.name.lifetime.rust"),
             Textmate("entity.name.type.lifetime"),
@@ -369,22 +358,34 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
     );
 
     builder.add_rules(
-        &[Textmate("constant.numeric"), Textmate("keyword.other.unit")],
+        &[
+            Semantic("number"),
+            Textmate("constant.numeric"),
+            Textmate("keyword.other.unit"),
+        ],
         (green(4), FontStyle::Clear),
     );
 
     builder.add_rules(
         &[
+            Semantic("comment"),
             Textmate("comment"),
             Textmate("punctuation.definition.comment"),
         ],
         green(0),
     );
 
-    builder.add_rule(Textmate("comment.line.documentation"), green(1));
+    builder.add_rules(
+        &[
+            Semantic("comment.documentation"),
+            Textmate("comment.line.documentation"),
+        ],
+        green(1),
+    );
 
     builder.add_rules(
         &[
+            Semantic("string"),
             Textmate("constant.character"),
             Textmate("punctuation.definition.char"),
             Textmate("punctuation.definition.string"),
@@ -395,6 +396,8 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("attribute"),
+            Semantic("function.attribute"),
             Textmate("entity.name.function.decorator"),
             Textmate("meta.attribute"),
             Textmate("punctuation.brackets.attribute"),
@@ -409,6 +412,7 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
 
     builder.add_rules(
         &[
+            Semantic("keyword"),
             Textmate("constant.language.null"),
             Textmate("entity.name.tag"),
             Textmate("keyword.operator.expression"),
@@ -442,10 +446,19 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
         cyan(1),
     );
 
-    builder.add_rule(Textmate("keyword.other.unsafe"), red(0));
+    builder.add_rules(
+        &[
+            Semantic("*.unsafe"),
+            Semantic("function.unsafe"),
+            Semantic("operator.unsafe"),
+            Textmate("keyword.other.unsafe"),
+        ],
+        red(0),
+    );
 
     builder.add_rules(
         &[
+            Semantic("punctuation"),
             Textmate("keyword.operator.logical.rust"),
             Textmate("keyword.operator"),
             Textmate("punctuation"),
@@ -480,5 +493,14 @@ fn textmate_colors(builder: &mut ThemeBuilder) {
         red(ColorLightnessPreset::DiffFg),
     );
 
+    builder.add_rule(Semantic("formatSpecifier"), blue(2));
+
+    builder.add_rule(Semantic("interface"), cyan(2));
+
+    builder.add_rule(Semantic("magit-ref-name"), (cyan(3), FontStyle::Bold));
+    builder.add_rule(
+        Semantic("magit-remote-ref-name"),
+        (green(0), FontStyle::Bold),
+    );
     builder.add_rule(Textmate("magit.subheader"), (greyscale(5), FontStyle::Bold));
 }

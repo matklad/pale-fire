@@ -134,8 +134,80 @@
 	},
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
+		"property": {
+			"foreground": "#B4DAB4"
+		},
+		"function": {
+			"foreground": "#9BDBDE"
+		},
+		"namespace": {
+			"foreground": "#C4EAC4",
+			"fontStyle": ""
+		},
+		"macro": {
+			"foreground": "#9AC3E5"
+		},
+		"escapeSequence": {
+			"foreground": "#9AC3E5"
+		},
+		"variable": {
+			"foreground": "#DCDCCC"
+		},
+		"parameter": {
+			"foreground": "#DFB396"
+		},
 		"boolean": {
-			"foreground": "#C5E2FA",
+			"foreground": "#C5E2FA"
+		},
+		"enumMember": {
+			"foreground": "#C5E2FA"
+		},
+		"variable.static": {
+			"foreground": "#C5E2FA"
+		},
+		"*.mutable": {
+			"underline": true
+		},
+		"*.consuming": {
+			"italic": true
+		},
+		"type": {
+			"foreground": "#7BBBBE",
+			"fontStyle": ""
+		},
+		"class": {
+			"foreground": "#7BBBBE",
+			"fontStyle": ""
+		},
+		"struct": {
+			"foreground": "#7BBBBE",
+			"fontStyle": ""
+		},
+		"enum": {
+			"foreground": "#7BBBBE",
+			"fontStyle": ""
+		},
+		"union": {
+			"foreground": "#7BBBBE",
+			"fontStyle": ""
+		},
+		"typeAlias": {
+			"foreground": "#7BBBBE",
+			"fontStyle": ""
+		},
+		"builtinType": {
+			"foreground": "#8BCBCE",
+			"fontStyle": ""
+		},
+		"typeParameter": {
+			"foreground": "#DFB396"
+		},
+		"lifetime": {
+			"foreground": "#DFB396",
+			"italic": true
+		},
+		"number": {
+			"foreground": "#C4EAC4",
 			"fontStyle": ""
 		},
 		"comment": {
@@ -143,6 +215,17 @@
 		},
 		"comment.documentation": {
 			"foreground": "#95B995"
+		},
+		"string": {
+			"foreground": "#D49E9E"
+		},
+		"attribute": {
+			"foreground": "#9AC3E5",
+			"fontStyle": ""
+		},
+		"function.attribute": {
+			"foreground": "#9AC3E5",
+			"fontStyle": ""
 		},
 		"keyword": {
 			"foreground": "#EEDDAD",
@@ -157,84 +240,15 @@
 		"operator.unsafe": {
 			"foreground": "#B47F7F"
 		},
-		"property": {
-			"foreground": "#B4DAB4"
-		},
-		"function": {
-			"foreground": "#9BDBDE"
-		},
-		"namespace": {
-			"foreground": "#C4EAC4"
-		},
-		"macro": {
-			"foreground": "#9AC3E5"
+		"punctuation": {
+			"foreground": "#DCDCCC",
+			"fontStyle": ""
 		},
 		"formatSpecifier": {
 			"foreground": "#9AC3E5"
 		},
-		"escapeSequence": {
-			"foreground": "#9AC3E5"
-		},
-		"variable": {
-			"foreground": "#DCDCCC"
-		},
-		"variable.static": {
-			"foreground": "#C5E2FA"
-		},
-		"parameter": {
-			"foreground": "#DFB396"
-		},
-		"struct": {
-			"foreground": "#7BBBBE"
-		},
-		"enum": {
-			"foreground": "#7BBBBE"
-		},
-		"union": {
-			"foreground": "#7BBBBE"
-		},
-		"typeAlias": {
-			"foreground": "#7BBBBE"
-		},
-		"builtinType": {
-			"foreground": "#8BCBCE"
-		},
-		"type": {
-			"foreground": "#7BBBBE"
-		},
 		"interface": {
 			"foreground": "#8BCBCE"
-		},
-		"enumMember": {
-			"foreground": "#C5E2FA"
-		},
-		"typeParameter": {
-			"foreground": "#DFB396"
-		},
-		"lifetime": {
-			"foreground": "#DFB396",
-			"italic": true
-		},
-		"number": {
-			"foreground": "#C4EAC4"
-		},
-		"string": {
-			"foreground": "#D49E9E"
-		},
-		"attribute": {
-			"foreground": "#9AC3E5"
-		},
-		"function.attribute": {
-			"foreground": "#9AC3E5"
-		},
-		"punctuation": {
-			"foreground": "#DCDCCC"
-		},
-		"*.mutable": {
-			"underline": true
-		},
-		"*.consuming": {
-			"italic": true
 		},
 		"magit-ref-name": {
 			"foreground": "#9BDBDE",
