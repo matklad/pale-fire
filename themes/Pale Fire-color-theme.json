@@ -30,7 +30,7 @@
 		"editor.wordHighlightBackground": "#5F5F5F",
 		"editor.wordHighlightStrongBackground": "#5F5F5F",
 		"editorCursor.foreground": "#FFFFEE",
-		"editorError.foreground": "#D49E9D",
+		"editorError.foreground": "#E5AEAD",
 		"editorGroup.dropBackground": "#9AC3E522",
 		"editorGroupHeader.noTabsBackground": "#494949",
 		"editorGroupHeader.tabsBackground": "#2B2B2B",
@@ -46,7 +46,7 @@
 		"editorOverviewRuler.addedForeground": "#779A77",
 		"editorOverviewRuler.border": "#5F5F5F",
 		"editorOverviewRuler.deletedForeground": "#C48F8E",
-		"editorOverviewRuler.errorForeground": "#A47170",
+		"editorOverviewRuler.errorForeground": "#B47F7F",
 		"editorOverviewRuler.findMatchForeground": "#9AC3E588",
 		"editorOverviewRuler.modifiedForeground": "#CDBD8E",
 		"editorWarning.foreground": "#DFB396",
@@ -56,13 +56,13 @@
 		"foreground": "#DCDCCC",
 		"gitDecoration.ignoredResourceForeground": "#6F6F6F",
 		"gitDecoration.modifiedResourceForeground": "#EEDDAD",
-		"gitDecoration.untrackedResourceForeground": "#B4DAB4",
+		"gitDecoration.untrackedResourceForeground": "#A4C9A4",
 		"input.background": "#FFFFFF0A",
 		"input.foreground": "#DCDCCC",
 		"input.placeholderForeground": "#6F6F6F",
 		"list.activeSelectionBackground": "#4F4F4F",
 		"list.activeSelectionForeground": "#DCDCCC",
-		"list.errorForeground": "#D49E9D",
+		"list.errorForeground": "#E5AEAD",
 		"list.focusBackground": "#4F4F4F",
 		"list.highlightForeground": "#C5E2FA",
 		"list.hoverBackground": "#3F3F3F",
@@ -97,7 +97,7 @@
 		"sideBarTitle.foreground": "#FFFFEE",
 		"statusBar.background": "#2B2B2B",
 		"statusBar.debuggingBackground": "#2B2B2B",
-		"statusBar.foreground": "#95B995",
+		"statusBar.foreground": "#A4C9A4",
 		"statusBar.debuggingForeground": "#DFB396",
 		"statusBar.noFolderBackground": "#2B2B2B",
 		"tab.activeForeground": "#DCDCCC",
@@ -158,7 +158,7 @@
 			"foreground": "#B47F7F"
 		},
 		"property": {
-			"foreground": "#B4DAB4"
+			"foreground": "#A4C9A4"
 		},
 		"function": {
 			"foreground": "#9BDBDE"
@@ -250,7 +250,7 @@
 				"variable.other.property"
 			],
 			"settings": {
-				"foreground": "#B4DAB4"
+				"foreground": "#A4C9A4"
 			}
 		},
 		{
