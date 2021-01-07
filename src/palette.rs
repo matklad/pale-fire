@@ -1,22 +1,40 @@
-#![allow(clippy::declare_interior_mutable_const, unused_attributes)]
-
-use once_cell::unsync::Lazy;
 use tincture::{Hue, Oklch};
 
 // Colors are from https://github.com/bbatsov/zenburn_emacs/blob/master/zenburn_theme.el
 
-const FG_CHROMA: f32 = 0.022;
-const FG_HUE: f32 = 107.0;
-pub(crate) const ZENBURN_FG: Lazy<Oklch> = Lazy::new(|| oklch(0.8901145, FG_CHROMA, FG_HUE));
-pub(crate) const ZENBURN_FG_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.9957194, FG_CHROMA, FG_HUE));
+pub(crate) struct GreyscaleLightness(u32);
 
-pub(crate) const ZENBURN_BG_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.28908, 0.0, 0.0));
-pub(crate) const ZENBURN_BG_MINUS_05: Lazy<Oklch> = Lazy::new(|| oklch(0.34069705, 0.0, 0.0));
-pub(crate) const ZENBURN_BG: Lazy<Oklch> = Lazy::new(|| oklch(0.36768097, 0.0, 0.0));
-pub(crate) const ZENBURN_BG_PLUS_05: Lazy<Oklch> = Lazy::new(|| oklch(0.4053975, 0.0, 0.0));
-pub(crate) const ZENBURN_BG_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.42760777, 0.0, 0.0));
-pub(crate) const ZENBURN_BG_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.4854972, 0.0, 0.0));
-pub(crate) const ZENBURN_BG_PLUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.5417056, 0.0, 0.0));
+impl From<u32> for GreyscaleLightness {
+    fn from(lightness: u32) -> Self {
+        assert!((0..=8).contains(&lightness));
+        Self(lightness)
+    }
+}
+
+impl From<GreyscaleLightness> for f32 {
+    fn from(lightness: GreyscaleLightness) -> Self {
+        match lightness.0 {
+            0 => 0.28908,
+            1 => 0.34069705,
+            2 => 0.36768097,
+            3 => 0.4053975,
+            4 => 0.42760777,
+            5 => 0.4854972,
+            6 => 0.5417056,
+            7 => 0.8901145,
+            8 => 0.9957194,
+            _ => unreachable!(),
+        }
+    }
+}
+
+pub(crate) fn fg(lightness: impl Into<GreyscaleLightness>) -> Oklch {
+    oklch(f32::from(lightness.into()), 0.022, 107.0)
+}
+
+pub(crate) fn bg(lightness: impl Into<GreyscaleLightness>) -> Oklch {
+    oklch(f32::from(lightness.into()), 0.0, 0.0)
+}
 
 pub(crate) struct ColorLightness(u32);
 

@@ -89,24 +89,6 @@ impl From<Oklch> for Color {
     }
 }
 
-impl From<Lazy<Oklch>> for Color {
-    fn from(oklch: Lazy<Oklch>) -> Self {
-        Self {
-            oklch: *oklch,
-            alpha: None,
-        }
-    }
-}
-
-impl From<(Lazy<Oklch>, u8)> for Color {
-    fn from((oklch, alpha): (Lazy<Oklch>, u8)) -> Self {
-        Self {
-            oklch: *oklch,
-            alpha: Some(alpha),
-        }
-    }
-}
-
 impl From<(Oklch, u8)> for Color {
     fn from((oklch, alpha): (Oklch, u8)) -> Self {
         Self {
