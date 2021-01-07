@@ -254,7 +254,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("constant.numeric"),
             Textmate("keyword.other.unit"),
         ],
-        cyan(4),
+        green(3),
     );
 
     builder.add_rules(
