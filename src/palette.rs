@@ -2,11 +2,22 @@ use tincture::{Hue, Oklch};
 
 // Colors are from https://github.com/bbatsov/zenburn_emacs/blob/master/zenburn_theme.el
 
+const FG_CHROMA: f32 = 0.022;
+const FG_HUE: f32 = 107.0;
+
+pub(crate) fn fg() -> Oklch {
+    oklch(0.8901145, FG_CHROMA, FG_HUE)
+}
+
+pub(crate) fn bright_fg() -> Oklch {
+    oklch(0.9957194, FG_CHROMA, FG_HUE)
+}
+
 pub(crate) struct GreyscaleLightness(u32);
 
 impl From<u32> for GreyscaleLightness {
     fn from(lightness: u32) -> Self {
-        assert!((0..=8).contains(&lightness));
+        assert!((0..=6).contains(&lightness));
         Self(lightness)
     }
 }
@@ -21,15 +32,9 @@ impl From<GreyscaleLightness> for f32 {
             4 => 0.42760777,
             5 => 0.4854972,
             6 => 0.5417056,
-            7 => 0.8901145,
-            8 => 0.9957194,
             _ => unreachable!(),
         }
     }
-}
-
-pub(crate) fn fg(lightness: impl Into<GreyscaleLightness>) -> Oklch {
-    oklch(f32::from(lightness.into()), 0.022, 107.0)
 }
 
 pub(crate) fn bg(lightness: impl Into<GreyscaleLightness>) -> Oklch {
