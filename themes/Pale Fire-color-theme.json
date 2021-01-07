@@ -15,7 +15,7 @@
 		"button.foreground": "#3F3F3F",
 		"button.hoverBackground": "#DCDCCC",
 		"debugIcon.breakpointForeground": "#CC9392",
-		"diffEditor.insertedTextBackground": "#BFEBBF33",
+		"diffEditor.insertedTextBackground": "#C3E9C333",
 		"diffEditor.removedTextBackground": "#EEB2B133",
 		"editor.background": "#3F3F3F",
 		"editor.findMatchBackground": "#94BFF366",
@@ -34,7 +34,7 @@
 		"editorGroup.dropBackground": "#94BFF322",
 		"editorGroupHeader.noTabsBackground": "#494949",
 		"editorGroupHeader.tabsBackground": "#2B2B2B",
-		"editorGutter.addedBackground": "#7F9F7F",
+		"editorGutter.addedBackground": "#7CA07D",
 		"editorGutter.deletedBackground": "#CC9392",
 		"editorGutter.modifiedBackground": "#D0BF8F",
 		"editorGroup.border": "#5F5F5F",
@@ -43,7 +43,7 @@
 		"editorLightBulb.foreground": "#F0DFAF",
 		"editorLineNumber.foreground": "#5F5F5F",
 		"editorLink.activeForeground": "#94BFF3",
-		"editorOverviewRuler.addedForeground": "#7F9F7F",
+		"editorOverviewRuler.addedForeground": "#7CA07D",
 		"editorOverviewRuler.border": "#5F5F5F",
 		"editorOverviewRuler.deletedForeground": "#CC9392",
 		"editorOverviewRuler.errorForeground": "#AB7473",
@@ -56,7 +56,7 @@
 		"foreground": "#DCDCCC",
 		"gitDecoration.ignoredResourceForeground": "#6F6F6F",
 		"gitDecoration.modifiedResourceForeground": "#F0DFAF",
-		"gitDecoration.untrackedResourceForeground": "#AFD8AF",
+		"gitDecoration.untrackedResourceForeground": "#B1D7B1",
 		"input.background": "#FFFFFF0A",
 		"input.foreground": "#DCDCCC",
 		"input.placeholderForeground": "#6F6F6F",
@@ -87,7 +87,7 @@
 		"peekViewTitleDescription.foreground": "#94BFF3",
 		"peekViewTitleLabel.foreground": "#FFFFEF",
 		"progressBar.background": "#94BFF3",
-		"rust_analyzer.inlayHints.foreground": "#7F9F7F",
+		"rust_analyzer.inlayHints.foreground": "#7CA07D",
 		"scrollbar.shadow": "#00000088",
 		"selection.background": "#FFFFFF55",
 		"settings.headerForeground": "#FFFFEF",
@@ -97,7 +97,7 @@
 		"sideBarTitle.foreground": "#FFFFEF",
 		"statusBar.background": "#2B2B2B",
 		"statusBar.debuggingBackground": "#2B2B2B",
-		"statusBar.foreground": "#8FB28F",
+		"statusBar.foreground": "#8EB28E",
 		"statusBar.debuggingForeground": "#DFAF8F",
 		"statusBar.noFolderBackground": "#2B2B2B",
 		"tab.activeForeground": "#DCDCCC",
@@ -109,13 +109,13 @@
 		"terminal.ansiBrightBlack": "#6F6F6F",
 		"terminal.ansiBrightBlue": "#BDE0F3",
 		"terminal.ansiBrightCyan": "#93E0E3",
-		"terminal.ansiBrightGreen": "#BFEBBF",
+		"terminal.ansiBrightGreen": "#C3E9C3",
 		"terminal.ansiBrightMagenta": "#DFAF8F",
 		"terminal.ansiBrightRed": "#EEB2B1",
 		"terminal.ansiBrightWhite": "#FFFFEF",
 		"terminal.ansiBrightYellow": "#F0DFAF",
 		"terminal.ansiCyan": "#7CB8BB",
-		"terminal.ansiGreen": "#7F9F7F",
+		"terminal.ansiGreen": "#7CA07D",
 		"terminal.ansiMagenta": "#DFAF8F",
 		"terminal.ansiRed": "#CC9392",
 		"terminal.ansiWhite": "#DCDCCC",
@@ -139,10 +139,10 @@
 			"fontStyle": ""
 		},
 		"comment": {
-			"foreground": "#7F9F7F"
+			"foreground": "#7CA07D"
 		},
 		"comment.documentation": {
-			"foreground": "#9FC59F"
+			"foreground": "#A0C5A0"
 		},
 		"keyword": {
 			"foreground": "#F0DFAF",
@@ -158,13 +158,13 @@
 			"foreground": "#BC8383"
 		},
 		"property": {
-			"foreground": "#AFD8AF"
+			"foreground": "#B1D7B1"
 		},
 		"function": {
 			"foreground": "#93E0E3"
 		},
 		"namespace": {
-			"foreground": "#BFEBBF"
+			"foreground": "#C3E9C3"
 		},
 		"macro": {
 			"foreground": "#94BFF3"
@@ -216,7 +216,7 @@
 			"italic": true
 		},
 		"number": {
-			"foreground": "#BFEBBF"
+			"foreground": "#C3E9C3"
 		},
 		"string": {
 			"foreground": "#CC9392"
@@ -250,7 +250,7 @@
 				"variable.other.property"
 			],
 			"settings": {
-				"foreground": "#AFD8AF"
+				"foreground": "#B1D7B1"
 			}
 		},
 		{
@@ -272,7 +272,7 @@
 				"storage.modifier.package"
 			],
 			"settings": {
-				"foreground": "#BFEBBF",
+				"foreground": "#C3E9C3",
 				"fontStyle": ""
 			}
 		},
@@ -386,7 +386,7 @@
 				"keyword.other.unit"
 			],
 			"settings": {
-				"foreground": "#BFEBBF",
+				"foreground": "#C3E9C3",
 				"fontStyle": ""
 			}
 		},
@@ -396,7 +396,7 @@
 				"punctuation.definition.comment"
 			],
 			"settings": {
-				"foreground": "#7F9F7F"
+				"foreground": "#7CA07D"
 			}
 		},
 		{
@@ -513,7 +513,7 @@
 				"punctuation.definition.inserted.diff"
 			],
 			"settings": {
-				"foreground": "#BFEBBF"
+				"foreground": "#C3E9C3"
 			}
 		},
 		{
