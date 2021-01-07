@@ -18,11 +18,11 @@ pub(crate) const ZENBURN_BG_PLUS_1: Lazy<Oklch> = Lazy::new(|| oklch(0.42760777,
 pub(crate) const ZENBURN_BG_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(0.4854972, 0.0, 0.0));
 pub(crate) const ZENBURN_BG_PLUS_3: Lazy<Oklch> = Lazy::new(|| oklch(0.5417056, 0.0, 0.0));
 
-pub(crate) struct LightnessLevel(u32);
+pub(crate) struct ColorLightness(u32);
 
-impl From<LightnessLevel> for f32 {
-    fn from(lightness_level: LightnessLevel) -> Self {
-        match lightness_level.0 {
+impl From<ColorLightness> for f32 {
+    fn from(lightness: ColorLightness) -> Self {
+        match lightness.0 {
             0 => 0.65,
             1 => 0.75,
             2 => 0.8,
@@ -33,13 +33,14 @@ impl From<LightnessLevel> for f32 {
     }
 }
 
-impl From<u32> for LightnessLevel {
-    fn from(level: u32) -> Self {
-        Self(level)
+impl From<u32> for ColorLightness {
+    fn from(lightness: u32) -> Self {
+        assert!((0..=4).contains(&lightness));
+        Self(lightness)
     }
 }
 
-pub(crate) enum LightnessLevelPreset {
+pub(crate) enum ColorLightnessPreset {
     TerminalAnsi,
     TerminalAnsiBright,
     DiffFg,
@@ -50,25 +51,25 @@ pub(crate) enum LightnessLevelPreset {
     Minimap,
 }
 
-impl From<LightnessLevelPreset> for LightnessLevel {
-    fn from(lightness_level_preset: LightnessLevelPreset) -> Self {
-        Self(match lightness_level_preset {
-            LightnessLevelPreset::TerminalAnsi => 1,
-            LightnessLevelPreset::TerminalAnsiBright => 3,
-            LightnessLevelPreset::DiffFg => 3,
-            LightnessLevelPreset::DiffBg => 0,
-            LightnessLevelPreset::Gutter => 1,
-            LightnessLevelPreset::OverviewRuler => 2,
-            LightnessLevelPreset::GitDecoration => 3,
-            LightnessLevelPreset::Minimap => 2,
+impl From<ColorLightnessPreset> for ColorLightness {
+    fn from(preset: ColorLightnessPreset) -> Self {
+        Self(match preset {
+            ColorLightnessPreset::TerminalAnsi => 1,
+            ColorLightnessPreset::TerminalAnsiBright => 3,
+            ColorLightnessPreset::DiffFg => 3,
+            ColorLightnessPreset::DiffBg => 0,
+            ColorLightnessPreset::Gutter => 1,
+            ColorLightnessPreset::OverviewRuler => 2,
+            ColorLightnessPreset::GitDecoration => 3,
+            ColorLightnessPreset::Minimap => 2,
         })
     }
 }
 
-impl From<LightnessLevelPreset> for f32 {
-    fn from(lightness_level_preset: LightnessLevelPreset) -> Self {
-        let lightness_level = LightnessLevel::from(lightness_level_preset);
-        lightness_level.into()
+impl From<ColorLightnessPreset> for f32 {
+    fn from(preset: ColorLightnessPreset) -> Self {
+        let lightness = ColorLightness::from(preset);
+        lightness.into()
     }
 }
 
@@ -76,8 +77,8 @@ const COLOR_CHROMA: f32 = 0.065;
 
 macro_rules! def_color_fn {
     ($name:ident, hue: $hue:literal) => {
-        pub(crate) fn $name(lightness_level: impl Into<LightnessLevel>) -> Oklch {
-            oklch(f32::from(lightness_level.into()), COLOR_CHROMA, $hue)
+        pub(crate) fn $name(lightness: impl Into<ColorLightness>) -> Oklch {
+            oklch(f32::from(lightness.into()), COLOR_CHROMA, $hue)
         }
     };
 }
@@ -88,16 +89,16 @@ def_color_fn!(yellow, hue: 91.0);
 def_color_fn!(green, hue: 145.0);
 def_color_fn!(cyan, hue: 200.0);
 
-pub(crate) fn blue(lightness_level: impl Into<LightnessLevel>) -> Oklch {
-    let lightness_level = lightness_level.into();
+pub(crate) fn blue(lightness: impl Into<ColorLightness>) -> Oklch {
+    let lightness = lightness.into();
 
-    let chroma = if lightness_level.0 == 4 {
+    let chroma = if lightness.0 == 4 {
         COLOR_CHROMA * 0.7
     } else {
         COLOR_CHROMA
     };
 
-    oklch(f32::from(lightness_level), chroma, 243.0)
+    oklch(f32::from(lightness), chroma, 243.0)
 }
 
 fn oklch(l: f32, c: f32, h: f32) -> Oklch {

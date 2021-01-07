@@ -40,12 +40,12 @@ impl Theme {
         color_rule(
             colors,
             "diffEditor.insertedTextBackground",
-            (green(LightnessLevelPreset::DiffBg), 0x33),
+            (green(ColorLightnessPreset::DiffBg), 0x33),
         );
         color_rule(
             colors,
             "diffEditor.removedTextBackground",
-            (red(LightnessLevelPreset::DiffBg), 0x33),
+            (red(ColorLightnessPreset::DiffBg), 0x33),
         );
         color_rule(colors, "editor.background", ZENBURN_BG);
         color_rule(colors, "editor.findMatchBackground", (blue(2), 0x66));
@@ -95,17 +95,17 @@ impl Theme {
         color_rule(
             colors,
             "editorGutter.addedBackground",
-            green(LightnessLevelPreset::Gutter),
+            green(ColorLightnessPreset::Gutter),
         );
         color_rule(
             colors,
             "editorGutter.deletedBackground",
-            red(LightnessLevelPreset::Gutter),
+            red(ColorLightnessPreset::Gutter),
         );
         color_rule(
             colors,
             "editorGutter.modifiedBackground",
-            yellow(LightnessLevelPreset::Gutter),
+            yellow(ColorLightnessPreset::Gutter),
         );
         color_rule(colors, "editorGroup.border", ZENBURN_BG_PLUS_2);
         color_rule(
@@ -120,28 +120,28 @@ impl Theme {
         color_rule(
             colors,
             "editorOverviewRuler.addedForeground",
-            green(LightnessLevelPreset::OverviewRuler),
+            green(ColorLightnessPreset::OverviewRuler),
         );
         color_rule(colors, "editorOverviewRuler.border", ZENBURN_BG_PLUS_2);
         color_rule(
             colors,
             "editorOverviewRuler.deletedForeground",
-            red(LightnessLevelPreset::OverviewRuler),
+            red(ColorLightnessPreset::OverviewRuler),
         );
         color_rule(
             colors,
             "editorOverviewRuler.errorForeground",
-            red(LightnessLevelPreset::OverviewRuler),
+            red(ColorLightnessPreset::OverviewRuler),
         );
         color_rule(
             colors,
             "editorOverviewRuler.findMatchForeground",
-            (blue(LightnessLevelPreset::OverviewRuler), 0x88),
+            (blue(ColorLightnessPreset::OverviewRuler), 0x88),
         );
         color_rule(
             colors,
             "editorOverviewRuler.modifiedForeground",
-            yellow(LightnessLevelPreset::OverviewRuler),
+            yellow(ColorLightnessPreset::OverviewRuler),
         );
         color_rule(colors, "editorWarning.foreground", orange(2));
         color_rule(colors, "editorWidget.background", ZENBURN_BG_MINUS_05);
@@ -156,12 +156,12 @@ impl Theme {
         color_rule(
             colors,
             "gitDecoration.modifiedResourceForeground",
-            yellow(LightnessLevelPreset::GitDecoration),
+            yellow(ColorLightnessPreset::GitDecoration),
         );
         color_rule(
             colors,
             "gitDecoration.untrackedResourceForeground",
-            green(LightnessLevelPreset::GitDecoration),
+            green(ColorLightnessPreset::GitDecoration),
         );
         color_rule(colors, "input.background", (Oklch::WHITE, 0x0A)); // input field lightens what is behind it
         color_rule(colors, "input.foreground", ZENBURN_FG);
@@ -181,12 +181,12 @@ impl Theme {
         color_rule(
             colors,
             "minimap.errorHighlight",
-            red(LightnessLevelPreset::Minimap),
+            red(ColorLightnessPreset::Minimap),
         );
         color_rule(
             colors,
             "minimap.findMatchHighlight",
-            (blue(LightnessLevelPreset::Minimap), 0x66),
+            (blue(ColorLightnessPreset::Minimap), 0x66),
         );
         color_rule(
             colors,
@@ -242,65 +242,65 @@ impl Theme {
         color_rule(
             colors,
             "terminal.ansiBlue",
-            blue(LightnessLevelPreset::TerminalAnsi),
+            blue(ColorLightnessPreset::TerminalAnsi),
         );
         color_rule(colors, "terminal.ansiBrightBlack", ZENBURN_BG_PLUS_3);
         color_rule(
             colors,
             "terminal.ansiBrightBlue",
-            blue(LightnessLevelPreset::TerminalAnsiBright),
+            blue(ColorLightnessPreset::TerminalAnsiBright),
         );
         color_rule(
             colors,
             "terminal.ansiBrightCyan",
-            cyan(LightnessLevelPreset::TerminalAnsiBright),
+            cyan(ColorLightnessPreset::TerminalAnsiBright),
         );
         color_rule(
             colors,
             "terminal.ansiBrightGreen",
-            green(LightnessLevelPreset::TerminalAnsiBright),
+            green(ColorLightnessPreset::TerminalAnsiBright),
         );
         color_rule(
             colors,
             "terminal.ansiBrightMagenta",
-            orange(LightnessLevelPreset::TerminalAnsiBright),
+            orange(ColorLightnessPreset::TerminalAnsiBright),
         );
         color_rule(
             colors,
             "terminal.ansiBrightRed",
-            red(LightnessLevelPreset::TerminalAnsiBright),
+            red(ColorLightnessPreset::TerminalAnsiBright),
         );
         color_rule(colors, "terminal.ansiBrightWhite", ZENBURN_FG_PLUS_1);
         color_rule(
             colors,
             "terminal.ansiBrightYellow",
-            yellow(LightnessLevelPreset::TerminalAnsiBright),
+            yellow(ColorLightnessPreset::TerminalAnsiBright),
         );
         color_rule(
             colors,
             "terminal.ansiCyan",
-            cyan(LightnessLevelPreset::TerminalAnsi),
+            cyan(ColorLightnessPreset::TerminalAnsi),
         );
         color_rule(
             colors,
             "terminal.ansiGreen",
-            green(LightnessLevelPreset::TerminalAnsi),
+            green(ColorLightnessPreset::TerminalAnsi),
         );
         color_rule(
             colors,
             "terminal.ansiMagenta",
-            orange(LightnessLevelPreset::TerminalAnsi),
+            orange(ColorLightnessPreset::TerminalAnsi),
         );
         color_rule(
             colors,
             "terminal.ansiRed",
-            red(LightnessLevelPreset::TerminalAnsi),
+            red(ColorLightnessPreset::TerminalAnsi),
         );
         color_rule(colors, "terminal.ansiWhite", ZENBURN_FG);
         color_rule(
             colors,
             "terminal.ansiYellow",
-            yellow(LightnessLevelPreset::TerminalAnsi),
+            yellow(ColorLightnessPreset::TerminalAnsi),
         );
         color_rule(colors, "terminal.foreground", ZENBURN_FG);
         color_rule(colors, "terminal.selectionBackground", ZENBURN_BG_MINUS_05); // Lighter than normal selection background to compensate for lighter terminal background
@@ -567,12 +567,12 @@ impl Theme {
                 "markup.inserted.diff",
                 "punctuation.definition.inserted.diff",
             ],
-            green(LightnessLevelPreset::DiffFg),
+            green(ColorLightnessPreset::DiffFg),
         );
         textmate_rule(
             colors,
             &["markup.deleted.diff", "punctuation.definition.deleted.diff"],
-            red(LightnessLevelPreset::DiffFg),
+            red(ColorLightnessPreset::DiffFg),
         );
 
         json::Value::Array(colors_owned)
