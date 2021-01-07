@@ -57,7 +57,7 @@ pub(crate) const ZENBURN_CYAN_PLUS_2: Lazy<Oklch> = Lazy::new(|| oklch(COLOR_L_P
 
 const BLUE_HUE: f32 = 243.0;
 pub(crate) const ZENBURN_BLUE_MINUS_1: Lazy<Oklch> = Lazy::new(|| oklch(COLOR_L, COLOR_CHROMA, BLUE_HUE));
-pub(crate) const ZENBURN_BLUE: Lazy<Oklch> = Lazy::new(|| oklch(COLOR_L_PLUS_2, COLOR_CHROMA, BLUE_HUE));
+pub(crate) const ZENBURN_BLUE: Lazy<Oklch> = Lazy::new(|| oklch(COLOR_L_PLUS_2, COLOR_CHROMA * 0.7, BLUE_HUE));
 
 fn oklch(l: f32, c: f32, h: f32) -> Oklch {
     Oklch {
