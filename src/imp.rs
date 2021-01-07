@@ -254,7 +254,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("storage.modifier.import"),
             Textmate("storage.modifier.package"),
         ],
-        (green(4), FontStyle::Clear),
+        green(4),
     );
 
     builder.add_rules(
@@ -317,7 +317,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("support.class"),
             Textmate("support.type"),
         ],
-        (cyan(1), FontStyle::Clear),
+        cyan(1),
     );
 
     builder.add_rules(
@@ -335,7 +335,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("storage.type.uintptr.go"),
             Textmate("support.type"),
         ],
-        (cyan(2), FontStyle::Clear),
+        cyan(2),
     );
 
     builder.add_rules(
@@ -363,7 +363,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("constant.numeric"),
             Textmate("keyword.other.unit"),
         ],
-        (green(4), FontStyle::Clear),
+        green(4),
     );
 
     builder.add_rules(
@@ -407,7 +407,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("storage.modifier.attribute"),
             Textmate("storage.type.annotation"),
         ],
-        (blue(2), FontStyle::Clear),
+        blue(2),
     );
 
     builder.add_rules(
@@ -463,7 +463,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Textmate("keyword.operator"),
             Textmate("punctuation"),
         ],
-        (fg(), FontStyle::Clear),
+        fg(),
     );
 
     builder.add_rules(

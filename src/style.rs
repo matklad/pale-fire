@@ -41,19 +41,22 @@ impl Style {
             map.insert("foreground".to_string(), (*color).into());
         }
 
-        if let Some(ref font_style) = self.font_style {
-            if in_textmate_rule {
-                map.insert("fontStyle".to_string(), font_style.into());
-            } else {
-                let (key, value) = match font_style {
-                    FontStyle::Bold => ("bold", json::Value::Bool(true)),
-                    FontStyle::Italic => ("italic", json::Value::Bool(true)),
-                    FontStyle::Underline => ("underline", json::Value::Bool(true)),
-                    FontStyle::Clear => ("fontStyle", json::Value::String(String::new())),
-                };
+        if in_textmate_rule {
+            let font_style = self.font_style.map_or_else(
+                || json::Value::String(String::new()),
+                |font_style| font_style.into(),
+            );
 
-                map.insert(key.to_string(), value);
-            }
+            map.insert("fontStyle".to_string(), font_style);
+        } else {
+            let (key, value) = match self.font_style {
+                Some(FontStyle::Bold) => ("bold", json::Value::Bool(true)),
+                Some(FontStyle::Italic) => ("italic", json::Value::Bool(true)),
+                Some(FontStyle::Underline) => ("underline", json::Value::Bool(true)),
+                None => ("fontStyle", json::Value::String(String::new())),
+            };
+
+            map.insert(key.to_string(), value);
         }
 
         json::Value::Object(map)
@@ -65,16 +68,14 @@ pub(crate) enum FontStyle {
     Bold,
     Italic,
     Underline,
-    Clear,
 }
 
-impl From<&FontStyle> for json::Value {
-    fn from(font_style: &FontStyle) -> Self {
+impl From<FontStyle> for json::Value {
+    fn from(font_style: FontStyle) -> Self {
         match font_style {
             FontStyle::Bold => Self::String("bold".to_string()),
             FontStyle::Italic => Self::String("italic".to_string()),
             FontStyle::Underline => Self::String("underline".to_string()),
-            FontStyle::Clear => Self::String(String::new()),
         }
     }
 }
