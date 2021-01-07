@@ -17,7 +17,7 @@ pub(crate) struct GreyscaleLightness(i32);
 
 impl From<i32> for GreyscaleLightness {
     fn from(lightness: i32) -> Self {
-        assert!((-2..=4).contains(&lightness));
+        assert!((-2..=5).contains(&lightness));
         Self(lightness)
     }
 }
@@ -32,6 +32,7 @@ impl From<GreyscaleLightness> for f32 {
             2 => 0.43,
             3 => 0.5,
             4 => 0.55,
+            5 => 0.7,
             _ => unreachable!(),
         }
     }

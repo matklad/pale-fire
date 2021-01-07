@@ -540,6 +540,15 @@
 			"settings": {
 				"foreground": "#F6BDBD"
 			}
+		},
+		{
+			"scope": [
+				"magit.subheader"
+			],
+			"settings": {
+				"foreground": "#9E9E9E",
+				"fontStyle": "bold"
+			}
 		}
 	]
 }

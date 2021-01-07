@@ -548,6 +548,12 @@ impl Theme {
             red(ColorLightnessPreset::DiffFg),
         );
 
+        textmate_rule(
+            colors,
+            &["magit.subheader"],
+            (greyscale(5), FontStyle::Bold),
+        );
+
         json::Value::Array(colors_owned)
     }
 }
