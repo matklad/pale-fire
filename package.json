@@ -27,6 +27,11 @@
                 "label": "Pale Fire",
                 "uiTheme": "vs-dark",
                 "path": "./themes/Pale Fire-color-theme.json"
+            },
+            {
+                "label": "Pale Fire High Contrast",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Pale Fire High Contrast-color-theme.json"
             }
         ]
     }

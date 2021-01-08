@@ -11,8 +11,15 @@ use std::{fs, io};
 use theme::{ThemeBuilder, Type};
 
 fn main() -> io::Result<()> {
-    let mut theme_builder = ThemeBuilder::new("Pale Fire".to_string(), Type::Dark);
-    imp::add_rules(&mut theme_builder, Palette::ORIGINAL);
+    gen_and_save_theme("Pale Fire", Palette::ORIGINAL)?;
+    gen_and_save_theme("Pale Fire High Contrast", Palette::HIGH_CONTRAST)?;
+
+    Ok(())
+}
+
+fn gen_and_save_theme(name: &str, palette: Palette) -> io::Result<()> {
+    let mut theme_builder = ThemeBuilder::new(name.to_string(), Type::Dark);
+    imp::add_rules(&mut theme_builder, palette);
 
     let theme = theme_builder.build();
     let json: json::Value = theme.into();
@@ -32,7 +39,7 @@ fn main() -> io::Result<()> {
         buf
     };
 
-    fs::write("themes/Pale Fire-color-theme.json", serialized_json)?;
+    fs::write(format!("themes/{}-color-theme.json", name), serialized_json)?;
 
     Ok(())
 }

@@ -14,6 +14,12 @@ impl Palette {
         base_color_lightness: 0.8,
         color_chroma: 0.065,
     };
+
+    pub(crate) const HIGH_CONTRAST: Self = Self {
+        base_foreground_lightness: 0.93,
+        base_greyscale_lightness: 0.34,
+        base_color_lightness: 0.81,
+        color_chroma: 0.077,
     };
 
     const FG_CHROMA: f32 = 0.022;
@@ -29,7 +35,7 @@ impl Palette {
 
     pub(crate) fn bright_fg(&self) -> Oklch {
         oklch(
-            self.base_foreground_lightness + 0.1,
+            (self.base_foreground_lightness + 0.1).min(0.99),
             Self::FG_CHROMA,
             Self::FG_HUE,
         )
