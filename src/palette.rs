@@ -22,7 +22,7 @@ impl Palette {
         color_chroma: 0.077,
     };
 
-    const FG_CHROMA: f32 = 0.025;
+    const FG_CHROMA: f32 = 0.03;
     const FG_HUE: f32 = 107.0;
 
     pub(crate) fn fg(&self) -> Oklch {
