@@ -4,6 +4,7 @@ pub(crate) struct Palette {
     base_foreground_lightness: f32,
     base_greyscale_lightness: f32,
     base_color_lightness: f32,
+    color_chroma: f32,
 }
 
 impl Palette {
@@ -11,6 +12,8 @@ impl Palette {
         base_foreground_lightness: 0.89,
         base_greyscale_lightness: 0.37,
         base_color_lightness: 0.8,
+        color_chroma: 0.065,
+    };
     };
 
     const FG_CHROMA: f32 = 0.022;
@@ -70,13 +73,12 @@ macro_rules! def_color_method {
     ($name:ident, hue: $hue:literal) => {
         impl Palette {
             pub(crate) fn $name(&self, lightness: impl Into<ColorLightness>) -> Oklch {
-                oklch(self.color_lightness(lightness), COLOR_CHROMA, $hue)
+                oklch(self.color_lightness(lightness), self.color_chroma, $hue)
             }
         }
     };
 }
 
-const COLOR_CHROMA: f32 = 0.065;
 def_color_method!(red, hue: 19.0);
 def_color_method!(orange, hue: 55.0);
 def_color_method!(yellow, hue: 91.0);
@@ -88,9 +90,9 @@ impl Palette {
         let lightness = lightness.into();
 
         let chroma = if lightness.0 == 4 {
-            COLOR_CHROMA * 0.7
+            self.color_chroma.min(0.045)
         } else {
-            COLOR_CHROMA
+            self.color_chroma
         };
 
         oklch(self.color_lightness(lightness), chroma, 243.0)
