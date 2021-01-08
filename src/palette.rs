@@ -87,7 +87,7 @@ macro_rules! def_color_method {
 
 def_color_method!(red, hue: 19.0);
 def_color_method!(orange, hue: 55.0);
-def_color_method!(yellow, hue: 91.0);
+def_color_method!(yellow, hue: 97.0);
 def_color_method!(green, hue: 145.0);
 def_color_method!(cyan, hue: 200.0);
 
