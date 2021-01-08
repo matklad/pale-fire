@@ -50,7 +50,7 @@ impl Palette {
 
         match lightness.0 {
             -2 => self.base_greyscale_lightness - 0.07,
-            -1 => self.base_greyscale_lightness - 0.03,
+            -1 => self.base_greyscale_lightness - 0.025,
             0 => self.base_greyscale_lightness,
             1 => self.base_greyscale_lightness + 0.03,
             2 => self.base_greyscale_lightness + 0.06,
