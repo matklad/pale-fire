@@ -452,7 +452,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder) {
             Semantic("operator.unsafe"),
             Textmate("keyword.other.unsafe"),
         ],
-        red(0),
+        (red(0), FontStyle::Inherit),
     );
 
     builder.add_rules(

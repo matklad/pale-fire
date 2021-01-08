@@ -41,33 +41,37 @@ impl Style {
             map.insert("foreground".to_string(), (*color).into());
         }
 
-        if in_textmate_rule {
-            let font_style = self.font_style.map_or_else(
-                || json::Value::String(String::new()),
-                |font_style| font_style.into(),
-            );
+        if self.font_style != Some(FontStyle::Inherit) {
+            if in_textmate_rule {
+                let font_style = self.font_style.map_or_else(
+                    || json::Value::String(String::new()),
+                    |font_style| font_style.into(),
+                );
 
-            map.insert("fontStyle".to_string(), font_style);
-        } else {
-            let (key, value) = match self.font_style {
-                Some(FontStyle::Bold) => ("bold", json::Value::Bool(true)),
-                Some(FontStyle::Italic) => ("italic", json::Value::Bool(true)),
-                Some(FontStyle::Underline) => ("underline", json::Value::Bool(true)),
-                None => ("fontStyle", json::Value::String(String::new())),
-            };
+                map.insert("fontStyle".to_string(), font_style);
+            } else {
+                let (key, value) = match self.font_style {
+                    Some(FontStyle::Bold) => ("bold", json::Value::Bool(true)),
+                    Some(FontStyle::Italic) => ("italic", json::Value::Bool(true)),
+                    Some(FontStyle::Underline) => ("underline", json::Value::Bool(true)),
+                    Some(FontStyle::Inherit) => unreachable!(),
+                    None => ("fontStyle", json::Value::String(String::new())),
+                };
 
-            map.insert(key.to_string(), value);
+                map.insert(key.to_string(), value);
+            }
         }
 
         json::Value::Object(map)
     }
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 pub(crate) enum FontStyle {
     Bold,
     Italic,
     Underline,
+    Inherit,
 }
 
 impl From<FontStyle> for json::Value {
@@ -76,6 +80,7 @@ impl From<FontStyle> for json::Value {
             FontStyle::Bold => Self::String("bold".to_string()),
             FontStyle::Italic => Self::String("italic".to_string()),
             FontStyle::Underline => Self::String("underline".to_string()),
+            FontStyle::Inherit => Self::String(String::new()),
         }
     }
 }

@@ -247,16 +247,13 @@
 			"fontStyle": ""
 		},
 		"*.unsafe": {
-			"foreground": "#B47F7F",
-			"fontStyle": ""
+			"foreground": "#B47F7F"
 		},
 		"function.unsafe": {
-			"foreground": "#B47F7F",
-			"fontStyle": ""
+			"foreground": "#B47F7F"
 		},
 		"operator.unsafe": {
-			"foreground": "#B47F7F",
-			"fontStyle": ""
+			"foreground": "#B47F7F"
 		},
 		"punctuation": {
 			"foreground": "#DCDCCC",
@@ -887,8 +884,7 @@
 		{
 			"scope": "keyword.other.unsafe",
 			"settings": {
-				"foreground": "#B47F7F",
-				"fontStyle": ""
+				"foreground": "#B47F7F"
 			}
 		},
 		{
