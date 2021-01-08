@@ -65,11 +65,11 @@ impl Palette {
         let lightness = lightness.into();
 
         match lightness.0 {
-            0 => self.base_color_lightness - 0.15,
-            1 => self.base_color_lightness - 0.05,
-            2 => self.base_color_lightness,
-            3 => self.base_color_lightness + 0.05,
-            4 => self.base_color_lightness + 0.1,
+            -2 => self.base_color_lightness - 0.15,
+            -1 => self.base_color_lightness - 0.05,
+            0 => self.base_color_lightness,
+            1 => self.base_color_lightness + 0.05,
+            2 => self.base_color_lightness + 0.1,
             _ => unreachable!(),
         }
     }
@@ -95,7 +95,7 @@ impl Palette {
     pub(crate) fn blue(&self, lightness: impl Into<ColorLightness>) -> Oklch {
         let lightness = lightness.into();
 
-        let chroma = if lightness.0 == 4 {
+        let chroma = if lightness.0 == 2 {
             self.color_chroma.min(0.045)
         } else {
             self.color_chroma
@@ -114,11 +114,11 @@ impl From<i32> for GreyscaleLightness {
     }
 }
 
-pub(crate) struct ColorLightness(u32);
+pub(crate) struct ColorLightness(i32);
 
-impl From<u32> for ColorLightness {
-    fn from(lightness: u32) -> Self {
-        assert!((0..=4).contains(&lightness));
+impl From<i32> for ColorLightness {
+    fn from(lightness: i32) -> Self {
+        assert!((-2..=2).contains(&lightness));
         Self(lightness)
     }
 }
@@ -138,15 +138,15 @@ pub(crate) enum ColorLightnessPreset {
 impl From<ColorLightnessPreset> for ColorLightness {
     fn from(preset: ColorLightnessPreset) -> Self {
         Self(match preset {
-            ColorLightnessPreset::TerminalAnsi => 1,
-            ColorLightnessPreset::TerminalAnsiBright => 3,
-            ColorLightnessPreset::DiffFg => 3,
-            ColorLightnessPreset::DiffBg => 0,
-            ColorLightnessPreset::Gutter => 1,
-            ColorLightnessPreset::OverviewRuler => 2,
-            ColorLightnessPreset::GitDecoration => 3,
-            ColorLightnessPreset::Minimap => 2,
-            ColorLightnessPreset::StatusBar => 1,
+            ColorLightnessPreset::TerminalAnsi => -1,
+            ColorLightnessPreset::TerminalAnsiBright => 1,
+            ColorLightnessPreset::DiffFg => 1,
+            ColorLightnessPreset::DiffBg => -2,
+            ColorLightnessPreset::Gutter => -1,
+            ColorLightnessPreset::OverviewRuler => 0,
+            ColorLightnessPreset::GitDecoration => 1,
+            ColorLightnessPreset::Minimap => 0,
+            ColorLightnessPreset::StatusBar => -1,
         })
     }
 }

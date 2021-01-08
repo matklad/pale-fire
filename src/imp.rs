@@ -15,14 +15,14 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("activityBar.background", palette.greyscale(-1));
     builder.add_workspace_rule("activityBar.foreground", palette.fg());
     builder.add_workspace_rule("activityBar.inactiveForeground", palette.greyscale(4));
-    builder.add_workspace_rule("activityBarBadge.background", palette.blue(2));
+    builder.add_workspace_rule("activityBarBadge.background", palette.blue(0));
     builder.add_workspace_rule("activityBarBadge.foreground", palette.greyscale(0));
     builder.add_workspace_rule("badge.background", palette.greyscale(3));
     builder.add_workspace_rule("badge.foreground", palette.fg());
-    builder.add_workspace_rule("button.background", palette.blue(2));
+    builder.add_workspace_rule("button.background", palette.blue(0));
     builder.add_workspace_rule("button.foreground", palette.greyscale(0));
     builder.add_workspace_rule("button.hoverBackground", palette.fg());
-    builder.add_workspace_rule("debugIcon.breakpointForeground", palette.red(2));
+    builder.add_workspace_rule("debugIcon.breakpointForeground", palette.red(0));
     builder.add_workspace_rule(
         "diffEditor.insertedTextBackground",
         (palette.green(ColorLightnessPreset::DiffBg), 0x33),
@@ -32,12 +32,12 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         (palette.red(ColorLightnessPreset::DiffBg), 0x33),
     );
     builder.add_workspace_rule("editor.background", palette.greyscale(0));
-    builder.add_workspace_rule("editor.findMatchBackground", (palette.blue(2), 0x66));
+    builder.add_workspace_rule("editor.findMatchBackground", (palette.blue(0), 0x66));
     builder.add_workspace_rule(
         "editor.findMatchHighlightBackground",
-        (palette.blue(2), 0x44),
+        (palette.blue(0), 0x44),
     );
-    builder.add_workspace_rule("editor.foldBackground", (palette.blue(2), 0x22));
+    builder.add_workspace_rule("editor.foldBackground", (palette.blue(0), 0x22));
     builder.add_workspace_rule("editor.foreground", palette.fg());
     builder.add_workspace_rule("editor.hoverHighlightBackground", palette.greyscale(2));
     builder.add_workspace_rule("editor.lineHighlightBackground", palette.greyscale(-1));
@@ -47,8 +47,8 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editor.wordHighlightBackground", palette.greyscale(3));
     builder.add_workspace_rule("editor.wordHighlightStrongBackground", palette.greyscale(3));
     builder.add_workspace_rule("editorCursor.foreground", palette.bright_fg());
-    builder.add_workspace_rule("editorError.foreground", palette.red(2));
-    builder.add_workspace_rule("editorGroup.dropBackground", (palette.blue(2), 0x22));
+    builder.add_workspace_rule("editorError.foreground", palette.red(0));
+    builder.add_workspace_rule("editorGroup.dropBackground", (palette.blue(0), 0x22));
     builder.add_workspace_rule("editorGroupHeader.noTabsBackground", palette.greyscale(1));
     builder.add_workspace_rule("editorGroupHeader.tabsBackground", palette.greyscale(-2));
     builder.add_workspace_rule(
@@ -66,9 +66,9 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editorGroup.border", palette.greyscale(3));
     builder.add_workspace_rule("editorIndentGuide.activeBackground", palette.greyscale(3));
     builder.add_workspace_rule("editorIndentGuide.background", palette.greyscale(2));
-    builder.add_workspace_rule("editorLightBulb.foreground", palette.yellow(4));
+    builder.add_workspace_rule("editorLightBulb.foreground", palette.yellow(2));
     builder.add_workspace_rule("editorLineNumber.foreground", palette.greyscale(3));
-    builder.add_workspace_rule("editorLink.activeForeground", palette.blue(2));
+    builder.add_workspace_rule("editorLink.activeForeground", palette.blue(0));
     builder.add_workspace_rule(
         "editorOverviewRuler.addedForeground",
         palette.green(ColorLightnessPreset::OverviewRuler),
@@ -90,7 +90,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "editorOverviewRuler.modifiedForeground",
         palette.yellow(ColorLightnessPreset::OverviewRuler),
     );
-    builder.add_workspace_rule("editorWarning.foreground", palette.orange(2));
+    builder.add_workspace_rule("editorWarning.foreground", palette.orange(0));
     builder.add_workspace_rule("editorWidget.background", palette.greyscale(-1));
     builder.add_workspace_rule("editorWidget.border", palette.greyscale(2));
     builder.add_workspace_rule("focusBorder", palette.greyscale(3));
@@ -112,12 +112,12 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("input.placeholderForeground", palette.greyscale(4));
     builder.add_workspace_rule("list.activeSelectionBackground", palette.greyscale(2));
     builder.add_workspace_rule("list.activeSelectionForeground", palette.fg());
-    builder.add_workspace_rule("list.errorForeground", palette.red(2));
+    builder.add_workspace_rule("list.errorForeground", palette.red(0));
     builder.add_workspace_rule("list.focusBackground", palette.greyscale(2));
-    builder.add_workspace_rule("list.highlightForeground", palette.blue(4));
+    builder.add_workspace_rule("list.highlightForeground", palette.blue(2));
     builder.add_workspace_rule("list.hoverBackground", palette.greyscale(0));
     builder.add_workspace_rule("list.inactiveSelectionBackground", palette.greyscale(1));
-    builder.add_workspace_rule("list.warningForeground", palette.orange(2));
+    builder.add_workspace_rule("list.warningForeground", palette.orange(0));
     builder.add_workspace_rule(
         "minimap.errorHighlight",
         palette.red(ColorLightnessPreset::Minimap),
@@ -134,26 +134,26 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("peekViewEditor.background", palette.greyscale(0));
     builder.add_workspace_rule(
         "peekViewEditor.matchHighlightBackground",
-        (palette.blue(2), 0x66),
+        (palette.blue(0), 0x66),
     );
     builder.add_workspace_rule("peekViewResult.background", palette.greyscale(-1));
     builder.add_workspace_rule("peekViewResult.fileForeground", palette.fg());
     builder.add_workspace_rule("peekViewResult.lineForeground", (palette.fg(), 0x99));
     builder.add_workspace_rule(
         "peekViewResult.matchHighlightBackground",
-        (palette.blue(2), 0x44),
+        (palette.blue(0), 0x44),
     );
     builder.add_workspace_rule("peekViewResult.selectionBackground", palette.greyscale(2));
     builder.add_workspace_rule("peekViewResult.selectionForeground", palette.fg());
     builder.add_workspace_rule("peekViewTitle.background", palette.greyscale(-1));
-    builder.add_workspace_rule("peekViewTitleDescription.foreground", palette.blue(2));
+    builder.add_workspace_rule("peekViewTitleDescription.foreground", palette.blue(0));
     builder.add_workspace_rule("peekViewTitleLabel.foreground", palette.bright_fg());
-    builder.add_workspace_rule("progressBar.background", palette.blue(2));
-    builder.add_workspace_rule("rust_analyzer.inlayHints.foreground", palette.green(0));
+    builder.add_workspace_rule("progressBar.background", palette.blue(0));
+    builder.add_workspace_rule("rust_analyzer.inlayHints.foreground", palette.green(-2));
     builder.add_workspace_rule("scrollbar.shadow", (Oklch::BLACK, 0x88));
     builder.add_workspace_rule("selection.background", (Oklch::WHITE, 0x55));
     builder.add_workspace_rule("settings.headerForeground", palette.bright_fg());
-    builder.add_workspace_rule("settings.modifiedItemIndicator", palette.blue(2));
+    builder.add_workspace_rule("settings.modifiedItemIndicator", palette.blue(0));
     builder.add_workspace_rule("sideBar.background", palette.greyscale(-1));
     builder.add_workspace_rule("sideBar.foreground", palette.fg());
     builder.add_workspace_rule("sideBarTitle.foreground", palette.bright_fg());
@@ -227,8 +227,8 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("terminal.foreground", palette.fg());
     builder.add_workspace_rule("terminal.selectionBackground", palette.greyscale(-1)); // Lighter than normal selection background to compensate for lighter terminal background
     builder.add_workspace_rule("terminalCursor.foreground", palette.bright_fg());
-    builder.add_workspace_rule("textLink.activeForeground", palette.blue(2));
-    builder.add_workspace_rule("textLink.foreground", palette.blue(2));
+    builder.add_workspace_rule("textLink.activeForeground", palette.blue(0));
+    builder.add_workspace_rule("textLink.foreground", palette.blue(0));
     builder.add_workspace_rule("textPreformat.foreground", palette.fg()); // inline code in e.g. Settings page
     builder.add_workspace_rule("titleBar.activeBackground", palette.greyscale(-1));
     builder.add_workspace_rule("titleBar.activeForeground", palette.fg());
@@ -263,7 +263,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.ts"),
             Textmate("variable.language.this"),
         ],
-        (palette.yellow(4), FontStyle::Bold),
+        (palette.yellow(2), FontStyle::Bold),
     );
 
     builder.add_rules(
@@ -272,7 +272,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("constant.numeric"),
             Textmate("keyword.other.unit"),
         ],
-        palette.green(3),
+        palette.green(1),
     );
 
     builder.add_rules(
@@ -283,7 +283,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("punctuation.definition.string"),
             Textmate("string"),
         ],
-        palette.red(1),
+        palette.red(-1),
     );
 
     builder.add_rules(&[Semantic("variable"), Textmate("variable")], palette.fg());
@@ -307,7 +307,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.other.enummember"),
             Textmate("support.constant"),
         ],
-        palette.blue(4),
+        palette.blue(2),
     );
 
     builder.add_rules(
@@ -317,7 +317,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("meta.function-call.generic.python"),
             Textmate("support.function"),
         ],
-        palette.cyan(3),
+        palette.cyan(1),
     );
 
     builder.add_rules(
@@ -333,7 +333,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("support.class"),
             Textmate("support.type"),
         ],
-        palette.cyan(1),
+        palette.cyan(-1),
     );
 
     builder.add_rules(
@@ -351,7 +351,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.uintptr.go"),
             Textmate("support.type"),
         ],
-        palette.cyan(2),
+        palette.cyan(0),
     );
 
     builder.add_rules(
@@ -359,7 +359,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("typeParameter"),
             Textmate("entity.name.type.parameter"),
         ],
-        palette.orange(2),
+        palette.orange(0),
     );
 
     builder.add_rules(
@@ -374,10 +374,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.other.object.property"),
             Textmate("variable.other.property"),
         ],
-        palette.orange(2),
+        palette.orange(0),
     );
 
-    builder.add_rule(Semantic("interface"), palette.cyan(4));
+    builder.add_rule(Semantic("interface"), palette.cyan(2));
 
     builder.add_rules(
         &[
@@ -388,7 +388,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.modifier.import"),
             Textmate("storage.modifier.package"),
         ],
-        palette.green(4),
+        palette.green(2),
     );
 
     builder.add_rules(
@@ -397,7 +397,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.macro"),
             Textmate("entity.name.other.preprocessor.macro"),
         ],
-        palette.blue(2),
+        palette.blue(0),
     );
 
     builder.add_rules(
@@ -408,7 +408,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.type.lifetime"),
             Textmate("punctuation.definition.lifetime"),
         ],
-        (palette.orange(2), FontStyle::Italic),
+        (palette.orange(0), FontStyle::Italic),
     );
 
     builder.add_rules(
@@ -416,10 +416,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("escapeSequence"),
             Textmate("constant.character.escape"),
         ],
-        palette.blue(2),
+        palette.blue(0),
     );
 
-    builder.add_rule(Semantic("formatSpecifier"), palette.blue(2));
+    builder.add_rule(Semantic("formatSpecifier"), palette.blue(0));
 
     builder.add_rules(
         &[
@@ -427,7 +427,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("comment"),
             Textmate("punctuation.definition.comment"),
         ],
-        palette.green(0),
+        palette.green(-2),
     );
 
     builder.add_rules(
@@ -435,7 +435,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("comment.documentation"),
             Textmate("comment.line.documentation"),
         ],
-        palette.green(1),
+        palette.green(-1),
     );
 
     builder.add_rules(
@@ -451,7 +451,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.modifier.attribute"),
             Textmate("storage.type.annotation"),
         ],
-        palette.blue(2),
+        palette.blue(0),
     );
 
     // CSS classes and IDs.
@@ -460,7 +460,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.other.attribute-name.class"),
             Textmate("entity.other.attribute-name.id"),
         ],
-        palette.cyan(1),
+        palette.cyan(-1),
     );
 
     builder.add_rules(
@@ -470,7 +470,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("operator.unsafe"),
             Textmate("keyword.other.unsafe"),
         ],
-        (palette.red(0), FontStyle::Inherit),
+        (palette.red(-2), FontStyle::Inherit),
     );
 
     builder.add_rules(
@@ -507,7 +507,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("punctuation.definition.range.diff"),
             Textmate("meta.diff.range"),
         ],
-        palette.blue(2),
+        palette.blue(0),
     );
 
     builder.add_rules(
@@ -516,15 +516,15 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     );
     builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
 
-    builder.add_rule(Semantic("unresolvedReference"), palette.red(0));
+    builder.add_rule(Semantic("unresolvedReference"), palette.red(-2));
 
     builder.add_rule(
         Semantic("magit-ref-name"),
-        (palette.cyan(3), FontStyle::Bold),
+        (palette.cyan(1), FontStyle::Bold),
     );
     builder.add_rule(
         Semantic("magit-remote-ref-name"),
-        (palette.green(0), FontStyle::Bold),
+        (palette.green(-2), FontStyle::Bold),
     );
     builder.add_rule(
         Textmate("magit.subheader"),
