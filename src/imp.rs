@@ -411,8 +411,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         (palette.orange(0), FontStyle::Italic),
     );
 
-    builder.add_rule(Semantic("label"), (palette.orange(0), FontStyle::Italic));
-
     builder.add_rules(
         &[
             Semantic("escapeSequence"),

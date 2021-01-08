@@ -223,10 +223,6 @@
 			"foreground": "#E9B491",
 			"italic": true
 		},
-		"label": {
-			"foreground": "#E9B491",
-			"italic": true
-		},
 		"escapeSequence": {
 			"foreground": "#96C7EF",
 			"fontStyle": ""
