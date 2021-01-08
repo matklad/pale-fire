@@ -5,13 +5,14 @@ mod theme;
 
 use json::ser::PrettyFormatter;
 use json::Serializer;
+use palette::Palette;
 use serde::ser::Serialize;
 use std::{fs, io};
 use theme::{ThemeBuilder, Type};
 
 fn main() -> io::Result<()> {
     let mut theme_builder = ThemeBuilder::new("Pale Fire".to_string(), Type::Dark);
-    imp::add_rules(&mut theme_builder);
+    imp::add_rules(&mut theme_builder, Palette::ORIGINAL);
 
     let theme = theme_builder.build();
     let json: json::Value = theme.into();

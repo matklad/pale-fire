@@ -1,16 +1,100 @@
 use tincture::{Hue, Oklch};
 
-// Colors are from https://github.com/bbatsov/zenburn_emacs/blob/master/zenburn_theme.el
-
-const FG_CHROMA: f32 = 0.022;
-const FG_HUE: f32 = 107.0;
-
-pub(crate) fn fg() -> Oklch {
-    oklch(0.89, FG_CHROMA, FG_HUE)
+pub(crate) struct Palette {
+    base_foreground_lightness: f32,
+    base_greyscale_lightness: f32,
+    base_color_lightness: f32,
 }
 
-pub(crate) fn bright_fg() -> Oklch {
-    oklch(0.99, FG_CHROMA, FG_HUE)
+impl Palette {
+    pub(crate) const ORIGINAL: Self = Self {
+        base_foreground_lightness: 0.89,
+        base_greyscale_lightness: 0.37,
+        base_color_lightness: 0.8,
+    };
+
+    const FG_CHROMA: f32 = 0.022;
+    const FG_HUE: f32 = 107.0;
+
+    pub(crate) fn fg(&self) -> Oklch {
+        oklch(
+            self.base_foreground_lightness,
+            Self::FG_CHROMA,
+            Self::FG_HUE,
+        )
+    }
+
+    pub(crate) fn bright_fg(&self) -> Oklch {
+        oklch(
+            self.base_foreground_lightness + 0.1,
+            Self::FG_CHROMA,
+            Self::FG_HUE,
+        )
+    }
+
+    pub(crate) fn greyscale(&self, lightness: impl Into<GreyscaleLightness>) -> Oklch {
+        oklch(self.greyscale_lightness(lightness), 0.0, 0.0)
+    }
+
+    fn greyscale_lightness(&self, lightness: impl Into<GreyscaleLightness>) -> f32 {
+        let lightness = lightness.into();
+
+        match lightness.0 {
+            -2 => self.base_greyscale_lightness - 0.07,
+            -1 => self.base_greyscale_lightness - 0.03,
+            0 => self.base_greyscale_lightness,
+            1 => self.base_greyscale_lightness + 0.03,
+            2 => self.base_greyscale_lightness + 0.06,
+            3 => self.base_greyscale_lightness + 0.13,
+            4 => self.base_greyscale_lightness + 0.18,
+            5 => self.base_greyscale_lightness + 0.33,
+            _ => unreachable!(),
+        }
+    }
+
+    fn color_lightness(&self, lightness: impl Into<ColorLightness>) -> f32 {
+        let lightness = lightness.into();
+
+        match lightness.0 {
+            0 => self.base_color_lightness - 0.15,
+            1 => self.base_color_lightness - 0.05,
+            2 => self.base_color_lightness,
+            3 => self.base_color_lightness + 0.05,
+            4 => self.base_color_lightness + 0.1,
+            _ => unreachable!(),
+        }
+    }
+}
+
+macro_rules! def_color_method {
+    ($name:ident, hue: $hue:literal) => {
+        impl Palette {
+            pub(crate) fn $name(&self, lightness: impl Into<ColorLightness>) -> Oklch {
+                oklch(self.color_lightness(lightness), COLOR_CHROMA, $hue)
+            }
+        }
+    };
+}
+
+const COLOR_CHROMA: f32 = 0.065;
+def_color_method!(red, hue: 19.0);
+def_color_method!(orange, hue: 55.0);
+def_color_method!(yellow, hue: 91.0);
+def_color_method!(green, hue: 145.0);
+def_color_method!(cyan, hue: 200.0);
+
+impl Palette {
+    pub(crate) fn blue(&self, lightness: impl Into<ColorLightness>) -> Oklch {
+        let lightness = lightness.into();
+
+        let chroma = if lightness.0 == 4 {
+            COLOR_CHROMA * 0.7
+        } else {
+            COLOR_CHROMA
+        };
+
+        oklch(self.color_lightness(lightness), chroma, 243.0)
+    }
 }
 
 pub(crate) struct GreyscaleLightness(i32);
@@ -22,40 +106,7 @@ impl From<i32> for GreyscaleLightness {
     }
 }
 
-impl From<GreyscaleLightness> for f32 {
-    fn from(lightness: GreyscaleLightness) -> Self {
-        match lightness.0 {
-            -2 => 0.3,
-            -1 => 0.34,
-            0 => 0.37,
-            1 => 0.4,
-            2 => 0.43,
-            3 => 0.5,
-            4 => 0.55,
-            5 => 0.7,
-            _ => unreachable!(),
-        }
-    }
-}
-
-pub(crate) fn greyscale(lightness: impl Into<GreyscaleLightness>) -> Oklch {
-    oklch(f32::from(lightness.into()), 0.0, 0.0)
-}
-
 pub(crate) struct ColorLightness(u32);
-
-impl From<ColorLightness> for f32 {
-    fn from(lightness: ColorLightness) -> Self {
-        match lightness.0 {
-            0 => 0.65,
-            1 => 0.75,
-            2 => 0.8,
-            3 => 0.85,
-            4 => 0.9,
-            _ => unreachable!(),
-        }
-    }
-}
 
 impl From<u32> for ColorLightness {
     fn from(lightness: u32) -> Self {
@@ -90,41 +141,6 @@ impl From<ColorLightnessPreset> for ColorLightness {
             ColorLightnessPreset::StatusBar => 1,
         })
     }
-}
-
-impl From<ColorLightnessPreset> for f32 {
-    fn from(preset: ColorLightnessPreset) -> Self {
-        let lightness = ColorLightness::from(preset);
-        lightness.into()
-    }
-}
-
-const COLOR_CHROMA: f32 = 0.065;
-
-macro_rules! def_color_fn {
-    ($name:ident, hue: $hue:literal) => {
-        pub(crate) fn $name(lightness: impl Into<ColorLightness>) -> Oklch {
-            oklch(f32::from(lightness.into()), COLOR_CHROMA, $hue)
-        }
-    };
-}
-
-def_color_fn!(red, hue: 19.0);
-def_color_fn!(orange, hue: 55.0);
-def_color_fn!(yellow, hue: 91.0);
-def_color_fn!(green, hue: 145.0);
-def_color_fn!(cyan, hue: 200.0);
-
-pub(crate) fn blue(lightness: impl Into<ColorLightness>) -> Oklch {
-    let lightness = lightness.into();
-
-    let chroma = if lightness.0 == 4 {
-        COLOR_CHROMA * 0.7
-    } else {
-        COLOR_CHROMA
-    };
-
-    oklch(f32::from(lightness), chroma, 243.0)
 }
 
 fn oklch(l: f32, c: f32, h: f32) -> Oklch {
