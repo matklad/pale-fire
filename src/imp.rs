@@ -67,6 +67,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editorIndentGuide.activeBackground", palette.greyscale(3));
     builder.add_workspace_rule("editorIndentGuide.background", palette.greyscale(2));
     builder.add_workspace_rule("editorLightBulb.foreground", palette.yellow(2));
+    builder.add_workspace_rule("editorLineNumber.activeForeground", palette.greyscale(5));
     builder.add_workspace_rule("editorLineNumber.foreground", palette.greyscale(3));
     builder.add_workspace_rule("editorLink.activeForeground", palette.blue(0));
     builder.add_workspace_rule(
