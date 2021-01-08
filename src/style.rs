@@ -87,20 +87,23 @@ impl From<FontStyle> for json::Value {
 
 #[derive(Clone, Copy)]
 pub(crate) struct Color {
-    oklch: Oklch,
+    hex: u32,
     alpha: Option<u8>,
 }
 
 impl From<Oklch> for Color {
     fn from(oklch: Oklch) -> Self {
-        Self { oklch, alpha: None }
+        Self {
+            hex: oklch_to_hex(oklch),
+            alpha: None,
+        }
     }
 }
 
 impl From<(Oklch, u8)> for Color {
     fn from((oklch, alpha): (Oklch, u8)) -> Self {
         Self {
-            oklch,
+            hex: oklch_to_hex(oklch),
             alpha: Some(alpha),
         }
     }
@@ -108,19 +111,21 @@ impl From<(Oklch, u8)> for Color {
 
 impl From<Color> for json::Value {
     fn from(color: Color) -> Self {
-        let oklab = Oklab::from(color.oklch);
-        let linear_rgb: LinearRgb = tincture::convert(oklab);
-        let srgb = Srgb::from(linear_rgb);
-        assert!(srgb.in_bounds());
-
-        let hex = srgb.hex();
-
         let hex = if let Some(alpha) = color.alpha {
-            format!("#{:06X}{:02X}", hex, alpha)
+            format!("#{:06X}{:02X}", color.hex, alpha)
         } else {
-            format!("#{:06X}", hex)
+            format!("#{:06X}", color.hex)
         };
 
         Self::String(hex)
     }
+}
+
+fn oklch_to_hex(oklch: Oklch) -> u32 {
+    let oklab = Oklab::from(oklch);
+    let linear_rgb: LinearRgb = tincture::convert(oklab);
+    let srgb = Srgb::from(linear_rgb);
+    assert!(srgb.in_bounds());
+
+    srgb.hex()
 }
