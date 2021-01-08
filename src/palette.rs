@@ -9,7 +9,7 @@ pub(crate) struct Palette {
 
 impl Palette {
     pub(crate) const ORIGINAL: Self = Self {
-        base_foreground_lightness: 0.89,
+        base_foreground_lightness: 0.9,
         base_greyscale_lightness: 0.37,
         base_color_lightness: 0.8,
         color_chroma: 0.064,
@@ -35,7 +35,7 @@ impl Palette {
 
     pub(crate) fn bright_fg(&self) -> Oklch {
         oklch(
-            (self.base_foreground_lightness + 0.1).min(0.99),
+            (self.base_foreground_lightness + 0.09).min(0.99),
             Self::FG_CHROMA,
             Self::FG_HUE,
         )
