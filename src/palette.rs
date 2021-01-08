@@ -12,7 +12,7 @@ impl Palette {
         base_foreground_lightness: 0.89,
         base_greyscale_lightness: 0.37,
         base_color_lightness: 0.8,
-        color_chroma: 0.065,
+        color_chroma: 0.064,
     };
 
     pub(crate) const HIGH_CONTRAST: Self = Self {
