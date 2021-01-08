@@ -1,9 +1,8 @@
-use tincture::{ColorSpace, Oklch};
-
 use crate::palette::{ColorLightnessPreset, Palette};
-use crate::style::FontStyle;
-use crate::theme::Scope::*;
-use crate::theme::ThemeBuilder;
+use mottle::style::FontStyle;
+use mottle::theme::Scope::*;
+use mottle::theme::ThemeBuilder;
+use tincture::{ColorSpace, Oklch};
 
 pub(crate) fn add_rules(builder: &mut ThemeBuilder, palette: Palette) {
     workspace_colors(builder, &palette);

@@ -5,10 +5,5 @@ name = "pale-fire"
 version = "0.1.0"
 
 [dependencies]
-serde = "1.0.117"
+mottle = "0.1.1"
 tincture = "0.5.0"
-
-[dependencies.json]
-features = ["preserve_order"]
-package = "serde_json"
-version = "1.0.59"
