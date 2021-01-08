@@ -933,28 +933,28 @@
 		{
 			"scope": "markup.inserted.diff",
 			"settings": {
-				"foreground": "#B4D9B4",
+				"foreground": "#A5C9A5",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "punctuation.definition.inserted.diff",
 			"settings": {
-				"foreground": "#B4D9B4",
+				"foreground": "#A5C9A5",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "markup.deleted.diff",
 			"settings": {
-				"foreground": "#F5BEBD",
+				"foreground": "#E4AEAD",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "punctuation.definition.deleted.diff",
 			"settings": {
-				"foreground": "#F5BEBD",
+				"foreground": "#E4AEAD",
 				"fontStyle": ""
 			}
 		},

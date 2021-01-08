@@ -140,7 +140,7 @@ impl From<ColorLightnessPreset> for ColorLightness {
         Self(match preset {
             ColorLightnessPreset::TerminalAnsi => -1,
             ColorLightnessPreset::TerminalAnsiBright => 1,
-            ColorLightnessPreset::DiffFg => 1,
+            ColorLightnessPreset::DiffFg => 0,
             ColorLightnessPreset::DiffBg => -2,
             ColorLightnessPreset::Gutter => -1,
             ColorLightnessPreset::OverviewRuler => 0,
