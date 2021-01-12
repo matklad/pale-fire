@@ -526,8 +526,5 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         Semantic("magit-remote-ref-name"),
         (palette.green(-2), FontStyle::Bold),
     );
-    builder.add_rule(
-        Textmate("magit.subheader"),
-        (palette.greyscale(5), FontStyle::Bold),
-    );
+    builder.add_rule(Textmate("magit.subheader"), FontStyle::Bold);
 }
