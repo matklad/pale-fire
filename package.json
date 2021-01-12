@@ -8,7 +8,7 @@
     "repository": {
         "url": "https://github.com/matklad/pale-fire"
     },
-    "version": "0.3.12",
+    "version": "0.3.13",
     "engines": {
         "vscode": "^1.41.0"
     },
