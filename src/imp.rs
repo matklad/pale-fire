@@ -177,7 +177,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "terminal.ansiBlue",
         palette.blue(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule("terminal.ansiBrightBlack", palette.greyscale(4));
+    builder.add_workspace_rule("terminal.ansiBrightBlack", palette.greyscale(5));
     builder.add_workspace_rule(
         "terminal.ansiBrightBlue",
         palette.blue(ColorLightnessPreset::TerminalAnsiBright),
