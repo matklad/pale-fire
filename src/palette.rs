@@ -22,10 +22,10 @@ impl Palette {
     pub(crate) const HIGH_CONTRAST: Self = Self {
         base_foreground_lightness: 0.93,
         base_greyscale_lightness: 0.34,
-        greyscale_lightness_scale_multiplier: 1.0,
-        base_color_lightness: 0.81,
-        color_lightness_scale_multiplier: 1.0,
-        color_chroma: 0.077,
+        greyscale_lightness_scale_multiplier: 1.5,
+        base_color_lightness: 0.8,
+        color_lightness_scale_multiplier: 1.15,
+        color_chroma: 0.078,
     };
 
     const FG_CHROMA: f32 = 0.03;
