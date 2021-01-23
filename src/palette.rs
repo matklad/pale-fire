@@ -3,7 +3,9 @@ use tincture::{Hue, Oklch};
 pub(crate) struct Palette {
     base_foreground_lightness: f32,
     base_greyscale_lightness: f32,
+    greyscale_lightness_scale_multiplier: f32,
     base_color_lightness: f32,
+    color_lightness_scale_multiplier: f32,
     color_chroma: f32,
 }
 
@@ -11,14 +13,18 @@ impl Palette {
     pub(crate) const ORIGINAL: Self = Self {
         base_foreground_lightness: 0.9,
         base_greyscale_lightness: 0.37,
+        greyscale_lightness_scale_multiplier: 1.0,
         base_color_lightness: 0.8,
+        color_lightness_scale_multiplier: 1.0,
         color_chroma: 0.064,
     };
 
     pub(crate) const HIGH_CONTRAST: Self = Self {
         base_foreground_lightness: 0.93,
         base_greyscale_lightness: 0.34,
+        greyscale_lightness_scale_multiplier: 1.0,
         base_color_lightness: 0.81,
+        color_lightness_scale_multiplier: 1.0,
         color_chroma: 0.077,
     };
 
@@ -49,14 +55,14 @@ impl Palette {
         let lightness = lightness.into();
 
         match lightness.0 {
-            -2 => self.base_greyscale_lightness - 0.07,
-            -1 => self.base_greyscale_lightness - 0.025,
+            -2 => self.base_greyscale_lightness - 0.07 * self.greyscale_lightness_scale_multiplier,
+            -1 => self.base_greyscale_lightness - 0.025 * self.greyscale_lightness_scale_multiplier,
             0 => self.base_greyscale_lightness,
-            1 => self.base_greyscale_lightness + 0.03,
-            2 => self.base_greyscale_lightness + 0.06,
-            3 => self.base_greyscale_lightness + 0.13,
-            4 => self.base_greyscale_lightness + 0.18,
-            5 => self.base_greyscale_lightness + 0.33,
+            1 => self.base_greyscale_lightness + 0.03 * self.greyscale_lightness_scale_multiplier,
+            2 => self.base_greyscale_lightness + 0.06 * self.greyscale_lightness_scale_multiplier,
+            3 => self.base_greyscale_lightness + 0.13 * self.greyscale_lightness_scale_multiplier,
+            4 => self.base_greyscale_lightness + 0.18 * self.greyscale_lightness_scale_multiplier,
+            5 => self.base_greyscale_lightness + 0.33 * self.greyscale_lightness_scale_multiplier,
             _ => unreachable!(),
         }
     }
@@ -65,11 +71,11 @@ impl Palette {
         let lightness = lightness.into();
 
         match lightness.0 {
-            -2 => self.base_color_lightness - 0.15,
-            -1 => self.base_color_lightness - 0.05,
+            -2 => self.base_color_lightness - 0.15 * self.color_lightness_scale_multiplier,
+            -1 => self.base_color_lightness - 0.05 * self.color_lightness_scale_multiplier,
             0 => self.base_color_lightness,
-            1 => self.base_color_lightness + 0.05,
-            2 => self.base_color_lightness + 0.1,
+            1 => self.base_color_lightness + 0.05 * self.color_lightness_scale_multiplier,
+            2 => self.base_color_lightness + 0.1 * self.color_lightness_scale_multiplier,
             _ => unreachable!(),
         }
     }
