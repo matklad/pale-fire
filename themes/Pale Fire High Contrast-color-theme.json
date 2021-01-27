@@ -421,6 +421,13 @@
 			}
 		},
 		{
+			"scope": "variable.language.self",
+			"settings": {
+				"foreground": "#F1E4A8",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "variable.language.this",
 			"settings": {
 				"foreground": "#F1E4A8",

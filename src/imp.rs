@@ -261,6 +261,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.rust"),
             Textmate("storage.type.struct"),
             Textmate("storage.type.ts"),
+            Textmate("variable.language.self"),
             Textmate("variable.language.this"),
         ],
         (palette.yellow(2), FontStyle::Bold),

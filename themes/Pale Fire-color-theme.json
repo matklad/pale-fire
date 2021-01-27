@@ -421,6 +421,13 @@
 			}
 		},
 		{
+			"scope": "variable.language.self",
+			"settings": {
+				"foreground": "#EADFAF",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "variable.language.this",
 			"settings": {
 				"foreground": "#EADFAF",
