@@ -40,6 +40,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editor.foreground", palette.fg());
     builder.add_workspace_rule("editor.hoverHighlightBackground", palette.greyscale(2));
     builder.add_workspace_rule("editor.lineHighlightBackground", palette.greyscale(-1));
+    builder.add_workspace_rule("editor.rangeHighlightBackground", (palette.blue(0), 0x22));
     builder.add_workspace_rule("editor.selectionBackground", palette.greyscale(-2));
     builder.add_workspace_rule("editor.selectionHighlightBackground", palette.greyscale(3));
     builder.add_workspace_rule("editor.symbolHighlightBackground", palette.greyscale(3));
@@ -89,6 +90,10 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule(
         "editorOverviewRuler.modifiedForeground",
         palette.yellow(ColorLightnessPreset::OverviewRuler),
+    );
+    builder.add_workspace_rule(
+        "editorOverviewRuler.rangeHighlightForeground",
+        (palette.blue(ColorLightnessPreset::OverviewRuler), 0x33),
     );
     builder.add_workspace_rule("editorWarning.foreground", palette.orange(0));
     builder.add_workspace_rule("editorWidget.background", palette.greyscale(-1));
