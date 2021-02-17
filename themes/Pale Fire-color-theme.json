@@ -124,7 +124,7 @@
 		"terminal.ansiWhite": "#E0E0C9",
 		"terminal.ansiYellow": "#B9AF80",
 		"terminal.foreground": "#E0E0C9",
-		"terminal.selectionBackground": "#393939",
+		"terminal.selectionBackground": "#0F0F0F",
 		"terminalCursor.foreground": "#FEFEE7",
 		"textLink.activeForeground": "#9AC3E4",
 		"textLink.foreground": "#9AC3E4",

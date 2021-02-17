@@ -55,6 +55,7 @@ impl Palette {
         let lightness = lightness.into();
 
         match lightness.0 {
+            -3 => self.base_greyscale_lightness - 0.2 * self.greyscale_lightness_scale_multiplier,
             -2 => self.base_greyscale_lightness - 0.07 * self.greyscale_lightness_scale_multiplier,
             -1 => self.base_greyscale_lightness - 0.025 * self.greyscale_lightness_scale_multiplier,
             0 => self.base_greyscale_lightness,
@@ -115,7 +116,7 @@ pub(crate) struct GreyscaleLightness(i32);
 
 impl From<i32> for GreyscaleLightness {
     fn from(lightness: i32) -> Self {
-        assert!((-2..=5).contains(&lightness));
+        assert!((-3..=5).contains(&lightness));
         Self(lightness)
     }
 }

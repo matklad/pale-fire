@@ -230,7 +230,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.yellow(ColorLightnessPreset::TerminalAnsi),
     );
     builder.add_workspace_rule("terminal.foreground", palette.fg());
-    builder.add_workspace_rule("terminal.selectionBackground", palette.greyscale(-1)); // Lighter than normal selection background to compensate for lighter terminal background
+    builder.add_workspace_rule("terminal.selectionBackground", palette.greyscale(-3));
     builder.add_workspace_rule("terminalCursor.foreground", palette.bright_fg());
     builder.add_workspace_rule("textLink.activeForeground", palette.blue(0));
     builder.add_workspace_rule("textLink.foreground", palette.blue(0));
