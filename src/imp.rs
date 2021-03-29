@@ -446,8 +446,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
 
     builder.add_rules(
         &[
-            Semantic("attribute"),
-            Semantic("function.attribute"),
+            Semantic("*.attribute"),
             Textmate("entity.name.function.decorator"),
             Textmate("meta.attribute"),
             Textmate("punctuation.brackets.attribute"),

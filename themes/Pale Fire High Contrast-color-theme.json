@@ -241,11 +241,7 @@
 			"foreground": "#8DB98D",
 			"fontStyle": ""
 		},
-		"attribute": {
-			"foreground": "#92C4EC",
-			"fontStyle": ""
-		},
-		"function.attribute": {
+		"*.attribute": {
 			"foreground": "#92C4EC",
 			"fontStyle": ""
 		},
