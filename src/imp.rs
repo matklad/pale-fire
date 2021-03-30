@@ -300,7 +300,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.variable.parameter"),
             Textmate("variable.parameter"),
         ],
-        palette.fg(),
+        palette.green(0),
     );
 
     builder.add_rules(
