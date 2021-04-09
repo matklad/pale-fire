@@ -533,4 +533,16 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         (palette.green(-2), FontStyle::Bold),
     );
     builder.add_rule(Textmate("magit.subheader"), FontStyle::Bold);
+
+    // Over 50 characters, the recommended limit.
+    builder.add_rule(
+        Textmate("invalid.deprecated.line-too-long.git-commit"),
+        palette.orange(0),
+    );
+
+    // Over 72 characters, the hard limit.
+    builder.add_rule(
+        Textmate("invalid.illegal.line-too-long.git-commit"),
+        palette.red(0),
+    );
 }

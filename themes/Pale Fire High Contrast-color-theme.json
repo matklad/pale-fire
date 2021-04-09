@@ -986,6 +986,20 @@
 			"settings": {
 				"fontStyle": "bold"
 			}
+		},
+		{
+			"scope": "invalid.deprecated.line-too-long.git-commit",
+			"settings": {
+				"foreground": "#E6B18E",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "invalid.illegal.line-too-long.git-commit",
+			"settings": {
+				"foreground": "#ECAAAA",
+				"fontStyle": ""
+			}
 		}
 	]
 }
