@@ -266,8 +266,8 @@
 			"italic": true
 		},
 		"unresolvedReference": {
-			"foreground": "#B37576",
-			"fontStyle": ""
+			"foreground": "#D99898",
+			"underline": true
 		},
 		"magit-ref-name": {
 			"foreground": "#91E0E4",

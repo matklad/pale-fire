@@ -522,7 +522,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     );
     builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
 
-    builder.add_rule(Semantic("unresolvedReference"), palette.red(-2));
+    builder.add_rule(
+        Semantic("unresolvedReference"),
+        (palette.red(-1), FontStyle::Underline),
+    );
 
     builder.add_rule(
         Semantic("magit-ref-name"),
