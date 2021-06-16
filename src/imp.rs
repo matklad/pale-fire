@@ -21,6 +21,8 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("button.background", palette.blue(0));
     builder.add_workspace_rule("button.foreground", palette.greyscale(0));
     builder.add_workspace_rule("button.hoverBackground", palette.fg());
+    builder.add_workspace_rule("checkbox.background", palette.greyscale(-2));
+    builder.add_workspace_rule("checkbox.border", palette.greyscale(2));
     builder.add_workspace_rule("debugIcon.breakpointForeground", palette.red(0));
     builder.add_workspace_rule(
         "diffEditor.insertedTextBackground",
@@ -30,6 +32,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "diffEditor.removedTextBackground",
         (palette.red(ColorLightnessPreset::DiffBg), 0x33),
     );
+    builder.add_workspace_rule("dropdown.border", palette.greyscale(2));
     builder.add_workspace_rule("editor.background", palette.greyscale(0));
     builder.add_workspace_rule("editor.findMatchBackground", (palette.blue(0), 0x66));
     builder.add_workspace_rule(
@@ -114,6 +117,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.green(ColorLightnessPreset::GitDecoration),
     );
     builder.add_workspace_rule("input.background", (Oklch::WHITE, 0x0A)); // input field lightens what is behind it
+    builder.add_workspace_rule("input.border", palette.greyscale(2));
     builder.add_workspace_rule("input.foreground", palette.fg());
     builder.add_workspace_rule("input.placeholderForeground", palette.greyscale(4));
     builder.add_workspace_rule("list.activeSelectionBackground", palette.greyscale(2));
