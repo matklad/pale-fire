@@ -388,7 +388,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.orange(0),
     );
 
-    builder.add_rule(Semantic("interface"), palette.cyan(0));
+    builder.add_rule(Semantic("interface"), (palette.cyan(0), FontStyle::Italic));
+    builder.add_rule(Semantic("*.trait"), FontStyle::Italic);
 
     builder.add_rules(
         &[
@@ -524,7 +525,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         &[Semantic("*.mutable"), Textmate("meta.mutable")],
         FontStyle::Underline,
     );
-    builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
     builder.add_rule(Semantic("*.public.declaration"), FontStyle::Bold);
 
     builder.add_rule(
