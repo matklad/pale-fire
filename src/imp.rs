@@ -274,7 +274,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.language.self"),
             Textmate("variable.language.this"),
         ],
-        palette.yellow(2),
+        (palette.yellow(2), FontStyle::Bold),
     );
 
     builder.add_rules(
@@ -525,7 +525,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         &[Semantic("*.mutable"), Textmate("meta.mutable")],
         FontStyle::Underline,
     );
-    builder.add_rule(Semantic("*.public.declaration"), FontStyle::Bold);
 
     builder.add_rule(
         Semantic("unresolvedReference"),
