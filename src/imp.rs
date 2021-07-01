@@ -274,7 +274,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.language.self"),
             Textmate("variable.language.this"),
         ],
-        (palette.yellow(2), FontStyle::Bold),
+        palette.yellow(2),
     );
 
     builder.add_rules(
@@ -525,6 +525,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         FontStyle::Underline,
     );
     builder.add_rule(Semantic("*.consuming"), FontStyle::Italic);
+    builder.add_rule(Semantic("*.public.declaration"), FontStyle::Bold);
 
     builder.add_rule(
         Semantic("unresolvedReference"),
@@ -538,6 +539,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_rule(
         Semantic("magit-remote-ref-name"),
         (palette.green(-2), FontStyle::Bold),
+    );
+    builder.add_rule(
+        Textmate("magit.header"),
+        (palette.yellow(2), FontStyle::Bold),
     );
     builder.add_rule(Textmate("magit.subheader"), FontStyle::Bold);
 

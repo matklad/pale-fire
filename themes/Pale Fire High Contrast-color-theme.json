@@ -144,7 +144,7 @@
 	"semanticTokenColors": {
 		"keyword": {
 			"foreground": "#F1E4A8",
-			"bold": true
+			"fontStyle": ""
 		},
 		"number": {
 			"foreground": "#B1DEB1",
@@ -269,6 +269,9 @@
 		"*.consuming": {
 			"italic": true
 		},
+		"*.public.declaration": {
+			"bold": true
+		},
 		"unresolvedReference": {
 			"foreground": "#D99898",
 			"underline": true
@@ -287,154 +290,154 @@
 			"scope": "constant.language.null",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "entity.name.tag",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword.operator.expression",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword.operator.logical",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword.operator.new",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword.operator.wordlike",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword.type.go",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "keyword",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "markup.heading.marker",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "punctuation.definition.heading",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.modifier",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.class",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.enum",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.function.python",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.function.ts",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.function",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.js",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.rust",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.struct",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.type.ts",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.language.self",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.language.this",
 			"settings": {
 				"foreground": "#F1E4A8",
-				"fontStyle": "bold"
+				"fontStyle": ""
 			}
 		},
 		{
@@ -983,6 +986,13 @@
 			"scope": "meta.mutable",
 			"settings": {
 				"fontStyle": "underline"
+			}
+		},
+		{
+			"scope": "magit.header",
+			"settings": {
+				"foreground": "#F1E4A8",
+				"fontStyle": "bold"
 			}
 		},
 		{
