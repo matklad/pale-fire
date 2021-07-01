@@ -116,7 +116,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "gitDecoration.untrackedResourceForeground",
         palette.green(ColorLightnessPreset::GitDecoration),
     );
-    builder.add_workspace_rule("input.background", (Oklch::WHITE, 0x0A)); // input field lightens what is behind it
+    builder.add_workspace_rule("input.background", palette.greyscale(-2));
     builder.add_workspace_rule("input.border", palette.greyscale(2));
     builder.add_workspace_rule("input.foreground", palette.fg());
     builder.add_workspace_rule("input.placeholderForeground", palette.greyscale(4));
