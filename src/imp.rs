@@ -318,17 +318,25 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.other.enummember"),
             Textmate("support.constant"),
         ],
-        palette.blue(2),
+        (palette.blue(2), FontStyle::Inherit),
     );
 
     builder.add_rules(
         &[
             Semantic("function"),
+            Semantic("method"),
             Textmate("entity.name.function"),
             Textmate("meta.function-call.generic.python"),
             Textmate("support.function"),
         ],
         palette.cyan(1),
+    );
+    builder.add_rules(
+        &[
+            Semantic("function.public.declaration"),
+            Semantic("method.public.declaration"),
+        ],
+        (palette.purple(1), FontStyle::Inherit),
     );
 
     builder.add_rules(
@@ -345,6 +353,17 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("support.type"),
         ],
         palette.cyan(-1),
+    );
+    builder.add_rules(
+        &[
+            Semantic("type.public.declaration"),
+            Semantic("class.public.declaration"),
+            Semantic("struct.public.declaration"),
+            Semantic("enum.public.declaration"),
+            Semantic("union.public.declaration"),
+            Semantic("typeAlias.public.declaration"),
+        ],
+        (palette.purple(-1), FontStyle::Inherit),
     );
 
     builder.add_rules(
@@ -389,6 +408,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     );
 
     builder.add_rule(Semantic("interface"), (palette.cyan(0), FontStyle::Italic));
+    builder.add_rule(
+        Semantic("interface.public.declaration"),
+        (palette.purple(0), FontStyle::Inherit),
+    );
     builder.add_rule(Semantic("*.trait"), FontStyle::Italic);
 
     builder.add_rules(
@@ -524,6 +547,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_rules(
         &[Semantic("*.mutable"), Textmate("meta.mutable")],
         FontStyle::Underline,
+    );
+    builder.add_rule(
+        Semantic("*.public.declaration"),
+        (palette.purple(1), FontStyle::Inherit),
     );
 
     builder.add_rule(

@@ -97,6 +97,7 @@ def_color_method!(orange, hue: 55.0);
 def_color_method!(yellow, hue: 97.0);
 def_color_method!(green, hue: 145.0);
 def_color_method!(cyan, hue: 200.0);
+def_color_method!(purple, hue: 300.0);
 
 impl Palette {
     pub(crate) fn blue(&self, lightness: impl Into<ColorLightness>) -> Oklch {

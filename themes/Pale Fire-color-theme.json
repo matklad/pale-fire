@@ -163,20 +163,27 @@
 			"fontStyle": ""
 		},
 		"boolean": {
-			"foreground": "#C5E2FA",
-			"fontStyle": ""
+			"foreground": "#C5E2FA"
 		},
 		"enumMember": {
-			"foreground": "#C5E2FA",
-			"fontStyle": ""
+			"foreground": "#C5E2FA"
 		},
 		"variable.static": {
-			"foreground": "#C5E2FA",
-			"fontStyle": ""
+			"foreground": "#C5E2FA"
 		},
 		"function": {
 			"foreground": "#9CDBDE",
 			"fontStyle": ""
+		},
+		"method": {
+			"foreground": "#9CDBDE",
+			"fontStyle": ""
+		},
+		"function.public.declaration": {
+			"foreground": "#D4C5F2"
+		},
+		"method.public.declaration": {
+			"foreground": "#D4C5F2"
 		},
 		"type": {
 			"foreground": "#7CBBBE",
@@ -202,6 +209,24 @@
 			"foreground": "#7CBBBE",
 			"fontStyle": ""
 		},
+		"type.public.declaration": {
+			"foreground": "#B4A5D1"
+		},
+		"class.public.declaration": {
+			"foreground": "#B4A5D1"
+		},
+		"struct.public.declaration": {
+			"foreground": "#B4A5D1"
+		},
+		"enum.public.declaration": {
+			"foreground": "#B4A5D1"
+		},
+		"union.public.declaration": {
+			"foreground": "#B4A5D1"
+		},
+		"typeAlias.public.declaration": {
+			"foreground": "#B4A5D1"
+		},
 		"builtinType": {
 			"foreground": "#8CCBCE",
 			"fontStyle": ""
@@ -217,6 +242,9 @@
 		"interface": {
 			"foreground": "#8CCBCE",
 			"italic": true
+		},
+		"interface.public.declaration": {
+			"foreground": "#C4B5E1"
 		},
 		"*.trait": {
 			"italic": true
@@ -268,6 +296,9 @@
 		},
 		"*.mutable": {
 			"underline": true
+		},
+		"*.public.declaration": {
+			"foreground": "#D4C5F2"
 		},
 		"unresolvedReference": {
 			"foreground": "#D49E9E",
@@ -503,29 +534,25 @@
 		{
 			"scope": "constant",
 			"settings": {
-				"foreground": "#C5E2FA",
-				"fontStyle": ""
+				"foreground": "#C5E2FA"
 			}
 		},
 		{
 			"scope": "entity.name.constant",
 			"settings": {
-				"foreground": "#C5E2FA",
-				"fontStyle": ""
+				"foreground": "#C5E2FA"
 			}
 		},
 		{
 			"scope": "variable.other.enummember",
 			"settings": {
-				"foreground": "#C5E2FA",
-				"fontStyle": ""
+				"foreground": "#C5E2FA"
 			}
 		},
 		{
 			"scope": "support.constant",
 			"settings": {
-				"foreground": "#C5E2FA",
-				"fontStyle": ""
+				"foreground": "#C5E2FA"
 			}
 		},
 		{
