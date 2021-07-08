@@ -202,7 +202,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     );
     builder.add_workspace_rule(
         "terminal.ansiBrightMagenta",
-        palette.orange(ColorLightnessPreset::TerminalAnsiBright),
+        palette.purple(ColorLightnessPreset::TerminalAnsiBright),
     );
     builder.add_workspace_rule(
         "terminal.ansiBrightRed",
@@ -223,7 +223,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     );
     builder.add_workspace_rule(
         "terminal.ansiMagenta",
-        palette.orange(ColorLightnessPreset::TerminalAnsi),
+        palette.purple(ColorLightnessPreset::TerminalAnsi),
     );
     builder.add_workspace_rule(
         "terminal.ansiRed",
