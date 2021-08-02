@@ -307,6 +307,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("constant"),
             Textmate("entity.name.constant"),
             Textmate("variable.other.enummember"),
+            Textmate("variable.other.metavariable"),
             Textmate("support.constant"),
         ],
         (palette.blue(2), FontStyle::Inherit),
@@ -371,6 +372,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.string.go"),
             Textmate("storage.type.uintptr.go"),
             Textmate("support.type"),
+            Textmate("variable.other.metavariable.specifier"),
         ],
         palette.cyan(0),
     );
@@ -420,6 +422,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_rules(
         &[
             Semantic("macro"),
+            Textmate("entity.name.function.macro"),
             Textmate("entity.name.macro"),
             Textmate("entity.name.other.preprocessor.macro"),
         ],

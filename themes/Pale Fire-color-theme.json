@@ -532,6 +532,12 @@
 			}
 		},
 		{
+			"scope": "variable.other.metavariable",
+			"settings": {
+				"foreground": "#C5E2FA"
+			}
+		},
+		{
 			"scope": "support.constant",
 			"settings": {
 				"foreground": "#C5E2FA"
@@ -664,6 +670,13 @@
 			}
 		},
 		{
+			"scope": "variable.other.metavariable.specifier",
+			"settings": {
+				"foreground": "#8CCBCE",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "entity.name.type.parameter",
 			"settings": {
 				"foreground": "#DFB397",
@@ -758,6 +771,13 @@
 			"scope": "storage.modifier.package",
 			"settings": {
 				"foreground": "#C4EAC4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "entity.name.function.macro",
+			"settings": {
+				"foreground": "#9AC3E4",
 				"fontStyle": ""
 			}
 		},
