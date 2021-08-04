@@ -64,6 +64,7 @@ impl Palette {
             3 => self.base_greyscale_lightness + 0.13 * self.greyscale_lightness_scale_multiplier,
             4 => self.base_greyscale_lightness + 0.18 * self.greyscale_lightness_scale_multiplier,
             5 => self.base_greyscale_lightness + 0.33 * self.greyscale_lightness_scale_multiplier,
+            6 => self.base_greyscale_lightness + 0.44 * self.greyscale_lightness_scale_multiplier,
             _ => unreachable!(),
         }
     }
@@ -117,7 +118,7 @@ pub(crate) struct GreyscaleLightness(i32);
 
 impl From<i32> for GreyscaleLightness {
     fn from(lightness: i32) -> Self {
-        assert!((-3..=5).contains(&lightness));
+        assert!((-3..=6).contains(&lightness));
         Self(lightness)
     }
 }
