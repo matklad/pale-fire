@@ -142,6 +142,8 @@ pub(crate) enum ColorLightnessPreset {
     GitDecoration,
     Minimap,
     StatusBar,
+    ErrorLensBackground,
+    ErrorLensForeground,
 }
 
 impl From<ColorLightnessPreset> for ColorLightness {
@@ -156,6 +158,8 @@ impl From<ColorLightnessPreset> for ColorLightness {
             ColorLightnessPreset::GitDecoration => 1,
             ColorLightnessPreset::Minimap => 0,
             ColorLightnessPreset::StatusBar => -1,
+            ColorLightnessPreset::ErrorLensBackground => -2,
+            ColorLightnessPreset::ErrorLensForeground => 1,
         })
     }
 }
