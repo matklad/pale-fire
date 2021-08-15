@@ -556,6 +556,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("punctuation"),
             Textmate("keyword.operator.logical.rust"),
             Textmate("keyword.operator"),
+            Textmate("storage.modifier.pointer"),
             Textmate("punctuation"),
         ],
         palette.fg(),

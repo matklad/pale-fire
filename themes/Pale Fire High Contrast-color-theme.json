@@ -968,6 +968,13 @@
 			}
 		},
 		{
+			"scope": "storage.modifier.pointer",
+			"settings": {
+				"foreground": "#EAEAD3",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "punctuation",
 			"settings": {
 				"foreground": "#EAEAD3",
