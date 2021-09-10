@@ -1106,6 +1106,13 @@
 			}
 		},
 		{
+			"scope": "magit.entity",
+			"settings": {
+				"foreground": "#9E9E9E",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "invalid.deprecated.line-too-long.git-commit",
 			"settings": {
 				"foreground": "#DFB397",

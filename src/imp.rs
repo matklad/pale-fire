@@ -636,6 +636,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         (palette.yellow(2), FontStyle::Bold),
     );
     builder.add_rule(Textmate("magit.subheader"), FontStyle::Bold);
+    builder.add_rule(Textmate("magit.entity"), palette.greyscale(5));
 
     // Over 50 characters, the recommended limit.
     builder.add_rule(
