@@ -566,6 +566,20 @@
 			}
 		},
 		{
+			"scope": "entity.other.attribute-name.table.toml",
+			"settings": {
+				"foreground": "#91E0E4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "entity.other.attribute-name.table.array.toml",
+			"settings": {
+				"foreground": "#91E0E4",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "entity.name.type",
 			"settings": {
 				"foreground": "#6CBBBF",
@@ -735,6 +749,20 @@
 		},
 		{
 			"scope": "variable.other.property",
+			"settings": {
+				"foreground": "#E6B18E",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "entity.name.tag.toml",
+			"settings": {
+				"foreground": "#E6B18E",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "entity.name.tag.yaml",
 			"settings": {
 				"foreground": "#E6B18E",
 				"fontStyle": ""
@@ -951,6 +979,13 @@
 		},
 		{
 			"scope": "punctuation",
+			"settings": {
+				"foreground": "#EAEAD3",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "keyword.control.flow.block-scalar.literal.yaml",
 			"settings": {
 				"foreground": "#EAEAD3",
 				"fontStyle": ""

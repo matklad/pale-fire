@@ -360,6 +360,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.function"),
             Textmate("meta.function-call.generic.python"),
             Textmate("support.function"),
+            Textmate("entity.other.attribute-name.table.toml"),
+            Textmate("entity.other.attribute-name.table.array.toml"),
         ],
         palette.cyan(1),
     );
@@ -436,6 +438,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.other.member"),
             Textmate("variable.other.object.property"),
             Textmate("variable.other.property"),
+            Textmate("entity.name.tag.toml"),
+            Textmate("entity.name.tag.yaml"),
         ],
         palette.orange(0),
     );
@@ -548,6 +552,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("keyword.operator"),
             Textmate("storage.modifier.pointer"),
             Textmate("punctuation"),
+            Textmate("keyword.control.flow.block-scalar.literal.yaml"),
         ],
         palette.fg(),
     );
