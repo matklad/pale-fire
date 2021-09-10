@@ -982,7 +982,7 @@
 			}
 		},
 		{
-			"scope": "markup.inserted.diff",
+			"scope": "markup.inserted",
 			"settings": {
 				"foreground": "#A5C9A5",
 				"fontStyle": ""
@@ -996,7 +996,7 @@
 			}
 		},
 		{
-			"scope": "markup.deleted.diff",
+			"scope": "markup.deleted",
 			"settings": {
 				"foreground": "#E4AEAD",
 				"fontStyle": ""
@@ -1006,6 +1006,13 @@
 			"scope": "punctuation.definition.deleted.diff",
 			"settings": {
 				"foreground": "#E4AEAD",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "markup.changed",
+			"settings": {
+				"foreground": "#DFB397",
 				"fontStyle": ""
 			}
 		},
@@ -1020,6 +1027,62 @@
 			"scope": "meta.diff.range",
 			"settings": {
 				"foreground": "#9AC3E4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "comment.line.number-sign.git-commit",
+			"settings": {
+				"foreground": "#717171",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "punctuation.definition.comment.git-commit",
+			"settings": {
+				"foreground": "#717171",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "meta.diff.index",
+			"settings": {
+				"foreground": "#717171",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "meta.diff.header",
+			"settings": {
+				"foreground": "#717171",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "meta.diff.header.to-file",
+			"settings": {
+				"foreground": "#FEFEE7",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": "meta.diff.header.from-file",
+			"settings": {
+				"foreground": "#FEFEE7",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": "punctuation.definition.from-file.diff",
+			"settings": {
+				"foreground": "#8CCBCE",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "punctuation.definition.to-file.diff",
+			"settings": {
+				"foreground": "#8CCBCE",
 				"fontStyle": ""
 			}
 		},

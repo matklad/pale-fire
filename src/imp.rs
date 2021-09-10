@@ -559,17 +559,21 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
 
     builder.add_rules(
         &[
-            Textmate("markup.inserted.diff"),
+            Textmate("markup.inserted"),
             Textmate("punctuation.definition.inserted.diff"),
         ],
         palette.green(ColorLightnessPreset::DiffFg),
     );
     builder.add_rules(
         &[
-            Textmate("markup.deleted.diff"),
+            Textmate("markup.deleted"),
             Textmate("punctuation.definition.deleted.diff"),
         ],
         palette.red(ColorLightnessPreset::DiffFg),
+    );
+    builder.add_rules(
+        &[Textmate("markup.changed")],
+        palette.orange(ColorLightnessPreset::DiffFg),
     );
 
     builder.add_rules(
@@ -578,6 +582,31 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("meta.diff.range"),
         ],
         palette.blue(0),
+    );
+    builder.add_rules(
+        &[
+            Textmate("comment.line.number-sign.git-commit"),
+            Textmate("punctuation.definition.comment.git-commit"),
+            Textmate("meta.diff.index"),
+            Textmate("meta.diff.header"),
+        ],
+        palette.greyscale(4),
+    );
+    builder.add_rules(
+        &[
+            Textmate("meta.diff.header.to-file"),
+            Textmate("meta.diff.header.from-file"),
+        ],
+        // we really want this to stand out
+        // because it’s easily lost among noisy diff output
+        (palette.bright_fg(), FontStyle::Bold),
+    );
+    builder.add_rules(
+        &[
+            Textmate("punctuation.definition.from-file.diff"),
+            Textmate("punctuation.definition.to-file.diff"),
+        ],
+        palette.cyan(0),
     );
 
     builder.add_rules(
