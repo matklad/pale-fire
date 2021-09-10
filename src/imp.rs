@@ -343,10 +343,16 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         &[
             Semantic("boolean"),
             Semantic("enumMember"),
+            Textmate("variable.other.enummember"),
+        ],
+        palette.blue(2),
+    );
+
+    builder.add_rules(
+        &[
             Semantic("variable.static"),
             Textmate("constant"),
             Textmate("entity.name.constant"),
-            Textmate("variable.other.enummember"),
             Textmate("variable.other.metavariable"),
             Textmate("support.constant"),
         ],

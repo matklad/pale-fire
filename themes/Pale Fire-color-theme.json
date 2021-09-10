@@ -167,10 +167,12 @@
 			"fontStyle": ""
 		},
 		"boolean": {
-			"foreground": "#C5E2FA"
+			"foreground": "#C5E2FA",
+			"fontStyle": ""
 		},
 		"enumMember": {
-			"foreground": "#C5E2FA"
+			"foreground": "#C5E2FA",
+			"fontStyle": ""
 		},
 		"variable.static": {
 			"foreground": "#C5E2FA"
@@ -515,6 +517,13 @@
 			}
 		},
 		{
+			"scope": "variable.other.enummember",
+			"settings": {
+				"foreground": "#C5E2FA",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "constant",
 			"settings": {
 				"foreground": "#C5E2FA"
@@ -522,12 +531,6 @@
 		},
 		{
 			"scope": "entity.name.constant",
-			"settings": {
-				"foreground": "#C5E2FA"
-			}
-		},
-		{
-			"scope": "variable.other.enummember",
 			"settings": {
 				"foreground": "#C5E2FA"
 			}
