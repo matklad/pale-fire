@@ -300,7 +300,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("keyword.operator.wordlike"),
             Textmate("keyword.type.go"),
             Textmate("keyword"),
-            Textmate("markup.heading.marker"),
             Textmate("punctuation.definition.heading"),
             Textmate("storage.modifier"),
             Textmate("storage.type.class"),
@@ -555,7 +554,43 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
 
     builder.add_rule(Textmate("markup.italic"), FontStyle::Italic);
     builder.add_rule(Textmate("markup.bold"), FontStyle::Bold);
-    builder.add_rule(Textmate("markup.heading"), FontStyle::Underline);
+    builder.add_rule(Textmate("markup.heading"), FontStyle::Bold);
+    builder.add_rules(
+        &[
+            Textmate("punctuation.definition.markdown"),
+            Textmate("punctuation.definition.heading.markdown"),
+            Textmate("punctuation.definition.metadata.markdown"),
+            Textmate("punctuation.definition.raw.markdown"),
+            Textmate("punctuation.definition.constant.markdown"),
+            Textmate("punctuation.definition.string.begin.markdown"),
+            Textmate("punctuation.definition.string.end.markdown"),
+            Textmate("punctuation.definition.list.begin.markdown"),
+            Textmate("punctuation.definition.quote.begin.markdown"),
+            Textmate("punctuation.definition.bold.markdown"),
+            Textmate("punctuation.definition.italic.markdown"),
+            Textmate("punctuation.separator.key-value.markdown"),
+            Textmate("punctuation.definition.asciidoc"),
+            Textmate("punctuation.separator.asciidoc"),
+            Textmate("support.asciidoc"),
+            Textmate("markup.heading.asciidoc"),
+            Textmate("markup.heading.marker.asciidoc"),
+            Textmate("markup.list.bullet.asciidoc"),
+            Textmate("markup.other.url.asciidoc"),
+            Textmate("constant.asciidoc"),
+            Textmate("entity.name.function.asciidoc"),
+        ],
+        palette.green(-1),
+    );
+    builder.add_rules(
+        &[
+            Textmate("string.other.link.title.markdown"),
+            Textmate("string.other.link.description.markdown"),
+            Textmate("constant.other.reference.link.markdown"),
+            Textmate("markup.link.asciidoc"),
+            Textmate("string.unquoted.asciidoc"),
+        ],
+        palette.fg(),
+    );
 
     builder.add_rules(
         &[
