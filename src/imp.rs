@@ -342,15 +342,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
 
     builder.add_rules(
         &[
-            Semantic("parameter"),
-            Textmate("entity.name.variable.parameter"),
-            Textmate("variable.parameter"),
-        ],
-        palette.greyscale(6),
-    );
-
-    builder.add_rules(
-        &[
             Semantic("boolean"),
             Semantic("enumMember"),
             Semantic("variable.static"),
