@@ -1139,6 +1139,13 @@
 			}
 		},
 		{
+			"scope": "fenced_code.block.language.markdown",
+			"settings": {
+				"foreground": "#8DB98D",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "punctuation.definition.asciidoc",
 			"settings": {
 				"foreground": "#8DB98D",

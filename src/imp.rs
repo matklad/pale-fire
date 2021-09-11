@@ -591,6 +591,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("punctuation.definition.bold.markdown"),
             Textmate("punctuation.definition.italic.markdown"),
             Textmate("punctuation.separator.key-value.markdown"),
+            Textmate("fenced_code.block.language.markdown"),
             Textmate("punctuation.definition.asciidoc"),
             Textmate("punctuation.separator.asciidoc"),
             Textmate("support.asciidoc"),
