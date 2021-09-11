@@ -364,6 +364,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("function"),
             Semantic("method"),
             Textmate("entity.name.function"),
+            Textmate("entity.name.function-call"),
             Textmate("meta.function-call.generic.python"),
             Textmate("support.function"),
             Textmate("entity.other.attribute-name.table.toml"),
@@ -465,6 +466,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.type.namespace"),
             Textmate("storage.modifier.import"),
             Textmate("storage.modifier.package"),
+            Textmate("entity.name.type.module"),
+            Textmate("variable.other.constant.elixir"),
         ],
         palette.green(2),
     );
@@ -475,6 +478,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.function.macro"),
             Textmate("entity.name.macro"),
             Textmate("entity.name.other.preprocessor.macro"),
+            Textmate("variable.other.readwrite.module.elixir"),
+            Textmate("punctuation.definition.variable.elixir"),
         ],
         palette.blue(0),
     );
@@ -498,7 +503,13 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.blue(0),
     );
 
-    builder.add_rule(Semantic("formatSpecifier"), palette.blue(0));
+    builder.add_rules(
+        &[
+            Semantic("formatSpecifier"),
+            Textmate("punctuation.section.embedded"),
+        ],
+        palette.blue(0),
+    );
 
     builder.add_rules(
         &[

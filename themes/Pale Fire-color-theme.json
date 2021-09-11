@@ -555,6 +555,13 @@
 			}
 		},
 		{
+			"scope": "entity.name.function-call",
+			"settings": {
+				"foreground": "#9CDBDE",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "meta.function-call.generic.python",
 			"settings": {
 				"foreground": "#9CDBDE",
@@ -807,6 +814,20 @@
 			}
 		},
 		{
+			"scope": "entity.name.type.module",
+			"settings": {
+				"foreground": "#C4EAC4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "variable.other.constant.elixir",
+			"settings": {
+				"foreground": "#C4EAC4",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "entity.name.function.macro",
 			"settings": {
 				"foreground": "#9AC3E4",
@@ -822,6 +843,20 @@
 		},
 		{
 			"scope": "entity.name.other.preprocessor.macro",
+			"settings": {
+				"foreground": "#9AC3E4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "variable.other.readwrite.module.elixir",
+			"settings": {
+				"foreground": "#9AC3E4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "punctuation.definition.variable.elixir",
 			"settings": {
 				"foreground": "#9AC3E4",
 				"fontStyle": ""
@@ -857,6 +892,13 @@
 		},
 		{
 			"scope": "constant.character.escape",
+			"settings": {
+				"foreground": "#9AC3E4",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "punctuation.section.embedded",
 			"settings": {
 				"foreground": "#9AC3E4",
 				"fontStyle": ""
