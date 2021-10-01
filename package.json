@@ -1,37 +1,47 @@
 {
-    "name": "pale-fire",
-    "displayName": "Pale Fire",
-    "description": "Emacs-inspired zenburn variation",
-    "icon": "icon.png",
-    "publisher": "matklad",
-    "repository": {
-        "url": "https://github.com/matklad/pale-fire"
-    },
-    "version": "0.3.40",
-    "engines": {
-        "vscode": "^1.41.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "scripts": {
-        "package": "vsce package"
-    },
-    "devDependencies": {
-        "vsce": "^1.71.0"
-    },
-    "contributes": {
-        "themes": [
-            {
-                "label": "Pale Fire",
-                "uiTheme": "vs-dark",
-                "path": "./themes/Pale Fire-color-theme.json"
-            },
-            {
-                "label": "Pale Fire High Contrast",
-                "uiTheme": "vs-dark",
-                "path": "./themes/Pale Fire High Contrast-color-theme.json"
-            }
-        ]
-    }
+  "name": "pale-fire",
+  "displayName": "Pale Fire",
+  "description": "Emacs-inspired zenburn variation",
+  "icon": "icon.png",
+  "publisher": "matklad",
+  "repository": {
+    "url": "https://github.com/matklad/pale-fire"
+  },
+  "version": "0.3.40",
+  "engines": {
+    "vscode": "^1.41.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "vsce": "^1.71.0"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Pale Fire",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Pale Fire-color-theme.json"
+      },
+      {
+        "label": "Pale Fire High Contrast",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Pale Fire High Contrast-color-theme.json"
+      },
+      {
+        "label": "Pale Fire Darker",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Pale Fire Darker-color-theme.json"
+      },
+      {
+        "label": "Pale Fire Stealth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Pale Fire Stealth-color-theme.json"
+      }
+    ]
+  }
 }

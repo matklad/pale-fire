@@ -8,6 +8,8 @@ use std::io;
 fn main() -> io::Result<()> {
     gen_and_save_theme("Pale Fire", Palette::ORIGINAL)?;
     gen_and_save_theme("Pale Fire High Contrast", Palette::HIGH_CONTRAST)?;
+    gen_and_save_theme("Pale Fire Darker", Palette::DARKER)?;
+    gen_and_save_theme("Pale Fire Stealth", Palette::STEALTH)?;
 
     Ok(())
 }
