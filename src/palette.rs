@@ -28,6 +28,24 @@ impl Palette {
         color_chroma: 0.078,
     };
 
+    pub(crate) const DARKER: Self = Self {
+        base_foreground_lightness: 0.95,
+        base_greyscale_lightness: 0.2,
+        greyscale_lightness_scale_multiplier: 0.75,
+        base_color_lightness: 0.75,
+        color_lightness_scale_multiplier: 1.05,
+        color_chroma: 0.1,
+    };
+
+    pub(crate) const STEALTH: Self = Self {
+        base_foreground_lightness: 0.9,
+        base_greyscale_lightness: 0.27,
+        greyscale_lightness_scale_multiplier: 0.5,
+        base_color_lightness: 0.75,
+        color_lightness_scale_multiplier: 0.8,
+        color_chroma: 0.064,
+    };
+
     const FG_CHROMA: f32 = 0.03;
     const FG_HUE: f32 = 107.0;
 
