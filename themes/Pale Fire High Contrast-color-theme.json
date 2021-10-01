@@ -238,7 +238,7 @@
 			"fontStyle": ""
 		},
 		"typeParameter": {
-			"foreground": "#E6B18E",
+			"foreground": "#F9C3A0",
 			"fontStyle": ""
 		},
 		"property": {
@@ -256,6 +256,10 @@
 			"italic": true
 		},
 		"namespace": {
+			"foreground": "#9FCC9F",
+			"fontStyle": ""
+		},
+		"namespace.crateRoot": {
 			"foreground": "#C3F1C3",
 			"fontStyle": ""
 		},
@@ -704,7 +708,7 @@
 		{
 			"scope": "entity.name.type.parameter",
 			"settings": {
-				"foreground": "#E6B18E",
+				"foreground": "#F9C3A0",
 				"fontStyle": ""
 			}
 		},
@@ -781,49 +785,49 @@
 		{
 			"scope": "entity.name.module",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "entity.name.namespace",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "entity.name.type.namespace",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.modifier.import",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "storage.modifier.package",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "entity.name.type.module",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},
 		{
 			"scope": "variable.other.constant.elixir",
 			"settings": {
-				"foreground": "#C3F1C3",
+				"foreground": "#9FCC9F",
 				"fontStyle": ""
 			}
 		},

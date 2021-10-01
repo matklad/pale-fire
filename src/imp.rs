@@ -431,7 +431,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("typeParameter"),
             Textmate("entity.name.type.parameter"),
         ],
-        palette.orange(0),
+        palette.orange(1),
     );
 
     builder.add_rules(
@@ -469,8 +469,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.type.module"),
             Textmate("variable.other.constant.elixir"),
         ],
-        palette.green(2),
+        palette.green(0),
     );
+
+    builder.add_rule(Semantic("namespace.crateRoot"), palette.green(2));
 
     builder.add_rules(
         &[
