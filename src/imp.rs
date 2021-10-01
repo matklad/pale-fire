@@ -67,7 +67,6 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "editorGutter.modifiedBackground",
         palette.yellow(ColorLightnessPreset::Gutter),
     );
-    builder.add_workspace_rule("editorGutter.background", palette.greyscale(1));
     builder.add_workspace_rule("editorIndentGuide.activeBackground", palette.greyscale(3));
     builder.add_workspace_rule("editorIndentGuide.background", palette.greyscale(2));
     builder.add_workspace_rule("editorLightBulb.foreground", palette.yellow(2));
