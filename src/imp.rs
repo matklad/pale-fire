@@ -218,6 +218,24 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.orange(ColorLightnessPreset::StatusBar),
     );
     builder.add_workspace_rule("statusBar.noFolderBackground", palette.greyscale(-2));
+    builder.add_workspace_rule("symbolIcon.variableForeground", palette.fg());
+    builder.add_workspace_rule("symbolIcon.functionForeground", palette.cyan(1));
+    builder.add_workspace_rule("symbolIcon.methodForeground", palette.cyan(1));
+    builder.add_workspace_rule("symbolIcon.classForeground", palette.cyan(-1));
+    builder.add_workspace_rule("symbolIcon.structForeground", palette.cyan(-1));
+    builder.add_workspace_rule("symbolIcon.enumeratorForeground", palette.cyan(-1));
+    builder.add_workspace_rule("symbolIcon.interfaceForeground", palette.cyan(0));
+    // we use same color for type parameters as class, struct, etc
+    // instead of the actual type parameter color
+    // since rust-analyzer emits this symbol kind for type aliases,
+    // which we want to have the same color as other type symbol kinds
+    builder.add_workspace_rule("symbolIcon.typeParameterForeground", palette.cyan(-1));
+    builder.add_workspace_rule("symbolIcon.constantForeground", palette.blue(2));
+    builder.add_workspace_rule("symbolIcon.enumeratorMemberForeground", palette.blue(2));
+    builder.add_workspace_rule("symbolIcon.fieldForeground", palette.orange(0));
+    builder.add_workspace_rule("symbolIcon.propertyForeground", palette.orange(0));
+    builder.add_workspace_rule("symbolIcon.moduleForeground", palette.green(0));
+    builder.add_workspace_rule("symbolIcon.namespaceForeground", palette.green(0));
     builder.add_workspace_rule("tab.activeForeground", palette.fg());
     builder.add_workspace_rule("tab.border", palette.greyscale(0));
     builder.add_workspace_rule("tab.inactiveBackground", palette.greyscale(-2));
