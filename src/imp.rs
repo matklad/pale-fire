@@ -308,6 +308,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.function.ts"),
             Textmate("storage.type.function"),
             Textmate("storage.type.js"),
+            Textmate("storage.type.local.java"), // var keyword
             Textmate("storage.type.rust"),
             Textmate("storage.type.struct"),
             Textmate("storage.type.ts"),

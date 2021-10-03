@@ -443,6 +443,13 @@
 			}
 		},
 		{
+			"scope": "storage.type.local.java",
+			"settings": {
+				"foreground": "#F1E4A8",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "storage.type.rust",
 			"settings": {
 				"foreground": "#F1E4A8",
