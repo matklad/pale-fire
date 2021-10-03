@@ -32,9 +32,9 @@ checksum = "dc6f3ad7b9d11a0c00842ff8de1b60ee58661048eb8049ed33c73594f359d7e6"
 
 [[package]]
 name = "mottle"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57833692d786090e31df69247d23d0e272f4a012990588eb89e3a2395cc36282"
+checksum = "423e66674ef284f5b4eb5d860a1bcfa54fb15f7fa88011c2e9e3776ee876ef8c"
 dependencies = [
  "serde",
  "serde_json",
