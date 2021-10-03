@@ -65,6 +65,38 @@ impl Palette {
         )
     }
 
+    pub(crate) fn variable_color(&self) -> Oklch {
+        self.fg()
+    }
+
+    pub(crate) fn function_color(&self) -> Oklch {
+        self.cyan(1)
+    }
+
+    pub(crate) fn type_color(&self) -> Oklch {
+        self.cyan(-1)
+    }
+
+    pub(crate) fn interface_color(&self) -> Oklch {
+        self.cyan(0)
+    }
+
+    pub(crate) fn constant_color(&self) -> Oklch {
+        self.blue(2)
+    }
+
+    pub(crate) fn enum_member_color(&self) -> Oklch {
+        self.blue(2)
+    }
+
+    pub(crate) fn property_color(&self) -> Oklch {
+        self.orange(0)
+    }
+
+    pub(crate) fn namespace_color(&self) -> Oklch {
+        self.green(0)
+    }
+
     pub(crate) fn greyscale(&self, lightness: impl Into<GreyscaleLightness>) -> Oklch {
         oklch(self.greyscale_lightness(lightness), 0.0, 0.0)
     }

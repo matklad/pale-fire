@@ -234,13 +234,13 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "statusBar.debuggingForeground",
         palette.orange(ColorLightnessPreset::StatusBar),
     );
-    builder.add_workspace_rule("symbolIcon.variableForeground", palette.fg());
+    builder.add_workspace_rule("symbolIcon.variableForeground", palette.variable_color());
     builder.add_workspace_rules(
         &[
             "symbolIcon.functionForeground",
             "symbolIcon.methodForeground",
         ],
-        palette.cyan(1),
+        palette.function_color(),
     );
     builder.add_workspace_rules(
         &[
@@ -253,24 +253,27 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
             // which we want to have the same color as other type symbol kinds
             "symbolIcon.typeParameterForeground",
         ],
-        palette.cyan(-1),
+        palette.type_color(),
     );
-    builder.add_workspace_rule("symbolIcon.interfaceForeground", palette.cyan(0));
-    builder.add_workspace_rule("symbolIcon.constantForeground", palette.blue(2));
-    builder.add_workspace_rule("symbolIcon.enumeratorMemberForeground", palette.blue(2));
+    builder.add_workspace_rule("symbolIcon.interfaceForeground", palette.interface_color());
+    builder.add_workspace_rule("symbolIcon.constantForeground", palette.constant_color());
+    builder.add_workspace_rule(
+        "symbolIcon.enumeratorMemberForeground",
+        palette.enum_member_color(),
+    );
     builder.add_workspace_rules(
         &[
             "symbolIcon.fieldForeground",
             "symbolIcon.propertyForeground",
         ],
-        palette.orange(0),
+        palette.property_color(),
     );
     builder.add_workspace_rules(
         &[
             "symbolIcon.moduleForeground",
             "symbolIcon.namespaceForeground",
         ],
-        palette.green(0),
+        palette.namespace_color(),
     );
     builder.add_workspace_rule("tab.activeForeground", palette.fg());
     builder.add_workspace_rule("tab.border", palette.greyscale(0));
@@ -390,7 +393,10 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.red(-1),
     );
 
-    builder.add_rules(&[Semantic("variable"), Textmate("variable")], palette.fg());
+    builder.add_rules(
+        &[Semantic("variable"), Textmate("variable")],
+        palette.variable_color(),
+    );
 
     builder.add_rules(
         &[
@@ -398,7 +404,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("enumMember"),
             Textmate("variable.other.enummember"),
         ],
-        palette.blue(2),
+        palette.enum_member_color(),
     );
 
     builder.add_rules(
@@ -409,7 +415,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.other.metavariable"),
             Textmate("support.constant"),
         ],
-        (palette.blue(2), FontStyle::Inherit),
+        (palette.constant_color(), FontStyle::Inherit),
     );
 
     builder.add_rules(
@@ -423,7 +429,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.other.attribute-name.table.toml"),
             Textmate("entity.other.attribute-name.table.array.toml"),
         ],
-        palette.cyan(1),
+        palette.function_color(),
     );
     builder.add_rules(
         &[
@@ -446,7 +452,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("support.class"),
             Textmate("support.type"),
         ],
-        palette.cyan(-1),
+        palette.type_color(),
     );
     builder.add_rules(
         &[
@@ -503,10 +509,13 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.tag.toml"),
             Textmate("entity.name.tag.yaml"),
         ],
-        palette.orange(0),
+        palette.property_color(),
     );
 
-    builder.add_rule(Semantic("interface"), (palette.cyan(0), FontStyle::Italic));
+    builder.add_rule(
+        Semantic("interface"),
+        (palette.interface_color(), FontStyle::Italic),
+    );
     builder.add_rule(
         Semantic("interface.public.declaration"),
         (palette.purple(0), FontStyle::Inherit),
@@ -525,7 +534,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.type.module"),
             Textmate("variable.other.constant.elixir"),
         ],
-        palette.green(0),
+        palette.namespace_color(),
     );
 
     builder.add_rule(Semantic("namespace.crateRoot"), palette.green(2));
