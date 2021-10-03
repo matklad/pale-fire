@@ -297,6 +297,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("keyword.operator.logical"),
             Textmate("keyword.operator.new"),
             Textmate("keyword.operator.wordlike"),
+            Textmate("keyword.type.elm"),
             Textmate("keyword.type.go"),
             Textmate("keyword"),
             Textmate("punctuation.definition.heading"),
@@ -429,6 +430,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         &[
             Semantic("typeParameter"),
             Textmate("entity.name.type.parameter"),
+            Textmate("variable.type"),
         ],
         palette.orange(1),
     );
@@ -438,6 +440,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Semantic("property"),
             Textmate("entity.name.field"),
             Textmate("entity.name.variable.field"),
+            Textmate("entity.name.record.field"),
             Textmate("punctuation.support.type.property-name"),
             Textmate("support.type.property-name"),
             Textmate("support.type.vendored.property-name"),
@@ -465,6 +468,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("entity.name.type.namespace"),
             Textmate("storage.modifier.import"),
             Textmate("storage.modifier.package"),
+            Textmate("support.module"),
             Textmate("entity.name.type.module"),
             Textmate("variable.other.constant.elixir"),
         ],

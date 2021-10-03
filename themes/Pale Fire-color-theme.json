@@ -366,6 +366,13 @@
 			}
 		},
 		{
+			"scope": "keyword.type.elm",
+			"settings": {
+				"foreground": "#EADFAF",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "keyword.type.go",
 			"settings": {
 				"foreground": "#EADFAF",
@@ -712,6 +719,13 @@
 			}
 		},
 		{
+			"scope": "variable.type",
+			"settings": {
+				"foreground": "#F0C3A6",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "entity.name.field",
 			"settings": {
 				"foreground": "#DFB397",
@@ -720,6 +734,13 @@
 		},
 		{
 			"scope": "entity.name.variable.field",
+			"settings": {
+				"foreground": "#DFB397",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "entity.name.record.field",
 			"settings": {
 				"foreground": "#DFB397",
 				"fontStyle": ""
@@ -811,6 +832,13 @@
 		},
 		{
 			"scope": "storage.modifier.package",
+			"settings": {
+				"foreground": "#A5C9A5",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "support.module",
 			"settings": {
 				"foreground": "#A5C9A5",
 				"fontStyle": ""
