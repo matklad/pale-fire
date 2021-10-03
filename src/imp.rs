@@ -40,15 +40,20 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         (palette.blue(0), 0x44),
     );
     builder.add_workspace_rule("editor.foldBackground", (palette.blue(0), 0x22));
-    builder.add_workspace_rule("editor.foreground", palette.fg());
+    builder.add_workspace_rules(&["editor.foreground", "foreground"], palette.fg());
     builder.add_workspace_rule("editor.hoverHighlightBackground", palette.greyscale(2));
     builder.add_workspace_rule("editor.lineHighlightBackground", palette.greyscale(-1));
     builder.add_workspace_rule("editor.rangeHighlightBackground", (palette.blue(0), 0x22));
     builder.add_workspace_rule("editor.selectionBackground", palette.greyscale(-2));
-    builder.add_workspace_rule("editor.selectionHighlightBackground", palette.greyscale(3));
-    builder.add_workspace_rule("editor.symbolHighlightBackground", palette.greyscale(3));
-    builder.add_workspace_rule("editor.wordHighlightBackground", palette.greyscale(3));
-    builder.add_workspace_rule("editor.wordHighlightStrongBackground", palette.greyscale(3));
+    builder.add_workspace_rules(
+        &[
+            "editor.selectionHighlightBackground",
+            "editor.symbolHighlightBackground",
+            "editor.wordHighlightBackground",
+            "editor.wordHighlightStrongBackground",
+        ],
+        palette.greyscale(3),
+    );
     builder.add_workspace_rule("editorCursor.foreground", palette.bright_fg());
     builder.add_workspace_rule("editorError.foreground", palette.red(0));
     builder.add_workspace_rule("editorGroup.dropBackground", (palette.blue(0), 0x22));
@@ -72,7 +77,14 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editorLightBulb.foreground", palette.yellow(2));
     builder.add_workspace_rule("editorLineNumber.activeForeground", palette.greyscale(5));
     builder.add_workspace_rule("editorLineNumber.foreground", palette.greyscale(3));
-    builder.add_workspace_rule("editorLink.activeForeground", palette.blue(0));
+    builder.add_workspace_rules(
+        &[
+            "editorLink.activeForeground",
+            "textLink.foreground",
+            "textLink.activeForeground",
+        ],
+        palette.blue(0),
+    );
     builder.add_workspace_rule(
         "editorOverviewRuler.addedForeground",
         palette.green(ColorLightnessPreset::OverviewRuler),
@@ -143,7 +155,6 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.green(ColorLightnessPreset::ErrorLensForeground),
     );
     builder.add_workspace_rule("focusBorder", palette.greyscale(3));
-    builder.add_workspace_rule("foreground", palette.fg());
     builder.add_workspace_rule(
         "gitDecoration.ignoredResourceForeground",
         palette.greyscale(4),
@@ -207,8 +218,14 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("sideBar.background", palette.greyscale(-1));
     builder.add_workspace_rule("sideBar.foreground", palette.fg());
     builder.add_workspace_rule("sideBarTitle.foreground", palette.bright_fg());
-    builder.add_workspace_rule("statusBar.background", palette.greyscale(-2));
-    builder.add_workspace_rule("statusBar.debuggingBackground", palette.greyscale(-2));
+    builder.add_workspace_rules(
+        &[
+            "statusBar.background",
+            "statusBar.debuggingBackground",
+            "statusBar.noFolderBackground",
+        ],
+        palette.greyscale(-2),
+    );
     builder.add_workspace_rule(
         "statusBar.foreground",
         palette.green(ColorLightnessPreset::StatusBar),
@@ -217,25 +234,44 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "statusBar.debuggingForeground",
         palette.orange(ColorLightnessPreset::StatusBar),
     );
-    builder.add_workspace_rule("statusBar.noFolderBackground", palette.greyscale(-2));
     builder.add_workspace_rule("symbolIcon.variableForeground", palette.fg());
-    builder.add_workspace_rule("symbolIcon.functionForeground", palette.cyan(1));
-    builder.add_workspace_rule("symbolIcon.methodForeground", palette.cyan(1));
-    builder.add_workspace_rule("symbolIcon.classForeground", palette.cyan(-1));
-    builder.add_workspace_rule("symbolIcon.structForeground", palette.cyan(-1));
-    builder.add_workspace_rule("symbolIcon.enumeratorForeground", palette.cyan(-1));
+    builder.add_workspace_rules(
+        &[
+            "symbolIcon.functionForeground",
+            "symbolIcon.methodForeground",
+        ],
+        palette.cyan(1),
+    );
+    builder.add_workspace_rules(
+        &[
+            "symbolIcon.classForeground",
+            "symbolIcon.structForeground",
+            "symbolIcon.enumeratorForeground",
+            // we use same color for type parameters as class, struct, etc
+            // instead of the actual type parameter color
+            // since rust-analyzer emits this symbol kind for type aliases,
+            // which we want to have the same color as other type symbol kinds
+            "symbolIcon.typeParameterForeground",
+        ],
+        palette.cyan(-1),
+    );
     builder.add_workspace_rule("symbolIcon.interfaceForeground", palette.cyan(0));
-    // we use same color for type parameters as class, struct, etc
-    // instead of the actual type parameter color
-    // since rust-analyzer emits this symbol kind for type aliases,
-    // which we want to have the same color as other type symbol kinds
-    builder.add_workspace_rule("symbolIcon.typeParameterForeground", palette.cyan(-1));
     builder.add_workspace_rule("symbolIcon.constantForeground", palette.blue(2));
     builder.add_workspace_rule("symbolIcon.enumeratorMemberForeground", palette.blue(2));
-    builder.add_workspace_rule("symbolIcon.fieldForeground", palette.orange(0));
-    builder.add_workspace_rule("symbolIcon.propertyForeground", palette.orange(0));
-    builder.add_workspace_rule("symbolIcon.moduleForeground", palette.green(0));
-    builder.add_workspace_rule("symbolIcon.namespaceForeground", palette.green(0));
+    builder.add_workspace_rules(
+        &[
+            "symbolIcon.fieldForeground",
+            "symbolIcon.propertyForeground",
+        ],
+        palette.orange(0),
+    );
+    builder.add_workspace_rules(
+        &[
+            "symbolIcon.moduleForeground",
+            "symbolIcon.namespaceForeground",
+        ],
+        palette.green(0),
+    );
     builder.add_workspace_rule("tab.activeForeground", palette.fg());
     builder.add_workspace_rule("tab.border", palette.greyscale(0));
     builder.add_workspace_rule("tab.inactiveBackground", palette.greyscale(-2));
@@ -295,8 +331,6 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("terminal.foreground", palette.fg());
     builder.add_workspace_rule("terminal.selectionBackground", palette.greyscale(-3));
     builder.add_workspace_rule("terminalCursor.foreground", palette.bright_fg());
-    builder.add_workspace_rule("textLink.activeForeground", palette.blue(0));
-    builder.add_workspace_rule("textLink.foreground", palette.blue(0));
     builder.add_workspace_rule("textPreformat.foreground", palette.fg()); // inline code in e.g. Settings page
     builder.add_workspace_rule("titleBar.activeBackground", palette.greyscale(-1));
     builder.add_workspace_rule("titleBar.activeForeground", palette.fg());
