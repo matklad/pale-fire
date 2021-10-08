@@ -44,7 +44,15 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editor.hoverHighlightBackground", palette.greyscale(2));
     builder.add_workspace_rule("editor.lineHighlightBackground", palette.greyscale(-1));
     builder.add_workspace_rule("editor.rangeHighlightBackground", (palette.blue(0), 0x22));
-    builder.add_workspace_rule("editor.selectionBackground", palette.greyscale(-2));
+    builder.add_workspace_rules(
+        &[
+            "editor.selectionBackground",
+            "terminal.selectionBackground",
+            "selection.background",
+            "minimap.selectionHighlight",
+        ],
+        (palette.blue(0), 0x33),
+    );
     builder.add_workspace_rules(
         &[
             "editor.selectionHighlightBackground",
@@ -187,7 +195,6 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "minimap.findMatchHighlight",
         (palette.blue(ColorLightnessPreset::Minimap), 0x66),
     );
-    builder.add_workspace_rule("minimap.selectionHighlight", (palette.greyscale(-2), 0x88));
     builder.add_workspace_rule("panel.background", palette.greyscale(1));
     builder.add_workspace_rule("panel.border", palette.greyscale(3));
     builder.add_workspace_rule("panelTitle.activeForeground", palette.fg());
@@ -212,7 +219,6 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("progressBar.background", palette.blue(0));
     builder.add_workspace_rule("rust_analyzer.inlayHints.foreground", palette.green(-2));
     builder.add_workspace_rule("scrollbar.shadow", (Oklch::BLACK, 0x88));
-    builder.add_workspace_rule("selection.background", (Oklch::WHITE, 0x55));
     builder.add_workspace_rule("settings.headerForeground", palette.bright_fg());
     builder.add_workspace_rule("settings.modifiedItemIndicator", palette.blue(0));
     builder.add_workspace_rule("sideBar.background", palette.greyscale(-1));
@@ -333,7 +339,6 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         palette.yellow(ColorLightnessPreset::TerminalAnsi),
     );
     builder.add_workspace_rule("terminal.foreground", palette.fg());
-    builder.add_workspace_rule("terminal.selectionBackground", palette.greyscale(-3));
     builder.add_workspace_rule("terminalCursor.foreground", palette.bright_fg());
     builder.add_workspace_rule("textPreformat.foreground", palette.fg()); // inline code in e.g. Settings page
     builder.add_workspace_rule("titleBar.activeBackground", palette.greyscale(-1));
