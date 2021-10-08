@@ -360,13 +360,6 @@
 			}
 		},
 		{
-			"scope": "keyword.operator.logical",
-			"settings": {
-				"foreground": "#EADFAF",
-				"fontStyle": "bold"
-			}
-		},
-		{
 			"scope": "keyword.operator.new",
 			"settings": {
 				"foreground": "#EADFAF",
@@ -396,6 +389,13 @@
 		},
 		{
 			"scope": "keyword",
+			"settings": {
+				"foreground": "#EADFAF",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": "keyword.operator.in",
 			"settings": {
 				"foreground": "#EADFAF",
 				"fontStyle": "bold"
@@ -459,6 +459,13 @@
 		},
 		{
 			"scope": "storage.type.local.java",
+			"settings": {
+				"foreground": "#EADFAF",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": "storage.type.def.groovy",
 			"settings": {
 				"foreground": "#EADFAF",
 				"fontStyle": "bold"

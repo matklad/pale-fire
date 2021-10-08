@@ -355,12 +355,12 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("constant.language.null"),
             Textmate("entity.name.tag"),
             Textmate("keyword.operator.expression"),
-            Textmate("keyword.operator.logical"),
             Textmate("keyword.operator.new"),
             Textmate("keyword.operator.wordlike"),
             Textmate("keyword.type.elm"),
             Textmate("keyword.type.go"),
             Textmate("keyword"),
+            Textmate("keyword.operator.in"), // in keyword
             Textmate("punctuation.definition.heading"),
             Textmate("storage.modifier"),
             Textmate("storage.type.class"),
@@ -370,6 +370,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.function"),
             Textmate("storage.type.js"),
             Textmate("storage.type.local.java"), // var keyword
+            Textmate("storage.type.def.groovy"), // def keyword
             Textmate("storage.type.rust"),
             Textmate("storage.type.struct"),
             Textmate("storage.type.ts"),
