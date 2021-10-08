@@ -2,6 +2,7 @@ use tincture::{Hue, Oklch};
 
 pub(crate) struct Palette {
     base_foreground_lightness: f32,
+    foreground_chroma: f32,
     base_greyscale_lightness: f32,
     greyscale_lightness_scale_multiplier: f32,
     base_color_lightness: f32,
@@ -12,6 +13,7 @@ pub(crate) struct Palette {
 impl Palette {
     pub(crate) const ORIGINAL: Self = Self {
         base_foreground_lightness: 0.9,
+        foreground_chroma: 0.03,
         base_greyscale_lightness: 0.37,
         greyscale_lightness_scale_multiplier: 1.0,
         base_color_lightness: 0.8,
@@ -21,6 +23,7 @@ impl Palette {
 
     pub(crate) const HIGH_CONTRAST: Self = Self {
         base_foreground_lightness: 0.93,
+        foreground_chroma: 0.03,
         base_greyscale_lightness: 0.34,
         greyscale_lightness_scale_multiplier: 1.5,
         base_color_lightness: 0.8,
@@ -30,8 +33,9 @@ impl Palette {
 
     pub(crate) const DARKER: Self = Self {
         base_foreground_lightness: 0.95,
+        foreground_chroma: 0.01,
         base_greyscale_lightness: 0.2,
-        greyscale_lightness_scale_multiplier: 0.75,
+        greyscale_lightness_scale_multiplier: 0.9,
         base_color_lightness: 0.75,
         color_lightness_scale_multiplier: 1.05,
         color_chroma: 0.1,
@@ -39,6 +43,7 @@ impl Palette {
 
     pub(crate) const STEALTH: Self = Self {
         base_foreground_lightness: 0.9,
+        foreground_chroma: 0.03,
         base_greyscale_lightness: 0.27,
         greyscale_lightness_scale_multiplier: 0.5,
         base_color_lightness: 0.75,
@@ -46,13 +51,12 @@ impl Palette {
         color_chroma: 0.064,
     };
 
-    const FG_CHROMA: f32 = 0.03;
     const FG_HUE: f32 = 107.0;
 
     pub(crate) fn fg(&self) -> Oklch {
         oklch(
             self.base_foreground_lightness,
-            Self::FG_CHROMA,
+            self.foreground_chroma,
             Self::FG_HUE,
         )
     }
@@ -60,7 +64,7 @@ impl Palette {
     pub(crate) fn bright_fg(&self) -> Oklch {
         oklch(
             (self.base_foreground_lightness + 0.09).min(0.99),
-            Self::FG_CHROMA,
+            self.foreground_chroma,
             Self::FG_HUE,
         )
     }
