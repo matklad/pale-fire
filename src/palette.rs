@@ -65,6 +65,10 @@ impl Palette {
         )
     }
 
+    pub(crate) fn keyword_color(&self) -> Oklch {
+        self.yellow(2)
+    }
+
     pub(crate) fn variable_color(&self) -> Oklch {
         self.fg()
     }

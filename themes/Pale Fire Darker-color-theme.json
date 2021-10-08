@@ -117,6 +117,7 @@
 		"statusBar.noFolderBackground": "#0B0B0B",
 		"statusBar.foreground": "#75AE77",
 		"statusBar.debuggingForeground": "#CE8D5F",
+		"symbolIcon.keywordForeground": "#E2D082",
 		"symbolIcon.variableForeground": "#F0F0D9",
 		"symbolIcon.functionForeground": "#65D2D8",
 		"symbolIcon.methodForeground": "#65D2D8",

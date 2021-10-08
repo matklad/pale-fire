@@ -234,6 +234,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         "statusBar.debuggingForeground",
         palette.orange(ColorLightnessPreset::StatusBar),
     );
+    builder.add_workspace_rule("symbolIcon.keywordForeground", palette.keyword_color());
     builder.add_workspace_rule("symbolIcon.variableForeground", palette.variable_color());
     builder.add_workspace_rules(
         &[
@@ -370,7 +371,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("variable.language.self"),
             Textmate("variable.language.this"),
         ],
-        (palette.yellow(2), FontStyle::Bold),
+        (palette.keyword_color(), FontStyle::Bold),
     );
 
     builder.add_rules(
