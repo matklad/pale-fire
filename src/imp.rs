@@ -352,7 +352,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_rules(
         &[
             Semantic("keyword"),
-            Textmate("constant.language.null"),
             Textmate("entity.name.tag"),
             Textmate("keyword.operator.expression"),
             Textmate("keyword.operator.new"),

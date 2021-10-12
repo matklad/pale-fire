@@ -339,13 +339,6 @@
 	},
 	"tokenColors": [
 		{
-			"scope": "constant.language.null",
-			"settings": {
-				"foreground": "#D3C899",
-				"fontStyle": "bold"
-			}
-		},
-		{
 			"scope": "entity.name.tag",
 			"settings": {
 				"foreground": "#D3C899",
