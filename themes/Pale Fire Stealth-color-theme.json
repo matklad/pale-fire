@@ -965,6 +965,13 @@
 			}
 		},
 		{
+			"scope": "punctuation.definition.template-expression",
+			"settings": {
+				"foreground": "#8BB3D4",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "comment",
 			"settings": {
 				"foreground": "#719471",

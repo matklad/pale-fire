@@ -581,6 +581,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         &[
             Semantic("formatSpecifier"),
             Textmate("punctuation.section.embedded"),
+            Textmate("punctuation.definition.template-expression"),
         ],
         palette.blue(0),
     );
