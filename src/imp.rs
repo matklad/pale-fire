@@ -642,6 +642,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("keyword.operator.logical.rust"),
             Textmate("keyword.operator"),
             Textmate("storage.modifier.pointer"),
+            Textmate("storage.type.function.arrow"),
             Textmate("punctuation"),
             Textmate("keyword.control.flow.block-scalar.literal.yaml"),
         ],

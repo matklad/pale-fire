@@ -1083,6 +1083,13 @@
 			}
 		},
 		{
+			"scope": "storage.type.function.arrow",
+			"settings": {
+				"foreground": "#E0E0C9",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "punctuation",
 			"settings": {
 				"foreground": "#E0E0C9",
