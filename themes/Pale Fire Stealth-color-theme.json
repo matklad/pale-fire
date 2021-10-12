@@ -1164,6 +1164,20 @@
 			}
 		},
 		{
+			"scope": "punctuation.definition.constant.begin.markdown",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "punctuation.definition.constant.end.markdown",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "punctuation.definition.string.begin.markdown",
 			"settings": {
 				"foreground": "#89AD89",
@@ -1213,7 +1227,35 @@
 			}
 		},
 		{
+			"scope": "punctuation.separator.key-value.markdown",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "fenced_code.block.language.markdown",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "constant.other.reference.link.markdown",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "meta.link.inline.markdown",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "meta.link.reference.def.markdown",
 			"settings": {
 				"foreground": "#89AD89",
 				"fontStyle": ""
@@ -1262,7 +1304,28 @@
 			}
 		},
 		{
+			"scope": "markup.link.asciidoc",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "markup.other.url.asciidoc",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "markup.other.anchor.asciidoc",
+			"settings": {
+				"foreground": "#89AD89",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "support.constant.asciidoc",
 			"settings": {
 				"foreground": "#89AD89",
 				"fontStyle": ""
@@ -1291,20 +1354,6 @@
 		},
 		{
 			"scope": "string.other.link.description.markdown",
-			"settings": {
-				"foreground": "#E0E0C9",
-				"fontStyle": ""
-			}
-		},
-		{
-			"scope": "constant.other.reference.link.markdown",
-			"settings": {
-				"foreground": "#E0E0C9",
-				"fontStyle": ""
-			}
-		},
-		{
-			"scope": "markup.link.asciidoc",
 			"settings": {
 				"foreground": "#E0E0C9",
 				"fontStyle": ""
