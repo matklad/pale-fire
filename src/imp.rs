@@ -370,6 +370,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.js"),
             Textmate("storage.type.local.java"), // var keyword
             Textmate("storage.type.def.groovy"), // def keyword
+            Textmate("storage.type.property"),
             Textmate("storage.type.rust"),
             Textmate("storage.type.struct"),
             Textmate("storage.type.ts"),

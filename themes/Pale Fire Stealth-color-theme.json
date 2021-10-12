@@ -465,6 +465,13 @@
 			}
 		},
 		{
+			"scope": "storage.type.property",
+			"settings": {
+				"foreground": "#D3C899",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "storage.type.rust",
 			"settings": {
 				"foreground": "#D3C899",
