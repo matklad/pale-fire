@@ -375,6 +375,7 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.struct"),
             Textmate("storage.type.ts"),
             Textmate("variable.language.self"),
+            Textmate("variable.language.special.self"),
             Textmate("variable.language.this"),
         ],
         (palette.keyword_color(), FontStyle::Bold),
@@ -505,8 +506,9 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         &[
             Semantic("property"),
             Textmate("entity.name.field"),
-            Textmate("entity.name.variable.field"),
             Textmate("entity.name.record.field"),
+            Textmate("entity.name.variable.field"),
+            Textmate("meta.attribute.python"),
             Textmate("punctuation.support.type.property-name"),
             Textmate("support.type.property-name"),
             Textmate("support.type.vendored.property-name"),
@@ -580,6 +582,8 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_rules(
         &[
             Semantic("formatSpecifier"),
+            Textmate("constant.character.format.placeholder"),
+            Textmate("constant.other.placeholder"),
             Textmate("punctuation.section.embedded"),
             Textmate("punctuation.definition.template-expression"),
         ],

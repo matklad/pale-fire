@@ -500,6 +500,13 @@
 			}
 		},
 		{
+			"scope": "variable.language.special.self",
+			"settings": {
+				"foreground": "#E2D082",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "variable.language.this",
 			"settings": {
 				"foreground": "#E2D082",
@@ -762,6 +769,13 @@
 			}
 		},
 		{
+			"scope": "entity.name.record.field",
+			"settings": {
+				"foreground": "#DF9D6F",
+				"fontStyle": ""
+			}
+		},
+		{
 			"scope": "entity.name.variable.field",
 			"settings": {
 				"foreground": "#DF9D6F",
@@ -769,7 +783,7 @@
 			}
 		},
 		{
-			"scope": "entity.name.record.field",
+			"scope": "meta.attribute.python",
 			"settings": {
 				"foreground": "#DF9D6F",
 				"fontStyle": ""
@@ -952,6 +966,20 @@
 		},
 		{
 			"scope": "constant.character.escape",
+			"settings": {
+				"foreground": "#74B5E8",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "constant.character.format.placeholder",
+			"settings": {
+				"foreground": "#74B5E8",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "constant.other.placeholder",
 			"settings": {
 				"foreground": "#74B5E8",
 				"fontStyle": ""
