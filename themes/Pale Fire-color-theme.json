@@ -168,6 +168,10 @@
 			"foreground": "#EADFAF",
 			"bold": true
 		},
+		"selfParameter": {
+			"foreground": "#EADFAF",
+			"bold": true
+		},
 		"number": {
 			"foreground": "#B4D9B4",
 			"fontStyle": ""
