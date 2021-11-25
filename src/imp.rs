@@ -1,8 +1,10 @@
 use crate::palette::{ColorLightnessPreset, Palette};
-use mottle::style::FontStyle;
+use mottle::style::{FontStyle, Style};
 use mottle::theme::Scope::*;
-use mottle::theme::ThemeBuilder;
+use mottle::theme::{Scope, ThemeBuilder};
 use tincture::{ColorSpace, Oklch};
+
+const INJECTED_OPACITY: u8 = 0xaa;
 
 pub(crate) fn add_rules(builder: &mut ThemeBuilder, palette: Palette) {
     workspace_colors(builder, &palette);
@@ -348,7 +350,115 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("widget.shadow", (Oklch::BLACK, 0x88));
 }
 
-fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
+#[derive(Default)]
+struct SyntaxHighlightingBuilder {
+    semantic_rules: Vec<(&'static str, SyntaxHighlightingStyle)>,
+    textmate_rules: Vec<(&'static str, SyntaxHighlightingStyle)>,
+}
+
+impl SyntaxHighlightingBuilder {
+    fn apply(self, builder: &mut ThemeBuilder, palette: &Palette) {
+        for (scope, style) in &self.semantic_rules {
+            builder.add_rule(Semantic(scope), style.to_style());
+        }
+
+        for (scope, style) in &self.textmate_rules {
+            builder.add_rule(Textmate(scope), style.to_style());
+        }
+
+        for (scope, style) in self.gen_injected_styles(palette) {
+            // FIXME: change mottle::theme::builder::Scope to store a Cow<'static, str>
+            // instead of &'static str so we can just use String here
+            // rather than leaking horribly.
+            builder.add_rule(Semantic(Box::leak(scope.into_boxed_str())), style);
+        }
+    }
+
+    fn add_rules(&mut self, scopes: &[Scope], style: impl Into<SyntaxHighlightingStyle>) {
+        let style = style.into();
+
+        for scope in scopes {
+            match scope {
+                Semantic(scope) => self.semantic_rules.push((scope, style)),
+                Textmate(scope) => self.textmate_rules.push((scope, style)),
+            }
+        }
+    }
+
+    fn add_rule(&mut self, scope: Scope, style: impl Into<SyntaxHighlightingStyle>) {
+        let style = style.into();
+
+        match scope {
+            Semantic(scope) => self.semantic_rules.push((scope, style)),
+            Textmate(scope) => self.textmate_rules.push((scope, style)),
+        }
+    }
+
+    fn gen_injected_styles(&self, palette: &Palette) -> Vec<(String, Style)> {
+        let mut injected_styles = Vec::with_capacity(self.semantic_rules.len());
+
+        for (scope, style) in &self.semantic_rules {
+            injected_styles.push((
+                format!("{}.injected", scope),
+                style.to_style_with_opacity(palette, INJECTED_OPACITY),
+            ));
+        }
+
+        injected_styles.push((
+            "*.injected".to_string(),
+            (palette.fg(), INJECTED_OPACITY).into(),
+        ));
+
+        injected_styles
+    }
+}
+
+#[derive(Clone, Copy)]
+enum SyntaxHighlightingStyle {
+    Color(Oklch),
+    FontStyle(FontStyle),
+    ColorAndFontStyle(Oklch, FontStyle),
+}
+
+impl From<Oklch> for SyntaxHighlightingStyle {
+    fn from(color: Oklch) -> Self {
+        Self::Color(color)
+    }
+}
+
+impl From<FontStyle> for SyntaxHighlightingStyle {
+    fn from(font_style: FontStyle) -> Self {
+        Self::FontStyle(font_style)
+    }
+}
+
+impl From<(Oklch, FontStyle)> for SyntaxHighlightingStyle {
+    fn from((color, font_style): (Oklch, FontStyle)) -> Self {
+        Self::ColorAndFontStyle(color, font_style)
+    }
+}
+
+impl SyntaxHighlightingStyle {
+    fn to_style(self) -> Style {
+        match self {
+            Self::Color(color) => color.into(),
+            Self::FontStyle(font_style) => font_style.into(),
+            Self::ColorAndFontStyle(color, font_style) => (color, font_style).into(),
+        }
+    }
+
+    fn to_style_with_opacity(self, palette: &Palette, opacity: u8) -> Style {
+        match self {
+            Self::Color(color) => (color, opacity).into(),
+            Self::FontStyle(font_style) => ((palette.fg(), opacity), font_style).into(),
+            Self::ColorAndFontStyle(color, font_style) => ((color, opacity), font_style).into(),
+        }
+    }
+}
+
+fn syntax_highlighting(theme_builder: &mut ThemeBuilder, palette: &Palette) {
+    let mut builder = SyntaxHighlightingBuilder::default();
+
     builder.add_rules(
         &[
             Semantic("keyword"),
@@ -795,4 +905,6 @@ fn syntax_highlighting(builder: &mut ThemeBuilder, palette: &Palette) {
         Textmate("invalid.illegal.line-too-long.git-commit"),
         palette.red(0),
     );
+
+    builder.apply(theme_builder, palette);
 }

@@ -339,6 +339,188 @@
 		"magit-remote-ref-name": {
 			"foreground": "#779A77",
 			"bold": true
+		},
+		"keyword.injected": {
+			"foreground": "#EADFAFAA",
+			"bold": true
+		},
+		"selfParameter.injected": {
+			"foreground": "#EADFAFAA",
+			"bold": true
+		},
+		"number.injected": {
+			"foreground": "#B4D9B4AA",
+			"fontStyle": ""
+		},
+		"string.injected": {
+			"foreground": "#D49E9EAA",
+			"fontStyle": ""
+		},
+		"variable.injected": {
+			"foreground": "#E0E0C9AA",
+			"fontStyle": ""
+		},
+		"boolean.injected": {
+			"foreground": "#C5E2FAAA",
+			"fontStyle": ""
+		},
+		"enumMember.injected": {
+			"foreground": "#C5E2FAAA",
+			"fontStyle": ""
+		},
+		"variable.static.injected": {
+			"foreground": "#C5E2FAAA"
+		},
+		"function.injected": {
+			"foreground": "#9CDBDEAA",
+			"fontStyle": ""
+		},
+		"method.injected": {
+			"foreground": "#9CDBDEAA",
+			"fontStyle": ""
+		},
+		"function.public.declaration.injected": {
+			"foreground": "#D4C5F2AA"
+		},
+		"method.public.declaration.injected": {
+			"foreground": "#D4C5F2AA"
+		},
+		"type.injected": {
+			"foreground": "#7CBBBEAA",
+			"fontStyle": ""
+		},
+		"class.injected": {
+			"foreground": "#7CBBBEAA",
+			"fontStyle": ""
+		},
+		"struct.injected": {
+			"foreground": "#7CBBBEAA",
+			"fontStyle": ""
+		},
+		"enum.injected": {
+			"foreground": "#7CBBBEAA",
+			"fontStyle": ""
+		},
+		"union.injected": {
+			"foreground": "#7CBBBEAA",
+			"fontStyle": ""
+		},
+		"typeAlias.injected": {
+			"foreground": "#7CBBBEAA",
+			"fontStyle": ""
+		},
+		"type.public.declaration.injected": {
+			"foreground": "#B4A5D1AA"
+		},
+		"class.public.declaration.injected": {
+			"foreground": "#B4A5D1AA"
+		},
+		"struct.public.declaration.injected": {
+			"foreground": "#B4A5D1AA"
+		},
+		"enum.public.declaration.injected": {
+			"foreground": "#B4A5D1AA"
+		},
+		"union.public.declaration.injected": {
+			"foreground": "#B4A5D1AA"
+		},
+		"typeAlias.public.declaration.injected": {
+			"foreground": "#B4A5D1AA"
+		},
+		"builtinType.injected": {
+			"foreground": "#8CCBCEAA",
+			"fontStyle": ""
+		},
+		"typeParameter.injected": {
+			"foreground": "#F0C3A6AA",
+			"fontStyle": ""
+		},
+		"property.injected": {
+			"foreground": "#DFB397AA",
+			"fontStyle": ""
+		},
+		"interface.injected": {
+			"foreground": "#8CCBCEAA",
+			"italic": true
+		},
+		"interface.public.declaration.injected": {
+			"foreground": "#C4B5E1AA"
+		},
+		"*.trait.injected": {
+			"foreground": "#E0E0C9AA",
+			"italic": true
+		},
+		"namespace.injected": {
+			"foreground": "#A5C9A5AA",
+			"fontStyle": ""
+		},
+		"namespace.crateRoot.injected": {
+			"foreground": "#C4EAC4AA",
+			"fontStyle": ""
+		},
+		"macro.injected": {
+			"foreground": "#9AC3E4AA",
+			"fontStyle": ""
+		},
+		"lifetime.injected": {
+			"foreground": "#DFB397AA",
+			"italic": true
+		},
+		"escapeSequence.injected": {
+			"foreground": "#9AC3E4AA",
+			"fontStyle": ""
+		},
+		"formatSpecifier.injected": {
+			"foreground": "#9AC3E4AA",
+			"fontStyle": ""
+		},
+		"comment.injected": {
+			"foreground": "#779A77AA",
+			"fontStyle": ""
+		},
+		"comment.documentation.injected": {
+			"foreground": "#95B995AA",
+			"fontStyle": ""
+		},
+		"*.attribute.injected": {
+			"foreground": "#9AC3E4AA",
+			"fontStyle": ""
+		},
+		"*.unsafe.injected": {
+			"foreground": "#B38080AA"
+		},
+		"function.unsafe.injected": {
+			"foreground": "#B38080AA"
+		},
+		"operator.unsafe.injected": {
+			"foreground": "#B38080AA"
+		},
+		"punctuation.injected": {
+			"foreground": "#E0E0C9AA",
+			"fontStyle": ""
+		},
+		"*.mutable.injected": {
+			"foreground": "#E0E0C9AA",
+			"underline": true
+		},
+		"*.public.declaration.injected": {
+			"foreground": "#D4C5F2AA"
+		},
+		"unresolvedReference.injected": {
+			"foreground": "#D49E9EAA",
+			"underline": true
+		},
+		"magit-ref-name.injected": {
+			"foreground": "#9CDBDEAA",
+			"bold": true
+		},
+		"magit-remote-ref-name.injected": {
+			"foreground": "#779A77AA",
+			"bold": true
+		},
+		"*.injected": {
+			"foreground": "#E0E0C9AA",
+			"fontStyle": ""
 		}
 	},
 	"tokenColors": [
