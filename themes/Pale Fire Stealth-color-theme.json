@@ -192,6 +192,9 @@
 			"foreground": "#AFCBE3",
 			"fontStyle": ""
 		},
+		"constParameter": {
+			"foreground": "#AFCBE3"
+		},
 		"variable.static": {
 			"foreground": "#AFCBE3"
 		},
@@ -367,6 +370,9 @@
 		"enumMember.injected": {
 			"foreground": "#AFCBE3AA",
 			"fontStyle": ""
+		},
+		"constParameter.injected": {
+			"foreground": "#AFCBE3AA"
 		},
 		"variable.static.injected": {
 			"foreground": "#AFCBE3AA"

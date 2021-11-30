@@ -528,6 +528,7 @@ fn syntax_highlighting(theme_builder: &mut ThemeBuilder, palette: &Palette) {
 
     builder.add_rules(
         &[
+            Semantic("constParameter"),
             Semantic("variable.static"),
             Textmate("constant"),
             Textmate("entity.name.constant"),
