@@ -35,6 +35,7 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         (palette.red(ColorLightnessPreset::DiffBg), 0x33),
     );
     builder.add_workspace_rule("dropdown.border", palette.greyscale(2));
+    builder.add_workspace_rule("dropdown.foreground", palette.fg());
     builder.add_workspace_rule("editor.background", palette.greyscale(0));
     builder.add_workspace_rule("editor.findMatchBackground", (palette.blue(0), 0x66));
     builder.add_workspace_rule(
