@@ -722,9 +722,9 @@ fn syntax_highlighting(theme_builder: &mut ThemeBuilder, palette: &Palette) {
 
     builder.add_rules(
         &[
-            Semantic("*.attribute"),
+            Semantic("attribute"),
+            Semantic("derive"),
             Textmate("entity.name.function.decorator"),
-            Textmate("meta.attribute"),
             Textmate("punctuation.brackets.attribute"),
             Textmate("punctuation.definition.annotation"),
             Textmate("punctuation.definition.attribute"),

@@ -309,7 +309,11 @@
 			"foreground": "#8DB98D",
 			"fontStyle": ""
 		},
-		"*.attribute": {
+		"attribute": {
+			"foreground": "#92C4EC",
+			"fontStyle": ""
+		},
+		"derive": {
 			"foreground": "#92C4EC",
 			"fontStyle": ""
 		},
@@ -489,7 +493,11 @@
 			"foreground": "#8DB98DAA",
 			"fontStyle": ""
 		},
-		"*.attribute.injected": {
+		"attribute.injected": {
+			"foreground": "#92C4ECAA",
+			"fontStyle": ""
+		},
+		"derive.injected": {
 			"foreground": "#92C4ECAA",
 			"fontStyle": ""
 		},
@@ -1215,13 +1223,6 @@
 		},
 		{
 			"scope": "entity.name.function.decorator",
-			"settings": {
-				"foreground": "#92C4EC",
-				"fontStyle": ""
-			}
-		},
-		{
-			"scope": "meta.attribute",
 			"settings": {
 				"foreground": "#92C4EC",
 				"fontStyle": ""
