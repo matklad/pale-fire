@@ -71,16 +71,25 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
     builder.add_workspace_rule("editorGroupHeader.noTabsBackground", palette.greyscale(1));
     builder.add_workspace_rule("editorGroupHeader.tabsBackground", palette.greyscale(-2));
     builder.add_workspace_rule("editorGroup.border", palette.greyscale(3));
-    builder.add_workspace_rule(
-        "editorGutter.addedBackground",
+    builder.add_workspace_rules(
+        &[
+            "editorGutter.addedBackground",
+            "minimapGutter.addedBackground",
+        ],
         palette.green(ColorLightnessPreset::Gutter),
     );
-    builder.add_workspace_rule(
-        "editorGutter.deletedBackground",
+    builder.add_workspace_rules(
+        &[
+            "editorGutter.deletedBackground",
+            "minimapGutter.deletedBackground",
+        ],
         palette.red(ColorLightnessPreset::Gutter),
     );
-    builder.add_workspace_rule(
-        "editorGutter.modifiedBackground",
+    builder.add_workspace_rules(
+        &[
+            "editorGutter.modifiedBackground",
+            "minimapGutter.modifiedBackground",
+        ],
         palette.yellow(ColorLightnessPreset::Gutter),
     );
     builder.add_workspace_rule("editorIndentGuide.activeBackground", palette.greyscale(3));
