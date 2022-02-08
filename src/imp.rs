@@ -488,13 +488,16 @@ fn syntax_highlighting(theme_builder: &mut ThemeBuilder, palette: &Palette) {
             Textmate("storage.type.function.python"),
             Textmate("storage.type.function.ts"),
             Textmate("storage.type.function"),
+            Textmate("storage.type.interface.ts"),
             Textmate("storage.type.js"),
             Textmate("storage.type.local.java"), // var keyword
             Textmate("storage.type.def.groovy"), // def keyword
+            Textmate("storage.type.namespace"),
             Textmate("storage.type.property"),
             Textmate("storage.type.rust"),
             Textmate("storage.type.struct"),
             Textmate("storage.type.ts"),
+            Textmate("storage.type.type"),
             Textmate("variable.language.self"),
             Textmate("variable.language.special.self"),
             Textmate("variable.language.this"),

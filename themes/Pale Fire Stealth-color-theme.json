@@ -648,6 +648,13 @@
 			}
 		},
 		{
+			"scope": "storage.type.interface.ts",
+			"settings": {
+				"foreground": "#D3C899",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"scope": "storage.type.js",
 			"settings": {
 				"foreground": "#D3C899",
@@ -663,6 +670,13 @@
 		},
 		{
 			"scope": "storage.type.def.groovy",
+			"settings": {
+				"foreground": "#D3C899",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": "storage.type.namespace",
 			"settings": {
 				"foreground": "#D3C899",
 				"fontStyle": "bold"
@@ -691,6 +705,13 @@
 		},
 		{
 			"scope": "storage.type.ts",
+			"settings": {
+				"foreground": "#D3C899",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": "storage.type.type",
 			"settings": {
 				"foreground": "#D3C899",
 				"fontStyle": "bold"
