@@ -1,54 +1,52 @@
 use crate::palette::{ColorLightnessPreset, Palette};
-use mottle::style::{FontStyle, Style};
-use mottle::theme::Scope::*;
-use mottle::theme::{Scope, ThemeBuilder};
-use tincture::{ColorSpace, Oklch};
+use mottle::dsl::{s, tm, FontStyle, ThemeBuilder};
+use mottle::proto;
 
 const INJECTED_OPACITY: u8 = 0xaa;
 
-pub(crate) fn add_rules(builder: &mut ThemeBuilder, palette: Palette) {
-    workspace_colors(builder, &palette);
-    syntax_highlighting(builder, &palette);
+pub(crate) fn add_rules(t: &mut ThemeBuilder, palette: Palette) {
+    workspace_colors(t, &palette);
+    syntax_highlighting(t, &palette);
 }
 
-fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
-    builder.add_workspace_rule("activityBar.activeBorder", palette.fg());
-    builder.add_workspace_rule("activityBar.background", palette.greyscale(-1));
-    builder.add_workspace_rule("activityBar.foreground", palette.fg());
-    builder.add_workspace_rule("activityBar.inactiveForeground", palette.greyscale(4));
-    builder.add_workspace_rule("activityBarBadge.background", palette.blue(0));
-    builder.add_workspace_rule("activityBarBadge.foreground", palette.greyscale(0));
-    builder.add_workspace_rule("badge.background", palette.greyscale(3));
-    builder.add_workspace_rule("badge.foreground", palette.fg());
-    builder.add_workspace_rule("button.background", palette.blue(0));
-    builder.add_workspace_rule("button.foreground", palette.greyscale(0));
-    builder.add_workspace_rule("button.hoverBackground", palette.fg());
-    builder.add_workspace_rule("checkbox.background", palette.greyscale(-2));
-    builder.add_workspace_rule("checkbox.border", palette.greyscale(2));
-    builder.add_workspace_rule("debugIcon.breakpointForeground", palette.red(0));
-    builder.add_workspace_rule(
-        "diffEditor.insertedTextBackground",
+fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
+    t.w(["activityBar.activeBorder"], palette.fg());
+    t.w(["activityBar.background"], palette.greyscale(-1));
+    t.w(["activityBar.foreground"], palette.fg());
+    t.w(["activityBar.inactiveForeground"], palette.greyscale(4));
+    t.w(["activityBarBadge.background"], palette.blue(0));
+    t.w(["activityBarBadge.foreground"], palette.greyscale(0));
+    t.w(["badge.background"], palette.greyscale(3));
+    t.w(["badge.foreground"], palette.fg());
+    t.w(["button.background"], palette.blue(0));
+    t.w(["button.foreground"], palette.greyscale(0));
+    t.w(["button.hoverBackground"], palette.fg());
+    t.w(["checkbox.background"], palette.greyscale(-2));
+    t.w(["checkbox.border"], palette.greyscale(2));
+    t.w(["debugIcon.breakpointForeground"], palette.red(0));
+    t.w(
+        ["diffEditor.insertedTextBackground"],
         (palette.green(ColorLightnessPreset::DiffBg), 0x33),
     );
-    builder.add_workspace_rule(
-        "diffEditor.removedTextBackground",
+    t.w(
+        ["diffEditor.removedTextBackground"],
         (palette.red(ColorLightnessPreset::DiffBg), 0x33),
     );
-    builder.add_workspace_rule("dropdown.border", palette.greyscale(2));
-    builder.add_workspace_rule("dropdown.foreground", palette.fg());
-    builder.add_workspace_rule("editor.background", palette.greyscale(0));
-    builder.add_workspace_rule("editor.findMatchBackground", (palette.blue(0), 0x66));
-    builder.add_workspace_rule(
-        "editor.findMatchHighlightBackground",
+    t.w(["dropdown.border"], palette.greyscale(2));
+    t.w(["dropdown.foreground"], palette.fg());
+    t.w(["editor.background"], palette.greyscale(0));
+    t.w(["editor.findMatchBackground"], (palette.blue(0), 0x66));
+    t.w(
+        ["editor.findMatchHighlightBackground"],
         (palette.blue(0), 0x44),
     );
-    builder.add_workspace_rule("editor.foldBackground", (palette.blue(0), 0x22));
-    builder.add_workspace_rules(&["editor.foreground", "foreground"], palette.fg());
-    builder.add_workspace_rule("editor.hoverHighlightBackground", palette.greyscale(2));
-    builder.add_workspace_rule("editor.lineHighlightBackground", palette.greyscale(-1));
-    builder.add_workspace_rule("editor.rangeHighlightBackground", (palette.blue(0), 0x22));
-    builder.add_workspace_rules(
-        &[
+    t.w(["editor.foldBackground"], (palette.blue(0), 0x22));
+    t.w(["editor.foreground", "foreground"], palette.fg());
+    t.w(["editor.hoverHighlightBackground"], palette.greyscale(2));
+    t.w(["editor.lineHighlightBackground"], palette.greyscale(-1));
+    t.w(["editor.rangeHighlightBackground"], (palette.blue(0), 0x22));
+    t.w(
+        [
             "editor.selectionBackground",
             "terminal.selectionBackground",
             "selection.background",
@@ -56,8 +54,8 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         ],
         (palette.blue(0), 0x33),
     );
-    builder.add_workspace_rules(
-        &[
+    t.w(
+        [
             "editor.selectionHighlightBackground",
             "editor.symbolHighlightBackground",
             "editor.wordHighlightBackground",
@@ -65,204 +63,204 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         ],
         palette.greyscale(3),
     );
-    builder.add_workspace_rule("editorCursor.foreground", palette.bright_fg());
-    builder.add_workspace_rule("editorError.foreground", palette.red(0));
-    builder.add_workspace_rule("editorGroup.dropBackground", (palette.blue(0), 0x22));
-    builder.add_workspace_rule("editorGroupHeader.noTabsBackground", palette.greyscale(1));
-    builder.add_workspace_rule("editorGroupHeader.tabsBackground", palette.greyscale(-2));
-    builder.add_workspace_rule("editorGroup.border", palette.greyscale(3));
-    builder.add_workspace_rules(
-        &[
+    t.w(["editorCursor.foreground"], palette.bright_fg());
+    t.w(["editorError.foreground"], palette.red(0));
+    t.w(["editorGroup.dropBackground"], (palette.blue(0), 0x22));
+    t.w(["editorGroupHeader.noTabsBackground"], palette.greyscale(1));
+    t.w(["editorGroupHeader.tabsBackground"], palette.greyscale(-2));
+    t.w(["editorGroup.border"], palette.greyscale(3));
+    t.w(
+        [
             "editorGutter.addedBackground",
             "minimapGutter.addedBackground",
         ],
         palette.green(ColorLightnessPreset::Gutter),
     );
-    builder.add_workspace_rules(
-        &[
+    t.w(
+        [
             "editorGutter.deletedBackground",
             "minimapGutter.deletedBackground",
         ],
         palette.red(ColorLightnessPreset::Gutter),
     );
-    builder.add_workspace_rules(
-        &[
+    t.w(
+        [
             "editorGutter.modifiedBackground",
             "minimapGutter.modifiedBackground",
         ],
         palette.yellow(ColorLightnessPreset::Gutter),
     );
-    builder.add_workspace_rule("editorIndentGuide.activeBackground", palette.greyscale(3));
-    builder.add_workspace_rule("editorIndentGuide.background", palette.greyscale(2));
-    builder.add_workspace_rule("editorLightBulb.foreground", palette.yellow(2));
-    builder.add_workspace_rule("editorLineNumber.activeForeground", palette.greyscale(5));
-    builder.add_workspace_rule("editorLineNumber.foreground", palette.greyscale(3));
-    builder.add_workspace_rules(
-        &[
+    t.w(["editorIndentGuide.activeBackground"], palette.greyscale(3));
+    t.w(["editorIndentGuide.background"], palette.greyscale(2));
+    t.w(["editorLightBulb.foreground"], palette.yellow(2));
+    t.w(["editorLineNumber.activeForeground"], palette.greyscale(5));
+    t.w(["editorLineNumber.foreground"], palette.greyscale(3));
+    t.w(
+        [
             "editorLink.activeForeground",
             "textLink.foreground",
             "textLink.activeForeground",
         ],
         palette.blue(0),
     );
-    builder.add_workspace_rule(
-        "editorOverviewRuler.addedForeground",
+    t.w(
+        ["editorOverviewRuler.addedForeground"],
         palette.green(ColorLightnessPreset::OverviewRuler),
     );
-    builder.add_workspace_rule("editorOverviewRuler.border", palette.greyscale(3));
-    builder.add_workspace_rule(
-        "editorOverviewRuler.deletedForeground",
+    t.w(["editorOverviewRuler.border"], palette.greyscale(3));
+    t.w(
+        ["editorOverviewRuler.deletedForeground"],
         palette.red(ColorLightnessPreset::OverviewRuler),
     );
-    builder.add_workspace_rule(
-        "editorOverviewRuler.errorForeground",
+    t.w(
+        ["editorOverviewRuler.errorForeground"],
         palette.red(ColorLightnessPreset::OverviewRuler),
     );
-    builder.add_workspace_rule(
-        "editorOverviewRuler.findMatchForeground",
+    t.w(
+        ["editorOverviewRuler.findMatchForeground"],
         (palette.blue(ColorLightnessPreset::OverviewRuler), 0x88),
     );
-    builder.add_workspace_rule(
-        "editorOverviewRuler.modifiedForeground",
+    t.w(
+        ["editorOverviewRuler.modifiedForeground"],
         palette.yellow(ColorLightnessPreset::OverviewRuler),
     );
-    builder.add_workspace_rule(
-        "editorOverviewRuler.rangeHighlightForeground",
+    t.w(
+        ["editorOverviewRuler.rangeHighlightForeground"],
         (palette.blue(ColorLightnessPreset::OverviewRuler), 0x33),
     );
-    builder.add_workspace_rule("editorWarning.foreground", palette.orange(0));
-    builder.add_workspace_rule("editorWidget.background", palette.greyscale(-1));
-    builder.add_workspace_rule("editorWidget.border", palette.greyscale(2));
-    builder.add_workspace_rule(
-        "errorLens.errorBackground",
+    t.w(["editorWarning.foreground"], palette.orange(0));
+    t.w(["editorWidget.background"], palette.greyscale(-1));
+    t.w(["editorWidget.border"], palette.greyscale(2));
+    t.w(
+        ["errorLens.errorBackground"],
         (palette.red(ColorLightnessPreset::ErrorLensBackground), 0x33),
     );
-    builder.add_workspace_rule(
-        "errorLens.errorForeground",
+    t.w(
+        ["errorLens.errorForeground"],
         palette.red(ColorLightnessPreset::ErrorLensForeground),
     );
-    builder.add_workspace_rule(
-        "errorLens.warningBackground",
+    t.w(
+        ["errorLens.warningBackground"],
         (
             palette.orange(ColorLightnessPreset::ErrorLensBackground),
             0x33,
         ),
     );
-    builder.add_workspace_rule(
-        "errorLens.warningForeground",
+    t.w(
+        ["errorLens.warningForeground"],
         palette.orange(ColorLightnessPreset::ErrorLensForeground),
     );
-    builder.add_workspace_rule(
-        "errorLens.infoBackground",
+    t.w(
+        ["errorLens.infoBackground"],
         (
             palette.blue(ColorLightnessPreset::ErrorLensBackground),
             0x33,
         ),
     );
-    builder.add_workspace_rule(
-        "errorLens.infoForeground",
+    t.w(
+        ["errorLens.infoForeground"],
         palette.blue(ColorLightnessPreset::ErrorLensForeground),
     );
-    builder.add_workspace_rule(
-        "errorLens.hintBackground",
+    t.w(
+        ["errorLens.hintBackground"],
         (
             palette.green(ColorLightnessPreset::ErrorLensBackground),
             0x33,
         ),
     );
-    builder.add_workspace_rule(
-        "errorLens.hintForeground",
+    t.w(
+        ["errorLens.hintForeground"],
         palette.green(ColorLightnessPreset::ErrorLensForeground),
     );
-    builder.add_workspace_rule("focusBorder", palette.greyscale(3));
-    builder.add_workspace_rule(
-        "gitDecoration.ignoredResourceForeground",
+    t.w(["focusBorder"], palette.greyscale(3));
+    t.w(
+        ["gitDecoration.ignoredResourceForeground"],
         palette.greyscale(4),
     );
-    builder.add_workspace_rule(
-        "gitDecoration.modifiedResourceForeground",
+    t.w(
+        ["gitDecoration.modifiedResourceForeground"],
         palette.yellow(ColorLightnessPreset::GitDecoration),
     );
-    builder.add_workspace_rule(
-        "gitDecoration.untrackedResourceForeground",
+    t.w(
+        ["gitDecoration.untrackedResourceForeground"],
         palette.green(ColorLightnessPreset::GitDecoration),
     );
-    builder.add_workspace_rule("input.background", palette.greyscale(-2));
-    builder.add_workspace_rule("input.border", palette.greyscale(2));
-    builder.add_workspace_rule("input.foreground", palette.fg());
-    builder.add_workspace_rule("input.placeholderForeground", palette.greyscale(4));
-    builder.add_workspace_rule("list.activeSelectionBackground", palette.greyscale(2));
-    builder.add_workspace_rule("list.activeSelectionForeground", palette.fg());
-    builder.add_workspace_rule("list.errorForeground", palette.red(0));
-    builder.add_workspace_rule("list.focusBackground", palette.greyscale(2));
-    builder.add_workspace_rule("list.highlightForeground", palette.blue(2));
-    builder.add_workspace_rule("list.hoverBackground", palette.greyscale(0));
-    builder.add_workspace_rule("list.inactiveSelectionBackground", palette.greyscale(1));
-    builder.add_workspace_rule("list.warningForeground", palette.orange(0));
-    builder.add_workspace_rule(
-        "minimap.errorHighlight",
+    t.w(["input.background"], palette.greyscale(-2));
+    t.w(["input.border"], palette.greyscale(2));
+    t.w(["input.foreground"], palette.fg());
+    t.w(["input.placeholderForeground"], palette.greyscale(4));
+    t.w(["list.activeSelectionBackground"], palette.greyscale(2));
+    t.w(["list.activeSelectionForeground"], palette.fg());
+    t.w(["list.errorForeground"], palette.red(0));
+    t.w(["list.focusBackground"], palette.greyscale(2));
+    t.w(["list.highlightForeground"], palette.blue(2));
+    t.w(["list.hoverBackground"], palette.greyscale(0));
+    t.w(["list.inactiveSelectionBackground"], palette.greyscale(1));
+    t.w(["list.warningForeground"], palette.orange(0));
+    t.w(
+        ["minimap.errorHighlight"],
         palette.red(ColorLightnessPreset::Minimap),
     );
-    builder.add_workspace_rule(
-        "minimap.findMatchHighlight",
+    t.w(
+        ["minimap.findMatchHighlight"],
         (palette.blue(ColorLightnessPreset::Minimap), 0x66),
     );
-    builder.add_workspace_rule("panel.background", palette.greyscale(1));
-    builder.add_workspace_rule("panel.border", palette.greyscale(3));
-    builder.add_workspace_rule("panelTitle.activeForeground", palette.fg());
-    builder.add_workspace_rule("peekView.border", palette.greyscale(4));
-    builder.add_workspace_rule("peekViewEditor.background", palette.greyscale(0));
-    builder.add_workspace_rule(
-        "peekViewEditor.matchHighlightBackground",
+    t.w(["panel.background"], palette.greyscale(1));
+    t.w(["panel.border"], palette.greyscale(3));
+    t.w(["panelTitle.activeForeground"], palette.fg());
+    t.w(["peekView.border"], palette.greyscale(4));
+    t.w(["peekViewEditor.background"], palette.greyscale(0));
+    t.w(
+        ["peekViewEditor.matchHighlightBackground"],
         (palette.blue(0), 0x66),
     );
-    builder.add_workspace_rule("peekViewResult.background", palette.greyscale(-1));
-    builder.add_workspace_rule("peekViewResult.fileForeground", palette.fg());
-    builder.add_workspace_rule("peekViewResult.lineForeground", (palette.fg(), 0x99));
-    builder.add_workspace_rule(
-        "peekViewResult.matchHighlightBackground",
+    t.w(["peekViewResult.background"], palette.greyscale(-1));
+    t.w(["peekViewResult.fileForeground"], palette.fg());
+    t.w(["peekViewResult.lineForeground"], (palette.fg(), 0x99));
+    t.w(
+        ["peekViewResult.matchHighlightBackground"],
         (palette.blue(0), 0x44),
     );
-    builder.add_workspace_rule("peekViewResult.selectionBackground", palette.greyscale(2));
-    builder.add_workspace_rule("peekViewResult.selectionForeground", palette.fg());
-    builder.add_workspace_rule("peekViewTitle.background", palette.greyscale(-1));
-    builder.add_workspace_rule("peekViewTitleDescription.foreground", palette.blue(0));
-    builder.add_workspace_rule("peekViewTitleLabel.foreground", palette.bright_fg());
-    builder.add_workspace_rule("progressBar.background", palette.blue(0));
-    builder.add_workspace_rule("rust_analyzer.inlayHints.foreground", palette.green(-2));
-    builder.add_workspace_rule("scrollbar.shadow", (Oklch::BLACK, 0x88));
-    builder.add_workspace_rule("settings.headerForeground", palette.bright_fg());
-    builder.add_workspace_rule("settings.modifiedItemIndicator", palette.blue(0));
-    builder.add_workspace_rule("sideBar.background", palette.greyscale(-1));
-    builder.add_workspace_rule("sideBar.foreground", palette.fg());
-    builder.add_workspace_rule("sideBarTitle.foreground", palette.bright_fg());
-    builder.add_workspace_rules(
-        &[
+    t.w(["peekViewResult.selectionBackground"], palette.greyscale(2));
+    t.w(["peekViewResult.selectionForeground"], palette.fg());
+    t.w(["peekViewTitle.background"], palette.greyscale(-1));
+    t.w(["peekViewTitleDescription.foreground"], palette.blue(0));
+    t.w(["peekViewTitleLabel.foreground"], palette.bright_fg());
+    t.w(["progressBar.background"], palette.blue(0));
+    t.w(["rust_analyzer.inlayHints.foreground"], palette.green(-2));
+    t.w(["scrollbar.shadow"], (0x000000, 0x88));
+    t.w(["settings.headerForeground"], palette.bright_fg());
+    t.w(["settings.modifiedItemIndicator"], palette.blue(0));
+    t.w(["sideBar.background"], palette.greyscale(-1));
+    t.w(["sideBar.foreground"], palette.fg());
+    t.w(["sideBarTitle.foreground"], palette.bright_fg());
+    t.w(
+        [
             "statusBar.background",
             "statusBar.debuggingBackground",
             "statusBar.noFolderBackground",
         ],
         palette.greyscale(-2),
     );
-    builder.add_workspace_rule(
-        "statusBar.foreground",
+    t.w(
+        ["statusBar.foreground"],
         palette.green(ColorLightnessPreset::StatusBar),
     );
-    builder.add_workspace_rule(
-        "statusBar.debuggingForeground",
+    t.w(
+        ["statusBar.debuggingForeground"],
         palette.orange(ColorLightnessPreset::StatusBar),
     );
-    builder.add_workspace_rule("symbolIcon.keywordForeground", palette.keyword_color());
-    builder.add_workspace_rule("symbolIcon.variableForeground", palette.variable_color());
-    builder.add_workspace_rules(
-        &[
+    t.w(["symbolIcon.keywordForeground"], palette.keyword_color());
+    t.w(["symbolIcon.variableForeground"], palette.variable_color());
+    t.w(
+        [
             "symbolIcon.functionForeground",
             "symbolIcon.methodForeground",
         ],
         palette.function_color(),
     );
-    builder.add_workspace_rules(
-        &[
+    t.w(
+        [
             "symbolIcon.classForeground",
             "symbolIcon.structForeground",
             "symbolIcon.enumeratorForeground",
@@ -274,651 +272,547 @@ fn workspace_colors(builder: &mut ThemeBuilder, palette: &Palette) {
         ],
         palette.type_color(),
     );
-    builder.add_workspace_rule("symbolIcon.interfaceForeground", palette.interface_color());
-    builder.add_workspace_rule("symbolIcon.constantForeground", palette.constant_color());
-    builder.add_workspace_rule(
-        "symbolIcon.enumeratorMemberForeground",
+    t.w(
+        ["symbolIcon.interfaceForeground"],
+        palette.interface_color(),
+    );
+    t.w(["symbolIcon.constantForeground"], palette.constant_color());
+    t.w(
+        ["symbolIcon.enumeratorMemberForeground"],
         palette.enum_member_color(),
     );
-    builder.add_workspace_rules(
-        &[
+    t.w(
+        [
             "symbolIcon.fieldForeground",
             "symbolIcon.propertyForeground",
         ],
         palette.property_color(),
     );
-    builder.add_workspace_rules(
-        &[
+    t.w(
+        [
             "symbolIcon.moduleForeground",
             "symbolIcon.namespaceForeground",
         ],
         palette.namespace_color(),
     );
-    builder.add_workspace_rule("tab.activeForeground", palette.fg());
-    builder.add_workspace_rule("tab.border", palette.greyscale(0));
-    builder.add_workspace_rule("tab.inactiveBackground", palette.greyscale(-2));
-    builder.add_workspace_rule("tab.inactiveForeground", palette.greyscale(4));
-    builder.add_workspace_rule("terminal.ansiBlack", palette.greyscale(-2));
-    builder.add_workspace_rule(
-        "terminal.ansiBlue",
+    t.w(["tab.activeForeground"], palette.fg());
+    t.w(["tab.border"], palette.greyscale(0));
+    t.w(["tab.inactiveBackground"], palette.greyscale(-2));
+    t.w(["tab.inactiveForeground"], palette.greyscale(4));
+    t.w(["terminal.ansiBlack"], palette.greyscale(-2));
+    t.w(
+        ["terminal.ansiBlue"],
         palette.blue(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule("terminal.ansiBrightBlack", palette.greyscale(5));
-    builder.add_workspace_rule(
-        "terminal.ansiBrightBlue",
+    t.w(["terminal.ansiBrightBlack"], palette.greyscale(5));
+    t.w(
+        ["terminal.ansiBrightBlue"],
         palette.blue(ColorLightnessPreset::TerminalAnsiBright),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiBrightCyan",
+    t.w(
+        ["terminal.ansiBrightCyan"],
         palette.cyan(ColorLightnessPreset::TerminalAnsiBright),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiBrightGreen",
+    t.w(
+        ["terminal.ansiBrightGreen"],
         palette.green(ColorLightnessPreset::TerminalAnsiBright),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiBrightMagenta",
+    t.w(
+        ["terminal.ansiBrightMagenta"],
         palette.purple(ColorLightnessPreset::TerminalAnsiBright),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiBrightRed",
+    t.w(
+        ["terminal.ansiBrightRed"],
         palette.red(ColorLightnessPreset::TerminalAnsiBright),
     );
-    builder.add_workspace_rule("terminal.ansiBrightWhite", palette.bright_fg());
-    builder.add_workspace_rule(
-        "terminal.ansiBrightYellow",
+    t.w(["terminal.ansiBrightWhite"], palette.bright_fg());
+    t.w(
+        ["terminal.ansiBrightYellow"],
         palette.yellow(ColorLightnessPreset::TerminalAnsiBright),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiCyan",
+    t.w(
+        ["terminal.ansiCyan"],
         palette.cyan(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiGreen",
+    t.w(
+        ["terminal.ansiGreen"],
         palette.green(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiMagenta",
+    t.w(
+        ["terminal.ansiMagenta"],
         palette.purple(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule(
-        "terminal.ansiRed",
+    t.w(
+        ["terminal.ansiRed"],
         palette.red(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule("terminal.ansiWhite", palette.fg());
-    builder.add_workspace_rule(
-        "terminal.ansiYellow",
+    t.w(["terminal.ansiWhite"], palette.fg());
+    t.w(
+        ["terminal.ansiYellow"],
         palette.yellow(ColorLightnessPreset::TerminalAnsi),
     );
-    builder.add_workspace_rule("terminal.foreground", palette.fg());
-    builder.add_workspace_rule("terminalCursor.foreground", palette.bright_fg());
-    builder.add_workspace_rule("textPreformat.foreground", palette.fg()); // inline code in e.g. Settings page
-    builder.add_workspace_rule("titleBar.activeBackground", palette.greyscale(-1));
-    builder.add_workspace_rule("titleBar.activeForeground", palette.fg());
-    builder.add_workspace_rule("titleBar.inactiveBackground", palette.greyscale(-1));
-    builder.add_workspace_rule("titleBar.inactiveForeground", palette.greyscale(4));
-    builder.add_workspace_rule("widget.shadow", (Oklch::BLACK, 0x88));
+    t.w(["terminal.foreground"], palette.fg());
+    t.w(["terminalCursor.foreground"], palette.bright_fg());
+    t.w(["textPreformat.foreground"], palette.fg()); // inline code in e.g. Settings page
+    t.w(["titleBar.activeBackground"], palette.greyscale(-1));
+    t.w(["titleBar.activeForeground"], palette.fg());
+    t.w(["titleBar.inactiveBackground"], palette.greyscale(-1));
+    t.w(["titleBar.inactiveForeground"], palette.greyscale(4));
+    t.w(["widget.shadow"], (0x000000, 0x88));
 }
 
-#[derive(Default)]
-struct SyntaxHighlightingBuilder {
-    semantic_rules: Vec<(&'static str, SyntaxHighlightingStyle)>,
-    textmate_rules: Vec<(&'static str, SyntaxHighlightingStyle)>,
-}
-
-impl SyntaxHighlightingBuilder {
-    fn apply(self, builder: &mut ThemeBuilder, palette: &Palette) {
-        for (scope, style) in &self.semantic_rules {
-            builder.add_rule(Semantic(scope), style.to_style());
-        }
-
-        for (scope, style) in &self.textmate_rules {
-            builder.add_rule(Textmate(scope), style.to_style());
-        }
-
-        for (scope, style) in self.gen_injected_styles(palette) {
-            // FIXME: change mottle::theme::builder::Scope to store a Cow<'static, str>
-            // instead of &'static str so we can just use String here
-            // rather than leaking horribly.
-            builder.add_rule(Semantic(Box::leak(scope.into_boxed_str())), style);
-        }
-    }
-
-    fn add_rules(&mut self, scopes: &[Scope], style: impl Into<SyntaxHighlightingStyle>) {
-        let style = style.into();
-
-        for scope in scopes {
-            match scope {
-                Semantic(scope) => self.semantic_rules.push((scope, style)),
-                Textmate(scope) => self.textmate_rules.push((scope, style)),
-            }
-        }
-    }
-
-    fn add_rule(&mut self, scope: Scope, style: impl Into<SyntaxHighlightingStyle>) {
-        let style = style.into();
-
-        match scope {
-            Semantic(scope) => self.semantic_rules.push((scope, style)),
-            Textmate(scope) => self.textmate_rules.push((scope, style)),
-        }
-    }
-
-    fn gen_injected_styles(&self, palette: &Palette) -> Vec<(String, Style)> {
-        let mut injected_styles = Vec::with_capacity(self.semantic_rules.len());
-
-        for (scope, style) in &self.semantic_rules {
-            injected_styles.push((
-                format!("{}.injected", scope),
-                style.to_style_with_opacity(palette, INJECTED_OPACITY),
-            ));
-        }
-
-        injected_styles.push((
-            "*.injected".to_string(),
-            (palette.fg(), INJECTED_OPACITY).into(),
-        ));
-
-        injected_styles
-    }
-}
-
-#[derive(Clone, Copy)]
-enum SyntaxHighlightingStyle {
-    Color(Oklch),
-    FontStyle(FontStyle),
-    ColorAndFontStyle(Oklch, FontStyle),
-}
-
-impl From<Oklch> for SyntaxHighlightingStyle {
-    fn from(color: Oklch) -> Self {
-        Self::Color(color)
-    }
-}
-
-impl From<FontStyle> for SyntaxHighlightingStyle {
-    fn from(font_style: FontStyle) -> Self {
-        Self::FontStyle(font_style)
-    }
-}
-
-impl From<(Oklch, FontStyle)> for SyntaxHighlightingStyle {
-    fn from((color, font_style): (Oklch, FontStyle)) -> Self {
-        Self::ColorAndFontStyle(color, font_style)
-    }
-}
-
-impl SyntaxHighlightingStyle {
-    fn to_style(self) -> Style {
-        match self {
-            Self::Color(color) => color.into(),
-            Self::FontStyle(font_style) => font_style.into(),
-            Self::ColorAndFontStyle(color, font_style) => (color, font_style).into(),
-        }
-    }
-
-    fn to_style_with_opacity(self, palette: &Palette, opacity: u8) -> Style {
-        match self {
-            Self::Color(color) => (color, opacity).into(),
-            Self::FontStyle(font_style) => ((palette.fg(), opacity), font_style).into(),
-            Self::ColorAndFontStyle(color, font_style) => ((color, opacity), font_style).into(),
-        }
-    }
-}
-
-fn syntax_highlighting(theme_builder: &mut ThemeBuilder, palette: &Palette) {
-    let mut builder = SyntaxHighlightingBuilder::default();
-
-    builder.add_rules(
-        &[
-            Semantic("keyword"),
-            Semantic("selfParameter"),
-            Textmate("entity.name.tag"),
-            Textmate("keyword.operator.expression"),
-            Textmate("keyword.operator.new"),
-            Textmate("keyword.operator.wordlike"),
-            Textmate("keyword.type.elm"),
-            Textmate("keyword.type.go"),
-            Textmate("keyword"),
-            Textmate("keyword.operator.in"), // in keyword
-            Textmate("punctuation.definition.heading"),
-            Textmate("storage.modifier"),
-            Textmate("storage.type.class"),
-            Textmate("storage.type.enum"),
-            Textmate("storage.type.function.python"),
-            Textmate("storage.type.function.ts"),
-            Textmate("storage.type.function"),
-            Textmate("storage.type.interface.ts"),
-            Textmate("storage.type.js"),
-            Textmate("storage.type.local.java"), // var keyword
-            Textmate("storage.type.def.groovy"), // def keyword
-            Textmate("storage.type.namespace"),
-            Textmate("storage.type.property"),
-            Textmate("storage.type.rust"),
-            Textmate("storage.type.struct"),
-            Textmate("storage.type.ts"),
-            Textmate("storage.type.type"),
-            Textmate("variable.language.self"),
-            Textmate("variable.language.special.self"),
-            Textmate("variable.language.this"),
+fn syntax_highlighting(t: &mut ThemeBuilder, palette: &Palette) {
+    t.a(
+        [
+            s("keyword"),
+            s("selfParameter"),
+            tm("entity.name.tag"),
+            tm("keyword.operator.expression"),
+            tm("keyword.operator.new"),
+            tm("keyword.operator.wordlike"),
+            tm("keyword.type.elm"),
+            tm("keyword.type.go"),
+            tm("keyword"),
+            tm("keyword.operator.in"), // in keyword
+            tm("punctuation.definition.heading"),
+            tm("storage.modifier"),
+            tm("storage.type.class"),
+            tm("storage.type.enum"),
+            tm("storage.type.function.python"),
+            tm("storage.type.function.ts"),
+            tm("storage.type.function"),
+            tm("storage.type.interface.ts"),
+            tm("storage.type.js"),
+            tm("storage.type.local.java"), // var keyword
+            tm("storage.type.def.groovy"), // def keyword
+            tm("storage.type.namespace"),
+            tm("storage.type.property"),
+            tm("storage.type.rust"),
+            tm("storage.type.struct"),
+            tm("storage.type.ts"),
+            tm("storage.type.type"),
+            tm("variable.language.self"),
+            tm("variable.language.special.self"),
+            tm("variable.language.this"),
         ],
         (palette.keyword_color(), FontStyle::Bold),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("number"),
-            Textmate("constant.numeric"),
-            Textmate("keyword.other.unit"),
+    t.a(
+        [
+            s("number"),
+            tm("constant.numeric"),
+            tm("keyword.other.unit"),
         ],
         palette.green(1),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("string"),
-            Textmate("constant.character"),
-            Textmate("punctuation.definition.char"),
-            Textmate("punctuation.definition.string"),
-            Textmate("string"),
+    t.a(
+        [
+            s("string"),
+            tm("constant.character"),
+            tm("punctuation.definition.char"),
+            tm("punctuation.definition.string"),
+            tm("string"),
         ],
         palette.red(-1),
     );
 
-    builder.add_rules(
-        &[Semantic("variable"), Textmate("variable")],
-        palette.variable_color(),
-    );
+    t.a([s("variable"), tm("variable")], palette.variable_color());
 
-    builder.add_rules(
-        &[
-            Semantic("boolean"),
-            Semantic("enumMember"),
-            Textmate("variable.other.enummember"),
+    t.a(
+        [
+            s("boolean"),
+            s("enumMember"),
+            tm("variable.other.enummember"),
         ],
         palette.enum_member_color(),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("constParameter"),
-            Semantic("variable.static"),
-            Textmate("constant"),
-            Textmate("entity.name.constant"),
-            Textmate("variable.other.metavariable"),
-            Textmate("support.constant"),
+    t.a(
+        [
+            s("constParameter"),
+            s("variable.static"),
+            tm("constant"),
+            tm("entity.name.constant"),
+            tm("variable.other.metavariable"),
+            tm("support.constant"),
         ],
-        (palette.constant_color(), FontStyle::Inherit),
+        palette.constant_color(),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("function"),
-            Semantic("method"),
-            Textmate("entity.name.function"),
-            Textmate("entity.name.function-call"),
-            Textmate("meta.function-call.generic.python"),
-            Textmate("support.function"),
-            Textmate("entity.other.attribute-name.table.toml"),
-            Textmate("entity.other.attribute-name.table.array.toml"),
+    t.a(
+        [
+            s("function"),
+            s("method"),
+            tm("entity.name.function"),
+            tm("entity.name.function-call"),
+            tm("meta.function-call.generic.python"),
+            tm("support.function"),
+            tm("entity.other.attribute-name.table.toml"),
+            tm("entity.other.attribute-name.table.array.toml"),
         ],
         palette.function_color(),
     );
-    builder.add_rules(
-        &[
-            Semantic("function.public.declaration"),
-            Semantic("method.public.declaration"),
+    t.a(
+        [
+            s("function.public.declaration"),
+            s("method.public.declaration"),
         ],
-        (palette.purple(1), FontStyle::Inherit),
+        palette.purple(1),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("type"),
-            Semantic("class"),
-            Semantic("struct"),
-            Semantic("enum"),
-            Semantic("union"),
-            Semantic("typeAlias"),
-            Textmate("entity.name.type"),
-            Textmate("storage.type"),
-            Textmate("support.class"),
-            Textmate("support.type"),
+    t.a(
+        [
+            s("type"),
+            s("class"),
+            s("struct"),
+            s("enum"),
+            s("union"),
+            s("typeAlias"),
+            tm("entity.name.type"),
+            tm("storage.type"),
+            tm("support.class"),
+            tm("support.type"),
         ],
         palette.type_color(),
     );
-    builder.add_rules(
-        &[
-            Semantic("type.public.declaration"),
-            Semantic("class.public.declaration"),
-            Semantic("struct.public.declaration"),
-            Semantic("enum.public.declaration"),
-            Semantic("union.public.declaration"),
-            Semantic("typeAlias.public.declaration"),
+    t.a(
+        [
+            s("type.public.declaration"),
+            s("class.public.declaration"),
+            s("struct.public.declaration"),
+            s("enum.public.declaration"),
+            s("union.public.declaration"),
+            s("typeAlias.public.declaration"),
         ],
-        (palette.purple(-1), FontStyle::Inherit),
+        palette.purple(-1),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("builtinType"),
-            Textmate("keyword.type"),
-            Textmate("storage.type.boolean.go"),
-            Textmate("storage.type.built-in"),
-            Textmate("storage.type.byte.go"),
-            Textmate("storage.type.error.go"),
-            Textmate("storage.type.numeric.go"),
-            Textmate("storage.type.primitive"),
-            Textmate("storage.type.rune.go"),
-            Textmate("storage.type.string.go"),
-            Textmate("storage.type.uintptr.go"),
-            Textmate("support.type"),
-            Textmate("variable.other.metavariable.specifier"),
+    t.a(
+        [
+            s("builtinType"),
+            tm("keyword.type"),
+            tm("storage.type.boolean.go"),
+            tm("storage.type.built-in"),
+            tm("storage.type.byte.go"),
+            tm("storage.type.error.go"),
+            tm("storage.type.numeric.go"),
+            tm("storage.type.primitive"),
+            tm("storage.type.rune.go"),
+            tm("storage.type.string.go"),
+            tm("storage.type.uintptr.go"),
+            tm("support.type"),
+            tm("variable.other.metavariable.specifier"),
         ],
         palette.cyan(0),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("typeParameter"),
-            Textmate("entity.name.type.parameter"),
-            Textmate("variable.type"),
+    t.a(
+        [
+            s("typeParameter"),
+            tm("entity.name.type.parameter"),
+            tm("variable.type"),
         ],
         palette.orange(1),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("property"),
-            Textmate("entity.name.field"),
-            Textmate("entity.name.record.field"),
-            Textmate("entity.name.variable.field"),
-            Textmate("meta.attribute.python"),
-            Textmate("punctuation.support.type.property-name"),
-            Textmate("support.type.property-name"),
-            Textmate("support.type.vendored.property-name"),
-            Textmate("variable.other.member"),
-            Textmate("variable.other.object.property"),
-            Textmate("variable.other.property"),
-            Textmate("entity.name.tag.toml"),
-            Textmate("entity.name.tag.yaml"),
+    t.a(
+        [
+            s("property"),
+            tm("entity.name.field"),
+            tm("entity.name.record.field"),
+            tm("entity.name.variable.field"),
+            tm("meta.attribute.python"),
+            tm("punctuation.support.type.property-name"),
+            tm("support.type.property-name"),
+            tm("support.type.vendored.property-name"),
+            tm("variable.other.member"),
+            tm("variable.other.object.property"),
+            tm("variable.other.property"),
+            tm("entity.name.tag.toml"),
+            tm("entity.name.tag.yaml"),
         ],
         palette.property_color(),
     );
 
-    builder.add_rule(
-        Semantic("interface"),
+    t.a(
+        [s("interface")],
         (palette.interface_color(), FontStyle::Italic),
     );
-    builder.add_rule(
-        Semantic("interface.public.declaration"),
-        (palette.purple(0), FontStyle::Inherit),
-    );
-    builder.add_rule(Semantic("*.trait"), FontStyle::Italic);
+    t.a([s("interface.public.declaration")], palette.purple(0));
+    t.a([s("*.trait")], FontStyle::Italic);
 
-    builder.add_rules(
-        &[
-            Semantic("namespace"),
-            Textmate("entity.name.module"),
-            Textmate("entity.name.namespace"),
-            Textmate("entity.name.type.namespace"),
-            Textmate("storage.modifier.import"),
-            Textmate("storage.modifier.package"),
-            Textmate("support.module"),
-            Textmate("entity.name.type.module"),
-            Textmate("variable.other.constant.elixir"),
+    t.a(
+        [
+            s("namespace"),
+            tm("entity.name.module"),
+            tm("entity.name.namespace"),
+            tm("entity.name.type.namespace"),
+            tm("storage.modifier.import"),
+            tm("storage.modifier.package"),
+            tm("support.module"),
+            tm("entity.name.type.module"),
+            tm("variable.other.constant.elixir"),
         ],
         palette.namespace_color(),
     );
 
-    builder.add_rule(Semantic("namespace.crateRoot"), palette.green(2));
+    t.a([s("namespace.crateRoot")], palette.green(2));
 
-    builder.add_rules(
-        &[
-            Semantic("macro"),
-            Textmate("entity.name.function.macro"),
-            Textmate("entity.name.macro"),
-            Textmate("entity.name.other.preprocessor.macro"),
-            Textmate("variable.other.readwrite.module.elixir"),
-            Textmate("punctuation.definition.variable.elixir"),
+    t.a(
+        [
+            s("macro"),
+            tm("entity.name.function.macro"),
+            tm("entity.name.macro"),
+            tm("entity.name.other.preprocessor.macro"),
+            tm("variable.other.readwrite.module.elixir"),
+            tm("punctuation.definition.variable.elixir"),
         ],
         palette.blue(0),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("lifetime"),
-            Textmate("storage.modifier.lifetime.rust"),
-            Textmate("entity.name.lifetime.rust"),
-            Textmate("entity.name.type.lifetime"),
-            Textmate("punctuation.definition.lifetime"),
+    t.a(
+        [
+            s("lifetime"),
+            tm("storage.modifier.lifetime.rust"),
+            tm("entity.name.lifetime.rust"),
+            tm("entity.name.type.lifetime"),
+            tm("punctuation.definition.lifetime"),
         ],
         (palette.orange(0), FontStyle::Italic),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("escapeSequence"),
-            Textmate("constant.character.escape"),
+    t.a(
+        [s("escapeSequence"), tm("constant.character.escape")],
+        palette.blue(0),
+    );
+
+    t.a(
+        [
+            s("formatSpecifier"),
+            tm("constant.character.format.placeholder"),
+            tm("constant.other.placeholder"),
+            tm("punctuation.section.embedded"),
+            tm("punctuation.definition.template-expression"),
         ],
         palette.blue(0),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("formatSpecifier"),
-            Textmate("constant.character.format.placeholder"),
-            Textmate("constant.other.placeholder"),
-            Textmate("punctuation.section.embedded"),
-            Textmate("punctuation.definition.template-expression"),
-        ],
-        palette.blue(0),
-    );
-
-    builder.add_rules(
-        &[
-            Semantic("comment"),
-            Textmate("comment"),
-            Textmate("punctuation.definition.comment"),
+    t.a(
+        [
+            s("comment"),
+            tm("comment"),
+            tm("punctuation.definition.comment"),
         ],
         palette.green(-2),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("comment.documentation"),
-            Textmate("comment.line.documentation"),
-        ],
+    t.a(
+        [s("comment.documentation"), tm("comment.line.documentation")],
         palette.green(-1),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("attribute"),
-            Semantic("derive"),
-            Textmate("entity.name.function.decorator"),
-            Textmate("punctuation.brackets.attribute"),
-            Textmate("punctuation.definition.annotation"),
-            Textmate("punctuation.definition.attribute"),
-            Textmate("punctuation.definition.decorator"),
-            Textmate("storage.modifier.attribute"),
-            Textmate("storage.type.annotation"),
+    t.a(
+        [
+            s("attribute"),
+            s("derive"),
+            tm("entity.name.function.decorator"),
+            tm("punctuation.brackets.attribute"),
+            tm("punctuation.definition.annotation"),
+            tm("punctuation.definition.attribute"),
+            tm("punctuation.definition.decorator"),
+            tm("storage.modifier.attribute"),
+            tm("storage.type.annotation"),
         ],
         palette.blue(0),
     );
 
     // CSS classes and IDs.
-    builder.add_rules(
-        &[
-            Textmate("entity.other.attribute-name.class"),
-            Textmate("entity.other.attribute-name.id"),
+    t.a(
+        [
+            tm("entity.other.attribute-name.class"),
+            tm("entity.other.attribute-name.id"),
         ],
         palette.cyan(-1),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("*.unsafe"),
-            Semantic("function.unsafe"),
-            Semantic("operator.unsafe"),
-            Textmate("keyword.other.unsafe"),
+    t.a(
+        [
+            s("*.unsafe"),
+            s("function.unsafe"),
+            s("operator.unsafe"),
+            tm("keyword.other.unsafe"),
         ],
-        (palette.red(-2), FontStyle::Inherit),
+        palette.red(-2),
     );
 
-    builder.add_rules(
-        &[
-            Semantic("punctuation"),
-            Textmate("keyword.operator.logical.rust"),
-            Textmate("keyword.operator"),
-            Textmate("storage.modifier.pointer"),
-            Textmate("storage.type.function.arrow"),
-            Textmate("punctuation"),
-            Textmate("keyword.control.flow.block-scalar.literal.yaml"),
+    t.a(
+        [
+            s("punctuation"),
+            tm("keyword.operator.logical.rust"),
+            tm("keyword.operator"),
+            tm("storage.modifier.pointer"),
+            tm("storage.type.function.arrow"),
+            tm("punctuation"),
+            tm("keyword.control.flow.block-scalar.literal.yaml"),
         ],
         palette.fg(),
     );
 
-    builder.add_rule(Textmate("markup.italic"), FontStyle::Italic);
-    builder.add_rule(Textmate("markup.bold"), FontStyle::Bold);
-    builder.add_rule(Textmate("markup.heading"), FontStyle::Bold);
-    builder.add_rules(
-        &[
-            Textmate("punctuation.definition.markdown"),
-            Textmate("punctuation.definition.heading.markdown"),
-            Textmate("punctuation.definition.metadata.markdown"),
-            Textmate("punctuation.definition.raw.markdown"),
-            Textmate("punctuation.definition.constant.markdown"),
-            Textmate("punctuation.definition.constant.begin.markdown"),
-            Textmate("punctuation.definition.constant.end.markdown"),
-            Textmate("punctuation.definition.string.begin.markdown"),
-            Textmate("punctuation.definition.string.end.markdown"),
-            Textmate("punctuation.definition.list.begin.markdown"),
-            Textmate("punctuation.definition.quote.begin.markdown"),
-            Textmate("punctuation.definition.bold.markdown"),
-            Textmate("punctuation.definition.italic.markdown"),
-            Textmate("punctuation.separator.key-value.markdown"),
-            Textmate("punctuation.separator.key-value.markdown"),
-            Textmate("fenced_code.block.language.markdown"),
-            Textmate("constant.other.reference.link.markdown"),
-            Textmate("meta.link.inline.markdown"),
-            Textmate("meta.link.reference.def.markdown"),
-            Textmate("punctuation.definition.asciidoc"),
-            Textmate("punctuation.separator.asciidoc"),
-            Textmate("support.asciidoc"),
-            Textmate("markup.heading.asciidoc"),
-            Textmate("markup.heading.marker.asciidoc"),
-            Textmate("markup.list.bullet.asciidoc"),
-            Textmate("markup.link.asciidoc"),
-            Textmate("markup.other.url.asciidoc"),
-            Textmate("markup.other.anchor.asciidoc"),
-            Textmate("support.constant.asciidoc"),
-            Textmate("constant.asciidoc"),
-            Textmate("entity.name.function.asciidoc"),
+    t.a([tm("markup.italic")], FontStyle::Italic);
+    t.a([tm("markup.bold")], FontStyle::Bold);
+    t.a([tm("markup.heading")], FontStyle::Bold);
+    t.a(
+        [
+            tm("punctuation.definition.markdown"),
+            tm("punctuation.definition.heading.markdown"),
+            tm("punctuation.definition.metadata.markdown"),
+            tm("punctuation.definition.raw.markdown"),
+            tm("punctuation.definition.constant.markdown"),
+            tm("punctuation.definition.constant.begin.markdown"),
+            tm("punctuation.definition.constant.end.markdown"),
+            tm("punctuation.definition.string.begin.markdown"),
+            tm("punctuation.definition.string.end.markdown"),
+            tm("punctuation.definition.list.begin.markdown"),
+            tm("punctuation.definition.quote.begin.markdown"),
+            tm("punctuation.definition.bold.markdown"),
+            tm("punctuation.definition.italic.markdown"),
+            tm("punctuation.separator.key-value.markdown"),
+            tm("punctuation.separator.key-value.markdown"),
+            tm("fenced_code.block.language.markdown"),
+            tm("constant.other.reference.link.markdown"),
+            tm("meta.link.inline.markdown"),
+            tm("meta.link.reference.def.markdown"),
+            tm("punctuation.definition.asciidoc"),
+            tm("punctuation.separator.asciidoc"),
+            tm("support.asciidoc"),
+            tm("markup.heading.asciidoc"),
+            tm("markup.heading.marker.asciidoc"),
+            tm("markup.list.bullet.asciidoc"),
+            tm("markup.link.asciidoc"),
+            tm("markup.other.url.asciidoc"),
+            tm("markup.other.anchor.asciidoc"),
+            tm("support.constant.asciidoc"),
+            tm("constant.asciidoc"),
+            tm("entity.name.function.asciidoc"),
         ],
         palette.green(-1),
     );
-    builder.add_rules(
-        &[
-            Textmate("string.other.link.title.markdown"),
-            Textmate("string.other.link.description.markdown"),
-            Textmate("string.unquoted.asciidoc"),
+    t.a(
+        [
+            tm("string.other.link.title.markdown"),
+            tm("string.other.link.description.markdown"),
+            tm("string.unquoted.asciidoc"),
         ],
         palette.fg(),
     );
 
-    builder.add_rules(
-        &[
-            Textmate("markup.inserted"),
-            Textmate("punctuation.definition.inserted.diff"),
+    t.a(
+        [
+            tm("markup.inserted"),
+            tm("punctuation.definition.inserted.diff"),
         ],
         palette.green(ColorLightnessPreset::DiffFg),
     );
-    builder.add_rules(
-        &[
-            Textmate("markup.deleted"),
-            Textmate("punctuation.definition.deleted.diff"),
+    t.a(
+        [
+            tm("markup.deleted"),
+            tm("punctuation.definition.deleted.diff"),
         ],
         palette.red(ColorLightnessPreset::DiffFg),
     );
-    builder.add_rules(
-        &[Textmate("markup.changed")],
+    t.a(
+        [tm("markup.changed")],
         palette.orange(ColorLightnessPreset::DiffFg),
     );
 
-    builder.add_rules(
-        &[
-            Textmate("punctuation.definition.range.diff"),
-            Textmate("meta.diff.range"),
+    t.a(
+        [
+            tm("punctuation.definition.range.diff"),
+            tm("meta.diff.range"),
         ],
         palette.blue(0),
     );
-    builder.add_rules(
-        &[
-            Textmate("comment.line.number-sign.git-commit"),
-            Textmate("punctuation.definition.comment.git-commit"),
-            Textmate("meta.diff.index"),
-            Textmate("meta.diff.header"),
+    t.a(
+        [
+            tm("comment.line.number-sign.git-commit"),
+            tm("punctuation.definition.comment.git-commit"),
+            tm("meta.diff.index"),
+            tm("meta.diff.header"),
         ],
         palette.greyscale(4),
     );
-    builder.add_rules(
-        &[
-            Textmate("meta.diff.header.to-file"),
-            Textmate("meta.diff.header.from-file"),
+    t.a(
+        [
+            tm("meta.diff.header.to-file"),
+            tm("meta.diff.header.from-file"),
         ],
         // we really want this to stand out
         // because it’s easily lost among noisy diff output
         (palette.bright_fg(), FontStyle::Bold),
     );
-    builder.add_rules(
-        &[
-            Textmate("punctuation.definition.from-file.diff"),
-            Textmate("punctuation.definition.to-file.diff"),
+    t.a(
+        [
+            tm("punctuation.definition.from-file.diff"),
+            tm("punctuation.definition.to-file.diff"),
         ],
         palette.cyan(0),
     );
 
-    builder.add_rules(
-        &[Semantic("*.mutable"), Textmate("meta.mutable")],
-        FontStyle::Underline,
-    );
-    builder.add_rule(
-        Semantic("*.public.declaration"),
-        (palette.purple(1), FontStyle::Inherit),
-    );
+    t.a([s("*.mutable"), tm("meta.mutable")], FontStyle::Underline);
+    t.a([s("*.public.declaration")], palette.purple(1));
 
-    builder.add_rule(
-        Semantic("unresolvedReference"),
+    t.a(
+        [s("unresolvedReference")],
         (palette.red(-1), FontStyle::Underline),
     );
 
-    builder.add_rule(
-        Semantic("magit-ref-name"),
-        (palette.cyan(1), FontStyle::Bold),
-    );
-    builder.add_rule(
-        Semantic("magit-remote-ref-name"),
+    t.a([s("magit-ref-name")], (palette.cyan(1), FontStyle::Bold));
+    t.a(
+        [s("magit-remote-ref-name")],
         (palette.green(-2), FontStyle::Bold),
     );
-    builder.add_rule(
-        Textmate("magit.header"),
-        (palette.yellow(2), FontStyle::Bold),
-    );
-    builder.add_rule(Textmate("magit.subheader"), FontStyle::Bold);
-    builder.add_rule(Textmate("magit.entity"), palette.greyscale(5));
+    t.a([tm("magit.header")], (palette.yellow(2), FontStyle::Bold));
+    t.a([tm("magit.subheader")], FontStyle::Bold);
+    t.a([tm("magit.entity")], palette.greyscale(5));
 
     // Over 50 characters, the recommended limit.
-    builder.add_rule(
-        Textmate("invalid.deprecated.line-too-long.git-commit"),
+    t.a(
+        [tm("invalid.deprecated.line-too-long.git-commit")],
         palette.orange(0),
     );
 
     // Over 72 characters, the hard limit.
-    builder.add_rule(
-        Textmate("invalid.illegal.line-too-long.git-commit"),
+    t.a(
+        [tm("invalid.illegal.line-too-long.git-commit")],
         palette.red(0),
     );
 
-    builder.apply(theme_builder, palette);
+    // all semantic rules are duplicated,
+    // with the `injected` modifier added and a lowered opacity
+    for (mut selector, mut style) in t.semantic_rules.clone() {
+        selector
+            .modifiers
+            .push(proto::semantic::Identifier::new("injected").unwrap());
+
+        match &mut style.foreground {
+            Some(c) => {
+                // we don’t specify alpha for syntax highlighting colors
+                assert_eq!(c.a, 0xFF);
+                c.a = INJECTED_OPACITY;
+            }
+            None => {
+                let (r, g, b) = palette.fg();
+                style.foreground = Some(proto::Color {
+                    r,
+                    g,
+                    b,
+                    a: INJECTED_OPACITY,
+                });
+            }
+        }
+
+        t.semantic_rules.insert(selector, style);
+    }
 }

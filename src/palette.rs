@@ -1,4 +1,4 @@
-use tincture::{Hue, Oklch};
+use tincture::Oklch;
 
 pub(crate) struct Palette {
     base_foreground_lightness: f32,
@@ -53,7 +53,7 @@ impl Palette {
 
     const FG_HUE: f32 = 107.0;
 
-    pub(crate) fn fg(&self) -> Oklch {
+    pub(crate) fn fg(&self) -> (u8, u8, u8) {
         oklch(
             self.base_foreground_lightness,
             self.foreground_chroma,
@@ -61,7 +61,7 @@ impl Palette {
         )
     }
 
-    pub(crate) fn bright_fg(&self) -> Oklch {
+    pub(crate) fn bright_fg(&self) -> (u8, u8, u8) {
         oklch(
             (self.base_foreground_lightness + 0.09).min(0.99),
             self.foreground_chroma,
@@ -69,43 +69,43 @@ impl Palette {
         )
     }
 
-    pub(crate) fn keyword_color(&self) -> Oklch {
+    pub(crate) fn keyword_color(&self) -> (u8, u8, u8) {
         self.yellow(2)
     }
 
-    pub(crate) fn variable_color(&self) -> Oklch {
+    pub(crate) fn variable_color(&self) -> (u8, u8, u8) {
         self.fg()
     }
 
-    pub(crate) fn function_color(&self) -> Oklch {
+    pub(crate) fn function_color(&self) -> (u8, u8, u8) {
         self.cyan(1)
     }
 
-    pub(crate) fn type_color(&self) -> Oklch {
+    pub(crate) fn type_color(&self) -> (u8, u8, u8) {
         self.cyan(-1)
     }
 
-    pub(crate) fn interface_color(&self) -> Oklch {
+    pub(crate) fn interface_color(&self) -> (u8, u8, u8) {
         self.cyan(0)
     }
 
-    pub(crate) fn constant_color(&self) -> Oklch {
+    pub(crate) fn constant_color(&self) -> (u8, u8, u8) {
         self.blue(2)
     }
 
-    pub(crate) fn enum_member_color(&self) -> Oklch {
+    pub(crate) fn enum_member_color(&self) -> (u8, u8, u8) {
         self.blue(2)
     }
 
-    pub(crate) fn property_color(&self) -> Oklch {
+    pub(crate) fn property_color(&self) -> (u8, u8, u8) {
         self.orange(0)
     }
 
-    pub(crate) fn namespace_color(&self) -> Oklch {
+    pub(crate) fn namespace_color(&self) -> (u8, u8, u8) {
         self.green(0)
     }
 
-    pub(crate) fn greyscale(&self, lightness: impl Into<GreyscaleLightness>) -> Oklch {
+    pub(crate) fn greyscale(&self, lightness: impl Into<GreyscaleLightness>) -> (u8, u8, u8) {
         oklch(self.greyscale_lightness(lightness), 0.0, 0.0)
     }
 
@@ -143,7 +143,7 @@ impl Palette {
 macro_rules! def_color_method {
     ($name:ident, hue: $hue:literal) => {
         impl Palette {
-            pub(crate) fn $name(&self, lightness: impl Into<ColorLightness>) -> Oklch {
+            pub(crate) fn $name(&self, lightness: impl Into<ColorLightness>) -> (u8, u8, u8) {
                 oklch(self.color_lightness(lightness), self.color_chroma, $hue)
             }
         }
@@ -158,7 +158,7 @@ def_color_method!(cyan, hue: 200.0);
 def_color_method!(purple, hue: 300.0);
 
 impl Palette {
-    pub(crate) fn blue(&self, lightness: impl Into<ColorLightness>) -> Oklch {
+    pub(crate) fn blue(&self, lightness: impl Into<ColorLightness>) -> (u8, u8, u8) {
         let lightness = lightness.into();
 
         let chroma = if lightness.0 == 2 {
@@ -221,10 +221,14 @@ impl From<ColorLightnessPreset> for ColorLightness {
     }
 }
 
-fn oklch(l: f32, c: f32, h: f32) -> Oklch {
-    Oklch {
+fn oklch(l: f32, c: f32, h: f32) -> (u8, u8, u8) {
+    let oklch = Oklch {
         l,
         c,
-        h: Hue::from_degrees(h).unwrap(),
-    }
+        h: h.to_radians(),
+    };
+    let oklab = tincture::oklch_to_oklab(oklch);
+    let linear_srgb = tincture::oklab_to_linear_srgb(oklab);
+    let srgb = tincture::linear_srgb_to_srgb(linear_srgb);
+    srgb.components()
 }

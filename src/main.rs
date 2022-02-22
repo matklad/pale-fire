@@ -1,11 +1,10 @@
 mod imp;
 mod palette;
 
-use mottle::theme::{ThemeBuilder, Type};
+use mottle::dsl::ThemeBuilder;
 use palette::Palette;
-use std::io;
 
-fn main() -> io::Result<()> {
+fn main() -> anyhow::Result<()> {
     gen_and_save_theme("Pale Fire", Palette::ORIGINAL)?;
     gen_and_save_theme("Pale Fire High Contrast", Palette::HIGH_CONTRAST)?;
     gen_and_save_theme("Pale Fire Darker", Palette::DARKER)?;
@@ -14,10 +13,12 @@ fn main() -> io::Result<()> {
     Ok(())
 }
 
-fn gen_and_save_theme(name: &str, palette: Palette) -> io::Result<()> {
-    let mut theme_builder = ThemeBuilder::new(name.to_string(), Type::Dark);
+fn gen_and_save_theme(name: &str, palette: Palette) -> anyhow::Result<()> {
+    let mut theme_builder = ThemeBuilder::default();
     imp::add_rules(&mut theme_builder, palette);
 
-    let theme = theme_builder.build();
-    theme.save()
+    let theme = theme_builder.build(name);
+    mottle::save_theme(&theme)?;
+
+    Ok(())
 }
