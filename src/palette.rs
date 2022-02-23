@@ -54,11 +54,7 @@ impl Palette {
     const FG_HUE: f32 = 107.0;
 
     pub(crate) fn fg(&self) -> (u8, u8, u8) {
-        oklch(
-            self.base_foreground_lightness,
-            self.foreground_chroma,
-            Self::FG_HUE,
-        )
+        oklch(self.base_foreground_lightness, self.foreground_chroma, Self::FG_HUE)
     }
 
     pub(crate) fn bright_fg(&self) -> (u8, u8, u8) {
@@ -161,11 +157,8 @@ impl Palette {
     pub(crate) fn blue(&self, lightness: impl Into<ColorLightness>) -> (u8, u8, u8) {
         let lightness = lightness.into();
 
-        let chroma = if lightness.0 == 2 {
-            self.color_chroma.min(0.045)
-        } else {
-            self.color_chroma
-        };
+        let chroma =
+            if lightness.0 == 2 { self.color_chroma.min(0.045) } else { self.color_chroma };
 
         oklch(self.color_lightness(lightness), chroma, 243.0)
     }
@@ -222,11 +215,7 @@ impl From<ColorLightnessPreset> for ColorLightness {
 }
 
 fn oklch(l: f32, c: f32, h: f32) -> (u8, u8, u8) {
-    let oklch = Oklch {
-        l,
-        c,
-        h: h.to_radians(),
-    };
+    let oklch = Oklch { l, c, h: h.to_radians() };
     let oklab = tincture::oklch_to_oklab(oklch);
     let linear_srgb = tincture::oklab_to_linear_srgb(oklab);
     let srgb = tincture::linear_srgb_to_srgb(linear_srgb);
