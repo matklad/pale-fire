@@ -65,39 +65,39 @@ impl Palette {
         )
     }
 
-    pub(crate) fn keyword_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn keywords(&self) -> (u8, u8, u8) {
         self.yellow(2)
     }
 
-    pub(crate) fn variable_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn variables(&self) -> (u8, u8, u8) {
         self.fg()
     }
 
-    pub(crate) fn function_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn functions(&self) -> (u8, u8, u8) {
         self.cyan(1)
     }
 
-    pub(crate) fn type_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn types(&self) -> (u8, u8, u8) {
         self.cyan(-1)
     }
 
-    pub(crate) fn interface_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn interfaces(&self) -> (u8, u8, u8) {
         self.cyan(0)
     }
 
-    pub(crate) fn constant_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn constants(&self) -> (u8, u8, u8) {
         self.blue(2)
     }
 
-    pub(crate) fn enum_member_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn enum_members(&self) -> (u8, u8, u8) {
         self.blue(2)
     }
 
-    pub(crate) fn property_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn properties(&self) -> (u8, u8, u8) {
         self.orange(0)
     }
 
-    pub(crate) fn namespace_color(&self) -> (u8, u8, u8) {
+    pub(crate) fn namespaces(&self) -> (u8, u8, u8) {
         self.green(0)
     }
 
