@@ -182,37 +182,17 @@ impl From<i32> for ColorLightness {
     }
 }
 
-pub(crate) enum ColorLightnessPreset {
-    TerminalAnsi,
-    TerminalAnsiBright,
-    DiffFg,
-    DiffBg,
-    Gutter,
-    OverviewRuler,
-    GitDecoration,
-    Minimap,
-    StatusBar,
-    ErrorLensBackground,
-    ErrorLensForeground,
-}
-
-impl From<ColorLightnessPreset> for ColorLightness {
-    fn from(preset: ColorLightnessPreset) -> Self {
-        Self(match preset {
-            ColorLightnessPreset::TerminalAnsi => -1,
-            ColorLightnessPreset::TerminalAnsiBright => 1,
-            ColorLightnessPreset::DiffFg => 0,
-            ColorLightnessPreset::DiffBg => -2,
-            ColorLightnessPreset::Gutter => -1,
-            ColorLightnessPreset::OverviewRuler => 0,
-            ColorLightnessPreset::GitDecoration => 1,
-            ColorLightnessPreset::Minimap => 0,
-            ColorLightnessPreset::StatusBar => -1,
-            ColorLightnessPreset::ErrorLensBackground => -2,
-            ColorLightnessPreset::ErrorLensForeground => 1,
-        })
-    }
-}
+pub(crate) const TERMINAL_ANSI_LIGHTNESS: ColorLightness = ColorLightness(-1);
+pub(crate) const TERMINAL_ANSI_BRIGHT_LIGHTNESS: ColorLightness = ColorLightness(1);
+pub(crate) const DIFF_FG_LIGHTNESS: ColorLightness = ColorLightness(0);
+pub(crate) const DIFF_BG_LIGHTNESS: ColorLightness = ColorLightness(-2);
+pub(crate) const GUTTER_LIGHTNESS: ColorLightness = ColorLightness(-1);
+pub(crate) const OVERVIEW_RULER_LIGHTNESS: ColorLightness = ColorLightness(0);
+pub(crate) const GIT_DECORATION_LIGHTNESS: ColorLightness = ColorLightness(1);
+pub(crate) const MINIMAP_LIGHTNESS: ColorLightness = ColorLightness(0);
+pub(crate) const STATUS_BAR_LIGHTNESS: ColorLightness = ColorLightness(-1);
+pub(crate) const ERROR_LENS_BACKGROUND_LIGHTNESS: ColorLightness = ColorLightness(-2);
+pub(crate) const ERROR_LENS_FOREGROUND_LIGHTNESS: ColorLightness = ColorLightness(1);
 
 fn oklch(l: f32, c: f32, h: f32) -> (u8, u8, u8) {
     let oklch = Oklch { l, c, h: h.to_radians() };

@@ -1,4 +1,9 @@
-use crate::palette::{ColorLightnessPreset, Palette};
+use crate::palette::{
+    Palette, DIFF_BG_LIGHTNESS, DIFF_FG_LIGHTNESS, ERROR_LENS_BACKGROUND_LIGHTNESS,
+    ERROR_LENS_FOREGROUND_LIGHTNESS, GIT_DECORATION_LIGHTNESS, GUTTER_LIGHTNESS, MINIMAP_LIGHTNESS,
+    OVERVIEW_RULER_LIGHTNESS, STATUS_BAR_LIGHTNESS, TERMINAL_ANSI_BRIGHT_LIGHTNESS,
+    TERMINAL_ANSI_LIGHTNESS,
+};
 use mottle::dsl::{s, tm, FontStyle, ThemeBuilder};
 use mottle::proto;
 
@@ -24,8 +29,8 @@ fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
     t.w(["checkbox.background"], palette.greyscale(-2));
     t.w(["checkbox.border"], palette.greyscale(2));
     t.w(["debugIcon.breakpointForeground"], palette.red(0));
-    t.w(["diffEditor.insertedTextBackground"], (palette.green(ColorLightnessPreset::DiffBg), 0x33));
-    t.w(["diffEditor.removedTextBackground"], (palette.red(ColorLightnessPreset::DiffBg), 0x33));
+    t.w(["diffEditor.insertedTextBackground"], (palette.green(DIFF_BG_LIGHTNESS), 0x33));
+    t.w(["diffEditor.removedTextBackground"], (palette.red(DIFF_BG_LIGHTNESS), 0x33));
     t.w(["dropdown.border"], palette.greyscale(2));
     t.w(["dropdown.foreground"], palette.fg());
     t.w(["editor.background"], palette.greyscale(0));
@@ -62,15 +67,15 @@ fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
     t.w(["editorGroup.border"], palette.greyscale(3));
     t.w(
         ["editorGutter.addedBackground", "minimapGutter.addedBackground"],
-        palette.green(ColorLightnessPreset::Gutter),
+        palette.green(GUTTER_LIGHTNESS),
     );
     t.w(
         ["editorGutter.deletedBackground", "minimapGutter.deletedBackground"],
-        palette.red(ColorLightnessPreset::Gutter),
+        palette.red(GUTTER_LIGHTNESS),
     );
     t.w(
         ["editorGutter.modifiedBackground", "minimapGutter.modifiedBackground"],
-        palette.yellow(ColorLightnessPreset::Gutter),
+        palette.yellow(GUTTER_LIGHTNESS),
     );
     t.w(["editorIndentGuide.activeBackground"], palette.greyscale(3));
     t.w(["editorIndentGuide.background"], palette.greyscale(2));
@@ -81,61 +86,34 @@ fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
         ["editorLink.activeForeground", "textLink.foreground", "textLink.activeForeground"],
         palette.blue(0),
     );
-    t.w(
-        ["editorOverviewRuler.addedForeground"],
-        palette.green(ColorLightnessPreset::OverviewRuler),
-    );
+    t.w(["editorOverviewRuler.addedForeground"], palette.green(OVERVIEW_RULER_LIGHTNESS));
     t.w(["editorOverviewRuler.border"], palette.greyscale(3));
-    t.w(
-        ["editorOverviewRuler.deletedForeground"],
-        palette.red(ColorLightnessPreset::OverviewRuler),
-    );
-    t.w(["editorOverviewRuler.errorForeground"], palette.red(ColorLightnessPreset::OverviewRuler));
+    t.w(["editorOverviewRuler.deletedForeground"], palette.red(OVERVIEW_RULER_LIGHTNESS));
+    t.w(["editorOverviewRuler.errorForeground"], palette.red(OVERVIEW_RULER_LIGHTNESS));
     t.w(
         ["editorOverviewRuler.findMatchForeground"],
-        (palette.blue(ColorLightnessPreset::OverviewRuler), 0x88),
+        (palette.blue(OVERVIEW_RULER_LIGHTNESS), 0x88),
     );
-    t.w(
-        ["editorOverviewRuler.modifiedForeground"],
-        palette.yellow(ColorLightnessPreset::OverviewRuler),
-    );
+    t.w(["editorOverviewRuler.modifiedForeground"], palette.yellow(OVERVIEW_RULER_LIGHTNESS));
     t.w(
         ["editorOverviewRuler.rangeHighlightForeground"],
-        (palette.blue(ColorLightnessPreset::OverviewRuler), 0x33),
+        (palette.blue(OVERVIEW_RULER_LIGHTNESS), 0x33),
     );
     t.w(["editorWarning.foreground"], palette.orange(0));
     t.w(["editorWidget.background"], palette.greyscale(-1));
     t.w(["editorWidget.border"], palette.greyscale(2));
-    t.w(
-        ["errorLens.errorBackground"],
-        (palette.red(ColorLightnessPreset::ErrorLensBackground), 0x33),
-    );
-    t.w(["errorLens.errorForeground"], palette.red(ColorLightnessPreset::ErrorLensForeground));
-    t.w(
-        ["errorLens.warningBackground"],
-        (palette.orange(ColorLightnessPreset::ErrorLensBackground), 0x33),
-    );
-    t.w(["errorLens.warningForeground"], palette.orange(ColorLightnessPreset::ErrorLensForeground));
-    t.w(
-        ["errorLens.infoBackground"],
-        (palette.blue(ColorLightnessPreset::ErrorLensBackground), 0x33),
-    );
-    t.w(["errorLens.infoForeground"], palette.blue(ColorLightnessPreset::ErrorLensForeground));
-    t.w(
-        ["errorLens.hintBackground"],
-        (palette.green(ColorLightnessPreset::ErrorLensBackground), 0x33),
-    );
-    t.w(["errorLens.hintForeground"], palette.green(ColorLightnessPreset::ErrorLensForeground));
+    t.w(["errorLens.errorBackground"], (palette.red(ERROR_LENS_BACKGROUND_LIGHTNESS), 0x33));
+    t.w(["errorLens.errorForeground"], palette.red(ERROR_LENS_FOREGROUND_LIGHTNESS));
+    t.w(["errorLens.warningBackground"], (palette.orange(ERROR_LENS_BACKGROUND_LIGHTNESS), 0x33));
+    t.w(["errorLens.warningForeground"], palette.orange(ERROR_LENS_FOREGROUND_LIGHTNESS));
+    t.w(["errorLens.infoBackground"], (palette.blue(ERROR_LENS_BACKGROUND_LIGHTNESS), 0x33));
+    t.w(["errorLens.infoForeground"], palette.blue(ERROR_LENS_FOREGROUND_LIGHTNESS));
+    t.w(["errorLens.hintBackground"], (palette.green(ERROR_LENS_BACKGROUND_LIGHTNESS), 0x33));
+    t.w(["errorLens.hintForeground"], palette.green(ERROR_LENS_FOREGROUND_LIGHTNESS));
     t.w(["focusBorder"], palette.greyscale(3));
     t.w(["gitDecoration.ignoredResourceForeground"], palette.greyscale(4));
-    t.w(
-        ["gitDecoration.modifiedResourceForeground"],
-        palette.yellow(ColorLightnessPreset::GitDecoration),
-    );
-    t.w(
-        ["gitDecoration.untrackedResourceForeground"],
-        palette.green(ColorLightnessPreset::GitDecoration),
-    );
+    t.w(["gitDecoration.modifiedResourceForeground"], palette.yellow(GIT_DECORATION_LIGHTNESS));
+    t.w(["gitDecoration.untrackedResourceForeground"], palette.green(GIT_DECORATION_LIGHTNESS));
     t.w(["input.background"], palette.greyscale(-2));
     t.w(["input.border"], palette.greyscale(2));
     t.w(["input.foreground"], palette.fg());
@@ -148,8 +126,8 @@ fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
     t.w(["list.hoverBackground"], palette.greyscale(0));
     t.w(["list.inactiveSelectionBackground"], palette.greyscale(1));
     t.w(["list.warningForeground"], palette.orange(0));
-    t.w(["minimap.errorHighlight"], palette.red(ColorLightnessPreset::Minimap));
-    t.w(["minimap.findMatchHighlight"], (palette.blue(ColorLightnessPreset::Minimap), 0x66));
+    t.w(["minimap.errorHighlight"], palette.red(MINIMAP_LIGHTNESS));
+    t.w(["minimap.findMatchHighlight"], (palette.blue(MINIMAP_LIGHTNESS), 0x66));
     t.w(["panel.background"], palette.greyscale(1));
     t.w(["panel.border"], palette.greyscale(3));
     t.w(["panelTitle.activeForeground"], palette.fg());
@@ -177,8 +155,8 @@ fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
         ["statusBar.background", "statusBar.debuggingBackground", "statusBar.noFolderBackground"],
         palette.greyscale(-2),
     );
-    t.w(["statusBar.foreground"], palette.green(ColorLightnessPreset::StatusBar));
-    t.w(["statusBar.debuggingForeground"], palette.orange(ColorLightnessPreset::StatusBar));
+    t.w(["statusBar.foreground"], palette.green(STATUS_BAR_LIGHTNESS));
+    t.w(["statusBar.debuggingForeground"], palette.orange(STATUS_BAR_LIGHTNESS));
     t.w(["symbolIcon.keywordForeground"], palette.keyword_color());
     t.w(["symbolIcon.variableForeground"], palette.variable_color());
     t.w(["symbolIcon.functionForeground", "symbolIcon.methodForeground"], palette.function_color());
@@ -208,21 +186,21 @@ fn workspace_colors(t: &mut ThemeBuilder, palette: &Palette) {
     t.w(["tab.inactiveBackground"], palette.greyscale(-2));
     t.w(["tab.inactiveForeground"], palette.greyscale(4));
     t.w(["terminal.ansiBlack"], palette.greyscale(-2));
-    t.w(["terminal.ansiBlue"], palette.blue(ColorLightnessPreset::TerminalAnsi));
+    t.w(["terminal.ansiBlue"], palette.blue(TERMINAL_ANSI_LIGHTNESS));
     t.w(["terminal.ansiBrightBlack"], palette.greyscale(5));
-    t.w(["terminal.ansiBrightBlue"], palette.blue(ColorLightnessPreset::TerminalAnsiBright));
-    t.w(["terminal.ansiBrightCyan"], palette.cyan(ColorLightnessPreset::TerminalAnsiBright));
-    t.w(["terminal.ansiBrightGreen"], palette.green(ColorLightnessPreset::TerminalAnsiBright));
-    t.w(["terminal.ansiBrightMagenta"], palette.purple(ColorLightnessPreset::TerminalAnsiBright));
-    t.w(["terminal.ansiBrightRed"], palette.red(ColorLightnessPreset::TerminalAnsiBright));
+    t.w(["terminal.ansiBrightBlue"], palette.blue(TERMINAL_ANSI_BRIGHT_LIGHTNESS));
+    t.w(["terminal.ansiBrightCyan"], palette.cyan(TERMINAL_ANSI_BRIGHT_LIGHTNESS));
+    t.w(["terminal.ansiBrightGreen"], palette.green(TERMINAL_ANSI_BRIGHT_LIGHTNESS));
+    t.w(["terminal.ansiBrightMagenta"], palette.purple(TERMINAL_ANSI_BRIGHT_LIGHTNESS));
+    t.w(["terminal.ansiBrightRed"], palette.red(TERMINAL_ANSI_BRIGHT_LIGHTNESS));
     t.w(["terminal.ansiBrightWhite"], palette.bright_fg());
-    t.w(["terminal.ansiBrightYellow"], palette.yellow(ColorLightnessPreset::TerminalAnsiBright));
-    t.w(["terminal.ansiCyan"], palette.cyan(ColorLightnessPreset::TerminalAnsi));
-    t.w(["terminal.ansiGreen"], palette.green(ColorLightnessPreset::TerminalAnsi));
-    t.w(["terminal.ansiMagenta"], palette.purple(ColorLightnessPreset::TerminalAnsi));
-    t.w(["terminal.ansiRed"], palette.red(ColorLightnessPreset::TerminalAnsi));
+    t.w(["terminal.ansiBrightYellow"], palette.yellow(TERMINAL_ANSI_BRIGHT_LIGHTNESS));
+    t.w(["terminal.ansiCyan"], palette.cyan(TERMINAL_ANSI_LIGHTNESS));
+    t.w(["terminal.ansiGreen"], palette.green(TERMINAL_ANSI_LIGHTNESS));
+    t.w(["terminal.ansiMagenta"], palette.purple(TERMINAL_ANSI_LIGHTNESS));
+    t.w(["terminal.ansiRed"], palette.red(TERMINAL_ANSI_LIGHTNESS));
     t.w(["terminal.ansiWhite"], palette.fg());
-    t.w(["terminal.ansiYellow"], palette.yellow(ColorLightnessPreset::TerminalAnsi));
+    t.w(["terminal.ansiYellow"], palette.yellow(TERMINAL_ANSI_LIGHTNESS));
     t.w(["terminal.foreground"], palette.fg());
     t.w(["terminalCursor.foreground"], palette.bright_fg());
     t.w(["textPreformat.foreground"], palette.fg()); // inline code in e.g. Settings page
@@ -537,13 +515,13 @@ fn syntax_highlighting(t: &mut ThemeBuilder, palette: &Palette) {
 
     t.a(
         [tm("markup.inserted"), tm("punctuation.definition.inserted.diff")],
-        palette.green(ColorLightnessPreset::DiffFg),
+        palette.green(DIFF_FG_LIGHTNESS),
     );
     t.a(
         [tm("markup.deleted"), tm("punctuation.definition.deleted.diff")],
-        palette.red(ColorLightnessPreset::DiffFg),
+        palette.red(DIFF_FG_LIGHTNESS),
     );
-    t.a([tm("markup.changed")], palette.orange(ColorLightnessPreset::DiffFg));
+    t.a([tm("markup.changed")], palette.orange(DIFF_FG_LIGHTNESS));
 
     t.a([tm("punctuation.definition.range.diff"), tm("meta.diff.range")], palette.blue(0));
     t.a(
