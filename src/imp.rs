@@ -79,6 +79,7 @@ fn workspace_colors(t: &mut ThemeBuilder, p: &Palette) {
     );
     t.w(["editorIndentGuide.activeBackground"], p.greyscale(3));
     t.w(["editorIndentGuide.background"], p.greyscale(2));
+    t.w(["editorInfo.foreground"], p.blue(0));
     t.w(["editorLightBulb.foreground"], p.yellow(2));
     t.w(["editorLineNumber.activeForeground"], p.greyscale(5));
     t.w(["editorLineNumber.foreground"], p.greyscale(3));
@@ -91,6 +92,7 @@ fn workspace_colors(t: &mut ThemeBuilder, p: &Palette) {
     t.w(["editorOverviewRuler.deletedForeground"], p.red(OVERVIEW_RULER_LIGHTNESS));
     t.w(["editorOverviewRuler.errorForeground"], p.red(OVERVIEW_RULER_LIGHTNESS));
     t.w(["editorOverviewRuler.findMatchForeground"], (p.blue(OVERVIEW_RULER_LIGHTNESS), 0x88));
+    t.w(["editorOverviewRuler.infoForeground"], p.blue(OVERVIEW_RULER_LIGHTNESS));
     t.w(["editorOverviewRuler.modifiedForeground"], p.yellow(OVERVIEW_RULER_LIGHTNESS));
     t.w(["editorOverviewRuler.rangeHighlightForeground"], (p.blue(OVERVIEW_RULER_LIGHTNESS), 0x33));
     t.w(["editorWarning.foreground"], p.orange(0));
@@ -122,6 +124,7 @@ fn workspace_colors(t: &mut ThemeBuilder, p: &Palette) {
     t.w(["list.warningForeground"], p.orange(0));
     t.w(["minimap.errorHighlight"], p.red(MINIMAP_LIGHTNESS));
     t.w(["minimap.findMatchHighlight"], (p.blue(MINIMAP_LIGHTNESS), 0x66));
+    t.w(["minimap.warningHighlight"], p.orange(MINIMAP_LIGHTNESS));
     t.w(["panel.background"], p.greyscale(1));
     t.w(["panel.border"], p.greyscale(3));
     t.w(["panelTitle.activeForeground"], p.fg());
