@@ -468,6 +468,10 @@
             "foreground": "#EADFAF",
             "bold": true
         },
+        "boolean": {
+            "foreground": "#EADFAF",
+            "bold": true
+        },
         "selfParameter": {
             "foreground": "#EADFAF",
             "bold": true
@@ -480,9 +484,6 @@
         },
         "variable": {
             "foreground": "#E0E0C9"
-        },
-        "boolean": {
-            "foreground": "#C5E2FA"
         },
         "enumMember": {
             "foreground": "#C5E2FA"
@@ -628,6 +629,10 @@
             "foreground": "#EADFAFAA",
             "bold": true
         },
+        "boolean.injected": {
+            "foreground": "#EADFAFAA",
+            "bold": true
+        },
         "selfParameter.injected": {
             "foreground": "#EADFAFAA",
             "bold": true
@@ -640,9 +645,6 @@
         },
         "variable.injected": {
             "foreground": "#E0E0C9AA"
-        },
-        "boolean.injected": {
-            "foreground": "#C5E2FAAA"
         },
         "enumMember.injected": {
             "foreground": "#C5E2FAAA"

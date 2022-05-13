@@ -210,6 +210,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
     t.a(
         [
             s("keyword"),
+            s("boolean"),
             s("selfParameter"),
             tm("entity.name.tag"),
             tm("keyword.operator.expression"),
@@ -258,7 +259,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
 
     t.a([s("variable"), tm("variable")], p.variables());
 
-    t.a([s("boolean"), s("enumMember"), tm("variable.other.enummember")], p.enum_members());
+    t.a([s("enumMember"), tm("variable.other.enummember")], p.enum_members());
 
     t.a(
         [

@@ -468,6 +468,10 @@
             "foreground": "#D3C899",
             "bold": true
         },
+        "boolean": {
+            "foreground": "#D3C899",
+            "bold": true
+        },
         "selfParameter": {
             "foreground": "#D3C899",
             "bold": true
@@ -480,9 +484,6 @@
         },
         "variable": {
             "foreground": "#E0E0C9"
-        },
-        "boolean": {
-            "foreground": "#AFCBE3"
         },
         "enumMember": {
             "foreground": "#AFCBE3"
@@ -628,6 +629,10 @@
             "foreground": "#D3C899AA",
             "bold": true
         },
+        "boolean.injected": {
+            "foreground": "#D3C899AA",
+            "bold": true
+        },
         "selfParameter.injected": {
             "foreground": "#D3C899AA",
             "bold": true
@@ -640,9 +645,6 @@
         },
         "variable.injected": {
             "foreground": "#E0E0C9AA"
-        },
-        "boolean.injected": {
-            "foreground": "#AFCBE3AA"
         },
         "enumMember.injected": {
             "foreground": "#AFCBE3AA"
