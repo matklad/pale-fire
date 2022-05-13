@@ -168,7 +168,7 @@
                 "variable.other.constant.elixir"
             ],
             "settings": {
-                "foreground": "#95B995"
+                "foreground": "#AED3AE"
             }
         },
         {
@@ -561,10 +561,13 @@
             "italic": true
         },
         "namespace": {
-            "foreground": "#95B995"
+            "foreground": "#AED3AE"
         },
         "namespace.crateRoot": {
             "foreground": "#AED3AE"
+        },
+        "namespace:rust": {
+            "foreground": "#95B995"
         },
         "macro": {
             "foreground": "#8BB3D4"
@@ -719,10 +722,13 @@
             "italic": true
         },
         "namespace.injected": {
-            "foreground": "#95B995AA"
+            "foreground": "#AED3AEAA"
         },
         "namespace.crateRoot.injected": {
             "foreground": "#AED3AEAA"
+        },
+        "namespace.injected:rust": {
+            "foreground": "#95B995AA"
         },
         "macro.injected": {
             "foreground": "#8BB3D4AA"
@@ -918,8 +924,8 @@
         "symbolIcon.enumeratorMemberForeground": "#AFCBE3",
         "symbolIcon.fieldForeground": "#CFA488",
         "symbolIcon.propertyForeground": "#CFA488",
-        "symbolIcon.moduleForeground": "#95B995",
-        "symbolIcon.namespaceForeground": "#95B995",
+        "symbolIcon.moduleForeground": "#AED3AE",
+        "symbolIcon.namespaceForeground": "#AED3AE",
         "tab.activeForeground": "#E0E0C9",
         "tab.border": "#262626",
         "tab.inactiveBackground": "#1E1E1E",

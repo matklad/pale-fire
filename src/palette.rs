@@ -98,7 +98,7 @@ impl Palette {
     }
 
     pub(crate) fn namespaces(&self) -> (u8, u8, u8) {
-        self.green(0)
+        self.green(2)
     }
 
     pub(crate) fn greyscale(&self, lightness: impl Into<GreyscaleLightness>) -> (u8, u8, u8) {

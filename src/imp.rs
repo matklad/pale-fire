@@ -361,6 +361,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
     t.a(
         [
             s("namespace"),
+            s("namespace.crateRoot"),
             tm("entity.name.module"),
             tm("entity.name.namespace"),
             tm("entity.name.type.namespace"),
@@ -373,7 +374,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
         p.namespaces(),
     );
 
-    t.a([s("namespace.crateRoot")], p.green(2));
+    t.a([s("namespace:rust")], p.green(0));
 
     t.a(
         [
