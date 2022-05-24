@@ -11,6 +11,7 @@
                 "keyword.type.elm",
                 "keyword.type.go",
                 "keyword",
+                "keyword.operator.logical.python",
                 "keyword.operator.in",
                 "punctuation.definition.heading",
                 "storage.modifier",
