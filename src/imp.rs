@@ -447,6 +447,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
         [
             s("punctuation"),
             tm("keyword.operator.logical.rust"),
+            tm("keyword.operator.logical.python"),
             tm("keyword.operator"),
             tm("storage.modifier.pointer"),
             tm("storage.type.function.arrow"),
