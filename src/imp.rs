@@ -219,6 +219,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
             tm("keyword.type.elm"),
             tm("keyword.type.go"),
             tm("keyword"),
+            tm("keyword.operator.logical.python"),
             tm("keyword.operator.in"), // in keyword
             tm("punctuation.definition.heading"),
             tm("storage.modifier"),
