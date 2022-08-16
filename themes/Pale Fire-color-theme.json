@@ -574,12 +574,6 @@
         "namespace": {
             "foreground": "#C4EAC4"
         },
-        "namespace.crateRoot": {
-            "foreground": "#C4EAC4"
-        },
-        "namespace:rust": {
-            "foreground": "#A5C9A5"
-        },
         "macro": {
             "foreground": "#9AC3E4"
         },
@@ -738,12 +732,6 @@
         },
         "namespace.injected": {
             "foreground": "#C4EAC4AA"
-        },
-        "namespace.crateRoot.injected": {
-            "foreground": "#C4EAC4AA"
-        },
-        "namespace.injected:rust": {
-            "foreground": "#A5C9A5AA"
         },
         "macro.injected": {
             "foreground": "#9AC3E4AA"
