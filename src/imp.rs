@@ -350,10 +350,12 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
             tm("variable.other.member"),
             tm("variable.other.object.property"),
             tm("variable.other.property"),
-            tm("entity.name.tag.toml"),
-            tm("entity.name.tag.yaml"),
         ],
         p.properties(),
+    );
+    t.a(
+        [tm("entity.name.tag.toml"), tm("entity.name.tag.yaml")],
+        (p.properties(), FontStyle::Clear),
     );
 
     t.a([s("interface")], (p.interfaces(), FontStyle::Italic));
@@ -454,7 +456,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
             tm("punctuation"),
             tm("keyword.control.flow.block-scalar.literal.yaml"),
         ],
-        p.fg(),
+        (p.fg(), FontStyle::Clear),
     );
 
     t.a([tm("markup.italic")], FontStyle::Italic);
