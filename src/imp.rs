@@ -69,6 +69,7 @@ fn workspace_colors(t: &mut ThemeBuilder, p: &Palette) {
         ["editorGutter.addedBackground", "minimapGutter.addedBackground"],
         p.green(GUTTER_LIGHTNESS),
     );
+    t.w(["editorGutter.background"], p.greyscale(2));
     t.w(
         ["editorGutter.deletedBackground", "minimapGutter.deletedBackground"],
         p.red(GUTTER_LIGHTNESS),
@@ -82,7 +83,7 @@ fn workspace_colors(t: &mut ThemeBuilder, p: &Palette) {
     t.w(["editorInfo.foreground"], p.blue(0));
     t.w(["editorLightBulb.foreground"], p.yellow(2));
     t.w(["editorLineNumber.activeForeground"], p.greyscale(5));
-    t.w(["editorLineNumber.foreground"], p.greyscale(3));
+    t.w(["editorLineNumber.foreground"], p.greyscale(4));
     t.w(
         ["editorLink.activeForeground", "textLink.foreground", "textLink.activeForeground"],
         p.blue(0),
