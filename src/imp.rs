@@ -288,7 +288,6 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
         ],
         p.functions(),
     );
-    t.a([s("function.public.declaration"), s("method.public.declaration")], p.purple(1));
 
     t.a(
         [
@@ -304,17 +303,6 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
             tm("support.type"),
         ],
         p.types(),
-    );
-    t.a(
-        [
-            s("type.public.declaration"),
-            s("class.public.declaration"),
-            s("struct.public.declaration"),
-            s("enum.public.declaration"),
-            s("union.public.declaration"),
-            s("typeAlias.public.declaration"),
-        ],
-        p.purple(-1),
     );
 
     t.a(
@@ -336,7 +324,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
         p.cyan(0),
     );
 
-    t.a([s("typeParameter"), tm("entity.name.type.parameter"), tm("variable.type")], p.orange(1));
+    t.a([s("typeParameter"), tm("entity.name.type.parameter"), tm("variable.type")], p.purple(0));
 
     t.a(
         [
@@ -360,7 +348,6 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
     );
 
     t.a([s("interface")], (p.interfaces(), FontStyle::Italic));
-    t.a([s("interface.public.declaration")], p.purple(0));
     t.a([s("*.trait")], FontStyle::Italic);
 
     t.a(
@@ -398,7 +385,7 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
             tm("entity.name.type.lifetime"),
             tm("punctuation.definition.lifetime"),
         ],
-        (p.orange(0), FontStyle::Italic),
+        (p.purple(0), FontStyle::Italic),
     );
 
     t.a([s("escapeSequence"), tm("constant.character.escape")], p.blue(0));
@@ -537,7 +524,6 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
     );
 
     t.a([s("*.mutable"), tm("meta.mutable")], FontStyle::Underline);
-    t.a([s("*.public.declaration")], p.purple(1));
 
     t.a([s("unresolvedReference")], (p.red(-1), FontStyle::Underline));
 

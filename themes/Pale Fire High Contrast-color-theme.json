@@ -135,7 +135,7 @@
                 "variable.type"
             ],
             "settings": {
-                "foreground": "#F9C3A0"
+                "foreground": "#C5B3E9"
             }
         },
         {
@@ -200,7 +200,7 @@
                 "punctuation.definition.lifetime"
             ],
             "settings": {
-                "foreground": "#E6B18E",
+                "foreground": "#C5B3E9",
                 "fontStyle": "italic"
             }
         },
@@ -510,12 +510,6 @@
         "method": {
             "foreground": "#91E0E4"
         },
-        "function.public.declaration": {
-            "foreground": "#D8C5FC"
-        },
-        "method.public.declaration": {
-            "foreground": "#D8C5FC"
-        },
         "type": {
             "foreground": "#6CBBBF"
         },
@@ -534,29 +528,11 @@
         "typeAlias": {
             "foreground": "#6CBBBF"
         },
-        "type.public.declaration": {
-            "foreground": "#B3A1D6"
-        },
-        "class.public.declaration": {
-            "foreground": "#B3A1D6"
-        },
-        "struct.public.declaration": {
-            "foreground": "#B3A1D6"
-        },
-        "enum.public.declaration": {
-            "foreground": "#B3A1D6"
-        },
-        "union.public.declaration": {
-            "foreground": "#B3A1D6"
-        },
-        "typeAlias.public.declaration": {
-            "foreground": "#B3A1D6"
-        },
         "builtinType": {
             "foreground": "#7ECDD1"
         },
         "typeParameter": {
-            "foreground": "#F9C3A0"
+            "foreground": "#C5B3E9"
         },
         "property": {
             "foreground": "#E6B18E"
@@ -564,9 +540,6 @@
         "interface": {
             "foreground": "#7ECDD1",
             "italic": true
-        },
-        "interface.public.declaration": {
-            "foreground": "#C5B3E9"
         },
         "*.trait": {
             "italic": true
@@ -578,7 +551,7 @@
             "foreground": "#92C4EC"
         },
         "lifetime": {
-            "foreground": "#E6B18E",
+            "foreground": "#C5B3E9",
             "italic": true
         },
         "escapeSequence": {
@@ -616,9 +589,6 @@
         },
         "*.mutable": {
             "underline": true
-        },
-        "*.public.declaration": {
-            "foreground": "#D8C5FC"
         },
         "unresolvedReference": {
             "foreground": "#D99898",
@@ -668,12 +638,6 @@
         "method.injected": {
             "foreground": "#91E0E4AA"
         },
-        "function.public.declaration.injected": {
-            "foreground": "#D8C5FCAA"
-        },
-        "method.public.declaration.injected": {
-            "foreground": "#D8C5FCAA"
-        },
         "type.injected": {
             "foreground": "#6CBBBFAA"
         },
@@ -692,29 +656,11 @@
         "typeAlias.injected": {
             "foreground": "#6CBBBFAA"
         },
-        "type.public.declaration.injected": {
-            "foreground": "#B3A1D6AA"
-        },
-        "class.public.declaration.injected": {
-            "foreground": "#B3A1D6AA"
-        },
-        "struct.public.declaration.injected": {
-            "foreground": "#B3A1D6AA"
-        },
-        "enum.public.declaration.injected": {
-            "foreground": "#B3A1D6AA"
-        },
-        "union.public.declaration.injected": {
-            "foreground": "#B3A1D6AA"
-        },
-        "typeAlias.public.declaration.injected": {
-            "foreground": "#B3A1D6AA"
-        },
         "builtinType.injected": {
             "foreground": "#7ECDD1AA"
         },
         "typeParameter.injected": {
-            "foreground": "#F9C3A0AA"
+            "foreground": "#C5B3E9AA"
         },
         "property.injected": {
             "foreground": "#E6B18EAA"
@@ -722,9 +668,6 @@
         "interface.injected": {
             "foreground": "#7ECDD1AA",
             "italic": true
-        },
-        "interface.public.declaration.injected": {
-            "foreground": "#C5B3E9AA"
         },
         "*.trait.injected": {
             "foreground": "#EAEAD3AA",
@@ -737,7 +680,7 @@
             "foreground": "#92C4ECAA"
         },
         "lifetime.injected": {
-            "foreground": "#E6B18EAA",
+            "foreground": "#C5B3E9AA",
             "italic": true
         },
         "escapeSequence.injected": {
@@ -776,9 +719,6 @@
         "*.mutable.injected": {
             "foreground": "#EAEAD3AA",
             "underline": true
-        },
-        "*.public.declaration.injected": {
-            "foreground": "#D8C5FCAA"
         },
         "unresolvedReference.injected": {
             "foreground": "#D99898AA",
