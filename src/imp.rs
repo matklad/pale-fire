@@ -427,7 +427,13 @@ fn syntax_highlighting(t: &mut ThemeBuilder, p: &Palette) {
     );
 
     t.a(
-        [s("*.unsafe"), s("function.unsafe"), s("operator.unsafe"), tm("keyword.other.unsafe")],
+        [
+            s("*.unsafe"),
+            s("function.unsafe"),
+            s("variable.unsafe"),
+            s("operator.unsafe"),
+            tm("keyword.other.unsafe"),
+        ],
         p.red(-2),
     );
 

@@ -578,6 +578,9 @@
         "function.unsafe": {
             "foreground": "#B26466"
         },
+        "variable.unsafe": {
+            "foreground": "#B26466"
+        },
         "operator.unsafe": {
             "foreground": "#B26466"
         },
@@ -705,6 +708,9 @@
             "foreground": "#B26466AA"
         },
         "function.unsafe.injected": {
+            "foreground": "#B26466AA"
+        },
+        "variable.unsafe.injected": {
             "foreground": "#B26466AA"
         },
         "operator.unsafe.injected": {
